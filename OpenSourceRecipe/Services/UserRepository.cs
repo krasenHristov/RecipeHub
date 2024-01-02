@@ -43,34 +43,24 @@ public class UserRepository
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        var checkUser = await GetUserByUsername(user.Username!);
+        user.Password = HashPassword(user.Password!);
 
-        if (checkUser != null)
+        var parameters = new DynamicParameters();
+        parameters.Add("Username", user.Username);
+        parameters.Add("Name", user.Name);
+        parameters.Add("ProfileImg", user.ProfileImg);
+        parameters.Add("Password", user.Password);
+        parameters.Add("Status", user.Status);
+        parameters.Add("Bio", user.Bio);
+
+        var sql = "INSERT INTO \"User\" " +
+                  "(\"Username\", \"Name\", \"ProfileImg\", \"Password\", \"Status\", \"Bio\") " +
+                  "VALUES (@Username, @Name, @ProfileImg, @Password, @Status, @Bio) RETURNING *";
+        var newUser = await connection.QueryAsync<User>(sql, parameters);
+
+        if (newUser == null)
         {
-            throw new Exception("Username already exists");
-        }
-
-        if (user.Password != null)
-        {
-            user.Password = HashPassword(user.Password);
-
-            var parameters = new DynamicParameters();
-            parameters.Add("Username", user.Username);
-            parameters.Add("Name", user.Name);
-            parameters.Add("ProfileImg", user.ProfileImg);
-            parameters.Add("Password", user.Password);
-            parameters.Add("Status", user.Status);
-            parameters.Add("Bio", user.Bio);
-
-            var sql = "INSERT INTO \"User\" " +
-                      "(\"Username\", \"Name\", \"ProfileImg\", \"Password\", \"Status\", \"Bio\") " +
-                      "VALUES (@Username, @Name, @ProfileImg, @Password, @Status, @Bio) RETURNING *";
-            var newUser = await connection.QueryAsync<User>(sql, parameters);
-
-            if (newUser == null)
-            {
-                throw new Exception("User not created");
-            }
+            throw new Exception("User not created");
         }
 
         return GenerateJwtToken(await GetUserByUsername(user.Username!));
@@ -99,7 +89,7 @@ public class UserRepository
 
         var claims = new[]
         {
-            new Claim(JwtRegisteredClaimNames.Sub, user!.UserId.ToString()),
+            new Claim(JwtRegisteredClaimNames.Sub, user!.UserId.ToString()!),
             new Claim(JwtRegisteredClaimNames.UniqueName, user.Username!),
             new Claim(JwtRegisteredClaimNames.NameId, user.Name!),
         };
@@ -118,12 +108,12 @@ public class UserRepository
     private string HashPassword(string password)
     {
         var hasher = new PasswordHasher<User>();
-        return hasher.HashPassword(null, password);
+        return hasher.HashPassword(null!, password);
     }
 
     private bool CheckPassword(string password, string hashedPassword)
     {
         var hasher = new PasswordHasher<User>();
-        return hasher.VerifyHashedPassword(null, hashedPassword, password) != PasswordVerificationResult.Failed;
+        return hasher.VerifyHashedPassword(null!, hashedPassword, password) != PasswordVerificationResult.Failed;
     }
 }
