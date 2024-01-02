@@ -1,0 +1,111 @@
+# Directories #
+[Bb]in/
+[Oo]bj/
+[Ll]ogs/
+[Pp]ackages/
+[Tt]est[Rr]esults/
+
+# Files #
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.pdb
+*.cache
+*.csproj.user
+*.dll.config
+*.exe.config
+*.config.local
+
+# Visual Studio files #
+.vs/
+.vscode/
+*.opendb
+*.dbmdl
+*.jfm
+*.tlog
+*.tmproj
+*.log
+*.vspscc
+*.vssscc
+._*
+*.swp
+*.mdf
+*.ldb
+*.sqlite
+*.sdf
+
+# ReSharper #
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# TeamCity #
+_TeamCity*
+
+# DotCover #
+*.dotCover
+
+# NCrunch #
+_NCrunch_*
+*.[Nn][Cc][Rr][Uu][Nn][Cc][Hh]
+ncrunchsolution
+
+# MightyMoose #
+*.mm.*
+AutoTest.Net/
+
+# Web publish script output files #
+*.Publish.xml
+*.pubxml
+*.pubxml.user
+
+# NuGet #
+packages/
+*.nupkg
+*.snupkg
+nuget.exe
+NuGet.Config
+NuGet.targets
+NuGet.Props
+nuget.exe.old
+nuget.update.exe
+project.lock.json
+project.assets.json
+global.json
+
+# Tooling #
+.tool/
+project.nuget.cache
+
+# Rider #
+.idea/
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ASP.NET Scaffolding #
+ScaffoldingReadMe.txt
+
+# ASP.NET Core #
+wwwroot/
+node_modules/
+bower_components/
+jspm_packages/
+local/
+
+# Others #
+*.swp
+*.bak
+*.tmp
+*~
+*.swp
+*.un~
+nohup.out
