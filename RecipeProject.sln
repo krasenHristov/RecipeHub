@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSourceRecipe", "OpenSourceRecipe\OpenSourceRecipe.csproj", "{62AAD4D7-41FE-4F49-927C-AF80B844DEAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSourceRecipe.IntegrationTests", "OpenSourceRecipe.IntegrationTests\OpenSourceRecipe.IntegrationTests.csproj", "{35FB421B-CBD4-4DBC-89AC-AB1F0C474972}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62AAD4D7-41FE-4F49-927C-AF80B844DEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62AAD4D7-41FE-4F49-927C-AF80B844DEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62AAD4D7-41FE-4F49-927C-AF80B844DEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62AAD4D7-41FE-4F49-927C-AF80B844DEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35FB421B-CBD4-4DBC-89AC-AB1F0C474972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35FB421B-CBD4-4DBC-89AC-AB1F0C474972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35FB421B-CBD4-4DBC-89AC-AB1F0C474972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35FB421B-CBD4-4DBC-89AC-AB1F0C474972}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -14,6 +14,7 @@ public class UserController(UserRepository userRepository) : ControllerBase
         try
         {
             var checkUser = await userRepository.GetUserByUsername(user.Username!);
+
             if (checkUser != null)
             {
                 return BadRequest("Username already exists");

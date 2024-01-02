@@ -1,9 +1,11 @@
 using System.Reflection;
 using System.Text;
+using Dapper;
 using FluentMigrator.Runner;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Npgsql;
 using OpenSourceRecipes.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,6 +42,37 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// get environment variable for connection string
+
+string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+
+var connectionStringName = builder.Environment.IsDevelopment() ? "DefaultConnection" : "TestConnection";
+var connectionString = builder.Configuration.GetConnectionString(connectionStringName);
+
+// if environment is test create connection, drop database, and recreate it
+if (env == "Testing")
+{
+    using var connection = new NpgsqlConnection(connectionString);
+    connection.Open();
+
+    var deleteScript = @"
+    DO
+    $do$
+    DECLARE
+        r RECORD;
+    BEGIN
+        FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = current_schema() AND tablename <> 'VersionInfo') LOOP
+            EXECUTE 'DELETE FROM ' || quote_ident(r.tablename);
+        END LOOP;
+    END
+    $do$;";
+
+    using var cmd = new NpgsqlCommand(deleteScript, connection);
+    cmd.ExecuteNonQuery();
+
+    connection.Close();
+}
+
 // add common FluentMigrator services
 builder.Services
     .AddFluentMigratorCore()
@@ -49,7 +82,7 @@ builder.Services
     .AddPostgres()
 
     // Set the connection string
-    .WithGlobalConnectionString(builder.Configuration.GetConnectionString("DefaultConnection"))
+    .WithGlobalConnectionString(connectionString)
 
     // Define the assembly containing the migrations
     // Assembly is defined in the project file (.csproj)
@@ -79,7 +112,7 @@ builder.Services.AddAuthentication(options =>
         ValidAudience = builder.Configuration["Jwt:Audience"], // this comes from appsettings.json
 
         // The signing key must match the one used to generate the token
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? string.Empty))
     };
 });
 
@@ -91,7 +124,7 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+if (env == "Testing" || env == "Development")
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -109,3 +142,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }

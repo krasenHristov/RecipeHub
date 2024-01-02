@@ -8,11 +8,32 @@ using Npgsql;
 using OpenSourceRecipes.Models;
 
 namespace OpenSourceRecipes.Services;
-public class UserRepository(IConfiguration configuration)
+public class UserRepository
 {
+
+    private readonly IConfiguration _configuration;
+    private readonly string? _connectionString;
+
+    public UserRepository(IConfiguration configuration)
+    {
+        this._configuration = configuration;
+
+        string ENV = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+
+        if (ENV == "Testing")
+        {
+            _connectionString = "TestConnection";
+        }
+        else
+        {
+            _connectionString = "DefaultConnection";
+        }
+
+    }
+
     public async Task<GetUserByUsernameDto?> GetUserByUsername(string username)
     {
-        await using var connection = new NpgsqlConnection(configuration.GetConnectionString("DefaultConnection"));
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
         var sql = "SELECT * FROM \"User\" WHERE \"Username\" = @Username";
 
         return await connection.QueryFirstOrDefaultAsync<GetUserByUsernameDto>(sql, new { Username = username });
@@ -20,36 +41,26 @@ public class UserRepository(IConfiguration configuration)
 
     public async Task<string> RegisterUser(User user)
     {
-        await using var connection = new NpgsqlConnection(configuration.GetConnectionString("DefaultConnection"));
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        var checkUser = await GetUserByUsername(user.Username!);
+        user.Password = HashPassword(user.Password!);
 
-        if (checkUser != null)
+        var parameters = new DynamicParameters();
+        parameters.Add("Username", user.Username);
+        parameters.Add("Name", user.Name);
+        parameters.Add("ProfileImg", user.ProfileImg);
+        parameters.Add("Password", user.Password);
+        parameters.Add("Status", user.Status);
+        parameters.Add("Bio", user.Bio);
+
+        var sql = "INSERT INTO \"User\" " +
+                  "(\"Username\", \"Name\", \"ProfileImg\", \"Password\", \"Status\", \"Bio\") " +
+                  "VALUES (@Username, @Name, @ProfileImg, @Password, @Status, @Bio) RETURNING *";
+        var newUser = await connection.QueryAsync<User>(sql, parameters);
+
+        if (newUser == null)
         {
-            throw new Exception("Username already exists");
-        }
-
-        if (user.Password != null)
-        {
-            user.Password = HashPassword(user.Password);
-
-            var parameters = new DynamicParameters();
-            parameters.Add("Username", user.Username);
-            parameters.Add("Name", user.Name);
-            parameters.Add("ProfileImg", user.ProfileImg);
-            parameters.Add("Password", user.Password);
-            parameters.Add("Status", user.Status);
-            parameters.Add("Bio", user.Bio);
-
-            var sql = "INSERT INTO \"User\" " +
-                      "(\"Username\", \"Name\", \"ProfileImg\", \"Password\", \"Status\", \"Bio\") " +
-                      "VALUES (@Username, @Name, @ProfileImg, @Password, @Status, @Bio) RETURNING *";
-            var newUser = await connection.QueryAsync<User>(sql, parameters);
-
-            if (newUser == null)
-            {
-                throw new Exception("User not created");
-            }
+            throw new Exception("User not created");
         }
 
         return GenerateJwtToken(await GetUserByUsername(user.Username!));
@@ -73,19 +84,19 @@ public class UserRepository(IConfiguration configuration)
 
     private string GenerateJwtToken(GetUserByUsernameDto? user)
     {
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"] ?? string.Empty));
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"] ?? string.Empty));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
         var claims = new[]
         {
-            new Claim(JwtRegisteredClaimNames.Sub, user!.UserId.ToString()),
+            new Claim(JwtRegisteredClaimNames.Sub, user!.UserId.ToString()!),
             new Claim(JwtRegisteredClaimNames.UniqueName, user.Username!),
             new Claim(JwtRegisteredClaimNames.NameId, user.Name!),
         };
 
         var token = new JwtSecurityToken(
-            configuration["Jwt:Issuer"],
-            configuration["Jwt:Audience"],
+            _configuration["Jwt:Issuer"],
+            _configuration["Jwt:Audience"],
             claims,
             expires: DateTime.Now.AddMinutes(30),
             signingCredentials: creds
@@ -97,12 +108,12 @@ public class UserRepository(IConfiguration configuration)
     private string HashPassword(string password)
     {
         var hasher = new PasswordHasher<User>();
-        return hasher.HashPassword(null, password);
+        return hasher.HashPassword(null!, password);
     }
 
     private bool CheckPassword(string password, string hashedPassword)
     {
         var hasher = new PasswordHasher<User>();
-        return hasher.VerifyHashedPassword(null, hashedPassword, password) != PasswordVerificationResult.Failed;
+        return hasher.VerifyHashedPassword(null!, hashedPassword, password) != PasswordVerificationResult.Failed;
     }
 }
