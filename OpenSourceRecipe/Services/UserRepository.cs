@@ -8,11 +8,32 @@ using Npgsql;
 using OpenSourceRecipes.Models;
 
 namespace OpenSourceRecipes.Services;
-public class UserRepository(IConfiguration configuration)
+public class UserRepository
 {
+
+    private readonly IConfiguration _configuration;
+    private readonly string? _connectionString;
+
+    public UserRepository(IConfiguration configuration)
+    {
+        this._configuration = configuration;
+
+        string ENV = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+
+        if (ENV == "Testing")
+        {
+            _connectionString = "TestConnection";
+        }
+        else
+        {
+            _connectionString = "DefaultConnection";
+        }
+
+    }
+
     public async Task<GetUserByUsernameDto?> GetUserByUsername(string username)
     {
-        await using var connection = new NpgsqlConnection(configuration.GetConnectionString("DefaultConnection"));
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
         var sql = "SELECT * FROM \"User\" WHERE \"Username\" = @Username";
 
         return await connection.QueryFirstOrDefaultAsync<GetUserByUsernameDto>(sql, new { Username = username });
@@ -20,7 +41,7 @@ public class UserRepository(IConfiguration configuration)
 
     public async Task<string> RegisterUser(User user)
     {
-        await using var connection = new NpgsqlConnection(configuration.GetConnectionString("DefaultConnection"));
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
         var checkUser = await GetUserByUsername(user.Username!);
 
@@ -73,7 +94,7 @@ public class UserRepository(IConfiguration configuration)
 
     private string GenerateJwtToken(GetUserByUsernameDto? user)
     {
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"] ?? string.Empty));
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"] ?? string.Empty));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
         var claims = new[]
@@ -84,8 +105,8 @@ public class UserRepository(IConfiguration configuration)
         };
 
         var token = new JwtSecurityToken(
-            configuration["Jwt:Issuer"],
-            configuration["Jwt:Audience"],
+            _configuration["Jwt:Issuer"],
+            _configuration["Jwt:Audience"],
             claims,
             expires: DateTime.Now.AddMinutes(30),
             signingCredentials: creds

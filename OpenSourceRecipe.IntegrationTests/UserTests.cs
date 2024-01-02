@@ -1,23 +1,16 @@
+using System.Data;
 using System.Net;
-using Xunit;
-using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using Npgsql;
 
 namespace OpenSourceRecipe.IntegrationTests;
 
-public class UserEndpoints : IClassFixture<CustomWebApplicationFactory<Program>>
+public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
+    : IClassFixture<CustomWebApplicationFactory<Program>>
 {
-    private readonly HttpClient _client;
-
-    public UserEndpoints(CustomWebApplicationFactory<Program> factory)
-    {
-        _client = factory.CreateClient();
-        Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Testing");
-    }
+    private readonly HttpClient _client = factory.CreateClient();
 
     [Fact]
     public async Task AuthTestEndpointWithoutToken_ShouldFail()
