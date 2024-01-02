@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using OpenSourceRecipes.Services;
+using OpenSourceRecipes.Seeds;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -102,7 +103,8 @@ if (app.Environment.IsDevelopment())
         runner.MigrateUp();
     }
 }
-
+var seedUser = new SeedUserData(builder.Configuration);
+seedUser.InsertIntoUser();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
