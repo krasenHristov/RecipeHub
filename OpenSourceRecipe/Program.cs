@@ -40,6 +40,12 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+Console.WriteLine(builder.Configuration.GetValue<bool>("UseTestSettings"));
+var connectionStringName = builder.Environment.IsDevelopment() ? "DefaultConnection" : "TestConnection";
+var connectionString = builder.Configuration.GetConnectionString(connectionStringName);
+
+Console.WriteLine(connectionString);
+
 // add common FluentMigrator services
 builder.Services
     .AddFluentMigratorCore()
@@ -49,7 +55,7 @@ builder.Services
     .AddPostgres()
 
     // Set the connection string
-    .WithGlobalConnectionString(builder.Configuration.GetConnectionString("DefaultConnection"))
+    .WithGlobalConnectionString(builder.Configuration.GetConnectionString(connectionString))
 
     // Define the assembly containing the migrations
     // Assembly is defined in the project file (.csproj)
@@ -109,3 +115,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }
