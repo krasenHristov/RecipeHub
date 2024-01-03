@@ -42,6 +42,26 @@ public class UserController(UserRepository userRepository) : ControllerBase
         }
     }
 
+    [HttpGet("api/user/{id}")]
+    public async Task<ActionResult<GetUserDto>> GetUserById(int id)
+    {
+        try
+        {
+            var user = await userRepository.GetUserById(id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
     [HttpGet("api/test")]
     [Authorize]
     public IActionResult Test ()

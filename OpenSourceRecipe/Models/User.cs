@@ -28,7 +28,7 @@ public class User
     public string? Bio { get; set; }
 }
 
-public class GetUserByUsernameDto
+public class GetUserDto
 {
     public int? UserId { get; set; }
     public string? Username { get; set; }
