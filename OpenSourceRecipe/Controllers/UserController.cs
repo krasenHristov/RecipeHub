@@ -8,7 +8,6 @@ namespace OpenSourceRecipe.Controllers;
 [ApiController]
 public class UserController(UserRepository userRepository) : ControllerBase
 {
-
     [HttpPost("api/register")]
     public async Task<ActionResult<string>> RegisterUser(User user)
     {
