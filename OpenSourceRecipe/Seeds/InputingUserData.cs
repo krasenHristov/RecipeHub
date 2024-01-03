@@ -23,9 +23,9 @@ namespace OpenSourceRecipes.Seeds
             foreach (var user in Users)
             {
                 string query = $"INSERT INTO \"User\" " +
-                               "(\"Username\", \"Name\", \"Password\", \"ProfileImg\", \"Status\", \"Bio\") " +
-                               $"VALUES ('{user.Username}', '{user.Name}', '{user.Password}', '{user.ProfileImg}', '{user.Status}', '{user.Bio}') " +
-                               "RETURNING *;";
+                                "(\"Username\", \"Name\", \"Password\", \"ProfileImg\", \"Status\", \"Bio\") " +
+                                $"VALUES ('{user.Username}', '{user.Name}', '{user.Password}', '{user.ProfileImg}', '{user.Status}', '{user.Bio}') " +
+                                "RETURNING *;";
                 var insertedUser = await connection.QueryFirstOrDefaultAsync<MyUserObject>(query);
                 insertedUsers.Add(insertedUser);
             }
