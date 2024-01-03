@@ -47,7 +47,7 @@ jobs:
       run: echo "ConnectionStrings__TestConnection=Host=localhost;Port=5433;Database=test_db;Username=test_user;Password=password" >> $GITHUB_ENV
 
     - name: Set up JWT Secret
-      run: echo "JWT__Key=supersecretkey" >> $GITHUB_ENV
+      run: echo "JWT__Key=${{ secrets.JWT_KEY }}" >> $GITHUB_ENV
 
     - name: Set up JWT Issuer
       run: echo "JWT__Issuer=OpenSourceRecipe" >> $GITHUB_ENV
