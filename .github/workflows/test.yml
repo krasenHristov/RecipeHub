@@ -46,5 +46,14 @@ jobs:
     - name: Set Testing Connection String
       run: export ConnectionStrings__TestConnection="Host=localhost;Port=5433;Database=test_db;Username=test_user;Password=password"
       
+    - name: set up JWT secret
+      run: export JWT__Key="supersecretkey"
+      
+    - name: set up JWT issuer
+      run: export JWT__Issuer="OpenSourceRecipe"
+      
+    - name: set up JWT audience
+      run: export JWT__Audience="OpenSourceRecipe"
+      
     - name: Test
       run: dotnet test
