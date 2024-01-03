@@ -43,5 +43,8 @@ jobs:
     - name: Set Testing Environment
       run: export ASPNETCORE_ENVIRONMENT=Testing
       
+    - name: Set Testing Connection String
+      run: export ConnectionStrings__TestConnection="Host=localhost;Port=5433;Database=test_db;Username=test_user;Password=password"
+      
     - name: Test
       run: dotnet test
