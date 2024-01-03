@@ -1,4 +1,4 @@
-name: Deploy to AWS Elastic Beanstalk
+name: Deploy to server
 
 on:
   push:
@@ -8,30 +8,28 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4.1.1
+      - name: Checkout and clone repo
+        uses: actions/checkout@v4.1.1
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '8.0'  
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ec2-13-40-213-131.eu-west-2.compute.amazonaws.com >> ~/.ssh/known_hosts
 
-    - name: Build and Publish
-      run: |
-        dotnet restore OpenSourceRecipe/OpenSourceRecipe.csproj
-        dotnet publish OpenSourceRecipe/OpenSourceRecipe.csproj -c Release -o ./publish
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Zip
-      run: zip -r deploy.zip ./publish
+      - name: Copy deployment script
+        run: |
+          scp -o StrictHostKeyChecking=no Scripts/DeployScript.sh ubuntu@ec2-13-40-213-131.eu-west-2.compute.amazonaws.com:~
 
-    - name: Deploy to Elastic Beanstalk
-      uses: einaregilsson/beanstalk-deploy@v21
-      with:
-        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: recipe-hub
-        environment_name: Recipe-hub-env
-        version_label: ${{ github.sha }}
-        region: us-east-1
-        deployment_package: deploy.zip
+      - name: Run deployment script
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-13-40-213-131.eu-west-2.compute.amazonaws.com "\
+          ls -l ~/DeployScript.sh && \
+          chmod +x ~/DeployScript.sh && \
+          bash ~/DeployScript.sh"
