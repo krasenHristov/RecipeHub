@@ -18,17 +18,20 @@ public class UserRepository
     {
         this._configuration = configuration;
 
-        string ENV = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
+        string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
 
-        if (ENV == "Testing")
+        if (env == "Testing")
         {
             _connectionString = "TestConnection";
+        }
+        else if (env == "Production")
+        {
+            _connectionString = "ProductionConnection";
         }
         else
         {
             _connectionString = "DefaultConnection";
         }
-
     }
 
     public async Task<GetUserByUsernameDto?> GetUserByUsername(string username)

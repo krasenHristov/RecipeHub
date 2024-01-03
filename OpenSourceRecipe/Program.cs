@@ -47,6 +47,20 @@ builder.Services.AddSwaggerGen(c =>
 string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
 
 var connectionStringName = builder.Environment.IsDevelopment() ? "DefaultConnection" : "TestConnection";
+
+if(builder.Environment.IsDevelopment())
+{
+    connectionStringName = "DefaultConnection";
+}
+else if(builder.Environment.IsProduction())
+{
+    connectionStringName = "ProductionConnection";
+}
+else if(env == "Testing")
+{
+    connectionStringName = "TestConnection";
+}
+
 var connectionString = builder.Configuration.GetConnectionString(connectionStringName);
 
 // if environment is test create connection, drop database, and recreate it
