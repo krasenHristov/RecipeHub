@@ -8,6 +8,12 @@ namespace OpenSourceRecipes.Utils;
 public class MyFoodObject
 {
     public int id { get; set; }
+    public string name { get; set; }
+    public List<NutritionItem> Nutrition { get; set; }
+}
+
+public class NutritionItem
+{
     public string serving { get; set; }
     public string calories { get; set; }
     public string carbohydrate { get; set; }
@@ -15,33 +21,35 @@ public class MyFoodObject
     public string fiber { get; set; }
     public string fat { get; set; }
     public string protein { get; set; }
-    public string name { get; set; }
 }
 
 public class ReadFoodFunc
 {
     public List<MyFoodObject> ReadFoodFile()
-    {           
+    {
+        Console.WriteLine("Reading Foods");
+        MyFoodObject[] foodsArray = new MyFoodObject[0];
+
         string currentDirectory = Environment.CurrentDirectory;
-        string[] files = Directory.GetFiles(Environment.CurrentDirectory, "*.txt");
+        currentDirectory = Path.Combine(currentDirectory, @"Seeds/data/");
+        string[] files = Directory.GetFiles(currentDirectory, "*.txt");
+
         foreach (string file in files)
         {
-            Console.WriteLine(file);
+            try
+            {
+                string jsonContent = File.ReadAllText(file);
+                MyFoodObject[] foodObjects = JsonConvert.DeserializeObject<MyFoodObject[]>(jsonContent);
+                Array.Resize(ref foodsArray, foodsArray.Length + foodObjects.Length);
+                Array.Copy(foodObjects, 0, foodsArray, foodsArray.Length - foodObjects.Length, foodObjects.Length);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
-        string filePath = @"Seeds/data/users.txt";
-        filePath = Path.Combine(currentDirectory, filePath);
-
-        try
-        {
-            string jsonContent = File.ReadAllText(filePath);
-            MyFoodObject[] usersArray = JsonConvert.DeserializeObject<MyFoodObject[]>(jsonContent);
-            return usersArray.ToList();
-        }
-        catch (Exception ex)
-        {  
-            Console.WriteLine($"An error occurred: {ex.Message}"); 
-            return new List<MyFoodObject>();
-        }
+        Console.WriteLine("Successfully read Foods");
+        return new List<MyFoodObject>(foodsArray);
     }
 }

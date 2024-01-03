@@ -1,695 +1,1703 @@
 [
   {
     "id": 0,
-    "serving": "100 g",
-    "calories": "42 kcal",
-    "carbohydrate": "0.1 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Akvavit"
+    "name": "Akvavit",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "42 kcal"
+      },
+      {
+        "carbohydrate": "0.1 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 1,
-    "serving": "100 g",
-    "calories": "360 kcal",
-    "carbohydrate": "27 g",
-    "sugar": "26 g",
-    "fiber": "0 g",
-    "fat": "14 g",
-    "protein": "0 g",
-    "name": "Amaretto"
+    "name": "Amaretto",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "360 kcal"
+      },
+      {
+        "carbohydrate": "27 g"
+      },
+      {
+        "sugar": "26 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "14 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 2,
-    "serving": "100 g",
-    "calories": "200 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Aquavit"
+    "name": "Aquavit",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "200 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 3,
-    "serving": "100 g",
-    "calories": "250 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Armagnac"
+    "name": "Armagnac",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "250 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 4,
-    "serving": "100 g",
-    "calories": "327 kcal",
-    "carbohydrate": "26 g",
-    "sugar": "26 g",
-    "fiber": "0 g",
-    "fat": "17 g",
-    "protein": "3 g",
-    "name": "Baileys Irish Cream"
+    "name": "Baileys Irish Cream",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "327 kcal"
+      },
+      {
+        "carbohydrate": "26 g"
+      },
+      {
+        "sugar": "26 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "17 g"
+      },
+      {
+        "protein": "3 g"
+      }
+    ]
   },
   {
     "id": 5,
-    "serving": "100 g",
-    "calories": "43 kcal",
-    "carbohydrate": "3.6 g",
-    "sugar": "0.6 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0.5 g",
-    "name": "Beer (Various Types)"
+    "name": "Beer (Various Types)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "43 kcal"
+      },
+      {
+        "carbohydrate": "3.6 g"
+      },
+      {
+        "sugar": "0.6 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0.5 g"
+      }
+    ]
   },
   {
     "id": 6,
-    "serving": "100 g",
-    "calories": "150 kcal",
-    "carbohydrate": "30 g",
-    "sugar": "20 g",
-    "fiber": "5 g",
-    "fat": "2 g",
-    "protein": "1 g",
-    "name": "Benedictine (Herbal Liqueur)"
+    "name": "Benedictine (Herbal Liqueur)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "150 kcal"
+      },
+      {
+        "carbohydrate": "30 g"
+      },
+      {
+        "sugar": "20 g"
+      },
+      {
+        "fiber": "5 g"
+      },
+      {
+        "fat": "2 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 7,
-    "serving": "100 g",
-    "calories": "250 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Brandy"
+    "name": "Brandy",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "250 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 8,
-    "serving": "100 g",
-    "calories": "80 kcal",
-    "carbohydrate": "2 g",
-    "sugar": "0 g",
-    "fiber": "1 g",
-    "fat": "0 g",
-    "protein": "1 g",
-    "name": "Cabernet Sauvignon"
+    "name": "Cabernet Sauvignon",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "80 kcal"
+      },
+      {
+        "carbohydrate": "2 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "1 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 9,
-    "serving": "100 g",
-    "calories": "230 kcal",
-    "carbohydrate": "10 g",
-    "sugar": "8 g",
-    "fiber": "2 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Calvados (Apple Brandy)"
+    "name": "Calvados (Apple Brandy)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "230 kcal"
+      },
+      {
+        "carbohydrate": "10 g"
+      },
+      {
+        "sugar": "8 g"
+      },
+      {
+        "fiber": "2 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 10,
-    "serving": "100 g",
-    "calories": "120 kcal",
-    "carbohydrate": "10 g",
-    "sugar": "10 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Campari"
+    "name": "Campari",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "120 kcal"
+      },
+      {
+        "carbohydrate": "10 g"
+      },
+      {
+        "sugar": "10 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 11,
-    "serving": "100 g",
-    "calories": "0 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Cassis (Blackcurrant Liqueur)"
+    "name": "Cassis (Blackcurrant Liqueur)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "0 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 12,
-    "serving": "100 g",
-    "calories": "0 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Chambord (Black Raspberry Liqueur)"
+    "name": "Chambord (Black Raspberry Liqueur)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "0 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 13,
-    "serving": "100 g",
-    "calories": "0 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Champagne"
+    "name": "Champagne",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "0 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 14,
-    "serving": "100 g",
-    "calories": "0 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Chardonnay"
+    "name": "Chardonnay",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "0 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 15,
-    "serving": "100 g",
-    "calories": "0 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Chartreuse (Herbal Liqueur)"
+    "name": "Chartreuse (Herbal Liqueur)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "0 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 16,
-    "serving": "100 g",
-    "calories": "0 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Coconut Rum"
+    "name": "Coconut Rum",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "0 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 17,
-    "serving": "100 g",
-    "calories": "0 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Cognac"
+    "name": "Cognac",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "0 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 18,
-    "serving": "100 g",
-    "calories": "0 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Cointreau"
+    "name": "Cointreau",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "0 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 19,
-    "serving": "100 g",
-    "calories": "0 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Cointreau"
+    "name": "Cointreau",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "0 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 20,
-    "serving": "100 g",
-    "calories": "95 kcal",
-    "carbohydrate": "25 g",
-    "sugar": "25 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Crème de Menthe (Mint Liqueur)"
+    "name": "Crème de Menthe (Mint Liqueur)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "95 kcal"
+      },
+      {
+        "carbohydrate": "25 g"
+      },
+      {
+        "sugar": "25 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 21,
-    "serving": "100 g",
-    "calories": "252 kcal",
-    "carbohydrate": "35 g",
-    "sugar": "30 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Curaçao (Orange Liqueur)"
+    "name": "Curaçao (Orange Liqueur)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "252 kcal"
+      },
+      {
+        "carbohydrate": "35 g"
+      },
+      {
+        "sugar": "30 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 22,
-    "serving": "100 g",
-    "calories": "64 kcal",
-    "carbohydrate": "2 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "1 g",
-    "name": "Dry Red Vermouth"
+    "name": "Dry Red Vermouth",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "64 kcal"
+      },
+      {
+        "carbohydrate": "2 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 23,
-    "serving": "100 g",
-    "calories": "150 kcal",
-    "carbohydrate": "3 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "1 g",
-    "name": "Dry Sherry"
+    "name": "Dry Sherry",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "150 kcal"
+      },
+      {
+        "carbohydrate": "3 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 24,
-    "serving": "100 g",
-    "calories": "73 kcal",
-    "carbohydrate": "5 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Dry White Vermouth"
+    "name": "Dry White Vermouth",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "73 kcal"
+      },
+      {
+        "carbohydrate": "5 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 25,
-    "serving": "100 g",
-    "calories": "292 kcal",
-    "carbohydrate": "24 g",
-    "sugar": "23 g",
-    "fiber": "0 g",
-    "fat": "17 g",
-    "protein": "2 g",
-    "name": "Frangelico (Hazelnut Liqueur)"
+    "name": "Frangelico (Hazelnut Liqueur)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "292 kcal"
+      },
+      {
+        "carbohydrate": "24 g"
+      },
+      {
+        "sugar": "23 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "17 g"
+      },
+      {
+        "protein": "2 g"
+      }
+    ]
   },
   {
     "id": 26,
-    "serving": "100 g",
-    "calories": "263 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Gin"
+    "name": "Gin",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "263 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 27,
-    "serving": "100 g",
-    "calories": "315 kcal",
-    "carbohydrate": "37 g",
-    "sugar": "37 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Grand Marnier"
+    "name": "Grand Marnier",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "315 kcal"
+      },
+      {
+        "carbohydrate": "37 g"
+      },
+      {
+        "sugar": "37 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 28,
-    "serving": "100 g",
-    "calories": "315 kcal",
-    "carbohydrate": "37 g",
-    "sugar": "37 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Grand Marnier"
+    "name": "Grand Marnier",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "315 kcal"
+      },
+      {
+        "carbohydrate": "37 g"
+      },
+      {
+        "sugar": "37 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 29,
-    "serving": "100 g",
-    "calories": "231 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Grappa"
+    "name": "Grappa",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "231 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 30,
-    "serving": "100 g",
-    "calories": "327 kcal",
-    "carbohydrate": "20 g",
-    "sugar": "19 g",
-    "fiber": "0 g",
-    "fat": "17 g",
-    "protein": "3 g",
-    "name": "Irish Cream Liqueur"
+    "name": "Irish Cream Liqueur",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "327 kcal"
+      },
+      {
+        "carbohydrate": "20 g"
+      },
+      {
+        "sugar": "19 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "17 g"
+      },
+      {
+        "protein": "3 g"
+      }
+    ]
   },
   {
     "id": 31,
-    "serving": "100 g",
-    "calories": "326 kcal",
-    "carbohydrate": "44 g",
-    "sugar": "37 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Kahlúa (Coffee Liqueur)"
+    "name": "Kahlúa (Coffee Liqueur)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "326 kcal"
+      },
+      {
+        "carbohydrate": "44 g"
+      },
+      {
+        "sugar": "37 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 32,
-    "serving": "100 g",
-    "calories": "326 kcal",
-    "carbohydrate": "43 g",
-    "sugar": "42 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Limoncello (Lemon Liqueur)"
+    "name": "Limoncello (Lemon Liqueur)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "326 kcal"
+      },
+      {
+        "carbohydrate": "43 g"
+      },
+      {
+        "sugar": "42 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 33,
-    "serving": "100 g",
-    "calories": "161 kcal",
-    "carbohydrate": "8 g",
-    "sugar": "5 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "1 g",
-    "name": "Madeira Wine"
+    "name": "Madeira Wine",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "161 kcal"
+      },
+      {
+        "carbohydrate": "8 g"
+      },
+      {
+        "sugar": "5 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 34,
-    "serving": "100 g",
-    "calories": "43 kcal",
-    "carbohydrate": "7 g",
-    "sugar": "3 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "1 g",
-    "name": "Marsala"
+    "name": "Marsala",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "43 kcal"
+      },
+      {
+        "carbohydrate": "7 g"
+      },
+      {
+        "sugar": "3 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 35,
-    "serving": "100 g",
-    "calories": "82 kcal",
-    "carbohydrate": "8 g",
-    "sugar": "4 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "1 g",
-    "name": "Marsala Wine"
+    "name": "Marsala Wine",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "82 kcal"
+      },
+      {
+        "carbohydrate": "8 g"
+      },
+      {
+        "sugar": "4 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 36,
-    "serving": "100 g",
-    "calories": "275 kcal",
-    "carbohydrate": "26 g",
-    "sugar": "26 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Melon Liqueur"
+    "name": "Melon Liqueur",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "275 kcal"
+      },
+      {
+        "carbohydrate": "26 g"
+      },
+      {
+        "sugar": "26 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 37,
-    "serving": "100 g",
-    "calories": "83 kcal",
-    "carbohydrate": "3 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Merlot"
+    "name": "Merlot",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "83 kcal"
+      },
+      {
+        "carbohydrate": "3 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 38,
-    "serving": "100 g",
-    "calories": "282 kcal",
-    "carbohydrate": "68 g",
-    "sugar": "40 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Mirin"
+    "name": "Mirin",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "282 kcal"
+      },
+      {
+        "carbohydrate": "68 g"
+      },
+      {
+        "sugar": "40 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 39,
-    "serving": "100 g",
-    "calories": "315 kcal",
-    "carbohydrate": "14 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Ouzo (Anise Flavored)"
+    "name": "Ouzo (Anise Flavored)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "315 kcal"
+      },
+      {
+        "carbohydrate": "14 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 40,
-    "serving": "100 g",
-    "calories": "231 kcal",
-    "carbohydrate": "34 g",
-    "sugar": "34 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Peach Schnapps"
+    "name": "Peach Schnapps",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "231 kcal"
+      },
+      {
+        "carbohydrate": "34 g"
+      },
+      {
+        "sugar": "34 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 41,
-    "serving": "100 g",
-    "calories": "346 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Pernod or Absinthe (Anise Flavored)"
+    "name": "Pernod or Absinthe (Anise Flavored)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "346 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 42,
-    "serving": "100 g",
-    "calories": "82 kcal",
-    "carbohydrate": "2 g",
-    "sugar": "1 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Pinot Grigio"
+    "name": "Pinot Grigio",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "82 kcal"
+      },
+      {
+        "carbohydrate": "2 g"
+      },
+      {
+        "sugar": "1 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 43,
-    "serving": "100 g",
-    "calories": "82 kcal",
-    "carbohydrate": "2 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Pinot Noir"
+    "name": "Pinot Noir",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "82 kcal"
+      },
+      {
+        "carbohydrate": "2 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 44,
-    "serving": "100 g",
-    "calories": "185 kcal",
-    "carbohydrate": "15 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "2 g",
-    "name": "Port Wine (Ruby or Tawny)"
+    "name": "Port Wine (Ruby or Tawny)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "185 kcal"
+      },
+      {
+        "carbohydrate": "15 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "2 g"
+      }
+    ]
   },
   {
     "id": 45,
-    "serving": "100 g",
-    "calories": "83 kcal",
-    "carbohydrate": "2 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Red Wine"
+    "name": "Red Wine",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "83 kcal"
+      },
+      {
+        "carbohydrate": "2 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 46,
-    "serving": "100 g",
-    "calories": "82 kcal",
-    "carbohydrate": "2 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Riesling"
+    "name": "Riesling",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "82 kcal"
+      },
+      {
+        "carbohydrate": "2 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 47,
-    "serving": "100 g",
-    "calories": "231 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Rum"
+    "name": "Rum",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "231 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 48,
-    "serving": "100 g",
-    "calories": "134 kcal",
-    "carbohydrate": "3 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "1 g",
-    "name": "Sake"
+    "name": "Sake",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "134 kcal"
+      },
+      {
+        "carbohydrate": "3 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 49,
-    "serving": "100 g",
-    "calories": "324 kcal",
-    "carbohydrate": "41 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Sambuca"
+    "name": "Sambuca",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "324 kcal"
+      },
+      {
+        "carbohydrate": "41 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 50,
-    "serving": "100 g",
-    "calories": "82 kcal",
-    "carbohydrate": "2.7 g",
-    "sugar": "0.6 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0.1 g",
-    "name": "Sauvignon Blanc"
+    "name": "Sauvignon Blanc",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "82 kcal"
+      },
+      {
+        "carbohydrate": "2.7 g"
+      },
+      {
+        "sugar": "0.6 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0.1 g"
+      }
+    ]
   },
   {
     "id": 51,
-    "serving": "100 g",
-    "calories": "153 kcal",
-    "carbohydrate": "5.4 g",
-    "sugar": "1.1 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0.3 g",
-    "name": "Shaoxing Wine (Chinese Rice Wine)"
+    "name": "Shaoxing Wine (Chinese Rice Wine)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "153 kcal"
+      },
+      {
+        "carbohydrate": "5.4 g"
+      },
+      {
+        "sugar": "1.1 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0.3 g"
+      }
+    ]
   },
   {
     "id": 52,
-    "serving": "100 g",
-    "calories": "151 kcal",
-    "carbohydrate": "4.7 g",
-    "sugar": "1.5 g",
-    "fiber": "0 g",
-    "fat": "0.1 g",
-    "protein": "0.2 g",
-    "name": "Sherry (Dry or Sweet)"
+    "name": "Sherry (Dry or Sweet)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "151 kcal"
+      },
+      {
+        "carbohydrate": "4.7 g"
+      },
+      {
+        "sugar": "1.5 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.2 g"
+      }
+    ]
   },
   {
     "id": 53,
-    "serving": "100 g",
-    "calories": "299 kcal",
-    "carbohydrate": "2.6 g",
-    "sugar": "0.5 g",
-    "fiber": "0 g",
-    "fat": "3.6 g",
-    "protein": "2.2 g",
-    "name": "Shiraz/Syrah"
+    "name": "Shiraz/Syrah",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "299 kcal"
+      },
+      {
+        "carbohydrate": "2.6 g"
+      },
+      {
+        "sugar": "0.5 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "3.6 g"
+      },
+      {
+        "protein": "2.2 g"
+      }
+    ]
   },
   {
     "id": 54,
-    "serving": "100 g",
-    "calories": "53 kcal",
-    "carbohydrate": "9.8 g",
-    "sugar": "2.2 g",
-    "fiber": "0.9 g",
-    "fat": "0.6 g",
-    "protein": "5.5 g",
-    "name": "Soy Sauce (contains alcohol, used in small quantities for flavor)"
+    "name": "Soy Sauce (contains alcohol, used in small quantities for flavor)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "53 kcal"
+      },
+      {
+        "carbohydrate": "9.8 g"
+      },
+      {
+        "sugar": "2.2 g"
+      },
+      {
+        "fiber": "0.9 g"
+      },
+      {
+        "fat": "0.6 g"
+      },
+      {
+        "protein": "5.5 g"
+      }
+    ]
   },
   {
     "id": 55,
-    "serving": "100 g",
-    "calories": "231 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Tequila"
+    "name": "Tequila",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "231 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 56,
-    "serving": "100 g",
-    "calories": "231 kcal",
-    "carbohydrate": "29 g",
-    "sugar": "28 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Triple Sec"
+    "name": "Triple Sec",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "231 kcal"
+      },
+      {
+        "carbohydrate": "29 g"
+      },
+      {
+        "sugar": "28 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 57,
-    "serving": "100 g",
-    "calories": "231 kcal",
-    "carbohydrate": "29 g",
-    "sugar": "28 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Triple Sec"
+    "name": "Triple Sec",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "231 kcal"
+      },
+      {
+        "carbohydrate": "29 g"
+      },
+      {
+        "sugar": "28 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 58,
-    "serving": "100 g",
-    "calories": "231 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Vodka"
+    "name": "Vodka",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "231 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 59,
-    "serving": "100 g",
-    "calories": "250 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Whiskey (Bourbon or Rye)"
+    "name": "Whiskey (Bourbon or Rye)",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "250 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 60,
-    "serving": "100 g",
-    "calories": "231 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "White Rum"
+    "name": "White Rum",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "231 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 61,
-    "serving": "100 g",
-    "calories": "82 kcal",
-    "carbohydrate": "2.6 g",
-    "sugar": "0.6 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0.1 g",
-    "name": "White Wine"
+    "name": "White Wine",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "82 kcal"
+      },
+      {
+        "carbohydrate": "2.6 g"
+      },
+      {
+        "sugar": "0.6 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0.1 g"
+      }
+    ]
   },
   {
     "id": 62,
-    "serving": "100 g",
-    "calories": "285 kcal",
-    "carbohydrate": "5 g",
-    "sugar": "2.1 g",
-    "fiber": "0 g",
-    "fat": "0.2 g",
-    "protein": "0.1 g",
-    "name": "Zinfandel"
+    "name": "Zinfandel",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "285 kcal"
+      },
+      {
+        "carbohydrate": "5 g"
+      },
+      {
+        "sugar": "2.1 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.1 g"
+      }
+    ]
   }
 ]

@@ -1,420 +1,1028 @@
 [
   {
     "id": 63,
-    "serving": "100 g",
-    "calories": "310 kcal",
-    "carbohydrate": "82.4 g",
-    "sugar": "82.1 g",
-    "fiber": "0.2 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Agave Nectar"
+    "name": "Agave Nectar",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "310 kcal"
+      },
+      {
+        "carbohydrate": "82.4 g"
+      },
+      {
+        "sugar": "82.1 g"
+      },
+      {
+        "fiber": "0.2 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 64,
-    "serving": "100 g",
-    "calories": "364 kcal",
-    "carbohydrate": "76.3 g",
-    "sugar": "0.4 g",
-    "fiber": "2.7 g",
-    "fat": "1.2 g",
-    "protein": "10.3 g",
-    "name": "All-Purpose Flour"
+    "name": "All-Purpose Flour",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "364 kcal"
+      },
+      {
+        "carbohydrate": "76.3 g"
+      },
+      {
+        "sugar": "0.4 g"
+      },
+      {
+        "fiber": "2.7 g"
+      },
+      {
+        "fat": "1.2 g"
+      },
+      {
+        "protein": "10.3 g"
+      }
+    ]
   },
   {
     "id": 65,
-    "serving": "100 g",
-    "calories": "884 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "92 g",
-    "protein": "0 g",
-    "name": "Almond Extract"
+    "name": "Almond Extract",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "884 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "92 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 66,
-    "serving": "100 g",
-    "calories": "576 kcal",
-    "carbohydrate": "21.7 g",
-    "sugar": "4.4 g",
-    "fiber": "11 g",
-    "fat": "50.6 g",
-    "protein": "21.4 g",
-    "name": "Almond Flour"
+    "name": "Almond Flour",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "576 kcal"
+      },
+      {
+        "carbohydrate": "21.7 g"
+      },
+      {
+        "sugar": "4.4 g"
+      },
+      {
+        "fiber": "11 g"
+      },
+      {
+        "fat": "50.6 g"
+      },
+      {
+        "protein": "21.4 g"
+      }
+    ]
   },
   {
     "id": 67,
-    "serving": "100 g",
-    "calories": "241 kcal",
-    "carbohydrate": "63.9 g",
-    "sugar": "53.4 g",
-    "fiber": "7.3 g",
-    "fat": "0.5 g",
-    "protein": "3.4 g",
-    "name": "Apricots dried"
+    "name": "Apricots dried",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "241 kcal"
+      },
+      {
+        "carbohydrate": "63.9 g"
+      },
+      {
+        "sugar": "53.4 g"
+      },
+      {
+        "fiber": "7.3 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "3.4 g"
+      }
+    ]
   },
   {
     "id": 68,
-    "serving": "100 g",
-    "calories": "97 kcal",
-    "carbohydrate": "24.3 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0.5 g",
-    "name": "Baking Powder"
+    "name": "Baking Powder",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "97 kcal"
+      },
+      {
+        "carbohydrate": "24.3 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0.5 g"
+      }
+    ]
   },
   {
     "id": 69,
-    "serving": "100 g",
-    "calories": "0 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Baking Soda"
+    "name": "Baking Soda",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "0 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 70,
-    "serving": "100 g",
-    "calories": "364 kcal",
-    "carbohydrate": "72.5 g",
-    "sugar": "0.4 g",
-    "fiber": "2.7 g",
-    "fat": "1.2 g",
-    "protein": "13.3 g",
-    "name": "Bread Flour"
+    "name": "Bread Flour",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "364 kcal"
+      },
+      {
+        "carbohydrate": "72.5 g"
+      },
+      {
+        "sugar": "0.4 g"
+      },
+      {
+        "fiber": "2.7 g"
+      },
+      {
+        "fat": "1.2 g"
+      },
+      {
+        "protein": "13.3 g"
+      }
+    ]
   },
   {
     "id": 71,
-    "serving": "100 g",
-    "calories": "380 kcal",
-    "carbohydrate": "98.1 g",
-    "sugar": "97.1 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0.1 g",
-    "name": "Brown Sugar"
+    "name": "Brown Sugar",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "380 kcal"
+      },
+      {
+        "carbohydrate": "98.1 g"
+      },
+      {
+        "sugar": "97.1 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0.1 g"
+      }
+    ]
   },
   {
     "id": 72,
-    "serving": "100 g",
-    "calories": "369 kcal",
-    "carbohydrate": "78.9 g",
-    "sugar": "47.8 g",
-    "fiber": "4.7 g",
-    "fat": "4.7 g",
-    "protein": "5.4 g",
-    "name": "Brownie Mix"
+    "name": "Brownie Mix",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "369 kcal"
+      },
+      {
+        "carbohydrate": "78.9 g"
+      },
+      {
+        "sugar": "47.8 g"
+      },
+      {
+        "fiber": "4.7 g"
+      },
+      {
+        "fat": "4.7 g"
+      },
+      {
+        "protein": "5.4 g"
+      }
+    ]
   },
   {
     "id": 73,
-    "serving": "100 g",
-    "calories": "717 kcal",
-    "carbohydrate": "0.1 g",
-    "sugar": "0.1 g",
-    "fiber": "0 g",
-    "fat": "81 g",
-    "protein": "0.9 g",
-    "name": "Butter"
+    "name": "Butter",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "717 kcal"
+      },
+      {
+        "carbohydrate": "0.1 g"
+      },
+      {
+        "sugar": "0.1 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "81 g"
+      },
+      {
+        "protein": "0.9 g"
+      }
+    ]
   },
   {
     "id": 74,
-    "serving": "100 g",
-    "calories": "364 kcal",
-    "carbohydrate": "72.5 g",
-    "sugar": "0.4 g",
-    "fiber": "2.7 g",
-    "fat": "1.2 g",
-    "protein": "13.3 g",
-    "name": "Cake Flour"
+    "name": "Cake Flour",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "364 kcal"
+      },
+      {
+        "carbohydrate": "72.5 g"
+      },
+      {
+        "sugar": "0.4 g"
+      },
+      {
+        "fiber": "2.7 g"
+      },
+      {
+        "fat": "1.2 g"
+      },
+      {
+        "protein": "13.3 g"
+      }
+    ]
   },
   {
     "id": 75,
-    "serving": "100 g",
-    "calories": "375 kcal",
-    "carbohydrate": "87.5 g",
-    "sugar": "47.5 g",
-    "fiber": "0 g",
-    "fat": "2.5 g",
-    "protein": "2.5 g",
-    "name": "Cake Mix"
+    "name": "Cake Mix",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "375 kcal"
+      },
+      {
+        "carbohydrate": "87.5 g"
+      },
+      {
+        "sugar": "47.5 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "2.5 g"
+      },
+      {
+        "protein": "2.5 g"
+      }
+    ]
   },
   {
     "id": 76,
-    "serving": "100 g",
-    "calories": "884 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "100 g",
-    "protein": "0 g",
-    "name": "Canola oil"
+    "name": "Canola oil",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "884 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "100 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 77,
-    "serving": "100 g",
-    "calories": "546 kcal",
-    "carbohydrate": "60.5 g",
-    "sugar": "47.5 g",
-    "fiber": "6.3 g",
-    "fat": "32.4 g",
-    "protein": "5.3 g",
-    "name": "Chocolate Bar"
+    "name": "Chocolate Bar",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "546 kcal"
+      },
+      {
+        "carbohydrate": "60.5 g"
+      },
+      {
+        "sugar": "47.5 g"
+      },
+      {
+        "fiber": "6.3 g"
+      },
+      {
+        "fat": "32.4 g"
+      },
+      {
+        "protein": "5.3 g"
+      }
+    ]
   },
   {
     "id": 78,
-    "serving": "100 g",
-    "calories": "899 kcal",
-    "carbohydrate": "50.0 g",
-    "sugar": "47.5 g",
-    "fiber": "5.0 g",
-    "fat": "50.0 g",
-    "protein": "5.0 g",
-    "name": "Chocolate Chips"
+    "name": "Chocolate Chips",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "899 kcal"
+      },
+      {
+        "carbohydrate": "50.0 g"
+      },
+      {
+        "sugar": "47.5 g"
+      },
+      {
+        "fiber": "5.0 g"
+      },
+      {
+        "fat": "50.0 g"
+      },
+      {
+        "protein": "5.0 g"
+      }
+    ]
   },
   {
     "id": 79,
-    "serving": "100 g",
-    "calories": "228 kcal",
-    "carbohydrate": "57.9 g",
-    "sugar": "2.6 g",
-    "fiber": "32.0 g",
-    "fat": "14.0 g",
-    "protein": "19.6 g",
-    "name": "Cocoa Powder"
+    "name": "Cocoa Powder",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "228 kcal"
+      },
+      {
+        "carbohydrate": "57.9 g"
+      },
+      {
+        "sugar": "2.6 g"
+      },
+      {
+        "fiber": "32.0 g"
+      },
+      {
+        "fat": "14.0 g"
+      },
+      {
+        "protein": "19.6 g"
+      }
+    ]
   },
   {
     "id": 80,
-    "serving": "100 g",
-    "calories": "354 kcal",
-    "carbohydrate": "57.5 g",
-    "sugar": "7.5 g",
-    "fiber": "39.5 g",
-    "fat": "11.0 g",
-    "protein": "18.0 g",
-    "name": "Coconut Flour"
+    "name": "Coconut Flour",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "354 kcal"
+      },
+      {
+        "carbohydrate": "57.5 g"
+      },
+      {
+        "sugar": "7.5 g"
+      },
+      {
+        "fiber": "39.5 g"
+      },
+      {
+        "fat": "11.0 g"
+      },
+      {
+        "protein": "18.0 g"
+      }
+    ]
   },
   {
     "id": 81,
-    "serving": "100 g",
-    "calories": "884 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "100 g",
-    "protein": "0 g",
-    "name": "Cooking Oil"
+    "name": "Cooking Oil",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "884 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "100 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 82,
-    "serving": "100 g",
-    "calories": "325 kcal",
-    "carbohydrate": "82.0 g",
-    "sugar": "66.0 g",
-    "fiber": "8.0 g",
-    "fat": "1.0 g",
-    "protein": "0.5 g",
-    "name": "Cranberries dried"
+    "name": "Cranberries dried",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "325 kcal"
+      },
+      {
+        "carbohydrate": "82.0 g"
+      },
+      {
+        "sugar": "66.0 g"
+      },
+      {
+        "fiber": "8.0 g"
+      },
+      {
+        "fat": "1.0 g"
+      },
+      {
+        "protein": "0.5 g"
+      }
+    ]
   },
   {
     "id": 83,
-    "serving": "100 g",
-    "calories": "364 kcal",
-    "carbohydrate": "72.5 g",
-    "sugar": "0.4 g",
-    "fiber": "2.7 g",
-    "fat": "1.2 g",
-    "protein": "13.3 g",
-    "name": "Flour"
+    "name": "Flour",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "364 kcal"
+      },
+      {
+        "carbohydrate": "72.5 g"
+      },
+      {
+        "sugar": "0.4 g"
+      },
+      {
+        "fiber": "2.7 g"
+      },
+      {
+        "fat": "1.2 g"
+      },
+      {
+        "protein": "13.3 g"
+      }
+    ]
   },
   {
     "id": 84,
-    "serving": "100 g",
-    "calories": "234 kcal",
-    "carbohydrate": "59.1 g",
-    "sugar": "59.1 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Food Coloring"
+    "name": "Food Coloring",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "234 kcal"
+      },
+      {
+        "carbohydrate": "59.1 g"
+      },
+      {
+        "sugar": "59.1 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 85,
-    "serving": "100 g",
-    "calories": "387 kcal",
-    "carbohydrate": "99.8 g",
-    "sugar": "99.7 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Granulated Sugar"
+    "name": "Granulated Sugar",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "387 kcal"
+      },
+      {
+        "carbohydrate": "99.8 g"
+      },
+      {
+        "sugar": "99.7 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 86,
-    "serving": "100 g",
-    "calories": "333 kcal",
-    "carbohydrate": "0.1 g",
-    "sugar": "0.1 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Lemon Extract"
+    "name": "Lemon Extract",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "333 kcal"
+      },
+      {
+        "carbohydrate": "0.1 g"
+      },
+      {
+        "sugar": "0.1 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 87,
-    "serving": "100 g",
-    "calories": "260 kcal",
-    "carbohydrate": "67.0 g",
-    "sugar": "51.0 g",
-    "fiber": "0.2 g",
-    "fat": "0.1 g",
-    "protein": "0.1 g",
-    "name": "Maple Syrup"
+    "name": "Maple Syrup",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "260 kcal"
+      },
+      {
+        "carbohydrate": "67.0 g"
+      },
+      {
+        "sugar": "51.0 g"
+      },
+      {
+        "fiber": "0.2 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.1 g"
+      }
+    ]
   },
   {
     "id": 88,
-    "serving": "100 g",
-    "calories": "717 kcal",
-    "carbohydrate": "0.0 g",
-    "sugar": "0.0 g",
-    "fiber": "0.0 g",
-    "fat": "81.0 g",
-    "protein": "0.0 g",
-    "name": "Margarine"
+    "name": "Margarine",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "717 kcal"
+      },
+      {
+        "carbohydrate": "0.0 g"
+      },
+      {
+        "sugar": "0.0 g"
+      },
+      {
+        "fiber": "0.0 g"
+      },
+      {
+        "fat": "81.0 g"
+      },
+      {
+        "protein": "0.0 g"
+      }
+    ]
   },
   {
     "id": 89,
-    "serving": "100 g",
-    "calories": "884 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "100 g",
-    "protein": "0 g",
-    "name": "Olive Oil"
+    "name": "Olive Oil",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "884 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "100 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 90,
-    "serving": "100 g",
-    "calories": "326 kcal",
-    "carbohydrate": "73.0 g",
-    "sugar": "21.0 g",
-    "fiber": "1.0 g",
-    "fat": "1.0 g",
-    "protein": "7.0 g",
-    "name": "Pancake Mix"
+    "name": "Pancake Mix",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "326 kcal"
+      },
+      {
+        "carbohydrate": "73.0 g"
+      },
+      {
+        "sugar": "21.0 g"
+      },
+      {
+        "fiber": "1.0 g"
+      },
+      {
+        "fat": "1.0 g"
+      },
+      {
+        "protein": "7.0 g"
+      }
+    ]
   },
   {
     "id": 91,
-    "serving": "100 g",
-    "calories": "364 kcal",
-    "carbohydrate": "72.5 g",
-    "sugar": "0.4 g",
-    "fiber": "2.7 g",
-    "fat": "1.2 g",
-    "protein": "13.3 g",
-    "name": "Pastry Flour"
+    "name": "Pastry Flour",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "364 kcal"
+      },
+      {
+        "carbohydrate": "72.5 g"
+      },
+      {
+        "sugar": "0.4 g"
+      },
+      {
+        "fiber": "2.7 g"
+      },
+      {
+        "fat": "1.2 g"
+      },
+      {
+        "protein": "13.3 g"
+      }
+    ]
   },
   {
     "id": 92,
-    "serving": "100 g",
-    "calories": "389 kcal",
-    "carbohydrate": "98.1 g",
-    "sugar": "97.9 g",
-    "fiber": "0 g",
-    "fat": "0.0 g",
-    "protein": "0.0 g",
-    "name": "Powdered Sugar"
+    "name": "Powdered Sugar",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "389 kcal"
+      },
+      {
+        "carbohydrate": "98.1 g"
+      },
+      {
+        "sugar": "97.9 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0.0 g"
+      },
+      {
+        "protein": "0.0 g"
+      }
+    ]
   },
   {
     "id": 93,
-    "serving": "100 g",
-    "calories": "299 kcal",
-    "carbohydrate": "79.2 g",
-    "sugar": "59.2 g",
-    "fiber": "3.7 g",
-    "fat": "0.5 g",
-    "protein": "2.3 g",
-    "name": "Raisins"
+    "name": "Raisins",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "299 kcal"
+      },
+      {
+        "carbohydrate": "79.2 g"
+      },
+      {
+        "sugar": "59.2 g"
+      },
+      {
+        "fiber": "3.7 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "2.3 g"
+      }
+    ]
   },
   {
     "id": 94,
-    "serving": "100 g",
-    "calories": "884 kcal",
-    "carbohydrate": "0.0 g",
-    "sugar": "0.0 g",
-    "fiber": "0.0 g",
-    "fat": "100 g",
-    "protein": "0.0 g",
-    "name": "Shortening"
+    "name": "Shortening",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "884 kcal"
+      },
+      {
+        "carbohydrate": "0.0 g"
+      },
+      {
+        "sugar": "0.0 g"
+      },
+      {
+        "fiber": "0.0 g"
+      },
+      {
+        "fat": "100 g"
+      },
+      {
+        "protein": "0.0 g"
+      }
+    ]
   },
   {
     "id": 95,
-    "serving": "100 g",
-    "calories": "390 kcal",
-    "carbohydrate": "93.1 g",
-    "sugar": "89.3 g",
-    "fiber": "0 g",
-    "fat": "0.5 g",
-    "protein": "0.1 g",
-    "name": "Sprinkles"
+    "name": "Sprinkles",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "390 kcal"
+      },
+      {
+        "carbohydrate": "93.1 g"
+      },
+      {
+        "sugar": "89.3 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "0.1 g"
+      }
+    ]
   },
   {
     "id": 96,
-    "serving": "100 g",
-    "calories": "387 kcal",
-    "carbohydrate": "99.8 g",
-    "sugar": "99.7 g",
-    "fiber": "0 g",
-    "fat": "0 g",
-    "protein": "0 g",
-    "name": "Sugar"
+    "name": "Sugar",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "387 kcal"
+      },
+      {
+        "carbohydrate": "99.8 g"
+      },
+      {
+        "sugar": "99.7 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "0 g"
+      }
+    ]
   },
   {
     "id": 97,
-    "serving": "100 g",
-    "calories": "288 kcal",
-    "carbohydrate": "13.0 g",
-    "sugar": "13.0 g",
-    "fiber": "0 g",
-    "fat": "0.1 g",
-    "protein": "0.1 g",
-    "name": "Vanilla Extract"
+    "name": "Vanilla Extract",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "288 kcal"
+      },
+      {
+        "carbohydrate": "13.0 g"
+      },
+      {
+        "sugar": "13.0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.1 g"
+      }
+    ]
   },
   {
     "id": 98,
-    "serving": "100 g",
-    "calories": "884 kcal",
-    "carbohydrate": "0.0 g",
-    "sugar": "0.0 g",
-    "fiber": "0.0 g",
-    "fat": "100 g",
-    "protein": "0.0 g",
-    "name": "Vegetable Oil"
+    "name": "Vegetable Oil",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "884 kcal"
+      },
+      {
+        "carbohydrate": "0.0 g"
+      },
+      {
+        "sugar": "0.0 g"
+      },
+      {
+        "fiber": "0.0 g"
+      },
+      {
+        "fat": "100 g"
+      },
+      {
+        "protein": "0.0 g"
+      }
+    ]
   },
   {
     "id": 99,
-    "serving": "100 g",
-    "calories": "332 kcal",
-    "carbohydrate": "71.6 g",
-    "sugar": "0.4 g",
-    "fiber": "10.7 g",
-    "fat": "1.9 g",
-    "protein": "13.2 g",
-    "name": "Whole Wheat Flour"
+    "name": "Whole Wheat Flour",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "332 kcal"
+      },
+      {
+        "carbohydrate": "71.6 g"
+      },
+      {
+        "sugar": "0.4 g"
+      },
+      {
+        "fiber": "10.7 g"
+      },
+      {
+        "fat": "1.9 g"
+      },
+      {
+        "protein": "13.2 g"
+      }
+    ]
   },
   {
     "id": 100,
-    "serving": "100 g",
-    "calories": "513 kcal",
-    "carbohydrate": "51.5 g",
-    "sugar": "0.6 g",
-    "fiber": "5.5 g",
-    "fat": "30.2 g",
-    "protein": "37.0 g",
-    "name": "Yeast"
+    "name": "Yeast",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "513 kcal"
+      },
+      {
+        "carbohydrate": "51.5 g"
+      },
+      {
+        "sugar": "0.6 g"
+      },
+      {
+        "fiber": "5.5 g"
+      },
+      {
+        "fat": "30.2 g"
+      },
+      {
+        "protein": "37.0 g"
+      }
+    ]
   }
 ]

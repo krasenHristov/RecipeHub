@@ -12,25 +12,27 @@ namespace OpenSourceRecipes.Seeds
 {
     public class SeedFoodData(IConfiguration configuration)
     {
-        public async void InsertIntoFood()
+        public async Task<List<MyFoodObject>> InsertIntoFood()
         {
-            // await using var connection = new NpgsqlConnection(configuration.GetConnectionString("DefaultConnection"));
-            // ReadUserFunc ReadUser = new ReadUserFunc();
-            // List<MyUserObject> Users = ReadUser.ReadUserFile();
+            await using var connection = new NpgsqlConnection(configuration.GetConnectionString("DefaultConnection"));
+            ReadFoodFunc ReadFood = new ReadFoodFunc();
 
-            // List<MyUserObject> insertedUsers = new List<MyUserObject>();
+            List<MyFoodObject> Foods = ReadFood.ReadFoodFile();
+            List<MyFoodObject> insertedFoods = new List<MyFoodObject>();
 
-            // foreach (var user in Users)
-            // {
-            //     string query = $"INSERT INTO \"User\" " +
-            //                     "(\"Username\", \"Name\", \"Password\", \"ProfileImg\", \"Status\", \"Bio\") " +
-            //                     $"VALUES ('{user.Username}', '{user.Name}', '{user.Password}', '{user.ProfileImg}', '{user.Status}', '{user.Bio}') " +
-            //                     "RETURNING *;";
-            //     var insertedUser = await connection.QueryFirstOrDefaultAsync<MyUserObject>(query);
-            //     insertedUsers.Add(insertedUser);
-            // }
+            Console.WriteLine("about to insert into Foods");
+            Console.WriteLine("------------------------");
 
-            // return insertedUsers;
+            foreach (var food in Foods)
+            {   
+                string query = $"INSERT INTO \"Ingredient\" " +
+                                "(\"IngredientId\", \"IngredientName\", \"Nutrition\") " +
+                                $"VALUES ('{food.id}', '{food.name}', '{food.Nutrition}') " +
+                               "RETURNING *;";
+                var insertedfood = await connection.QueryFirstOrDefaultAsync<MyFoodObject>(query);
+                insertedFoods.Add(insertedfood);
+            }
+            return insertedFoods;
         }
     }
 }

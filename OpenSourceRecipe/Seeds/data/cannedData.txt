@@ -1,530 +1,1298 @@
 [
   {
     "id": 101,
-    "serving": "100 g",
-    "calories": "150 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "10 g",
-    "protein": "17 g",
-    "name": "Canned Anchovies"
+    "name": "Canned Anchovies",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "150 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "10 g"
+      },
+      {
+        "protein": "17 g"
+      }
+    ]
   },
   {
     "id": 102,
-    "serving": "100 g",
-    "calories": "250 kcal",
-    "carbohydrate": "63 g",
-    "sugar": "50 g",
-    "fiber": "3 g",
-    "fat": "0.5 g",
-    "protein": "1 g",
-    "name": "Canned Apple Pie Filling"
+    "name": "Canned Apple Pie Filling",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "250 kcal"
+      },
+      {
+        "carbohydrate": "63 g"
+      },
+      {
+        "sugar": "50 g"
+      },
+      {
+        "fiber": "3 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 103,
-    "serving": "100 g",
-    "calories": "15 kcal",
-    "carbohydrate": "1 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "1 g",
-    "protein": "1 g",
-    "name": "Canned Beef Broth"
+    "name": "Canned Beef Broth",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "15 kcal"
+      },
+      {
+        "carbohydrate": "1 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "1 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 104,
-    "serving": "100 g",
-    "calories": "120 kcal",
-    "carbohydrate": "20 g",
-    "sugar": "0 g",
-    "fiber": "8 g",
-    "fat": "1 g",
-    "protein": "8 g",
-    "name": "Canned Black Beans"
+    "name": "Canned Black Beans",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "120 kcal"
+      },
+      {
+        "carbohydrate": "20 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "8 g"
+      },
+      {
+        "fat": "1 g"
+      },
+      {
+        "protein": "8 g"
+      }
+    ]
   },
   {
     "id": 105,
-    "serving": "100 g",
-    "calories": "115 kcal",
-    "carbohydrate": "6 g",
-    "sugar": "0 g",
-    "fiber": "3 g",
-    "fat": "10 g",
-    "protein": "1 g",
-    "name": "Canned Black Olives"
+    "name": "Canned Black Olives",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "115 kcal"
+      },
+      {
+        "carbohydrate": "6 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "3 g"
+      },
+      {
+        "fat": "10 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 106,
-    "serving": "100 g",
-    "calories": "90 kcal",
-    "carbohydrate": "15 g",
-    "sugar": "0 g",
-    "fiber": "5 g",
-    "fat": "0.5 g",
-    "protein": "6 g",
-    "name": "Canned Cannellini Beans"
+    "name": "Canned Cannellini Beans",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "90 kcal"
+      },
+      {
+        "carbohydrate": "15 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "5 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "6 g"
+      }
+    ]
   },
   {
     "id": 107,
-    "serving": "100 g",
-    "calories": "41 kcal",
-    "carbohydrate": "10 g",
-    "sugar": "4.7 g",
-    "fiber": "2.8 g",
-    "fat": "0.2 g",
-    "protein": "0.9 g",
-    "name": "Canned Carrots"
+    "name": "Canned Carrots",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "41 kcal"
+      },
+      {
+        "carbohydrate": "10 g"
+      },
+      {
+        "sugar": "4.7 g"
+      },
+      {
+        "fiber": "2.8 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.9 g"
+      }
+    ]
   },
   {
     "id": 108,
-    "serving": "100 g",
-    "calories": "7 kcal",
-    "carbohydrate": "0.6 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "0.2 g",
-    "protein": "1 g",
-    "name": "Canned Chicken Broth"
+    "name": "Canned Chicken Broth",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "7 kcal"
+      },
+      {
+        "carbohydrate": "0.6 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 109,
-    "serving": "100 g",
-    "calories": "165 kcal",
-    "carbohydrate": "15 g",
-    "sugar": "4 g",
-    "fiber": "5 g",
-    "fat": "10 g",
-    "protein": "10 g",
-    "name": "Canned Chili"
+    "name": "Canned Chili",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "165 kcal"
+      },
+      {
+        "carbohydrate": "15 g"
+      },
+      {
+        "sugar": "4 g"
+      },
+      {
+        "fiber": "5 g"
+      },
+      {
+        "fat": "10 g"
+      },
+      {
+        "protein": "10 g"
+      }
+    ]
   },
   {
     "id": 110,
-    "serving": "100 g",
-    "calories": "50 kcal",
-    "carbohydrate": "10 g",
-    "sugar": "5 g",
-    "fiber": "2 g",
-    "fat": "2 g",
-    "protein": "1 g",
-    "name": "Canned Chopped Sauce"
+    "name": "Canned Chopped Sauce",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "50 kcal"
+      },
+      {
+        "carbohydrate": "10 g"
+      },
+      {
+        "sugar": "5 g"
+      },
+      {
+        "fiber": "2 g"
+      },
+      {
+        "fat": "2 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 111,
-    "serving": "100 g",
-    "calories": "120 kcal",
-    "carbohydrate": "9 g",
-    "sugar": "2 g",
-    "fiber": "0 g",
-    "fat": "8 g",
-    "protein": "5 g",
-    "name": "Canned Clam Chowder"
+    "name": "Canned Clam Chowder",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "120 kcal"
+      },
+      {
+        "carbohydrate": "9 g"
+      },
+      {
+        "sugar": "2 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "8 g"
+      },
+      {
+        "protein": "5 g"
+      }
+    ]
   },
   {
     "id": 112,
-    "serving": "100 g",
-    "calories": "321 kcal",
-    "carbohydrate": "54 g",
-    "sugar": "54 g",
-    "fiber": "0 g",
-    "fat": "9 g",
-    "protein": "8 g",
-    "name": "Canned Condensed Milk"
+    "name": "Canned Condensed Milk",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "321 kcal"
+      },
+      {
+        "carbohydrate": "54 g"
+      },
+      {
+        "sugar": "54 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "9 g"
+      },
+      {
+        "protein": "8 g"
+      }
+    ]
   },
   {
     "id": 113,
-    "serving": "100 g",
-    "calories": "86 kcal",
-    "carbohydrate": "19 g",
-    "sugar": "6 g",
-    "fiber": "2.7 g",
-    "fat": "1.2 g",
-    "protein": "3 g",
-    "name": "Canned Corn"
+    "name": "Canned Corn",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "86 kcal"
+      },
+      {
+        "carbohydrate": "19 g"
+      },
+      {
+        "sugar": "6 g"
+      },
+      {
+        "fiber": "2.7 g"
+      },
+      {
+        "fat": "1.2 g"
+      },
+      {
+        "protein": "3 g"
+      }
+    ]
   },
   {
     "id": 114,
-    "serving": "100 g",
-    "calories": "251 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "21 g",
-    "protein": "14 g",
-    "name": "Canned Corned Beef"
+    "name": "Canned Corned Beef",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "251 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "21 g"
+      },
+      {
+        "protein": "14 g"
+      }
+    ]
   },
   {
     "id": 115,
-    "serving": "100 g",
-    "calories": "32 kcal",
-    "carbohydrate": "7 g",
-    "sugar": "4 g",
-    "fiber": "2 g",
-    "fat": "0.3 g",
-    "protein": "1 g",
-    "name": "Canned Crushed Tomatoes"
+    "name": "Canned Crushed Tomatoes",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "32 kcal"
+      },
+      {
+        "carbohydrate": "7 g"
+      },
+      {
+        "sugar": "4 g"
+      },
+      {
+        "fiber": "2 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 116,
-    "serving": "100 g",
-    "calories": "18 kcal",
-    "carbohydrate": "4 g",
-    "sugar": "2 g",
-    "fiber": "1 g",
-    "fat": "0.2 g",
-    "protein": "1 g",
-    "name": "Canned Diced Tomatoes"
+    "name": "Canned Diced Tomatoes",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "18 kcal"
+      },
+      {
+        "carbohydrate": "4 g"
+      },
+      {
+        "sugar": "2 g"
+      },
+      {
+        "fiber": "1 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 117,
-    "serving": "100 g",
-    "calories": "135 kcal",
-    "carbohydrate": "11 g",
-    "sugar": "11 g",
-    "fiber": "0 g",
-    "fat": "7 g",
-    "protein": "7 g",
-    "name": "Canned Evaporated Milk"
+    "name": "Canned Evaporated Milk",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "135 kcal"
+      },
+      {
+        "carbohydrate": "11 g"
+      },
+      {
+        "sugar": "11 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "7 g"
+      },
+      {
+        "protein": "7 g"
+      }
+    ]
   },
   {
     "id": 118,
-    "serving": "100 g",
-    "calories": "68 kcal",
-    "carbohydrate": "17 g",
-    "sugar": "16 g",
-    "fiber": "1 g",
-    "fat": "0.2 g",
-    "protein": "0.4 g",
-    "name": "Canned Fruits"
+    "name": "Canned Fruits",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "68 kcal"
+      },
+      {
+        "carbohydrate": "17 g"
+      },
+      {
+        "sugar": "16 g"
+      },
+      {
+        "fiber": "1 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.4 g"
+      }
+    ]
   },
   {
     "id": 119,
-    "serving": "100 g",
-    "calories": "35 kcal",
-    "carbohydrate": "6 g",
-    "sugar": "0.2 g",
-    "fiber": "0 g",
-    "fat": "1 g",
-    "protein": "1 g",
-    "name": "Canned Gravy"
+    "name": "Canned Gravy",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "35 kcal"
+      },
+      {
+        "carbohydrate": "6 g"
+      },
+      {
+        "sugar": "0.2 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "1 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 120,
-    "serving": "100 g",
-    "calories": "35 kcal",
-    "carbohydrate": "7 g",
-    "sugar": "3 g",
-    "fiber": "3 g",
-    "fat": "0.4 g",
-    "protein": "1 g",
-    "name": "Canned Green Beans"
+    "name": "Canned Green Beans",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "35 kcal"
+      },
+      {
+        "carbohydrate": "7 g"
+      },
+      {
+        "sugar": "3 g"
+      },
+      {
+        "fiber": "3 g"
+      },
+      {
+        "fat": "0.4 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 121,
-    "serving": "100 g",
-    "calories": "40 kcal",
-    "carbohydrate": "8 g",
-    "sugar": "3 g",
-    "fiber": "3 g",
-    "fat": "0.4 g",
-    "protein": "1.5 g",
-    "name": "Canned Green Chilies"
+    "name": "Canned Green Chilies",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "40 kcal"
+      },
+      {
+        "carbohydrate": "8 g"
+      },
+      {
+        "sugar": "3 g"
+      },
+      {
+        "fiber": "3 g"
+      },
+      {
+        "fat": "0.4 g"
+      },
+      {
+        "protein": "1.5 g"
+      }
+    ]
   },
   {
     "id": 122,
-    "serving": "100 g",
-    "calories": "29 kcal",
-    "carbohydrate": "5.7 g",
-    "sugar": "1.7 g",
-    "fiber": "2.8 g",
-    "fat": "0.4 g",
-    "protein": "1.3 g",
-    "name": "Canned Jalapeños"
+    "name": "Canned Jalapeños",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "29 kcal"
+      },
+      {
+        "carbohydrate": "5.7 g"
+      },
+      {
+        "sugar": "1.7 g"
+      },
+      {
+        "fiber": "2.8 g"
+      },
+      {
+        "fat": "0.4 g"
+      },
+      {
+        "protein": "1.3 g"
+      }
+    ]
   },
   {
     "id": 123,
-    "serving": "100 g",
-    "calories": "127 kcal",
-    "carbohydrate": "22.8 g",
-    "sugar": "0.3 g",
-    "fiber": "6.4 g",
-    "fat": "0.5 g",
-    "protein": "8.7 g",
-    "name": "Canned Kidney Beans"
+    "name": "Canned Kidney Beans",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "127 kcal"
+      },
+      {
+        "carbohydrate": "22.8 g"
+      },
+      {
+        "sugar": "0.3 g"
+      },
+      {
+        "fiber": "6.4 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "8.7 g"
+      }
+    ]
   },
   {
     "id": 124,
-    "serving": "100 g",
-    "calories": "86 kcal",
-    "carbohydrate": "20.9 g",
-    "sugar": "14.5 g",
-    "fiber": "2.2 g",
-    "fat": "0.2 g",
-    "protein": "0.7 g",
-    "name": "Canned Mandarin Oranges"
+    "name": "Canned Mandarin Oranges",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "86 kcal"
+      },
+      {
+        "carbohydrate": "20.9 g"
+      },
+      {
+        "sugar": "14.5 g"
+      },
+      {
+        "fiber": "2.2 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.7 g"
+      }
+    ]
   },
   {
     "id": 125,
-    "serving": "100 g",
-    "calories": "295 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "26 g",
-    "protein": "14 g",
-    "name": "Canned Meat"
+    "name": "Canned Meat",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "295 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "26 g"
+      },
+      {
+        "protein": "14 g"
+      }
+    ]
   },
   {
     "id": 126,
-    "serving": "100 g",
-    "calories": "31 kcal",
-    "carbohydrate": "6.5 g",
-    "sugar": "1.6 g",
-    "fiber": "2 g",
-    "fat": "0.3 g",
-    "protein": "1 g",
-    "name": "Canned Minestrone"
+    "name": "Canned Minestrone",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "31 kcal"
+      },
+      {
+        "carbohydrate": "6.5 g"
+      },
+      {
+        "sugar": "1.6 g"
+      },
+      {
+        "fiber": "2 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 127,
-    "serving": "100 g",
-    "calories": "42 kcal",
-    "carbohydrate": "8.2 g",
-    "sugar": "2.8 g",
-    "fiber": "3 g",
-    "fat": "0.4 g",
-    "protein": "1.5 g",
-    "name": "Canned Mixed Vegetables"
+    "name": "Canned Mixed Vegetables",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "42 kcal"
+      },
+      {
+        "carbohydrate": "8.2 g"
+      },
+      {
+        "sugar": "2.8 g"
+      },
+      {
+        "fiber": "3 g"
+      },
+      {
+        "fat": "0.4 g"
+      },
+      {
+        "protein": "1.5 g"
+      }
+    ]
   },
   {
     "id": 128,
-    "serving": "100 g",
-    "calories": "127 kcal",
-    "carbohydrate": "22.8 g",
-    "sugar": "0.3 g",
-    "fiber": "6.4 g",
-    "fat": "0.5 g",
-    "protein": "8.7 g",
-    "name": "Canned Navy Beans"
+    "name": "Canned Navy Beans",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "127 kcal"
+      },
+      {
+        "carbohydrate": "22.8 g"
+      },
+      {
+        "sugar": "0.3 g"
+      },
+      {
+        "fiber": "6.4 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "8.7 g"
+      }
+    ]
   },
   {
     "id": 129,
-    "serving": "100 g",
-    "calories": "115 kcal",
-    "carbohydrate": "6.3 g",
-    "sugar": "0.5 g",
-    "fiber": "3.3 g",
-    "fat": "10.7 g",
-    "protein": "0.8 g",
-    "name": "Canned Olives"
+    "name": "Canned Olives",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "115 kcal"
+      },
+      {
+        "carbohydrate": "6.3 g"
+      },
+      {
+        "sugar": "0.5 g"
+      },
+      {
+        "fiber": "3.3 g"
+      },
+      {
+        "fat": "10.7 g"
+      },
+      {
+        "protein": "0.8 g"
+      }
+    ]
   },
   {
     "id": 130,
-    "serving": "100 g",
-    "calories": "32 kcal",
-    "carbohydrate": "6.7 g",
-    "sugar": "4.2 g",
-    "fiber": "2.3 g",
-    "fat": "0.3 g",
-    "protein": "1.3 g",
-    "name": "Canned Pasta Sauce"
+    "name": "Canned Pasta Sauce",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "32 kcal"
+      },
+      {
+        "carbohydrate": "6.7 g"
+      },
+      {
+        "sugar": "4.2 g"
+      },
+      {
+        "fiber": "2.3 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "1.3 g"
+      }
+    ]
   },
   {
     "id": 131,
-    "serving": "100 g",
-    "calories": "39 kcal",
-    "carbohydrate": "9.5 g",
-    "sugar": "8.4 g",
-    "fiber": "1.6 g",
-    "fat": "0.3 g",
-    "protein": "0.5 g",
-    "name": "Canned Peaches"
+    "name": "Canned Peaches",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "39 kcal"
+      },
+      {
+        "carbohydrate": "9.5 g"
+      },
+      {
+        "sugar": "8.4 g"
+      },
+      {
+        "fiber": "1.6 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "0.5 g"
+      }
+    ]
   },
   {
     "id": 132,
-    "serving": "100 g",
-    "calories": "43 kcal",
-    "carbohydrate": "10.6 g",
-    "sugar": "7.4 g",
-    "fiber": "2.5 g",
-    "fat": "0.1 g",
-    "protein": "0.4 g",
-    "name": "Canned Pears"
+    "name": "Canned Pears",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "43 kcal"
+      },
+      {
+        "carbohydrate": "10.6 g"
+      },
+      {
+        "sugar": "7.4 g"
+      },
+      {
+        "fiber": "2.5 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.4 g"
+      }
+    ]
   },
   {
     "id": 133,
-    "serving": "100 g",
-    "calories": "81 kcal",
-    "carbohydrate": "14 g",
-    "sugar": "5.7 g",
-    "fiber": "5 g",
-    "fat": "0.4 g",
-    "protein": "5 g",
-    "name": "Canned Peas"
+    "name": "Canned Peas",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "81 kcal"
+      },
+      {
+        "carbohydrate": "14 g"
+      },
+      {
+        "sugar": "5.7 g"
+      },
+      {
+        "fiber": "5 g"
+      },
+      {
+        "fat": "0.4 g"
+      },
+      {
+        "protein": "5 g"
+      }
+    ]
   },
   {
     "id": 134,
-    "serving": "100 g",
-    "calories": "11 kcal",
-    "carbohydrate": "2.3 g",
-    "sugar": "1.6 g",
-    "fiber": "1.6 g",
-    "fat": "0.2 g",
-    "protein": "0.3 g",
-    "name": "Canned Pickles"
+    "name": "Canned Pickles",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "11 kcal"
+      },
+      {
+        "carbohydrate": "2.3 g"
+      },
+      {
+        "sugar": "1.6 g"
+      },
+      {
+        "fiber": "1.6 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.3 g"
+      }
+    ]
   },
   {
     "id": 135,
-    "serving": "100 g",
-    "calories": "259 kcal",
-    "carbohydrate": "63 g",
-    "sugar": "44 g",
-    "fiber": "2.1 g",
-    "fat": "0.5 g",
-    "protein": "0.6 g",
-    "name": "Canned Pie Filling"
+    "name": "Canned Pie Filling",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "259 kcal"
+      },
+      {
+        "carbohydrate": "63 g"
+      },
+      {
+        "sugar": "44 g"
+      },
+      {
+        "fiber": "2.1 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "0.6 g"
+      }
+    ]
   },
   {
     "id": 136,
-    "serving": "100 g",
-    "calories": "50 kcal",
-    "carbohydrate": "13.1 g",
-    "sugar": "9.9 g",
-    "fiber": "1.4 g",
-    "fat": "0.1 g",
-    "protein": "0.5 g",
-    "name": "Canned Pineapple"
+    "name": "Canned Pineapple",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "50 kcal"
+      },
+      {
+        "carbohydrate": "13.1 g"
+      },
+      {
+        "sugar": "9.9 g"
+      },
+      {
+        "fiber": "1.4 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.5 g"
+      }
+    ]
   },
   {
     "id": 137,
-    "serving": "100 g",
-    "calories": "15 kcal",
-    "carbohydrate": "3.9 g",
-    "sugar": "1.6 g",
-    "fiber": "1.1 g",
-    "fat": "0.1 g",
-    "protein": "0.6 g",
-    "name": "Canned Pumpkin"
+    "name": "Canned Pumpkin",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "15 kcal"
+      },
+      {
+        "carbohydrate": "3.9 g"
+      },
+      {
+        "sugar": "1.6 g"
+      },
+      {
+        "fiber": "1.1 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.6 g"
+      }
+    ]
   },
   {
     "id": 138,
-    "serving": "100 g",
-    "calories": "208 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "11 g",
-    "protein": "25 g",
-    "name": "Canned Sardines"
+    "name": "Canned Sardines",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "208 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "11 g"
+      },
+      {
+        "protein": "25 g"
+      }
+    ]
   },
   {
     "id": 139,
-    "serving": "100 g",
-    "calories": "45 kcal",
-    "carbohydrate": "8.9 g",
-    "sugar": "0.5 g",
-    "fiber": "0.5 g",
-    "fat": "0.6 g",
-    "protein": "0.9 g",
-    "name": "Canned Soup"
+    "name": "Canned Soup",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "45 kcal"
+      },
+      {
+        "carbohydrate": "8.9 g"
+      },
+      {
+        "sugar": "0.5 g"
+      },
+      {
+        "fiber": "0.5 g"
+      },
+      {
+        "fat": "0.6 g"
+      },
+      {
+        "protein": "0.9 g"
+      }
+    ]
   },
   {
     "id": 140,
-    "serving": "100 g",
-    "calories": "321 kcal",
-    "carbohydrate": "54 g",
-    "sugar": "54 g",
-    "fiber": "0 g",
-    "fat": "9 g",
-    "protein": "8 g",
-    "name": "Canned Sweetened Condensed Milk"
+    "name": "Canned Sweetened Condensed Milk",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "321 kcal"
+      },
+      {
+        "carbohydrate": "54 g"
+      },
+      {
+        "sugar": "54 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "9 g"
+      },
+      {
+        "protein": "8 g"
+      }
+    ]
   },
   {
     "id": 141,
-    "serving": "100 g",
-    "calories": "82 kcal",
-    "carbohydrate": "18 g",
-    "sugar": "13 g",
-    "fiber": "5 g",
-    "fat": "0.5 g",
-    "protein": "4 g",
-    "name": "Canned Tomato Paste"
+    "name": "Canned Tomato Paste",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "82 kcal"
+      },
+      {
+        "carbohydrate": "18 g"
+      },
+      {
+        "sugar": "13 g"
+      },
+      {
+        "fiber": "5 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "4 g"
+      }
+    ]
   },
   {
     "id": 142,
-    "serving": "100 g",
-    "calories": "19 kcal",
-    "carbohydrate": "3.9 g",
-    "sugar": "2.6 g",
-    "fiber": "1.2 g",
-    "fat": "0.2 g",
-    "protein": "0.9 g",
-    "name": "Canned Tomato Sauce"
+    "name": "Canned Tomato Sauce",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "19 kcal"
+      },
+      {
+        "carbohydrate": "3.9 g"
+      },
+      {
+        "sugar": "2.6 g"
+      },
+      {
+        "fiber": "1.2 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.9 g"
+      }
+    ]
   },
   {
     "id": 143,
-    "serving": "100 g",
-    "calories": "18 kcal",
-    "carbohydrate": "3.9 g",
-    "sugar": "2.6 g",
-    "fiber": "1.2 g",
-    "fat": "0.2 g",
-    "protein": "0.9 g",
-    "name": "Canned Tomatoes"
+    "name": "Canned Tomatoes",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "18 kcal"
+      },
+      {
+        "carbohydrate": "3.9 g"
+      },
+      {
+        "sugar": "2.6 g"
+      },
+      {
+        "fiber": "1.2 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.9 g"
+      }
+    ]
   },
   {
     "id": 144,
-    "serving": "100 g",
-    "calories": "116 kcal",
-    "carbohydrate": "0 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "5 g",
-    "protein": "26 g",
-    "name": "Canned Tuna"
+    "name": "Canned Tuna",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "116 kcal"
+      },
+      {
+        "carbohydrate": "0 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "5 g"
+      },
+      {
+        "protein": "26 g"
+      }
+    ]
   },
   {
     "id": 145,
-    "serving": "100 g",
-    "calories": "4 kcal",
-    "carbohydrate": "0.6 g",
-    "sugar": "0.3 g",
-    "fiber": "0 g",
-    "fat": "0.1 g",
-    "protein": "0.3 g",
-    "name": "Canned Vegetable Broth"
+    "name": "Canned Vegetable Broth",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "4 kcal"
+      },
+      {
+        "carbohydrate": "0.6 g"
+      },
+      {
+        "sugar": "0.3 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.3 g"
+      }
+    ]
   },
   {
     "id": 146,
-    "serving": "100 g",
-    "calories": "32 kcal",
-    "carbohydrate": "6.9 g",
-    "sugar": "3.4 g",
-    "fiber": "2.5 g",
-    "fat": "0.2 g",
-    "protein": "1.6 g",
-    "name": "Canned Vegetables"
+    "name": "Canned Vegetables",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "32 kcal"
+      },
+      {
+        "carbohydrate": "6.9 g"
+      },
+      {
+        "sugar": "3.4 g"
+      },
+      {
+        "fiber": "2.5 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.6 g"
+      }
+    ]
   },
   {
     "id": 147,
-    "serving": "100 g",
-    "calories": "302 kcal",
-    "carbohydrate": "1 g",
-    "sugar": "0 g",
-    "fiber": "0 g",
-    "fat": "28 g",
-    "protein": "11 g",
-    "name": "Canned Vienna Sausages"
+    "name": "Canned Vienna Sausages",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "302 kcal"
+      },
+      {
+        "carbohydrate": "1 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "0 g"
+      },
+      {
+        "fat": "28 g"
+      },
+      {
+        "protein": "11 g"
+      }
+    ]
   },
   {
     "id": 148,
-    "serving": "100 g",
-    "calories": "18 kcal",
-    "carbohydrate": "3.9 g",
-    "sugar": "2.6 g",
-    "fiber": "1.2 g",
-    "fat": "0.2 g",
-    "protein": "0.9 g",
-    "name": "Canned Whole Tomatoes"
+    "name": "Canned Whole Tomatoes",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "18 kcal"
+      },
+      {
+        "carbohydrate": "3.9 g"
+      },
+      {
+        "sugar": "2.6 g"
+      },
+      {
+        "fiber": "1.2 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.9 g"
+      }
+    ]
   }
 ]

@@ -18,15 +18,18 @@ public class MyUserObject
 public class ReadUserFunc
 {
     public List<MyUserObject> ReadUserFile()
-    {   
+    {           
+        Console.WriteLine("------------------------");
+        Console.WriteLine("Reading Users");
         string currentDirectory = Environment.CurrentDirectory;
-        string filePath = @"Seeds/data/users.txt";
+        string filePath = @"Seeds/data/users.json";
         filePath = Path.Combine(currentDirectory, filePath);
 
         try
         {
             string jsonContent = File.ReadAllText(filePath);
             MyUserObject[] usersArray = JsonConvert.DeserializeObject<MyUserObject[]>(jsonContent);
+            Console.WriteLine("Successfully read Users");
             return usersArray.ToList();
         }
         catch (Exception ex)

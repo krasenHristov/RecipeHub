@@ -1,926 +1,2270 @@
 [
   {
     "id": 624,
-    "serving": "100 g",
-    "calories": "374 kcal",
-    "carbohydrate": "66.17 g",
-    "sugar": "1.7 g",
-    "fiber": "9.3 g",
-    "fat": "6.51 g",
-    "protein": "14.45 g",
-    "name": "Amaranth"
+    "name": "Amaranth",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "374 kcal"
+      },
+      {
+        "carbohydrate": "66.17 g"
+      },
+      {
+        "sugar": "1.7 g"
+      },
+      {
+        "fiber": "9.3 g"
+      },
+      {
+        "fat": "6.51 g"
+      },
+      {
+        "protein": "14.45 g"
+      }
+    ]
   },
   {
     "id": 625,
-    "serving": "100 g",
-    "calories": "23 kcal",
-    "carbohydrate": "5 g",
-    "sugar": "2 g",
-    "fiber": "1 g",
-    "fat": "0.2 g",
-    "protein": "0.6 g",
-    "name": "Apple gourd"
+    "name": "Apple gourd",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "23 kcal"
+      },
+      {
+        "carbohydrate": "5 g"
+      },
+      {
+        "sugar": "2 g"
+      },
+      {
+        "fiber": "1 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.6 g"
+      }
+    ]
   },
   {
     "id": 626,
-    "serving": "100 g",
-    "calories": "112 kcal",
-    "carbohydrate": "26 g",
-    "sugar": "4 g",
-    "fiber": "4.9 g",
-    "fat": "0.2 g",
-    "protein": "1.7 g",
-    "name": "Arbi"
+    "name": "Arbi",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "112 kcal"
+      },
+      {
+        "carbohydrate": "26 g"
+      },
+      {
+        "sugar": "4 g"
+      },
+      {
+        "fiber": "4.9 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.7 g"
+      }
+    ]
   },
   {
     "id": 627,
-    "serving": "100 g",
-    "calories": "47 kcal",
-    "carbohydrate": "11 g",
-    "sugar": "0.9 g",
-    "fiber": "5.4 g",
-    "fat": "0.2 g",
-    "protein": "3.3 g",
-    "name": "Artichoke"
+    "name": "Artichoke",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "47 kcal"
+      },
+      {
+        "carbohydrate": "11 g"
+      },
+      {
+        "sugar": "0.9 g"
+      },
+      {
+        "fiber": "5.4 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "3.3 g"
+      }
+    ]
   },
   {
     "id": 628,
-    "serving": "100 g",
-    "calories": "25 kcal",
-    "carbohydrate": "3.7 g",
-    "sugar": "0.7 g",
-    "fiber": "1.6 g",
-    "fat": "0.7 g",
-    "protein": "2.6 g",
-    "name": "Arugula"
+    "name": "Arugula",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "25 kcal"
+      },
+      {
+        "carbohydrate": "3.7 g"
+      },
+      {
+        "sugar": "0.7 g"
+      },
+      {
+        "fiber": "1.6 g"
+      },
+      {
+        "fat": "0.7 g"
+      },
+      {
+        "protein": "2.6 g"
+      }
+    ]
   },
   {
     "id": 629,
-    "serving": "100 g",
-    "calories": "13 kcal",
-    "carbohydrate": "3.2 g",
-    "sugar": "2.4 g",
-    "fiber": "0.5 g",
-    "fat": "0.2 g",
-    "protein": "0.5 g",
-    "name": "Ash Gourd"
+    "name": "Ash Gourd",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "13 kcal"
+      },
+      {
+        "carbohydrate": "3.2 g"
+      },
+      {
+        "sugar": "2.4 g"
+      },
+      {
+        "fiber": "0.5 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.5 g"
+      }
+    ]
   },
   {
     "id": 630,
-    "serving": "100 g",
-    "calories": "20 kcal",
-    "carbohydrate": "3.7 g",
-    "sugar": "1.9 g",
-    "fiber": "2.1 g",
-    "fat": "0.2 g",
-    "protein": "2.2 g",
-    "name": "Asparagus"
+    "name": "Asparagus",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "20 kcal"
+      },
+      {
+        "carbohydrate": "3.7 g"
+      },
+      {
+        "sugar": "1.9 g"
+      },
+      {
+        "fiber": "2.1 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "2.2 g"
+      }
+    ]
   },
   {
     "id": 631,
-    "serving": "100 g",
-    "calories": "25 kcal",
-    "carbohydrate": "6 g",
-    "sugar": "3.5 g",
-    "fiber": "3 g",
-    "fat": "0.2 g",
-    "protein": "1 g",
-    "name": "Aubergine"
+    "name": "Aubergine",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "25 kcal"
+      },
+      {
+        "carbohydrate": "6 g"
+      },
+      {
+        "sugar": "3.5 g"
+      },
+      {
+        "fiber": "3 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 632,
-    "serving": "100 g",
-    "calories": "37 kcal",
-    "carbohydrate": "5.9 g",
-    "sugar": "2.3 g",
-    "fiber": "2.6 g",
-    "fat": "0.6 g",
-    "protein": "2.7 g",
-    "name": "Banana blossom"
+    "name": "Banana blossom",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "37 kcal"
+      },
+      {
+        "carbohydrate": "5.9 g"
+      },
+      {
+        "sugar": "2.3 g"
+      },
+      {
+        "fiber": "2.6 g"
+      },
+      {
+        "fat": "0.6 g"
+      },
+      {
+        "protein": "2.7 g"
+      }
+    ]
   },
   {
     "id": 633,
-    "serving": "100 g",
-    "calories": "12 kcal",
-    "carbohydrate": "2.6 g",
-    "sugar": "0 g",
-    "fiber": "2.2 g",
-    "fat": "0.1 g",
-    "protein": "0.6 g",
-    "name": "Banana stem"
+    "name": "Banana stem",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "12 kcal"
+      },
+      {
+        "carbohydrate": "2.6 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "2.2 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.6 g"
+      }
+    ]
   },
   {
     "id": 634,
-    "serving": "100 g",
-    "calories": "31 kcal",
-    "carbohydrate": "7 g",
-    "sugar": "3.3 g",
-    "fiber": "3.4 g",
-    "fat": "0.2 g",
-    "protein": "1.8 g",
-    "name": "Beans"
+    "name": "Beans",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "31 kcal"
+      },
+      {
+        "carbohydrate": "7 g"
+      },
+      {
+        "sugar": "3.3 g"
+      },
+      {
+        "fiber": "3.4 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.8 g"
+      }
+    ]
   },
   {
     "id": 635,
-    "serving": "100 g",
-    "calories": "43 kcal",
-    "carbohydrate": "9.6 g",
-    "sugar": "6.8 g",
-    "fiber": "2.8 g",
-    "fat": "0.2 g",
-    "protein": "1.6 g",
-    "name": "Beetroot"
+    "name": "Beetroot",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "43 kcal"
+      },
+      {
+        "carbohydrate": "9.6 g"
+      },
+      {
+        "sugar": "6.8 g"
+      },
+      {
+        "fiber": "2.8 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.6 g"
+      }
+    ]
   },
   {
     "id": 636,
-    "serving": "100 g",
-    "calories": "31 kcal",
-    "carbohydrate": "6 g",
-    "sugar": "4.2 g",
-    "fiber": "2 g",
-    "fat": "0.3 g",
-    "protein": "1.3 g",
-    "name": "Bell Pepper"
+    "name": "Bell Pepper",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "31 kcal"
+      },
+      {
+        "carbohydrate": "6 g"
+      },
+      {
+        "sugar": "4.2 g"
+      },
+      {
+        "fiber": "2 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "1.3 g"
+      }
+    ]
   },
   {
     "id": 637,
-    "serving": "100 g",
-    "calories": "17 kcal",
-    "carbohydrate": "3.7 g",
-    "sugar": "1.2 g",
-    "fiber": "2.6 g",
-    "fat": "0.2 g",
-    "protein": "1 g",
-    "name": "Bitter gourd"
+    "name": "Bitter gourd",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "17 kcal"
+      },
+      {
+        "carbohydrate": "3.7 g"
+      },
+      {
+        "sugar": "1.2 g"
+      },
+      {
+        "fiber": "2.6 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 638,
-    "serving": "100 g",
-    "calories": "255 kcal",
-    "carbohydrate": "64.8 g",
-    "sugar": "0.6 g",
-    "fiber": "25.3 g",
-    "fat": "3.3 g",
-    "protein": "10.4 g",
-    "name": "Black Pepper"
+    "name": "Black Pepper",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "255 kcal"
+      },
+      {
+        "carbohydrate": "64.8 g"
+      },
+      {
+        "sugar": "0.6 g"
+      },
+      {
+        "fiber": "25.3 g"
+      },
+      {
+        "fat": "3.3 g"
+      },
+      {
+        "protein": "10.4 g"
+      }
+    ]
   },
   {
     "id": 639,
-    "serving": "100 g",
-    "calories": "15 kcal",
-    "carbohydrate": "3.6 g",
-    "sugar": "1.2 g",
-    "fiber": "0.5 g",
-    "fat": "0.1 g",
-    "protein": "0.6 g",
-    "name": "Bottle Gourd"
+    "name": "Bottle Gourd",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "15 kcal"
+      },
+      {
+        "carbohydrate": "3.6 g"
+      },
+      {
+        "sugar": "1.2 g"
+      },
+      {
+        "fiber": "0.5 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.6 g"
+      }
+    ]
   },
   {
     "id": 640,
-    "serving": "100 g",
-    "calories": "341 kcal",
-    "carbohydrate": "58 g",
-    "sugar": "9 g",
-    "fiber": "25 g",
-    "fat": "1.5 g",
-    "protein": "26 g",
-    "name": "Broad beans"
+    "name": "Broad beans",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "341 kcal"
+      },
+      {
+        "carbohydrate": "58 g"
+      },
+      {
+        "sugar": "9 g"
+      },
+      {
+        "fiber": "25 g"
+      },
+      {
+        "fat": "1.5 g"
+      },
+      {
+        "protein": "26 g"
+      }
+    ]
   },
   {
     "id": 641,
-    "serving": "100 g",
-    "calories": "55 kcal",
-    "carbohydrate": "11.2 g",
-    "sugar": "1.7 g",
-    "fiber": "3.7 g",
-    "fat": "0.6 g",
-    "protein": "3.7 g",
-    "name": "Broccoli"
+    "name": "Broccoli",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "55 kcal"
+      },
+      {
+        "carbohydrate": "11.2 g"
+      },
+      {
+        "sugar": "1.7 g"
+      },
+      {
+        "fiber": "3.7 g"
+      },
+      {
+        "fat": "0.6 g"
+      },
+      {
+        "protein": "3.7 g"
+      }
+    ]
   },
   {
     "id": 642,
-    "serving": "100 g",
-    "calories": "43 kcal",
-    "carbohydrate": "8.95 g",
-    "sugar": "2.2 g",
-    "fiber": "3.8 g",
-    "fat": "0.3 g",
-    "protein": "3.4 g",
-    "name": "Brussels sprouts"
+    "name": "Brussels sprouts",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "43 kcal"
+      },
+      {
+        "carbohydrate": "8.95 g"
+      },
+      {
+        "sugar": "2.2 g"
+      },
+      {
+        "fiber": "3.8 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "3.4 g"
+      }
+    ]
   },
   {
     "id": 643,
-    "serving": "100 g",
-    "calories": "25 kcal",
-    "carbohydrate": "5.8 g",
-    "sugar": "3.2 g",
-    "fiber": "2.5 g",
-    "fat": "0.1 g",
-    "protein": "1.3 g",
-    "name": "Cabbage"
+    "name": "Cabbage",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "25 kcal"
+      },
+      {
+        "carbohydrate": "5.8 g"
+      },
+      {
+        "sugar": "3.2 g"
+      },
+      {
+        "fiber": "2.5 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "1.3 g"
+      }
+    ]
   },
   {
     "id": 644,
-    "serving": "100 g",
-    "calories": "41 kcal",
-    "carbohydrate": "10 g",
-    "sugar": "4.7 g",
-    "fiber": "2.8 g",
-    "fat": "0.2 g",
-    "protein": "0.9 g",
-    "name": "Carrot"
+    "name": "Carrot",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "41 kcal"
+      },
+      {
+        "carbohydrate": "10 g"
+      },
+      {
+        "sugar": "4.7 g"
+      },
+      {
+        "fiber": "2.8 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.9 g"
+      }
+    ]
   },
   {
     "id": 645,
-    "serving": "100 g",
-    "calories": "25 kcal",
-    "carbohydrate": "5 g",
-    "sugar": "2.4 g",
-    "fiber": "2.5 g",
-    "fat": "0.3 g",
-    "protein": "1.9 g",
-    "name": "Cauliflower"
+    "name": "Cauliflower",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "25 kcal"
+      },
+      {
+        "carbohydrate": "5 g"
+      },
+      {
+        "sugar": "2.4 g"
+      },
+      {
+        "fiber": "2.5 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "1.9 g"
+      }
+    ]
   },
   {
     "id": 646,
-    "serving": "100 g",
-    "calories": "42 kcal",
-    "carbohydrate": "9 g",
-    "sugar": "1.9 g",
-    "fiber": "2.8 g",
-    "fat": "0.3 g",
-    "protein": "1.5 g",
-    "name": "Celeriac"
+    "name": "Celeriac",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "42 kcal"
+      },
+      {
+        "carbohydrate": "9 g"
+      },
+      {
+        "sugar": "1.9 g"
+      },
+      {
+        "fiber": "2.8 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "1.5 g"
+      }
+    ]
   },
   {
     "id": 647,
-    "serving": "100 g",
-    "calories": "15 kcal",
-    "carbohydrate": "3 g",
-    "sugar": "0.8 g",
-    "fiber": "1.2 g",
-    "fat": "0.2 g",
-    "protein": "1.2 g",
-    "name": "Celtuce"
+    "name": "Celtuce",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "15 kcal"
+      },
+      {
+        "carbohydrate": "3 g"
+      },
+      {
+        "sugar": "0.8 g"
+      },
+      {
+        "fiber": "1.2 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.2 g"
+      }
+    ]
   },
   {
     "id": 648,
-    "serving": "100 g",
-    "calories": "19 kcal",
-    "carbohydrate": "4.1 g",
-    "sugar": "1.1 g",
-    "fiber": "1.6 g",
-    "fat": "0.2 g",
-    "protein": "1.6 g",
-    "name": "Chard"
+    "name": "Chard",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "19 kcal"
+      },
+      {
+        "carbohydrate": "4.1 g"
+      },
+      {
+        "sugar": "1.1 g"
+      },
+      {
+        "fiber": "1.6 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.6 g"
+      }
+    ]
   },
   {
     "id": 649,
-    "serving": "100 g",
-    "calories": "19 kcal",
-    "carbohydrate": "4.5 g",
-    "sugar": "1.4 g",
-    "fiber": "2 g",
-    "fat": "0.4 g",
-    "protein": "0.8 g",
-    "name": "Chayote"
+    "name": "Chayote",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "19 kcal"
+      },
+      {
+        "carbohydrate": "4.5 g"
+      },
+      {
+        "sugar": "1.4 g"
+      },
+      {
+        "fiber": "2 g"
+      },
+      {
+        "fat": "0.4 g"
+      },
+      {
+        "protein": "0.8 g"
+      }
+    ]
   },
   {
     "id": 650,
-    "serving": "100 g",
-    "calories": "164 kcal",
-    "carbohydrate": "27 g",
-    "sugar": "4.8 g",
-    "fiber": "7.6 g",
-    "fat": "2.6 g",
-    "protein": "8.9 g",
-    "name": "Chickpea"
+    "name": "Chickpea",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "164 kcal"
+      },
+      {
+        "carbohydrate": "27 g"
+      },
+      {
+        "sugar": "4.8 g"
+      },
+      {
+        "fiber": "7.6 g"
+      },
+      {
+        "fat": "2.6 g"
+      },
+      {
+        "protein": "8.9 g"
+      }
+    ]
   },
   {
     "id": 651,
-    "serving": "100 g",
-    "calories": "40 kcal",
-    "carbohydrate": "8.8 g",
-    "sugar": "5.3 g",
-    "fiber": "1.5 g",
-    "fat": "0.4 g",
-    "protein": "1.9 g",
-    "name": "Chilli"
+    "name": "Chilli",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "40 kcal"
+      },
+      {
+        "carbohydrate": "8.8 g"
+      },
+      {
+        "sugar": "5.3 g"
+      },
+      {
+        "fiber": "1.5 g"
+      },
+      {
+        "fat": "0.4 g"
+      },
+      {
+        "protein": "1.9 g"
+      }
+    ]
   },
   {
     "id": 652,
-    "serving": "100 g",
-    "calories": "15 kcal",
-    "carbohydrate": "3.7 g",
-    "sugar": "1.5 g",
-    "fiber": "2.2 g",
-    "fat": "0.2 g",
-    "protein": "1.1 g",
-    "name": "Cluster Beans"
+    "name": "Cluster Beans",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "15 kcal"
+      },
+      {
+        "carbohydrate": "3.7 g"
+      },
+      {
+        "sugar": "1.5 g"
+      },
+      {
+        "fiber": "2.2 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.1 g"
+      }
+    ]
   },
   {
     "id": 653,
-    "serving": "100 g",
-    "calories": "32 kcal",
-    "carbohydrate": "6 g",
-    "sugar": "0 g",
-    "fiber": "4 g",
-    "fat": "0.5 g",
-    "protein": "3 g",
-    "name": "Collard Greens"
+    "name": "Collard Greens",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "32 kcal"
+      },
+      {
+        "carbohydrate": "6 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "4 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "3 g"
+      }
+    ]
   },
   {
     "id": 654,
-    "serving": "100 g",
-    "calories": "23 kcal",
-    "carbohydrate": "3.7 g",
-    "sugar": "0.9 g",
-    "fiber": "2.8 g",
-    "fat": "0.5 g",
-    "protein": "2.1 g",
-    "name": "Coriander"
+    "name": "Coriander",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "23 kcal"
+      },
+      {
+        "carbohydrate": "3.7 g"
+      },
+      {
+        "sugar": "0.9 g"
+      },
+      {
+        "fiber": "2.8 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "2.1 g"
+      }
+    ]
   },
   {
     "id": 655,
-    "serving": "100 g",
-    "calories": "86 kcal",
-    "carbohydrate": "19 g",
-    "sugar": "6.3 g",
-    "fiber": "2.7 g",
-    "fat": "1.2 g",
-    "protein": "3.3 g",
-    "name": "Corn"
+    "name": "Corn",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "86 kcal"
+      },
+      {
+        "carbohydrate": "19 g"
+      },
+      {
+        "sugar": "6.3 g"
+      },
+      {
+        "fiber": "2.7 g"
+      },
+      {
+        "fat": "1.2 g"
+      },
+      {
+        "protein": "3.3 g"
+      }
+    ]
   },
   {
     "id": 656,
-    "serving": "100 g",
-    "calories": "16 kcal",
-    "carbohydrate": "3.6 g",
-    "sugar": "1.7 g",
-    "fiber": "0.5 g",
-    "fat": "0.2 g",
-    "protein": "0.7 g",
-    "name": "Cucumber"
+    "name": "Cucumber",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "16 kcal"
+      },
+      {
+        "carbohydrate": "3.6 g"
+      },
+      {
+        "sugar": "1.7 g"
+      },
+      {
+        "fiber": "0.5 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.7 g"
+      }
+    ]
   },
   {
     "id": 657,
-    "serving": "100 g",
-    "calories": "106 kcal",
-    "carbohydrate": "25 g",
-    "sugar": "0 g",
-    "fiber": "14 g",
-    "fat": "1.3 g",
-    "protein": "3.9 g",
-    "name": "Curry leaves"
+    "name": "Curry leaves",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "106 kcal"
+      },
+      {
+        "carbohydrate": "25 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "14 g"
+      },
+      {
+        "fat": "1.3 g"
+      },
+      {
+        "protein": "3.9 g"
+      }
+    ]
   },
   {
     "id": 658,
-    "serving": "100 g",
-    "calories": "34 kcal",
-    "carbohydrate": "8 g",
-    "sugar": "0 g",
-    "fiber": "2.1 g",
-    "fat": "67 g",
-    "protein": "2 g",
-    "name": "Dragon Tongue Bean"
+    "name": "Dragon Tongue Bean",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "34 kcal"
+      },
+      {
+        "carbohydrate": "8 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "2.1 g"
+      },
+      {
+        "fat": "67 g"
+      },
+      {
+        "protein": "2 g"
+      }
+    ]
   },
   {
     "id": 659,
-    "serving": "100 g",
-    "calories": "37 kcal",
-    "carbohydrate": "8.5 g",
-    "sugar": "0 g",
-    "fiber": "2 g",
-    "fat": "0.4 g",
-    "protein": "2.1 g",
-    "name": "Drumstick"
+    "name": "Drumstick",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "37 kcal"
+      },
+      {
+        "carbohydrate": "8.5 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "2 g"
+      },
+      {
+        "fat": "0.4 g"
+      },
+      {
+        "protein": "2.1 g"
+      }
+    ]
   },
   {
     "id": 660,
-    "serving": "100 g",
-    "calories": "96 kcal",
-    "carbohydrate": "24 g",
-    "sugar": "0 g",
-    "fiber": "4.1 g",
-    "fat": "0.5 g",
-    "protein": "1.5 g",
-    "name": "Elephant yam"
+    "name": "Elephant yam",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "96 kcal"
+      },
+      {
+        "carbohydrate": "24 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "4.1 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "1.5 g"
+      }
+    ]
   },
   {
     "id": 661,
-    "serving": "100 g",
-    "calories": "17 kcal",
-    "carbohydrate": "3.4 g",
-    "sugar": "0.5 g",
-    "fiber": "3.1 g",
-    "fat": "0.2 g",
-    "protein": "1.3 g",
-    "name": "Endive"
+    "name": "Endive",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "17 kcal"
+      },
+      {
+        "carbohydrate": "3.4 g"
+      },
+      {
+        "sugar": "0.5 g"
+      },
+      {
+        "fiber": "3.1 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.3 g"
+      }
+    ]
   },
   {
     "id": 662,
-    "serving": "100 g",
-    "calories": "12 kcal",
-    "carbohydrate": "5 g",
-    "sugar": "4 g",
-    "fiber": "1 g",
-    "fat": "0 g",
-    "protein": "1 g",
-    "name": "Frisee"
+    "name": "Frisee",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "12 kcal"
+      },
+      {
+        "carbohydrate": "5 g"
+      },
+      {
+        "sugar": "4 g"
+      },
+      {
+        "fiber": "1 g"
+      },
+      {
+        "fat": "0 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 663,
-    "serving": "100 g",
-    "calories": "49 kcal",
-    "carbohydrate": "8.4 g",
-    "sugar": "0 g",
-    "fiber": "24 g",
-    "fat": "1.6 g",
-    "protein": "23 g",
-    "name": "Fenugreek Leaf"
+    "name": "Fenugreek Leaf",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "49 kcal"
+      },
+      {
+        "carbohydrate": "8.4 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "24 g"
+      },
+      {
+        "fat": "1.6 g"
+      },
+      {
+        "protein": "23 g"
+      }
+    ]
   },
   {
     "id": 664,
-    "serving": "100 g",
-    "calories": "70 kcal",
-    "carbohydrate": "13 g",
-    "sugar": "0 g",
-    "fiber": "2.4 g",
-    "fat": "0.5 g",
-    "protein": "1.2 g",
-    "name": "Galangal"
+    "name": "Galangal",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "70 kcal"
+      },
+      {
+        "carbohydrate": "13 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "2.4 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "1.2 g"
+      }
+    ]
   },
   {
     "id": 665,
-    "serving": "100 g",
-    "calories": "30 kcal",
-    "carbohydrate": "4.35 g",
-    "sugar": "0.2 g",
-    "fiber": "2.5 g",
-    "fat": "0.73 g",
-    "protein": "3.27 g",
-    "name": "Garlic Chives"
+    "name": "Garlic Chives",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "30 kcal"
+      },
+      {
+        "carbohydrate": "4.35 g"
+      },
+      {
+        "sugar": "0.2 g"
+      },
+      {
+        "fiber": "2.5 g"
+      },
+      {
+        "fat": "0.73 g"
+      },
+      {
+        "protein": "3.27 g"
+      }
+    ]
   },
   {
     "id": 666,
-    "serving": "100 g",
-    "calories": "347 kcal",
-    "carbohydrate": "63 g",
-    "sugar": "10 g",
-    "fiber": "15 g",
-    "fat": "1.2 g",
-    "protein": "21 g",
-    "name": "Green Gram"
+    "name": "Green Gram",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "347 kcal"
+      },
+      {
+        "carbohydrate": "63 g"
+      },
+      {
+        "sugar": "10 g"
+      },
+      {
+        "fiber": "15 g"
+      },
+      {
+        "fat": "1.2 g"
+      },
+      {
+        "protein": "21 g"
+      }
+    ]
   },
   {
     "id": 667,
-    "serving": "100 g",
-    "calories": "122 kcal",
-    "carbohydrate": "31 g",
-    "sugar": "14 g",
-    "fiber": "2.3 g",
-    "fat": "0.4 g",
-    "protein": "1.3 g",
-    "name": "Green Plantain"
+    "name": "Green Plantain",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "122 kcal"
+      },
+      {
+        "carbohydrate": "31 g"
+      },
+      {
+        "sugar": "14 g"
+      },
+      {
+        "fiber": "2.3 g"
+      },
+      {
+        "fat": "0.4 g"
+      },
+      {
+        "protein": "1.3 g"
+      }
+    ]
   },
   {
     "id": 668,
-    "serving": "100 g",
-    "calories": "40 kcal",
-    "carbohydrate": "9 g",
-    "sugar": "5.3 g",
-    "fiber": "2.8 g",
-    "fat": "0.2 g",
-    "protein": "1.9 g",
-    "name": "Green chilli"
+    "name": "Green chilli",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "40 kcal"
+      },
+      {
+        "carbohydrate": "9 g"
+      },
+      {
+        "sugar": "5.3 g"
+      },
+      {
+        "fiber": "2.8 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.9 g"
+      }
+    ]
   },
   {
     "id": 669,
-    "serving": "100 g",
-    "calories": "40 kcal",
-    "carbohydrate": "10 g",
-    "sugar": "2.8 g",
-    "fiber": "1.8 g",
-    "fat": "0.2 g",
-    "protein": "1.6 g",
-    "name": "Ivy gourd"
+    "name": "Ivy gourd",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "40 kcal"
+      },
+      {
+        "carbohydrate": "10 g"
+      },
+      {
+        "sugar": "2.8 g"
+      },
+      {
+        "fiber": "1.8 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.6 g"
+      }
+    ]
   },
   {
     "id": 670,
-    "serving": "100 g",
-    "calories": "95 kcal",
-    "carbohydrate": "24 g",
-    "sugar": "19 g",
-    "fiber": "2.5 g",
-    "fat": "0.3 g",
-    "protein": "2.5 g",
-    "name": "JackFruit"
+    "name": "JackFruit",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "95 kcal"
+      },
+      {
+        "carbohydrate": "24 g"
+      },
+      {
+        "sugar": "19 g"
+      },
+      {
+        "fiber": "2.5 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "2.5 g"
+      }
+    ]
   },
   {
     "id": 671,
-    "serving": "100 g",
-    "calories": "38 kcal",
-    "carbohydrate": "9 g",
-    "sugar": "4.9 g",
-    "fiber": "4.9 g",
-    "fat": "0.1 g",
-    "protein": "0.7 g",
-    "name": "Jicama"
+    "name": "Jicama",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "38 kcal"
+      },
+      {
+        "carbohydrate": "9 g"
+      },
+      {
+        "sugar": "4.9 g"
+      },
+      {
+        "fiber": "4.9 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.7 g"
+      }
+    ]
   },
   {
     "id": 672,
-    "serving": "100 g",
-    "calories": "49 kcal",
-    "carbohydrate": "11 g",
-    "sugar": "0 g",
-    "fiber": "2 g",
-    "fat": "0.9 g",
-    "protein": "4.3 g",
-    "name": "Kale"
+    "name": "Kale",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "49 kcal"
+      },
+      {
+        "carbohydrate": "11 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "2 g"
+      },
+      {
+        "fat": "0.9 g"
+      },
+      {
+        "protein": "4.3 g"
+      }
+    ]
   },
   {
     "id": 673,
-    "serving": "100 g",
-    "calories": "27 kcal",
-    "carbohydrate": "6.2 g",
-    "sugar": "2.6 g",
-    "fiber": "3.6 g",
-    "fat": "0.1 g",
-    "protein": "0.9 g",
-    "name": "Kohlrabi"
+    "name": "Kohlrabi",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "27 kcal"
+      },
+      {
+        "carbohydrate": "6.2 g"
+      },
+      {
+        "sugar": "2.6 g"
+      },
+      {
+        "fiber": "3.6 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.9 g"
+      }
+    ]
   },
   {
     "id": 674,
-    "serving": "100 g",
-    "calories": "61 kcal",
-    "carbohydrate": "14 g",
-    "sugar": "3.9 g",
-    "fiber": "1.8 g",
-    "fat": "0.3 g",
-    "protein": "1.5 g",
-    "name": "Leek"
+    "name": "Leek",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "61 kcal"
+      },
+      {
+        "carbohydrate": "14 g"
+      },
+      {
+        "sugar": "3.9 g"
+      },
+      {
+        "fiber": "1.8 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "1.5 g"
+      }
+    ]
   },
   {
     "id": 675,
-    "serving": "100 g",
-    "calories": "25 kcal",
-    "carbohydrate": "3.7 g",
-    "sugar": "2.1 g",
-    "fiber": "1.6 g",
-    "fat": "0.7 g",
-    "protein": "2.6 g",
-    "name": "Rocket"
+    "name": "Rocket",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "25 kcal"
+      },
+      {
+        "carbohydrate": "3.7 g"
+      },
+      {
+        "sugar": "2.1 g"
+      },
+      {
+        "fiber": "1.6 g"
+      },
+      {
+        "fat": "0.7 g"
+      },
+      {
+        "protein": "2.6 g"
+      }
+    ]
   },
   {
     "id": 676,
-    "serving": "100 g",
-    "calories": "5 kcal",
-    "carbohydrate": "1 g",
-    "sugar": "0.5 g",
-    "fiber": "1.3 g",
-    "fat": "0.1 g",
-    "protein": "0.5 g",
-    "name": "Lettuce"
+    "name": "Lettuce",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "5 kcal"
+      },
+      {
+        "carbohydrate": "1 g"
+      },
+      {
+        "sugar": "0.5 g"
+      },
+      {
+        "fiber": "1.3 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.5 g"
+      }
+    ]
   },
   {
     "id": 677,
-    "serving": "100 g",
-    "calories": "18 kcal",
-    "carbohydrate": "3.9 g",
-    "sugar": "2.6 g",
-    "fiber": "1.2 g",
-    "fat": "0.2 g",
-    "protein": "0.9 g",
-    "name": "Cherry Tomatoes"
+    "name": "Cherry Tomatoes",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "18 kcal"
+      },
+      {
+        "carbohydrate": "3.9 g"
+      },
+      {
+        "sugar": "2.6 g"
+      },
+      {
+        "fiber": "1.2 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.9 g"
+      }
+    ]
   },
   {
     "id": 678,
-    "serving": "100 g",
-    "calories": "22 kcal",
-    "carbohydrate": "3.3 g",
-    "sugar": "2.1 g",
-    "fiber": "2.3 g",
-    "fat": "0.3 g",
-    "protein": "3.1 g",
-    "name": "Mushroom"
+    "name": "Mushroom",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "22 kcal"
+      },
+      {
+        "carbohydrate": "3.3 g"
+      },
+      {
+        "sugar": "2.1 g"
+      },
+      {
+        "fiber": "2.3 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "3.1 g"
+      }
+    ]
   },
   {
     "id": 679,
-    "serving": "100 g",
-    "calories": "27 kcal",
-    "carbohydrate": "5.8 g",
-    "sugar": "1.6 g",
-    "fiber": "3.2 g",
-    "fat": "0.5 g",
-    "protein": "2.9 g",
-    "name": "Mustard greens"
+    "name": "Mustard greens",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "27 kcal"
+      },
+      {
+        "carbohydrate": "5.8 g"
+      },
+      {
+        "sugar": "1.6 g"
+      },
+      {
+        "fiber": "3.2 g"
+      },
+      {
+        "fat": "0.5 g"
+      },
+      {
+        "protein": "2.9 g"
+      }
+    ]
   },
   {
     "id": 680,
-    "serving": "100 g",
-    "calories": "33 kcal",
-    "carbohydrate": "7.5 g",
-    "sugar": "1.5 g",
-    "fiber": "3.2 g",
-    "fat": "0.2 g",
-    "protein": "2 g",
-    "name": "Okra"
+    "name": "Okra",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "33 kcal"
+      },
+      {
+        "carbohydrate": "7.5 g"
+      },
+      {
+        "sugar": "1.5 g"
+      },
+      {
+        "fiber": "3.2 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "2 g"
+      }
+    ]
   },
   {
     "id": 681,
-    "serving": "100 g",
-    "calories": "115 kcal",
-    "carbohydrate": "6.3 g",
-    "sugar": "0 g",
-    "fiber": "3.3 g",
-    "fat": "10.7 g",
-    "protein": "0.8 g",
-    "name": "Olive"
+    "name": "Olive",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "115 kcal"
+      },
+      {
+        "carbohydrate": "6.3 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "3.3 g"
+      },
+      {
+        "fat": "10.7 g"
+      },
+      {
+        "protein": "0.8 g"
+      }
+    ]
   },
   {
     "id": 682,
-    "serving": "100 g",
-    "calories": "40 kcal",
-    "carbohydrate": "9.3 g",
-    "sugar": "4.7 g",
-    "fiber": "1.7 g",
-    "fat": "0.1 g",
-    "protein": "1.1 g",
-    "name": "Onion"
+    "name": "Onion",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "40 kcal"
+      },
+      {
+        "carbohydrate": "9.3 g"
+      },
+      {
+        "sugar": "4.7 g"
+      },
+      {
+        "fiber": "1.7 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "1.1 g"
+      }
+    ]
   },
   {
     "id": 683,
-    "serving": "100 g",
-    "calories": "13 kcal",
-    "carbohydrate": "2.2 g",
-    "sugar": "0.8 g",
-    "fiber": "1.0 g",
-    "fat": "0.2 g",
-    "protein": "1.5 g",
-    "name": "Pak Choy"
+    "name": "Pak Choy",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "13 kcal"
+      },
+      {
+        "carbohydrate": "2.2 g"
+      },
+      {
+        "sugar": "0.8 g"
+      },
+      {
+        "fiber": "1.0 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.5 g"
+      }
+    ]
   },
   {
     "id": 684,
-    "serving": "100 g",
-    "calories": "81 kcal",
-    "carbohydrate": "14 g",
-    "sugar": "5 g",
-    "fiber": "5 g",
-    "fat": "0.4 g",
-    "protein": "5 g",
-    "name": "Pea"
+    "name": "Pea",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "81 kcal"
+      },
+      {
+        "carbohydrate": "14 g"
+      },
+      {
+        "sugar": "5 g"
+      },
+      {
+        "fiber": "5 g"
+      },
+      {
+        "fat": "0.4 g"
+      },
+      {
+        "protein": "5 g"
+      }
+    ]
   },
   {
     "id": 685,
-    "serving": "100 g",
-    "calories": "44 kcal",
-    "carbohydrate": "8.41 g",
-    "sugar": "0 g",
-    "fiber": "6.8 g",
-    "fat": "0.73 g",
-    "protein": "3.29 g",
-    "name": "Peppermint leaves"
+    "name": "Peppermint leaves",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "44 kcal"
+      },
+      {
+        "carbohydrate": "8.41 g"
+      },
+      {
+        "sugar": "0 g"
+      },
+      {
+        "fiber": "6.8 g"
+      },
+      {
+        "fat": "0.73 g"
+      },
+      {
+        "protein": "3.29 g"
+      }
+    ]
   },
   {
     "id": 686,
-    "serving": "100 g",
-    "calories": "20 kcal",
-    "carbohydrate": "2.2 g",
-    "sugar": "0.2 g",
-    "fiber": "3 g",
-    "fat": "0.3 g",
-    "protein": "2 g",
-    "name": "Pointed Gourd"
+    "name": "Pointed Gourd",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "20 kcal"
+      },
+      {
+        "carbohydrate": "2.2 g"
+      },
+      {
+        "sugar": "0.2 g"
+      },
+      {
+        "fiber": "3 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "2 g"
+      }
+    ]
   },
   {
     "id": 687,
-    "serving": "100 g",
-    "calories": "77 kcal",
-    "carbohydrate": "17.5 g",
-    "sugar": "0.8 g",
-    "fiber": "2.2 g",
-    "fat": "0.1 g",
-    "protein": "2 g",
-    "name": "Potato"
+    "name": "Potato",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "77 kcal"
+      },
+      {
+        "carbohydrate": "17.5 g"
+      },
+      {
+        "sugar": "0.8 g"
+      },
+      {
+        "fiber": "2.2 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "2 g"
+      }
+    ]
   },
   {
     "id": 688,
-    "serving": "100 g",
-    "calories": "26 kcal",
-    "carbohydrate": "6.5 g",
-    "sugar": "1.4 g",
-    "fiber": "0.5 g",
-    "fat": "0.1 g",
-    "protein": "1 g",
-    "name": "Pumpkin"
+    "name": "Pumpkin",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "26 kcal"
+      },
+      {
+        "carbohydrate": "6.5 g"
+      },
+      {
+        "sugar": "1.4 g"
+      },
+      {
+        "fiber": "0.5 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "1 g"
+      }
+    ]
   },
   {
     "id": 689,
-    "serving": "100 g",
-    "calories": "23 kcal",
-    "carbohydrate": "4.5 g",
-    "sugar": "0.9 g",
-    "fiber": "2.1 g",
-    "fat": "0.2 g",
-    "protein": "1.4 g",
-    "name": "Radicchio"
+    "name": "Radicchio",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "23 kcal"
+      },
+      {
+        "carbohydrate": "4.5 g"
+      },
+      {
+        "sugar": "0.9 g"
+      },
+      {
+        "fiber": "2.1 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.4 g"
+      }
+    ]
   },
   {
     "id": 690,
-    "serving": "100 g",
-    "calories": "15 kcal",
-    "carbohydrate": "3.4 g",
-    "sugar": "1.9 g",
-    "fiber": "1.6 g",
-    "fat": "0.1 g",
-    "protein": "0.7 g",
-    "name": "Radish"
+    "name": "Radish",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "15 kcal"
+      },
+      {
+        "carbohydrate": "3.4 g"
+      },
+      {
+        "sugar": "1.9 g"
+      },
+      {
+        "fiber": "1.6 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.7 g"
+      }
+    ]
   },
   {
     "id": 691,
-    "serving": "100 g",
-    "calories": "43 kcal",
-    "carbohydrate": "8.3 g",
-    "sugar": "0.5 g",
-    "fiber": "3.5 g",
-    "fat": "0.6 g",
-    "protein": "3.3 g",
-    "name": "Rapini"
+    "name": "Rapini",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "43 kcal"
+      },
+      {
+        "carbohydrate": "8.3 g"
+      },
+      {
+        "sugar": "0.5 g"
+      },
+      {
+        "fiber": "3.5 g"
+      },
+      {
+        "fat": "0.6 g"
+      },
+      {
+        "protein": "3.3 g"
+      }
+    ]
   },
   {
     "id": 692,
-    "serving": "100 g",
-    "calories": "60 kcal",
-    "carbohydrate": "15 g",
-    "sugar": "13.7 g",
-    "fiber": "1.6 g",
-    "fat": "0.4 g",
-    "protein": "0.8 g",
-    "name": "Raw Mango"
+    "name": "Raw Mango",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "60 kcal"
+      },
+      {
+        "carbohydrate": "15 g"
+      },
+      {
+        "sugar": "13.7 g"
+      },
+      {
+        "fiber": "1.6 g"
+      },
+      {
+        "fat": "0.4 g"
+      },
+      {
+        "protein": "0.8 g"
+      }
+    ]
   },
   {
     "id": 693,
-    "serving": "100 g",
-    "calories": "21 kcal",
-    "carbohydrate": "4.5 g",
-    "sugar": "1.1 g",
-    "fiber": "1.8 g",
-    "fat": "0.2 g",
-    "protein": "0.9 g",
-    "name": "Rhubarb"
+    "name": "Rhubarb",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "21 kcal"
+      },
+      {
+        "carbohydrate": "4.5 g"
+      },
+      {
+        "sugar": "1.1 g"
+      },
+      {
+        "fiber": "1.8 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.9 g"
+      }
+    ]
   },
   {
     "id": 694,
-    "serving": "100 g",
-    "calories": "20 kcal",
-    "carbohydrate": "4.5 g",
-    "sugar": "0.3 g",
-    "fiber": "0.7 g",
-    "fat": "0.2 g",
-    "protein": "0.6 g",
-    "name": "Ridge gourd"
+    "name": "Ridge gourd",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "20 kcal"
+      },
+      {
+        "carbohydrate": "4.5 g"
+      },
+      {
+        "sugar": "0.3 g"
+      },
+      {
+        "fiber": "0.7 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.6 g"
+      }
+    ]
   },
   {
     "id": 695,
-    "serving": "100 g",
-    "calories": "35 kcal",
-    "carbohydrate": "8.2 g",
-    "sugar": "4.5 g",
-    "fiber": "2.3 g",
-    "fat": "0.2 g",
-    "protein": "1.1 g",
-    "name": "Rutabaga"
+    "name": "Rutabaga",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "35 kcal"
+      },
+      {
+        "carbohydrate": "8.2 g"
+      },
+      {
+        "sugar": "4.5 g"
+      },
+      {
+        "fiber": "2.3 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.1 g"
+      }
+    ]
   },
   {
     "id": 696,
-    "serving": "100 g",
-    "calories": "72 kcal",
-    "carbohydrate": "17 g",
-    "sugar": "8.1 g",
-    "fiber": "3.2 g",
-    "fat": "0.1 g",
-    "protein": "2.5 g",
-    "name": "Shallot"
+    "name": "Shallot",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "72 kcal"
+      },
+      {
+        "carbohydrate": "17 g"
+      },
+      {
+        "sugar": "8.1 g"
+      },
+      {
+        "fiber": "3.2 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "2.5 g"
+      }
+    ]
   },
   {
     "id": 697,
-    "serving": "100 g",
-    "calories": "16 kcal",
-    "carbohydrate": "3.8 g",
-    "sugar": "2.6 g",
-    "fiber": "0.5 g",
-    "fat": "0.2 g",
-    "protein": "0.6 g",
-    "name": "Snake gourd"
+    "name": "Snake gourd",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "16 kcal"
+      },
+      {
+        "carbohydrate": "3.8 g"
+      },
+      {
+        "sugar": "2.6 g"
+      },
+      {
+        "fiber": "0.5 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.6 g"
+      }
+    ]
   },
   {
     "id": 698,
-    "serving": "100 g",
-    "calories": "147 kcal",
-    "carbohydrate": "8.7 g",
-    "sugar": "3.2 g",
-    "fiber": "6.8 g",
-    "fat": "8.9 g",
-    "protein": "12.0 g",
-    "name": "Soya Bean"
+    "name": "Soya Bean",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "147 kcal"
+      },
+      {
+        "carbohydrate": "8.7 g"
+      },
+      {
+        "sugar": "3.2 g"
+      },
+      {
+        "fiber": "6.8 g"
+      },
+      {
+        "fat": "8.9 g"
+      },
+      {
+        "protein": "12.0 g"
+      }
+    ]
   },
   {
     "id": 699,
-    "serving": "100 g",
-    "calories": "23 kcal",
-    "carbohydrate": "3.6 g",
-    "sugar": "0.4 g",
-    "fiber": "2.2 g",
-    "fat": "0.4 g",
-    "protein": "2.9 g",
-    "name": "Spinach"
+    "name": "Spinach",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "23 kcal"
+      },
+      {
+        "carbohydrate": "3.6 g"
+      },
+      {
+        "sugar": "0.4 g"
+      },
+      {
+        "fiber": "2.2 g"
+      },
+      {
+        "fat": "0.4 g"
+      },
+      {
+        "protein": "2.9 g"
+      }
+    ]
   },
   {
     "id": 700,
-    "serving": "100 g",
-    "calories": "32 kcal",
-    "carbohydrate": "7.3 g",
-    "sugar": "2.3 g",
-    "fiber": "2.6 g",
-    "fat": "0.2 g",
-    "protein": "1.8 g",
-    "name": "Spring onion"
+    "name": "Spring onion",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "32 kcal"
+      },
+      {
+        "carbohydrate": "7.3 g"
+      },
+      {
+        "sugar": "2.3 g"
+      },
+      {
+        "fiber": "2.6 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "1.8 g"
+      }
+    ]
   },
   {
     "id": 701,
-    "serving": "100 g",
-    "calories": "86 kcal",
-    "carbohydrate": "20.1 g",
-    "sugar": "4.2 g",
-    "fiber": "3 g",
-    "fat": "0.1 g",
-    "protein": "1.6 g",
-    "name": "Sweet Potato"
+    "name": "Sweet Potato",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "86 kcal"
+      },
+      {
+        "carbohydrate": "20.1 g"
+      },
+      {
+        "sugar": "4.2 g"
+      },
+      {
+        "fiber": "3 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "1.6 g"
+      }
+    ]
   },
   {
     "id": 702,
-    "serving": "100 g",
-    "calories": "18 kcal",
-    "carbohydrate": "3.9 g",
-    "sugar": "2.6 g",
-    "fiber": "1.2 g",
-    "fat": "0.2 g",
-    "protein": "0.9 g",
-    "name": "Tomato"
+    "name": "Tomato",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "18 kcal"
+      },
+      {
+        "carbohydrate": "3.9 g"
+      },
+      {
+        "sugar": "2.6 g"
+      },
+      {
+        "fiber": "1.2 g"
+      },
+      {
+        "fat": "0.2 g"
+      },
+      {
+        "protein": "0.9 g"
+      }
+    ]
   },
   {
     "id": 703,
-    "serving": "100 g",
-    "calories": "31 kcal",
-    "carbohydrate": "7.0 g",
-    "sugar": "5.4 g",
-    "fiber": "3.0 g",
-    "fat": "0.3 g",
-    "protein": "1.0 g",
-    "name": "Tamarillo"
+    "name": "Tamarillo",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "31 kcal"
+      },
+      {
+        "carbohydrate": "7.0 g"
+      },
+      {
+        "sugar": "5.4 g"
+      },
+      {
+        "fiber": "3.0 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "1.0 g"
+      }
+    ]
   },
   {
     "id": 704,
-    "serving": "100 g",
-    "calories": "28 kcal",
-    "carbohydrate": "6.4 g",
-    "sugar": "3.8 g",
-    "fiber": "1.8 g",
-    "fat": "0.1 g",
-    "protein": "0.9 g",
-    "name": "Turnip"
+    "name": "Turnip",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "28 kcal"
+      },
+      {
+        "carbohydrate": "6.4 g"
+      },
+      {
+        "sugar": "3.8 g"
+      },
+      {
+        "fiber": "1.8 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "0.9 g"
+      }
+    ]
   },
   {
     "id": 705,
-    "serving": "100 g",
-    "calories": "97 kcal",
-    "carbohydrate": "23.9 g",
-    "sugar": "4.5 g",
-    "fiber": "3 g",
-    "fat": "0.1 g",
-    "protein": "1.4 g",
-    "name": "Water Chestnut"
+    "name": "Water Chestnut",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "97 kcal"
+      },
+      {
+        "carbohydrate": "23.9 g"
+      },
+      {
+        "sugar": "4.5 g"
+      },
+      {
+        "fiber": "3 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "1.4 g"
+      }
+    ]
   },
   {
     "id": 706,
-    "serving": "100 g",
-    "calories": "11 kcal",
-    "carbohydrate": "1.3 g",
-    "sugar": "0.2 g",
-    "fiber": "0.5 g",
-    "fat": "0.1 g",
-    "protein": "2.3 g",
-    "name": "Watercress"
+    "name": "Watercress",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "11 kcal"
+      },
+      {
+        "carbohydrate": "1.3 g"
+      },
+      {
+        "sugar": "0.2 g"
+      },
+      {
+        "fiber": "0.5 g"
+      },
+      {
+        "fat": "0.1 g"
+      },
+      {
+        "protein": "2.3 g"
+      }
+    ]
   },
   {
     "id": 707,
-    "serving": "100 g",
-    "calories": "17 kcal",
-    "carbohydrate": "3.1 g",
-    "sugar": "1.7 g",
-    "fiber": "1 g",
-    "fat": "0.3 g",
-    "protein": "1.2 g",
-    "name": "Zucchini"
+    "name": "Zucchini",
+    "Nutrition": [
+      {
+        "serving": "100 g"
+      },
+      {
+        "calories": "17 kcal"
+      },
+      {
+        "carbohydrate": "3.1 g"
+      },
+      {
+        "sugar": "1.7 g"
+      },
+      {
+        "fiber": "1 g"
+      },
+      {
+        "fat": "0.3 g"
+      },
+      {
+        "protein": "1.2 g"
+      }
+    ]
   }
 ]

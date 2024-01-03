@@ -105,6 +105,9 @@ if (app.Environment.IsDevelopment())
 }
 var seedUser = new SeedUserData(builder.Configuration);
 seedUser.InsertIntoUser();
+var seedFoods = new SeedFoodData(builder.Configuration);
+seedFoods.InsertIntoFood();
+
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

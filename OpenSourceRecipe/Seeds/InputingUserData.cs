@@ -16,10 +16,11 @@ namespace OpenSourceRecipes.Seeds
         {
             await using var connection = new NpgsqlConnection(configuration.GetConnectionString("DefaultConnection"));
             ReadUserFunc ReadUser = new ReadUserFunc();
+
             List<MyUserObject> Users = ReadUser.ReadUserFile();
-
             List<MyUserObject> insertedUsers = new List<MyUserObject>();
-
+            
+            Console.WriteLine("about to insert Into Users");
             foreach (var user in Users)
             {
                 string query = $"INSERT INTO \"User\" " +
