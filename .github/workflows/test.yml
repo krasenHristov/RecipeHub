@@ -41,19 +41,19 @@ jobs:
       run: dotnet build --no-restore
 
     - name: Set Testing Environment
-      run: export ASPNETCORE_ENVIRONMENT=Testing
-      
+      run: echo "ASPNETCORE_ENVIRONMENT=Testing" >> $GITHUB_ENV
+
     - name: Set Testing Connection String
-      run: export ConnectionStrings__TestConnection="Host=localhost;Port=5433;Database=test_db;Username=test_user;Password=password"
-      
-    - name: set up JWT secret
-      run: export JWT__Key="supersecretkey"
-      
-    - name: set up JWT issuer
-      run: export JWT__Issuer="OpenSourceRecipe"
-      
-    - name: set up JWT audience
-      run: export JWT__Audience="OpenSourceRecipe"
+      run: echo "ConnectionStrings__TestConnection=Host=localhost;Port=5433;Database=test_db;Username=test_user;Password=password" >> $GITHUB_ENV
+
+    - name: Set up JWT Secret
+      run: echo "JWT__Key=supersecretkey" >> $GITHUB_ENV
+
+    - name: Set up JWT Issuer
+      run: echo "JWT__Issuer=OpenSourceRecipe" >> $GITHUB_ENV
+
+    - name: Set up JWT Audience
+      run: echo "JWT__Audience=OpenSourceRecipe" >> $GITHUB_ENV
       
     - name: Test
       run: dotnet test
