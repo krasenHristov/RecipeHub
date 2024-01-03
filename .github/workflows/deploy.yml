@@ -19,8 +19,8 @@ jobs:
 
     - name: Build and Publish
       run: |
-        dotnet restore
-        dotnet publish -c Release -o ./publish
+        dotnet restore OpenSourceRecipe/OpenSourceRecipe.csproj
+        dotnet publish OpenSourceRecipe/OpenSourceRecipe.csproj -c Release -o ./publish
 
     - name: Zip
       run: zip -r deploy.zip ./publish
