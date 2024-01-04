@@ -33,7 +33,13 @@ public class UserRepository
             _connectionString = "DefaultConnection";
         }
     }
+    public async Task<GetUserDto?> GetUserById(int userId)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+        var sql = "SELECT * FROM \"User\" WHERE \"UserId\" = @UserId";
 
+        return await connection.QueryFirstOrDefaultAsync<GetUserDto>(sql, new {UserId = userId});
+    }
     public async Task<GetUserDto?> GetUserByUsername(string username)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
