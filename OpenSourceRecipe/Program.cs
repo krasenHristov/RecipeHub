@@ -1,6 +1,5 @@
 using System.Reflection;
 using System.Text;
-using Dapper;
 using FluentMigrator.Runner;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -56,7 +55,7 @@ builder.Services.AddSwaggerGen(c =>
 
 string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
 
-var connectionStringName = builder.Environment.IsDevelopment() ? "DefaultConnection" : "TestConnection";
+string connectionStringName = "";
 
 if(builder.Environment.IsDevelopment())
 {
