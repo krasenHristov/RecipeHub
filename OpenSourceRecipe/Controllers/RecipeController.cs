@@ -9,9 +9,8 @@ namespace OpenSourceRecipe.Controllers;
 public class RecipeController(RecipeRepository recipeRepository) : ControllerBase
 {
     [HttpPost("api/recipes")]
-    public async Task<ActionResult<Recipe>> CreateRecipe(CreateRecipeDto recipe)
+    public async Task<ActionResult<GetRecipeDto>> CreateRecipe(CreateRecipeDto recipe)
     {
-        Console.WriteLine("Hi");
         try
         {
             return await recipeRepository.CreateRecipe(recipe);

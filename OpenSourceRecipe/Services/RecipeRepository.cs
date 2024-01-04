@@ -29,7 +29,7 @@ public class RecipeRepository
             _connectionString = "DefaultConnection";
         }
     }
-    public async Task<Recipe> CreateRecipe(CreateRecipeDto recipe)
+    public async Task<GetRecipeDto> CreateRecipe(CreateRecipeDto recipe)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
@@ -45,11 +45,11 @@ public class RecipeRepository
         parameters.Add("OriginalRecipeId", recipe.OriginalRecipeId);
         parameters.Add("UserId", recipe.UserId);
         parameters.Add("CuisineId", recipe.CuisineId);
-
+        
         var sql = "INSERT INTO \"Recipe\" " + 
                   "(\"RecipeTitle\", \"TagLine\", \"Difficulty\", \"TimeToPrepare\", \"RecipeMethod\", \"RecipeImg\", \"Cuisine\", \"ForkedFromId\", \"OriginalRecipeId\", \"UserId\", \"CuisineId\") " +
                   "VALUES (@RecipeTitle, @TagLine, @Difficulty, @TimeToPrepare, @RecipeMethod, @RecipeImg, @Cuisine, @ForkedFromId, @OriginalRecipeId, @UserId, @CuisineId) RETURNING *";
-        var newRecipe = await connection.QuerySingleOrDefaultAsync<Recipe>(sql, parameters);
+        var newRecipe = await connection.QuerySingleOrDefaultAsync<GetRecipeDto>(sql, parameters);
 
         if (newRecipe == null)
         {

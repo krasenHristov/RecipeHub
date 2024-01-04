@@ -20,7 +20,7 @@ public class RecipeEndpointTests(CustomWebApplicationFactory<Program> factory)
         {
             RecipeTitle = "Test Recipe",
             TagLine = "Yummy xUnit Test",
-            Difficulty = "Low",
+            Difficulty = 1,
             TimeToPrepare = 1,
             RecipeMethod = "1. Pass this test",
             RecipeImg = "https://i.redd.it/iewa8k3fl3d61.jpg",
