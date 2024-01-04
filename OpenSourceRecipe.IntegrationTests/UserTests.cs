@@ -292,7 +292,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         //Assert
           //Check returned user is registered user
         Assert.Equal(HttpStatusCode.OK, userByIdResponse.StatusCode);
-        Assert.Equal("testuser2", userById.Username);
+        Assert.Equal("testuser2", userById!.Username);
         Assert.Equal("Test User2", userById.Name);
         Assert.Equal("https://www.google.com", userById.ProfileImg);
         Assert.Equal("This is a test user for integration testing purposes only..............................................................", userById.Bio);

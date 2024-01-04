@@ -166,6 +166,8 @@ if (env == "Testing" || env == "Development")
     }
 }
 
+app.UseCors("AllowAll");
+
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
