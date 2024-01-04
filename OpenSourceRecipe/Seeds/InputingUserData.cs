@@ -23,6 +23,7 @@ namespace OpenSourceRecipes.Seeds
             Console.WriteLine("about to insert Into Users");
             foreach (var user in Users)
             {
+                //if theres an error with user check this VERY high likely hood that status will be your issue
                 string query = $"INSERT INTO \"User\" " +
                                 "(\"Username\", \"Name\", \"Password\", \"ProfileImg\", \"Status\", \"Bio\") " +
                                 $"VALUES ('{user.Username}', '{user.Name}', '{user.Password}', '{user.ProfileImg}', '{user.Status}', '{user.Bio}') " +

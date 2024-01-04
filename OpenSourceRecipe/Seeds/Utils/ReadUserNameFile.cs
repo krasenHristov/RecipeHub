@@ -11,7 +11,7 @@ public class MyUserObject
     public string Name { get; set; }
     public string Password { get; set; }
     public string ProfileImg { get; set; }
-    public string Status { get; set; }
+    public bool Status { get; set; }
     public string Bio { get; set; }
 }
 
@@ -24,7 +24,6 @@ public class ReadUserFunc
         string currentDirectory = Environment.CurrentDirectory;
         string filePath = @"Seeds/data/users.json";
         filePath = Path.Combine(currentDirectory, filePath);
-
         try
         {
             string jsonContent = File.ReadAllText(filePath);
