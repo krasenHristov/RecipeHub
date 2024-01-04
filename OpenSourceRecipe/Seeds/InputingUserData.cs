@@ -1,8 +1,3 @@
-using System;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using OpenSourceRecipes.Utils;
 using Dapper;
 using Npgsql;
@@ -18,7 +13,7 @@ namespace OpenSourceRecipes.Seeds
 
             List<MyUserObject> Users = ReadUser.ReadUserFile();
             List<MyUserObject> insertedUsers = new List<MyUserObject>();
-            
+
             Console.WriteLine("about to insert Into Users");
             foreach (var user in Users)
             {

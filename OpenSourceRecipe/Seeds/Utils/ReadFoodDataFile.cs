@@ -1,21 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using Newtonsoft.Json;
 
 namespace OpenSourceRecipes.Utils;
 public class MyFoodObject
 {
-    public int id { get; set; }
-    public string name { get; set; }
-    public string serving { get; set; }
-    public string calories { get; set; }
-    public string carbohydrate { get; set; }
-    public string sugar { get; set; }
-    public string fiber { get; set; }
-    public string fat { get; set; }
-    public string protein { get; set; }
+    public int Id { get; set; } = 0;
+    public string Name { get; set; } = "";
+    public string Serving { get; set; } = "";
+    public string Calories { get; set; } = "";
+    public string Carbohydrate { get; set; } = "";
+    public string Sugar { get; set; } = "";
+    public string Fiber { get; set; } = "";
+    public string Fat { get; set; } = "";
+    public string Protein { get; set; } = "";
 }
 
 public class ReadFoodFunc
@@ -23,12 +19,16 @@ public class ReadFoodFunc
     public List<MyFoodObject> ReadFoodFile()
     {
         Console.WriteLine("Reading Foods");
-        MyFoodObject[] foodsArray = new MyFoodObject[0];
+        MyFoodObject[] foodsArray = Array.Empty<MyFoodObject>();
 
-        string currentDirectory = Environment.CurrentDirectory;
-        currentDirectory = Path.Combine(currentDirectory, @"Seeds/data/");
+        string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        string currentDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"../../../../"));
+
+        currentDirectory = Path.Combine(currentDirectory, @"OpenSourceRecipe/Seeds/data/");
+
         string[] files = Directory.GetFiles(currentDirectory, "*.txt");
 
+        Console.WriteLine("------------------------");
         foreach (string file in files)
         {
             try
@@ -45,6 +45,7 @@ public class ReadFoodFunc
         }
 
         Console.WriteLine("Successfully read Foods");
+        Console.WriteLine("------------------------");
         return new List<MyFoodObject>(foodsArray);
     }
 }

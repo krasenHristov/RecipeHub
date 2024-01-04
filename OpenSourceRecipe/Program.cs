@@ -96,8 +96,8 @@ if (env == "Testing")
 
     connection.Close();
 
-    var IngredientSeed = new SeedFoodData(builder.Configuration);
-    IngredientSeed.InsertIntoFood();
+    var ingredientSeed = new SeedFoodData(builder.Configuration);
+    ingredientSeed?.InsertIntoFood();
 }
 
 // add common FluentMigrator services

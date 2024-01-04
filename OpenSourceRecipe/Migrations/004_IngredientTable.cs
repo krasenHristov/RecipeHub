@@ -30,12 +30,12 @@ public class UpdateIngredientTable : Migration
     public override void Up()
     {
         Execute.Sql("ALTER TABLE \"Ingredient\" " +
-                    "DROP COLUMN \"Nutrition\" " +
-                    "ADD COLUMN \"Calories\" TEXT NOT NULL" +
-                    "ADD COLUMN \"Carbohydrate\" TEXT NOT NULL" +
-                    "ADD COLUMN \"Sugar\" TEXT NOT NULL" +
-                    "ADD COLUMN \"Fiber\" TEXT NOT NULL" +
-                    "ADD COLUMN \"Fat\" TEXT NOT NULL" +
+                    "DROP COLUMN \"Nutrition\", " +
+                    "ADD COLUMN \"Calories\" TEXT NOT NULL, " +
+                    "ADD COLUMN \"Carbohydrate\" TEXT NOT NULL, " +
+                    "ADD COLUMN \"Sugar\" TEXT NOT NULL, " +
+                    "ADD COLUMN \"Fiber\" TEXT NOT NULL, " +
+                    "ADD COLUMN \"Fat\" TEXT NOT NULL, " +
                     "ADD COLUMN \"Protein\" TEXT NOT NULL;");
     }
 
