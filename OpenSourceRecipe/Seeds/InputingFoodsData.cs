@@ -25,7 +25,7 @@ namespace OpenSourceRecipes.Seeds
                                 $"VALUES ('{food.Id}', '{food.Name}', '{food.Calories}','{food.Carbohydrate}', '{food.Sugar}', '{food.Fiber}', '{food.Fat}', '{food.Protein}') " +
                                 "RETURNING *;";
                 var insertedFood = await connection.QueryAsync<MyFoodObject>(query);
-                insertedFoods.Add(insertedFood.FirstOrDefault());
+                insertedFoods.Add(insertedFood.FirstOrDefault()!);
             }
 
             Console.WriteLine("------------------------");
