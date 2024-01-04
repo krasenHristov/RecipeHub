@@ -34,12 +34,12 @@ public class UserRepository
         }
     }
 
-    public async Task<GetUserByUsernameDto?> GetUserByUsername(string username)
+    public async Task<GetUserDto?> GetUserByUsername(string username)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
         var sql = "SELECT * FROM \"User\" WHERE \"Username\" = @Username";
 
-        return await connection.QueryFirstOrDefaultAsync<GetUserByUsernameDto>(sql, new { Username = username });
+        return await connection.QueryFirstOrDefaultAsync<GetUserDto>(sql, new { Username = username });
     }
 
     public async Task<string> RegisterUser(User user)
@@ -85,7 +85,7 @@ public class UserRepository
         return GenerateJwtToken(await GetUserByUsername(username));
     }
 
-    private string GenerateJwtToken(GetUserByUsernameDto? user)
+    private string GenerateJwtToken(GetUserDto? user)
     {
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"] ?? string.Empty));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

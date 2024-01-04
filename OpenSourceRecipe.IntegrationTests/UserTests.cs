@@ -2,6 +2,7 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
 using Newtonsoft.Json;
+using OpenSourceRecipes.Models;
 
 namespace OpenSourceRecipe.IntegrationTests;
 
@@ -14,7 +15,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     public async Task AuthTestEndpointWithoutToken_ShouldFail()
     {
         // arrange
-        var request = new HttpRequestMessage(HttpMethod.Get, "api/test");
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/test-auth");
 
         // act
         var response = await _client.SendAsync(request);
@@ -207,10 +208,45 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
         // Act - Call the API
-        var request = new HttpRequestMessage(HttpMethod.Get, "api/test");
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/test-auth");
         var response = await _client.SendAsync(request);
 
         // Assert - Ensure the request was successful
         response.EnsureSuccessStatusCode();
+    }
+
+    [Fact]
+    public async Task GetUserByUsername_ShouldReturnUserObject()
+    {
+        var newUser = new
+        {
+            Username = "testuserrrrrrr",
+            Name = "Test Userrrrrr",
+            ProfileImg = "https://www.google.com",
+            Password = "password",
+            Bio = "This is a test user for integration testing purposes only.............................................................."
+        };
+
+        var registerRequest = new HttpRequestMessage(HttpMethod.Post, "api/register")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newUser), Encoding.UTF8, "application/json")
+        };
+
+        var registerResponse = await _client.SendAsync(registerRequest);
+        registerResponse.EnsureSuccessStatusCode();
+
+        var request = new HttpRequestMessage(HttpMethod.Get, $"api/user/testuserrrrrrr");
+
+        var response = await _client.SendAsync(request);
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        User user = JsonConvert.DeserializeObject<User>(content.ToString());
+
+        Assert.Equal("testuserrrrrrr", user?.Username);
+        Assert.Equal("Test Userrrrrr", user?.Name);
+        Assert.Equal("https://www.google.com", user?.ProfileImg);
+        Assert.Equal("This is a test user for integration testing purposes only..............................................................", user?.Bio);
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
 }
