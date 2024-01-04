@@ -10,6 +10,8 @@ public class UserController(UserRepository userRepository) : ControllerBase
 {
 
     [HttpPost("api/register")]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<string>> RegisterUser(User user)
     {
         try
@@ -21,7 +23,9 @@ public class UserController(UserRepository userRepository) : ControllerBase
                 return BadRequest("Username already exists");
             }
 
-            return await userRepository.RegisterUser(user);
+            string token = await userRepository.RegisterUser(user);
+
+            return Created($"api/user/{user.Username}", token);
         }
         catch (Exception e)
         {
@@ -31,6 +35,8 @@ public class UserController(UserRepository userRepository) : ControllerBase
     }
 
     [HttpPost("api/login")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<string>> LoginUser(LoginUserDto user)
     {
         try
@@ -44,6 +50,9 @@ public class UserController(UserRepository userRepository) : ControllerBase
     }
 
     [HttpGet("api/user/{username}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<GetUserDto>> GetUserByUsername(string username)
     {
         try
@@ -65,13 +74,16 @@ public class UserController(UserRepository userRepository) : ControllerBase
     }
 
     [HttpGet("api/user/id/{userId}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<GetUserDto>> GetUserById(int userId)
     {
-        try 
+        try
         {
             var user = await userRepository.GetUserById(userId);
 
-            
+
             if (user == null)
             {
                 return NotFound("User does not exist");
@@ -87,6 +99,8 @@ public class UserController(UserRepository userRepository) : ControllerBase
     }
 
     [HttpGet("api/test-auth")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [Authorize]
     public IActionResult Test ()
     {
