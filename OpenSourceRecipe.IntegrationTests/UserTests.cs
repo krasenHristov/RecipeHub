@@ -249,4 +249,69 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.Equal("This is a test user for integration testing purposes only..............................................................", user?.Bio);
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
+
+    [Fact]
+    public async Task GetUserById_ShouldSucceed()
+    {
+        //Arrange
+          //Register user with username
+        var newUser = new
+        {
+            Username = "testuser2",
+            Name = "Test User2",
+            ProfileImg = "https://www.google.com",
+            Password = "password",
+            Bio = "This is a test user for integration testing purposes only.............................................................."
+        };
+          //Get user by username - then get ID
+        var registerRequest = new HttpRequestMessage(HttpMethod.Post, "api/register")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newUser), Encoding.UTF8, "application/json")
+        };
+
+        var registerResponse = await _client.SendAsync(registerRequest);
+        registerResponse.EnsureSuccessStatusCode();
+
+        var request = new HttpRequestMessage(HttpMethod.Get, $"api/user/testuser2");
+
+        var response = await _client.SendAsync(request);
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        GetUserDto user = JsonConvert.DeserializeObject<GetUserDto>(content.ToString());
+
+        //Act
+          //Search user by ID - get ID
+        var getUserByIdRequest = new HttpRequestMessage(HttpMethod.Get, $"api/user/id/{user!.UserId}");
+
+        var userByIdResponse = await _client.SendAsync(getUserByIdRequest);
+
+        var userByIdContent = await response.Content.ReadAsStringAsync();
+
+        GetUserDto userById = JsonConvert.DeserializeObject<GetUserDto>(userByIdContent.ToString());
+        //Assert
+          //Check returned user is registered user
+        Assert.Equal(HttpStatusCode.OK, userByIdResponse.StatusCode);
+        Assert.Equal("testuser2", userById.Username);
+        Assert.Equal("Test User2", userById.Name);
+        Assert.Equal("https://www.google.com", userById.ProfileImg);
+        Assert.Equal("This is a test user for integration testing purposes only..............................................................", userById.Bio);
+    }
+
+    [Fact]
+    public async Task GetUserByIdNoUser_ShouldFail()
+    {
+        //Act 
+            //Send request with wrong user ID
+        var request = new HttpRequestMessage(HttpMethod.Get, $"api/user/id/99999999999999");
+        
+        var response = await _client.SendAsync(request);
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        GetUserDto userById = JsonConvert.DeserializeObject<GetUserDto>(content.ToString());
+        //Assert
+            //Assert bad request
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
 }
