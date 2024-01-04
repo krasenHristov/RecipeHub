@@ -64,6 +64,28 @@ public class UserController(UserRepository userRepository) : ControllerBase
         }
     }
 
+    [HttpGet("api/user/id/{userId}")]
+    public async Task<ActionResult<GetUserDto>> GetUserById(int userId)
+    {
+        try 
+        {
+            var user = await userRepository.GetUserById(userId);
+
+            
+            if (user == null)
+            {
+                return NotFound("User does not exist");
+            }
+
+            return Ok(user);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+
     [HttpGet("api/test-auth")]
     [Authorize]
     public IActionResult Test ()
