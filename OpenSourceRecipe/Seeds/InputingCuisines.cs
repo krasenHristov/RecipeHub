@@ -9,17 +9,17 @@ namespace OpenSourceRecipes.Seeds
     public class MyCuisineObject
     {
     public int CuisineId { get; set; }
-    public string CuisineName { get; set; }
-    public string Description { get; set; }
-    public string CuisineImg { get; set; }
+    public string CuisineName { get; set; } = "";
+    public string Description { get; set; } = "";
+    public string CuisineImg { get; set; } = "";
     }
-    
+
     public class SeedCuisineData(IConfiguration configuration)
     {
         public async Task<IEnumerable<MyCuisineObject>> InsertIntoCuisine()
         {
             await using var connection = new NpgsqlConnection(configuration.GetConnectionString("TestConnection"));
-            var CuisineArr = new[]
+            var cuisineArr = new[]
             {
                 new MyCuisineObject
                 {
@@ -49,16 +49,16 @@ namespace OpenSourceRecipes.Seeds
             Console.WriteLine("Inserting Cuisines");
             Console.WriteLine("------------------------");
 
-            foreach (var cuisine in CuisineArr)
+            foreach (var cuisine in cuisineArr)
             {
                 string query = $"INSERT INTO \"Cuisine\" " +
                                 "(\"CuisineId\", \"CuisineName\", \"Description\", \"CuisineImg\") " +
                                 $"VALUES ('{cuisine.CuisineId}', '{cuisine.CuisineName}', '{cuisine.Description}', '{cuisine.CuisineImg}') " +
                                 "RETURNING *;";
                 var insertedCuisine = await connection.QueryFirstOrDefaultAsync<MyCuisineObject>(query);
-                insertedCuisines.Add(insertedCuisine);
+                if (insertedCuisine != null) insertedCuisines.Add(insertedCuisine);
             }
-            
+
             Console.WriteLine("------------------------");
             Console.WriteLine("Successfully inserted Cuisines");
 

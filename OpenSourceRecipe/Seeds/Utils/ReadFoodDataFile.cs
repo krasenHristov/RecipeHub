@@ -34,8 +34,8 @@ public class ReadFoodFunc
             try
             {
                 string jsonContent = File.ReadAllText(file);
-                MyFoodObject[] foodObjects = JsonConvert.DeserializeObject<MyFoodObject[]>(jsonContent);
-                Array.Resize(ref foodsArray, foodsArray.Length + foodObjects.Length);
+                MyFoodObject[]? foodObjects = JsonConvert.DeserializeObject<MyFoodObject[]>(jsonContent);
+                Array.Resize(ref foodsArray, foodsArray.Length + foodObjects!.Length);
                 Array.Copy(foodObjects, 0, foodsArray, foodsArray.Length - foodObjects.Length, foodObjects.Length);
             }
             catch (Exception ex)
