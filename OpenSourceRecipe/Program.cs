@@ -98,6 +98,9 @@ if (env == "Testing")
 
     var ingredientSeed = new SeedFoodData(builder.Configuration);
     ingredientSeed?.InsertIntoFood();
+
+    var cuisineSeed = new SeedCuisineData(builder.Configuration);
+    cuisineSeed?.InsertIntoCuisine();
 }
 
 // add common FluentMigrator services
