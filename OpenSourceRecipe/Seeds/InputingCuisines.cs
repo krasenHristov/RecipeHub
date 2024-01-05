@@ -6,6 +6,7 @@ using Npgsql;
 
 namespace OpenSourceRecipes.Seeds
 {
+
     public class MyCuisineObject
     {
     public int CuisineId { get; set; }

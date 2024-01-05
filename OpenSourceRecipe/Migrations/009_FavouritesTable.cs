@@ -1,4 +1,3 @@
-/*
 using FluentMigrator;
 
 namespace OpenSourceRecipes.Migrations;
@@ -21,4 +20,3 @@ public class CreateFavouritesTable : Migration
         Delete.Table("Favourites");
     }
 }
-*/

@@ -1,4 +1,3 @@
-/*
 using FluentMigrator;
 
 namespace OpenSourceRecipes.Migrations;
@@ -24,4 +23,3 @@ public class CreateRecipeCommentTable : Migration
         Delete.Table("RecipeComment");
     }
 }
-*/

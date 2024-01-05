@@ -1,4 +1,3 @@
-/*
 using FluentMigrator;
 
 namespace OpenSourceRecipes.Migrations;
@@ -12,11 +11,10 @@ public class CreateRecipeIngredientTable : Migration
                     "(" +
                     "\"Quantity\" TEXT NOT NULL," +
                     "\"RecipeId\" INT NOT NULL REFERENCES \"Recipe\" (\"RecipeId\")," +
-                    "\"IngredientId\" INT NOT NULL," +
-                    "\"IngredientName\" VARCHAR(255) NOT NULL," +
-                    "FOREIGN KEY (\"IngredientId\", \"IngredientName\") REFERENCES \"Ingredient\" (\"IngredientId\", \"IngredientName\")" +
+                    "\"IngredientId\" INT NOT NULL REFERENCES \"Ingredient\" (\"IngredientId\")," +
+                    "\"IngredientName\" VARCHAR(255) NOT NULL" +
                     ");"
-                    );
+        );
     }
 
     public override void Down()
@@ -24,4 +22,3 @@ public class CreateRecipeIngredientTable : Migration
         Delete.Table("RecipeIngredient");
     }
 }
-*/
