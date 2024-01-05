@@ -9,7 +9,7 @@ public class CreateCuisineTable : Migration
     {
         Execute.Sql("CREATE TABLE \"Cuisine\"" +
                     "(" +
-                    "\"CuisineId\" SERIAL PRIMARY KEY," +
+                    "\"CuisineId\" INT NOT NULL PRIMARY KEY," +
                     "\"CuisineName\" VARCHAR(255) NOT NULL," +
                     "\"Description\" TEXT NOT NULL," +
                     "\"CuisineImg\" VARCHAR(255) NOT NULL" +
