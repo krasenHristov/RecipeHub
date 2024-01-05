@@ -20,4 +20,17 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
             return BadRequest(e.Message);
         }
     }
+
+    [HttpGet("api/recipes")]
+    public async Task<ActionResult<IEnumerable<GetRecipeDto>>> GetAllRecipes()
+    {
+        try
+        {
+            return Ok(await recipeRepository.GetAllRecipes());
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }

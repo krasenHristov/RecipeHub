@@ -385,6 +385,21 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     }
 
     [Fact]
+    public async Task GetAllRecipesEndpoint_ShouldSucceed()
+    {
+        // get all recipes
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes");
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStreamAsync();
+
+        // assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(content);
+    }
+
+    // INGREDIENT TESTS
+
+    [Fact]
     public async Task CreateIngredientEndpoint_ShouldSucceed()
     {
        //Arrange
