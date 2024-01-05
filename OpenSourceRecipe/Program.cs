@@ -95,15 +95,6 @@ if (env == "Testing")
     cmd.ExecuteNonQuery();
 
     connection.Close();
-
-    var ingredientSeed = new SeedFoodData(builder.Configuration);
-    ingredientSeed?.InsertIntoFood();
-
-    var recipeSeed = new SeedRecipeData(builder.Configuration);
-    recipeSeed?.InsertIntoRecipe();
-
-    var cuisineSeed = new SeedCuisineData(builder.Configuration);
-    cuisineSeed?.InsertIntoCuisine();
 }
 
 // add common FluentMigrator services
@@ -168,6 +159,17 @@ if (env == "Testing" || env == "Development")
         var runner = scope.ServiceProvider.GetRequiredService<IMigrationRunner>();
         runner.MigrateUp();
     }
+
+    var userseed = new SeedUserData(builder.Configuration);
+    var ingredientSeed = new SeedFoodData(builder.Configuration);
+    var recipeSeed = new SeedRecipeData(builder.Configuration);
+    var cuisineSeed = new SeedCuisineData(builder.Configuration);
+    
+    userseed?.InsertIntoUser();
+    ingredientSeed?.InsertIntoFood();
+    cuisineSeed?.InsertIntoCuisine(); 
+    recipeSeed?.InsertIntoRecipe();
+
 }
 
 app.UseCors("AllowAll");
