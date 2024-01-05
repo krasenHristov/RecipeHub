@@ -48,16 +48,25 @@ public class Recipe
 
 public class CreateRecipeDto
 {
+    [Required]
     public string? RecipeTitle { get; set; }
+    [Required]
     public string? TagLine { get; set; }
+    [Required]
     public int Difficulty { get; set; }
+    [Required]
     public int TimeToPrepare { get; set; }
+    [Required]
     public string? RecipeMethod { get; set; }
+    [Required]
     public string? RecipeImg { get; set; }
+    [Required]
     public string? Cuisine { get; set; }
     public int? ForkedFromId { get; set; } = null;
     public int? OriginalRecipeId { get; set; } = null;
+    [Required]
     public int UserId { get; set; }
+    [Required]
     public int CuisineId { get; set; }
 }
 
