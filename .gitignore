@@ -110,3 +110,6 @@ local/
 *.swp
 *.un~
 nohup.out
+
+# Contributor files
+project-notes.md
