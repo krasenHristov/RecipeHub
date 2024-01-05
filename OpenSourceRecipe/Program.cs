@@ -95,10 +95,6 @@ if (env == "Testing")
     cmd.ExecuteNonQuery();
 
     connection.Close();
-
-
-
-
 }
 
 // add common FluentMigrator services
@@ -163,16 +159,16 @@ if (env == "Testing" || env == "Development")
     {
         var runner = scope.ServiceProvider.GetRequiredService<IMigrationRunner>();
         runner.MigrateUp();
-
-        var userSeed = new SeedUserData(builder.Configuration);
-        userSeed?.InsertIntoUser();
-
-        var ingredientSeed = new SeedFoodData(builder.Configuration);
-        ingredientSeed?.InsertIntoFood();
-
-        var cuisineSeed = new SeedCuisineData(builder.Configuration);
-        cuisineSeed?.InsertIntoCuisine();
     }
+
+    var userSeed = new SeedUserData(builder.Configuration);
+    userSeed?.InsertIntoUser();
+
+    var ingredientSeed = new SeedFoodData(builder.Configuration);
+    ingredientSeed?.InsertIntoFood();
+
+    var cuisineSeed = new SeedCuisineData(builder.Configuration);
+    cuisineSeed?.InsertIntoCuisine();
 }
 
 app.UseCors("AllowAll");
