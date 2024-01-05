@@ -311,4 +311,78 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
             //Assert bad request
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
+
+    // RECIPE TESTS
+    [Fact]
+    public async Task CreateRecipeEndpoint_ShouldSucceed()
+    {
+        var newUser = new
+        {
+            Username = "testeruser4",
+            Name = "Test User2",
+            ProfileImg = "https://www.google.com",
+            Password = "password",
+            Bio = "This is a test user for integration testing purposes only.............................................................."
+        };
+
+        var registerRequest = new HttpRequestMessage(HttpMethod.Post, "api/register")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newUser), Encoding.UTF8, "application/json")
+        };
+
+        var registerResponse = await _client.SendAsync(registerRequest);
+        registerResponse.EnsureSuccessStatusCode();
+
+        var requestUser = new HttpRequestMessage(HttpMethod.Get, $"api/user/testeruser4");
+
+        var responseUser = await _client.SendAsync(requestUser);
+
+        var userContent= await responseUser.Content.ReadAsStringAsync();
+
+        GetUserDto? user = JsonConvert.DeserializeObject<GetUserDto>(userContent);
+
+        //Arrange
+        var newRecipe = new
+        {
+            RecipeTitle = "Test Recipe",
+            TagLine = "Yummy xUnit Test",
+            Difficulty = 1,
+            TimeToPrepare = 1,
+            RecipeMethod = "1. Pass this test",
+            RecipeImg = "https://i.redd.it/iewa8k3fl3d61.jpg",
+            Cuisine = "I don't think we need this field, we have CuisineId",
+            user!.UserId,
+            CuisineId = 1,
+        };
+
+
+        var request = new HttpRequestMessage(HttpMethod.Post, "api/recipes")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newRecipe), Encoding.UTF8, "application/json")
+        };
+
+
+        //Act
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStreamAsync();
+
+        //Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task CreateRecipeEndpointNoRecipe_ShouldFail()
+    {
+        //Act
+        var request = new HttpRequestMessage(HttpMethod.Post, "api/recipes")
+        {
+            Content = new StringContent("", Encoding.UTF8, "application/json")
+        };
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStreamAsync();
+
+        //Assert
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
 }

@@ -1,3 +1,4 @@
+/*
 using FluentMigrator;
 
 namespace OpenSourceRecipes.Migrations;
@@ -23,3 +24,4 @@ public class CreateRecipeIngredientTable : Migration
         Delete.Table("RecipeIngredient");
     }
 }
+*/
