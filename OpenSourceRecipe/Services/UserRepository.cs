@@ -114,7 +114,7 @@ public class UserRepository
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
-    private string HashPassword(string password)
+    public string HashPassword(string password)
     {
         var hasher = new PasswordHasher<User>();
         return hasher.HashPassword(null!, password);

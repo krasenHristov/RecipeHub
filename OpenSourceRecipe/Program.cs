@@ -99,6 +99,9 @@ if (env == "Testing")
     var ingredientSeed = new SeedFoodData(builder.Configuration);
     ingredientSeed?.InsertIntoFood();
 
+    var recipeSeed = new SeedRecipeData(builder.Configuration);
+    recipeSeed?.InsertIntoRecipe();
+
     var cuisineSeed = new SeedCuisineData(builder.Configuration);
     cuisineSeed?.InsertIntoCuisine();
 }
