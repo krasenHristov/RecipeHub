@@ -13,5 +13,33 @@ public class Ingredient
     public string? IngredientName { get; set; }
 
     // Nutrition information for the ingredient
-    public string? Nutrition { get; set; }
+    public int Calories { get; set; }
+    public int Carbohydrate { get; set; }
+    public int Sugar { get; set; }
+    public int Fiber { get; set; }
+    public int Fat { get; set; }
+    public int Protein { get; set; }
+}
+
+public class CreateIngredientDto
+{
+    public string? IngredientName { get; set; }
+    public int Calories { get; set; }
+    public int Carbohydrate { get; set; }
+    public int Sugar { get; set; }
+    public int Fiber { get; set; }
+    public int Fat { get; set; }
+    public int Protein { get; set; }
+}
+
+public class GetIngredientDto
+{
+    public int IngredientId { get; set; }
+    public string? IngredientName { get; set; }
+    public int Calories { get; set; }
+    public int Carbohydrate { get; set; }
+    public int Sugar { get; set; }
+    public int Fiber { get; set; }
+    public int Fat { get; set; }
+    public int Protein { get; set; }
 }
