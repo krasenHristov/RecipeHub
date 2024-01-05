@@ -63,7 +63,7 @@ public class UserRepository
         parameters.Add("Bio", user.Bio);
 
         var sql = "INSERT INTO \"User\" " +
-                  "(\"Username\", \"Name\", \"ProfileImg\", \"Password\", \"Status\", \"Bio\") " +
+                   "(\"Username\", \"Name\", \"ProfileImg\", \"Password\", \"Status\", \"Bio\") " +
                   "VALUES (@Username, @Name, @ProfileImg, @Password, @Status, @Bio) RETURNING *";
         var newUser = await connection.QueryAsync<User>(sql, parameters);
 

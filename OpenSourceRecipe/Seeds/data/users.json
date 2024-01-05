@@ -1,5 +1,6 @@
 [
     {
+        "UserId": 1,
         "Username": "TestUser",
         "Name": "TestName",
         "Password": "TestPassword",
