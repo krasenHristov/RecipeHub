@@ -65,4 +65,5 @@ namespace OpenSourceRecipes.Seeds
             return insertedCuisines;
         }
     }
+    
 }
