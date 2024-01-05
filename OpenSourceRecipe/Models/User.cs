@@ -13,7 +13,7 @@ public class User
     public string? Name { get; set; }
 
     // Image of the user
-    public string? ProfileImg { get; set; }
+    public string? ProfileImg { get; set; } = "https://www.outsystems.com/Forge_CW/_image.aspx/Q8LvY--6WakOw9afDCuuGdL9c3WA3ttAt5pfSB[…]-upload-example-2023-01-04%2000-00-00-2023-07-24%2020-02-59";
 
     // Password of the user
     [MaxLength(255)]
@@ -24,8 +24,7 @@ public class User
     public bool Status { get; set; } = true;
 
     // Bio of the user
-    [MinLength(100)]
-    public string? Bio { get; set; }
+    public string? Bio { get; set; } = "This user has not set a bio yet";
 }
 
 public class GetUserDto

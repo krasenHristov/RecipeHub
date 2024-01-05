@@ -259,9 +259,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         {
             Username = "testuser2",
             Name = "Test User2",
-            ProfileImg = "https://www.google.com",
             Password = "password",
-            Bio = "This is a test user for integration testing purposes only.............................................................."
         };
           //Get user by username - then get ID
         var registerRequest = new HttpRequestMessage(HttpMethod.Post, "api/register")
@@ -294,8 +292,8 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.Equal(HttpStatusCode.OK, userByIdResponse.StatusCode);
         Assert.Equal("testuser2", userById!.Username);
         Assert.Equal("Test User2", userById.Name);
-        Assert.Equal("https://www.google.com", userById.ProfileImg);
-        Assert.Equal("This is a test user for integration testing purposes only..............................................................", userById.Bio);
+        Assert.Equal("https://www.outsystems.com/Forge_CW/_image.aspx/Q8LvY--6WakOw9afDCuuGdL9c3WA3ttAt5pfSB[…]-upload-example-2023-01-04%2000-00-00-2023-07-24%2020-02-59", userById.ProfileImg);
+        Assert.Equal("This user has not set a bio yet", userById.Bio);
     }
 
     [Fact]
@@ -385,7 +383,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         //Assert
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
-    
+
     [Fact]
     public async Task CreateIngredientEndpoint_ShouldSucceed()
     {
