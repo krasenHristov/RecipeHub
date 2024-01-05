@@ -101,6 +101,9 @@ if (env == "Testing")
 
     var recipeSeed = new SeedRecipeData(builder.Configuration);
     recipeSeed?.InsertIntoRecipe();
+
+    var cuisineSeed = new SeedCuisineData(builder.Configuration);
+    cuisineSeed?.InsertIntoCuisine();
 }
 
 // add common FluentMigrator services
@@ -148,6 +151,7 @@ builder.Services.AddAuthentication(options =>
 
 // Repositories
 builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<RecipeRepository>();
 
 // Controllers
 builder.Services.AddControllers();
@@ -165,6 +169,8 @@ if (env == "Testing" || env == "Development")
         runner.MigrateUp();
     }
 }
+
+app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
 app.UseAuthentication();

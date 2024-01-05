@@ -23,7 +23,6 @@ public class Recipe
     public int TimeToPrepare { get; set; }
 
     // Method is a string of text describing the recipe
-    [MinLength(100)]
     public string? RecipeMethod { get; set; }
 
     // Date the recipe was posted defaults to the current date
@@ -44,5 +43,37 @@ public class Recipe
     public int UserId { get; set; }
 
     // Foreign Key to the Cuisine table
+    public int CuisineId { get; set; }
+}
+
+public class CreateRecipeDto
+{
+    public string? RecipeTitle { get; set; }
+    public string? TagLine { get; set; }
+    public int Difficulty { get; set; }
+    public int TimeToPrepare { get; set; }
+    public string? RecipeMethod { get; set; }
+    public string? RecipeImg { get; set; }
+    public string? Cuisine { get; set; }
+    public int? ForkedFromId { get; set; } = null;
+    public int? OriginalRecipeId { get; set; } = null;
+    public int UserId { get; set; }
+    public int CuisineId { get; set; }
+}
+
+public class GetRecipeDto
+{
+    public int RecipeId { get; set; }
+    public string? RecipeTitle { get; set; }
+    public string? TagLine { get; set; }
+    public int Difficulty { get; set; }
+    public int TimeToPrepare { get; set; }
+    public string? RecipeMethod { get; set; }
+    public string? PostedOn { get; set; }
+    public string? RecipeImg { get; set; }
+    public string? Cuisine { get; set; }
+    public int? ForkedFromId { get; set; } = null;
+    public int? OriginalRecipeId { get; set; } = null;
+    public int UserId { get; set; }
     public int CuisineId { get; set; }
 }
