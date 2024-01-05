@@ -15,7 +15,7 @@ namespace OpenSourceRecipes.Seeds
             var passwordStuff = new UserRepository(configuration);
 
             List<MyUserObject> users = readUser.ReadUserFile();
-          
+
             List<MyUserObject> insertedUsers = new List<MyUserObject>();
 
             Console.WriteLine("about to insert Into Users");

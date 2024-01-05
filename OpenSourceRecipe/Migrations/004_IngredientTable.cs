@@ -11,32 +11,15 @@ public class CreateIngredientTable : Migration
                     "(" +
                     "\"IngredientId\" INT NOT NULL," +
                     "\"IngredientName\" VARCHAR(255) NOT NULL," +
-                    "\"Nutrition\" TEXT NOT NULL," +
+                    "\"Calories\" TEXT NOT NULL," +
+                    "\"Carbohydrate\" TEXT NOT NULL," +
+                    "\"Sugar\" TEXT NOT NULL," +
+                    "\"Fiber\" TEXT NOT NULL," +
+                    "\"Fat\" TEXT NOT NULL," +
+                    "\"Protein\" TEXT NOT NULL," +
 
                     "PRIMARY KEY (\"IngredientId\", \"IngredientName\")" +
                     ");");
-    }
-
-    public override void Down()
-    {
-        Delete.Table("Ingredient");
-    }
-}
-
-[Migration(2024010410)]
-
-public class UpdateIngredientTable : Migration
-{
-    public override void Up()
-    {
-        Execute.Sql("ALTER TABLE \"Ingredient\" " +
-                    "DROP COLUMN \"Nutrition\", " +
-                    "ADD COLUMN \"Calories\" TEXT NOT NULL, " +
-                    "ADD COLUMN \"Carbohydrate\" TEXT NOT NULL, " +
-                    "ADD COLUMN \"Sugar\" TEXT NOT NULL, " +
-                    "ADD COLUMN \"Fiber\" TEXT NOT NULL, " +
-                    "ADD COLUMN \"Fat\" TEXT NOT NULL, " +
-                    "ADD COLUMN \"Protein\" TEXT NOT NULL;");
     }
 
     public override void Down()
