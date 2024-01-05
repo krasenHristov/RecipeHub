@@ -33,3 +33,23 @@ public class CreateRecipeTable : Migration
         Delete.Table("Recipe");
     }
 }
+
+[Migration(2024010503_01)]
+public class AlterRecipeTable : Migration
+{
+    public override void Up()
+    {
+        Execute.Sql("CREATE SEQUENCE recipe_id_seq;");
+        Execute.Sql("ALTER TABLE \"Recipe\" ALTER COLUMN \"RecipeId\" SET DEFAULT nextval('recipe_id_seq')");
+        Execute.Sql("ALTER TABLE \"Recipe\" ALTER COLUMN \"ForkedFrom\" DROP DEFAULT;");
+        Execute.Sql("ALTER TABLE \"Recipe\" ADD COLUMN \"ForkedFromId\" INT DEFAULT NULL;");
+    }
+
+    public override void Down()
+    {
+        Execute.Sql("ALTER TABLE \"Recipe\" DROP COLUMN \"ForkedFromId\";");
+        Execute.Sql("ALTER TABLE \"Recipe\" ALTER COLUMN \"ForkedFrom\" SET DEFAULT NULL;");
+        Execute.Sql("ALTER TABLE \"Recipe\" ALTER COLUMN \"RecipeId\" SET DEFAULT NULL;");
+        Execute.Sql("DROP SEQUENCE recipe_id_seq;");
+    }
+}
