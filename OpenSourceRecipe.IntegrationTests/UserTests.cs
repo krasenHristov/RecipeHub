@@ -241,7 +241,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
 
         var content = await response.Content.ReadAsStringAsync();
 
-        User user = JsonConvert.DeserializeObject<User>(content.ToString());
+        User? user = JsonConvert.DeserializeObject<User>(content.ToString());
 
         Assert.Equal("testuserrrrrrr", user?.Username);
         Assert.Equal("Test Userrrrrr", user?.Name);
@@ -278,7 +278,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
 
         var content = await response.Content.ReadAsStringAsync();
 
-        GetUserDto user = JsonConvert.DeserializeObject<GetUserDto>(content.ToString());
+        GetUserDto? user = JsonConvert.DeserializeObject<GetUserDto>(content.ToString());
 
         //Act
           //Search user by ID - get ID
@@ -288,11 +288,11 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
 
         var userByIdContent = await response.Content.ReadAsStringAsync();
 
-        GetUserDto userById = JsonConvert.DeserializeObject<GetUserDto>(userByIdContent.ToString());
+        GetUserDto? userById = JsonConvert.DeserializeObject<GetUserDto>(userByIdContent.ToString());
         //Assert
           //Check returned user is registered user
         Assert.Equal(HttpStatusCode.OK, userByIdResponse.StatusCode);
-        Assert.Equal("testuser2", userById.Username);
+        Assert.Equal("testuser2", userById!.Username);
         Assert.Equal("Test User2", userById.Name);
         Assert.Equal("https://www.google.com", userById.ProfileImg);
         Assert.Equal("This is a test user for integration testing purposes only..............................................................", userById.Bio);
@@ -301,15 +301,12 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     [Fact]
     public async Task GetUserByIdNoUser_ShouldFail()
     {
-        //Act 
+        //Act
             //Send request with wrong user ID
         var request = new HttpRequestMessage(HttpMethod.Get, $"api/user/id/99999999999999");
-        
+
         var response = await _client.SendAsync(request);
 
-        var content = await response.Content.ReadAsStringAsync();
-
-        GetUserDto userById = JsonConvert.DeserializeObject<GetUserDto>(content.ToString());
         //Assert
             //Assert bad request
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);

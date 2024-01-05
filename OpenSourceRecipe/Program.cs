@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Npgsql;
 using OpenSourceRecipes.Services;
+using OpenSourceRecipes.Seeds;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -94,6 +95,12 @@ if (env == "Testing")
     cmd.ExecuteNonQuery();
 
     connection.Close();
+
+    var ingredientSeed = new SeedFoodData(builder.Configuration);
+    ingredientSeed?.InsertIntoFood();
+
+    var cuisineSeed = new SeedCuisineData(builder.Configuration);
+    cuisineSeed?.InsertIntoCuisine();
 }
 
 // add common FluentMigrator services
