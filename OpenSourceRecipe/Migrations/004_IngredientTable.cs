@@ -23,7 +23,7 @@ public class CreateIngredientTable : Migration
     }
 }
 
-[Migration(2024010410)]
+[Migration(2024010404_01)]
 
 public class UpdateIngredientTable : Migration
 {
