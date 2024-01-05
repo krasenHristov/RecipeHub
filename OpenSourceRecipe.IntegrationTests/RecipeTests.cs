@@ -1,10 +1,6 @@
 using System.Net;
-using System.Net.Http.Headers;
 using System.Text;
 using Newtonsoft.Json;
-using OpenSourceRecipes.Models;
-using Xunit;
-using Xunit.Abstractions;
 
 namespace OpenSourceRecipe.IntegrationTests;
 public class RecipeEndpointTests(CustomWebApplicationFactory<Program> factory)
@@ -28,7 +24,7 @@ public class RecipeEndpointTests(CustomWebApplicationFactory<Program> factory)
             UserId = 1,
             CuisineId = 1,
         };
-        
+
         var request = new HttpRequestMessage(HttpMethod.Post, "api/recipes")
         {
             Content = new StringContent(JsonConvert.SerializeObject(newRecipe), Encoding.UTF8, "application/json")
@@ -58,4 +54,4 @@ public class RecipeEndpointTests(CustomWebApplicationFactory<Program> factory)
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
 
     }
-}   
+}

@@ -1,7 +1,4 @@
-using System.Security.Claims;
-using System.Text;
 using Dapper;
-using Microsoft.AspNetCore.Identity;
 using Npgsql;
 using OpenSourceRecipes.Models;
 
@@ -45,8 +42,8 @@ public class RecipeRepository
         parameters.Add("OriginalRecipeId", recipe.OriginalRecipeId);
         parameters.Add("UserId", recipe.UserId);
         parameters.Add("CuisineId", recipe.CuisineId);
-        
-        var sql = "INSERT INTO \"Recipe\" " + 
+
+        var sql = "INSERT INTO \"Recipe\" " +
                   "(\"RecipeTitle\", \"TagLine\", \"Difficulty\", \"TimeToPrepare\", \"RecipeMethod\", \"RecipeImg\", \"Cuisine\", \"ForkedFromId\", \"OriginalRecipeId\", \"UserId\", \"CuisineId\") " +
                   "VALUES (@RecipeTitle, @TagLine, @Difficulty, @TimeToPrepare, @RecipeMethod, @RecipeImg, @Cuisine, @ForkedFromId, @OriginalRecipeId, @UserId, @CuisineId) RETURNING *";
         var newRecipe = await connection.QuerySingleOrDefaultAsync<GetRecipeDto>(sql, parameters);
