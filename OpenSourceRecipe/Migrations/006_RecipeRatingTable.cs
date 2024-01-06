@@ -18,6 +18,6 @@ public class CreateRecipeRatingTable : Migration
 
     public override void Down()
     {
-        Delete.Table("RecipeRating");
+        Execute.Sql("DROP TABLE \"RecipeRating\"");
     }
 }

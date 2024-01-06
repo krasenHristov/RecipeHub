@@ -22,7 +22,7 @@ public class CreateIngredientTable : Migration
 
     public override void Down()
     {
-        Delete.Table("Ingredient");
+        Execute.Sql("DROP TABLE \"Ingredient\"");
     }
 }
 

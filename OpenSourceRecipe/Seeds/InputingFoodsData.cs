@@ -6,9 +6,9 @@ namespace OpenSourceRecipes.Seeds
 {
     public class SeedFoodData(IConfiguration configuration)
     {
-        public async Task<List<MyFoodObject>> InsertIntoFood()
+        public async Task<List<MyFoodObject>> InsertIntoFood(string connectionStringName)
         {
-            await using var connection = new NpgsqlConnection(configuration.GetConnectionString("TestConnection"));
+            await using var connection = new NpgsqlConnection(configuration.GetConnectionString(connectionStringName));
             ReadFoodFunc readFood = new ReadFoodFunc();
 
             List<MyFoodObject> foods = readFood.ReadFoodFile();
@@ -35,7 +35,7 @@ namespace OpenSourceRecipes.Seeds
                                     VALUES (@Name, @Calories, @Carbohydrate, @Sugar, @Fiber, @Fat, @Protein)
                                     RETURNING *;";
                         var insertedFood = await connection.QueryAsync<MyFoodObject>(insertQuery, food);
-                        insertedFoods.Add(insertedFood.FirstOrDefault());
+                        insertedFoods.Add(insertedFood.FirstOrDefault()!);
                     }
                 }
                 catch (Exception e)
@@ -45,7 +45,6 @@ namespace OpenSourceRecipes.Seeds
                     throw;
                 }
             }
-
 
             Console.WriteLine("------------------------");
             Console.WriteLine("Successfully inserted" + insertedFoods.Count + "Ingredients");

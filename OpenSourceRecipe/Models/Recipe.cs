@@ -86,3 +86,21 @@ public class GetRecipeDto
     public int UserId { get; set; }
     public int CuisineId { get; set; }
 }
+
+public class GetRecipeByIdDto
+{
+    public int RecipeId { get; set; }
+    public string? RecipeTitle { get; set; }
+    public string? TagLine { get; set; }
+    public int Difficulty { get; set; }
+    public int TimeToPrepare { get; set; }
+    public string? RecipeMethod { get; set; }
+    public string? PostedOn { get; set; }
+    public string? RecipeImg { get; set; }
+    public string? Cuisine { get; set; }
+    public int? ForkedFromId { get; set; } = null;
+    public int? OriginalRecipeId { get; set; } = null;
+    public int UserId { get; set; }
+    public int CuisineId { get; set; }
+    public IEnumerable<Ingredient>? RecipeIngredients { get; set; }
+}

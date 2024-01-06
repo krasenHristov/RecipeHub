@@ -161,24 +161,24 @@ if (env == "Testing" || env == "Development")
         await Task.Run(() =>
         {
             runner.MigrateDown(0);
+        });
+
+        await Task.Run(() =>
+        {
             runner.MigrateUp();
         });
     }
+
+    var userseed = new SeedUserData(builder.Configuration);
+    var ingredientSeed = new SeedFoodData(builder.Configuration);
+    var recipeSeed = new SeedRecipeData(builder.Configuration);
+    var cuisineSeed = new SeedCuisineData(builder.Configuration);
+
+    await userseed.InsertIntoUser(connectionStringName);
+    await ingredientSeed.InsertIntoFood(connectionStringName);
+    await cuisineSeed.InsertIntoCuisine(connectionStringName);
+    await recipeSeed.InsertIntoRecipe(connectionStringName);
 }
-
-if (env == "Testing")
-{
-        var userseed = new SeedUserData(builder.Configuration);
-        var ingredientSeed = new SeedFoodData(builder.Configuration);
-        var recipeSeed = new SeedRecipeData(builder.Configuration);
-        var cuisineSeed = new SeedCuisineData(builder.Configuration);
-
-        await userseed?.InsertIntoUser();
-        await ingredientSeed?.InsertIntoFood();
-        await cuisineSeed?.InsertIntoCuisine();
-        await recipeSeed?.InsertIntoRecipe();
-}
-
 
 if (env == "Production")
 {

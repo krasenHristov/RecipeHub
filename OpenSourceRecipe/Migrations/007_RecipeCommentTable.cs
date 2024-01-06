@@ -20,6 +20,6 @@ public class CreateRecipeCommentTable : Migration
 
     public override void Down()
     {
-        Delete.Table("RecipeComment");
+        Execute.Sql("DROP TABLE \"RecipeComment\"");
     }
 }

@@ -17,6 +17,6 @@ public class CreateFavouritesTable : Migration
 
     public override void Down()
     {
-        Delete.Table("Favourites");
+        Execute.Sql("DROP TABLE \"Favourites\"");
     }
 }
