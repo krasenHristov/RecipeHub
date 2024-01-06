@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OpenSourceRecipes.Models;
 using OpenSourceRecipes.Services;
@@ -27,6 +26,26 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
         try
         {
             return Ok(await recipeRepository.GetAllRecipes());
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
+    [HttpGet("api/recipes/{recipeId}")]
+    public async Task<ActionResult<GetRecipeByIdDto>> GetRecipeById(int recipeId)
+    {
+        try
+        {
+            GetRecipeByIdDto? recipe = await recipeRepository.GetRecipeById(recipeId);
+
+            if (recipe == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(recipe);
         }
         catch (Exception e)
         {

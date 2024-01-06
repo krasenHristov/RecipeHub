@@ -21,6 +21,6 @@ public class CreateUserTable : Migration
 
     public override void Down()
     {
-        Delete.Table("User");
+        Execute.Sql("DROP TABLE \"User\"");
     }
 }

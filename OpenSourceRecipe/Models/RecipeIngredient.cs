@@ -12,4 +12,7 @@ public class RecipeIngredient
 
     // The quantity of the ingredient
     public string? Quantity { get; set; }
+
+    // The name of the ingredient
+    public string? IngredientName { get; set; }
 }

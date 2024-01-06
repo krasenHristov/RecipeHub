@@ -18,6 +18,6 @@ public class CreateCommentVoteTable : Migration
 
     public override void Down()
     {
-        Delete.Table("CommentVote");
+        Execute.Sql("DROP TABLE \"CommentVote\"");
     }
 }

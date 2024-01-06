@@ -26,6 +26,32 @@ public class RecipeRepository
             _connectionString = "DefaultConnection";
         }
     }
+
+    public async Task<GetRecipeByIdDto?> GetRecipeById(int recipeId)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        var recipeSql = "SELECT * FROM \"Recipe\" WHERE \"RecipeId\" = @RecipeId";
+
+        var recipe = await connection.QueryFirstOrDefaultAsync<GetRecipeByIdDto>(recipeSql, new {RecipeId = recipeId});
+
+        var ingredientsSql = "SELECT i.* FROM \"RecipeIngredient\" ri " +
+                             "JOIN \"Ingredient\" i " +
+                             "ON ri.\"IngredientId\" = i.\"IngredientId\"" +
+                             "WHERE \"RecipeId\" = @RecipeId";
+
+        var ingredients = await connection.QueryAsync<Ingredient>(ingredientsSql, new {RecipeId = recipeId});
+
+        if (recipe != null)
+        {
+            recipe.RecipeIngredients = ingredients.ToList();
+
+            return recipe;
+        }
+
+        return null;
+    }
+
     public async Task<GetRecipeDto> CreateRecipe(CreateRecipeDto recipe)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));

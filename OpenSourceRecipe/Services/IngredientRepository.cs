@@ -10,7 +10,7 @@ public class IngredientRepository
 {
     private readonly IConfiguration _configuration;
     private readonly string? _connectionString;
-        public IngredientRepository(IConfiguration configuration)
+    public IngredientRepository(IConfiguration configuration)
     {
         this._configuration = configuration;
 
@@ -29,6 +29,7 @@ public class IngredientRepository
             _connectionString = "DefaultConnection";
         }
     }
+
     public async Task<GetIngredientDto> CreateIngredient(CreateIngredientDto ingredient)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));

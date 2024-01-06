@@ -29,7 +29,6 @@ public class CreateRecipeTable : Migration
 
     public override void Down()
     {
-
-        Delete.Table("Recipe");
+        Execute.Sql("DROP TABLE \"Recipe\"");
     }
 }

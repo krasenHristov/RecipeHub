@@ -17,9 +17,9 @@ namespace OpenSourceRecipes.Seeds
 
     public class SeedCuisineData(IConfiguration configuration)
     {
-        public async Task<IEnumerable<MyCuisineObject>> InsertIntoCuisine()
+        public async Task<IEnumerable<MyCuisineObject>> InsertIntoCuisine(string connectionStringName)
         {
-            await using var connection = new NpgsqlConnection(configuration.GetConnectionString("TestConnection"));
+            await using var connection = new NpgsqlConnection(configuration.GetConnectionString(connectionStringName));
             var cuisineArr = new[]
             {
                 new MyCuisineObject

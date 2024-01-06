@@ -9,7 +9,7 @@ public class CreateCuisineTable : Migration
     {
         Execute.Sql("CREATE TABLE \"Cuisine\"" +
                     "(" +
-                    "\"CuisineId\" INT NOT NULL PRIMARY KEY," +
+                    "\"CuisineId\" SERIAL PRIMARY KEY," +
                     "\"CuisineName\" VARCHAR(255) NOT NULL," +
                     "\"Description\" TEXT NOT NULL," +
                     "\"CuisineImg\" VARCHAR(255) NOT NULL" +
@@ -18,6 +18,6 @@ public class CreateCuisineTable : Migration
 
     public override void Down()
     {
-        Delete.Table("Cuisine");
+        Execute.Sql("DROP TABLE \"Cuisine\"");
     }
 }

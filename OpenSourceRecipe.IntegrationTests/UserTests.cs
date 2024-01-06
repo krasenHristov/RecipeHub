@@ -394,8 +394,31 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.NotNull(content);
     }
 
-    // INGREDIENT TESTS
+    [Fact]
+    public async Task GetRecipeByIdEndpoint_ShouldSucceed()
+    {
+        // get recipe by id
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/1");
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStreamAsync();
 
+        // assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetRecipeByIdEndpointNoRecipe_ShouldFail()
+    {
+        // get recipe by id
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/99");
+        var response = await _client.SendAsync(request);
+
+        // assert
+        Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
+
+    // INGREDIENT TESTS
     [Fact]
     public async Task CreateIngredientEndpoint_ShouldSucceed()
     {
@@ -403,12 +426,12 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
        var newIngredient = new
        {
             IngredientName = "Test Ingredient",
-            Calories = 50,
-            Carbohydrates = 5,
-            Sugar = 10,
-            Fiber = 10,
-            Fat = 20,
-            Protein = 10
+            Calories = "50 kcal",
+            Carbohydrate = "5 g",
+            Sugar = "3 g",
+            Fiber = "0 g",
+            Fat = "20 g",
+            Protein = "10 g"
        };
 
        var request = new HttpRequestMessage(HttpMethod.Post, "api/ingredients")
@@ -419,6 +442,14 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
        //Act
         var response = await _client.SendAsync(request);
         var content = await response.Content.ReadAsStreamAsync();
+
+        using (var reader = new StreamReader(content))
+        {
+            var contents = await reader.ReadToEndAsync();
+
+            Console.WriteLine(contents);
+        }
+
 
        //Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);

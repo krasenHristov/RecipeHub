@@ -7,9 +7,9 @@ namespace OpenSourceRecipes.Seeds
 {
     public class SeedUserData(IConfiguration configuration)
     {
-        public async Task<IEnumerable<MyUserObject>> InsertIntoUser()
+        public async Task<IEnumerable<MyUserObject>> InsertIntoUser(string connectionStringName)
         {
-            await using var connection = new NpgsqlConnection(configuration.GetConnectionString("TestConnection"));
+            await using var connection = new NpgsqlConnection(configuration.GetConnectionString(connectionStringName));
             ReadUserFunc readUser = new ReadUserFunc();
 
             var passwordStuff = new UserRepository(configuration);
