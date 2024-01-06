@@ -32,21 +32,23 @@ namespace OpenSourceRecipes.Seeds
             var recipesObject = new RecipesData();
             var recipeArr = recipesObject.GetRecipes();
 
-            var recipe1Ingredients = new[] { 1, 2, 3 };
-            var recipe2Ingredients = new[] { 4, 5, 6 };
-            var recipe3Ingredients = new[] { 7, 8, 9 };
+            var ingredients = new int[][]
+            {
+                new int[] {1, 2, 3, 4},
+                new int[] {5, 6, 7, 8},
+                new int[] {9, 10, 11, 12},
+            };
 
             List<MyRecipeObject> insertedRecipes = new List<MyRecipeObject>();
 
             Console.WriteLine("Inserting Recipes");
             Console.WriteLine("------------------------");
 
-            foreach (var recipe in recipeArr)
+            for (int i = 0; i < recipeArr.Length; i++)
             {
                 try
                 {
-                    // , \"ForkedFromId\", \"OriginalRecipeId\"
-                    // , '{recipe.ForkedFromId}', '{recipe.OriginalRecipeId}'
+                    MyRecipeObject recipe = recipeArr[i];
                     string query = $"INSERT INTO \"Recipe\" " +
                                     "(\"RecipeTitle\", \"TagLine\", \"Difficulty\", \"TimeToPrepare\", \"RecipeMethod\", \"Cuisine\", \"RecipeImg\", \"ForkedFromId\", \"OriginalRecipeId\", \"UserId\", \"CuisineId\") " +
                                     "VALUES (@RecipeTitle, @TagLine, @Difficulty, @TimeToPrepare, @RecipeMethod, @Cuisine, @RecipeImg, @ForkedFromId, @OriginalRecipeId, @UserId, @CuisineId) " +
@@ -54,7 +56,7 @@ namespace OpenSourceRecipes.Seeds
                     var insertedRecipe = await connection.QueryFirstOrDefaultAsync<MyRecipeObject>(query, recipe);
                     if (insertedRecipe != null) insertedRecipes.Add(insertedRecipe);
 
-                    foreach (var ingredient in recipe1Ingredients)
+                    foreach (var ingredient in ingredients[i])
                     {
                         string ingredientQuery = $"INSERT INTO \"RecipeIngredient\" " +
                                         "(\"Quantity\", \"RecipeId\", \"IngredientId\") " +
