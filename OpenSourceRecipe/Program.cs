@@ -149,10 +149,15 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-if (env == "Testing" || env == "Development")
+if (env == "Development" || env == "Production")
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+}
+
+if (env == "Testing" || env == "Development")
+{
 
     using (var scope = app.Services.CreateScope())
     {
