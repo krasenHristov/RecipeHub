@@ -12,7 +12,7 @@ public class UserController(UserRepository userRepository) : ControllerBase
     [HttpPost("api/register")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<string>> RegisterUser(User user)
+    public async Task<ActionResult<GetLoggedInUserDto>> RegisterUser(User user)
     {
         try
         {
@@ -23,9 +23,9 @@ public class UserController(UserRepository userRepository) : ControllerBase
                 return BadRequest("Username already exists");
             }
 
-            string token = await userRepository.RegisterUser(user);
+            GetLoggedInUserDto userDetails = await userRepository.RegisterUser(user);
 
-            return Created($"api/user/{user.Username}", token);
+            return Created($"api/user/{user.Username}", userDetails);
         }
         catch (Exception e)
         {
@@ -37,7 +37,7 @@ public class UserController(UserRepository userRepository) : ControllerBase
     [HttpPost("api/login")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<string>> LoginUser(LoginUserDto user)
+    public async Task<ActionResult<GetLoggedInUserDto>> LoginUser(LoginUserDto user)
     {
         try
         {

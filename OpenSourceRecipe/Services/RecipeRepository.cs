@@ -56,4 +56,14 @@ public class RecipeRepository
         return newRecipe;
     }
 
+    public async Task<IEnumerable<GetRecipeDto>> GetAllRecipes()
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        var sql = "SELECT * FROM \"Recipe\"";
+
+        var recipes = await connection.QueryAsync<GetRecipeDto>(sql);
+
+        return recipes;
+    }
 }

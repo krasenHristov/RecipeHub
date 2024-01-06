@@ -21,8 +21,8 @@ namespace OpenSourceRecipes.Seeds
             {
                 var food = foods[i];
                 string query = $"INSERT INTO \"Ingredient\" " +
-                                "(\"IngredientId\", \"IngredientName\", \"Calories\", \"Carbohydrate\", \"Sugar\", \"Fiber\", \"Fat\", \"Protein\") " +
-                                $"VALUES ('{food.Id}', '{food.Name}', '{food.Calories}','{food.Carbohydrate}', '{food.Sugar}', '{food.Fiber}', '{food.Fat}', '{food.Protein}') " +
+                                "(\"IngredientName\", \"Calories\", \"Carbohydrate\", \"Sugar\", \"Fiber\", \"Fat\", \"Protein\") " +
+                                $"VALUES ('{food.Name}', '{food.Calories}','{food.Carbohydrate}', '{food.Sugar}', '{food.Fiber}', '{food.Fat}', '{food.Protein}') " +
                                 "RETURNING *;";
                 var insertedFood = await connection.QueryAsync<MyFoodObject>(query);
                 insertedFoods.Add(insertedFood.FirstOrDefault()!);

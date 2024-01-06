@@ -203,9 +203,11 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var registerResponse = await _client.SendAsync(registerRequest);
         registerResponse.EnsureSuccessStatusCode();
 
-        string token = registerResponse.Content.ReadAsStringAsync().Result;
+        var userDetails = registerResponse.Content.ReadAsStringAsync().Result;
 
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
 
         // Act - Call the API
         var request = new HttpRequestMessage(HttpMethod.Get, "api/test-auth");
@@ -259,9 +261,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         {
             Username = "testuser2",
             Name = "Test User2",
-            ProfileImg = "https://www.google.com",
             Password = "password",
-            Bio = "This is a test user for integration testing purposes only.............................................................."
         };
           //Get user by username - then get ID
         var registerRequest = new HttpRequestMessage(HttpMethod.Post, "api/register")
@@ -294,8 +294,8 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.Equal(HttpStatusCode.OK, userByIdResponse.StatusCode);
         Assert.Equal("testuser2", userById!.Username);
         Assert.Equal("Test User2", userById.Name);
-        Assert.Equal("https://www.google.com", userById.ProfileImg);
-        Assert.Equal("This is a test user for integration testing purposes only..............................................................", userById.Bio);
+        Assert.Equal("https://www.outsystems.com/Forge_CW/_image.aspx/Q8LvY--6WakOw9afDCuuGdL9c3WA3ttAt5pfSB[…]-upload-example-2023-01-04%2000-00-00-2023-07-24%2020-02-59", userById.ProfileImg);
+        Assert.Equal("This user has not set a bio yet", userById.Bio);
     }
 
     [Fact]
@@ -376,6 +376,65 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     {
         //Act
         var request = new HttpRequestMessage(HttpMethod.Post, "api/recipes")
+        {
+            Content = new StringContent("", Encoding.UTF8, "application/json")
+        };
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStreamAsync();
+
+        //Assert
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task GetAllRecipesEndpoint_ShouldSucceed()
+    {
+        // get all recipes
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes");
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStreamAsync();
+
+        // assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(content);
+    }
+
+    // INGREDIENT TESTS
+
+    [Fact]
+    public async Task CreateIngredientEndpoint_ShouldSucceed()
+    {
+       //Arrange
+       var newIngredient = new
+       {
+            IngredientName = "Test Ingredient",
+            Calories = 50,
+            Carbohydrates = 5,
+            Sugar = 10,
+            Fiber = 10,
+            Fat = 20,
+            Protein = 10
+       };
+
+       var request = new HttpRequestMessage(HttpMethod.Post, "api/ingredients")
+       {
+            Content = new StringContent(JsonConvert.SerializeObject(newIngredient), Encoding.UTF8, "application/json")
+       };
+
+       //Act
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStreamAsync();
+
+       //Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task CreateIngredientEndpointNoParams_ShouldFail()
+    {
+        //Act
+        var request = new HttpRequestMessage(HttpMethod.Post, "api/ingredients")
         {
             Content = new StringContent("", Encoding.UTF8, "application/json")
         };

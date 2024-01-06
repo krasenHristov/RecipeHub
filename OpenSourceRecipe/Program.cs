@@ -144,6 +144,7 @@ builder.Services.AddAuthentication(options =>
 // Repositories
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<RecipeRepository>();
+builder.Services.AddScoped<IngredientRepository>();
 
 // Controllers
 builder.Services.AddControllers();
@@ -170,7 +171,6 @@ if (env == "Testing" || env == "Development")
     ingredientSeed?.InsertIntoFood();
     cuisineSeed?.InsertIntoCuisine(); 
     recipeSeed?.InsertIntoRecipe();
-
 }
 
 app.UseCors("AllowAll");

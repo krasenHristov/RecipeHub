@@ -9,16 +9,14 @@ public class CreateIngredientTable : Migration
     {
         Execute.Sql("CREATE TABLE \"Ingredient\"" +
                     "(" +
-                    "\"IngredientId\" INT NOT NULL," +
-                    "\"IngredientName\" VARCHAR(255) NOT NULL," +
-                    "\"Calories\" TEXT NOT NULL," +
-                    "\"Carbohydrate\" TEXT NOT NULL," +
-                    "\"Sugar\" TEXT NOT NULL," +
-                    "\"Fiber\" TEXT NOT NULL," +
-                    "\"Fat\" TEXT NOT NULL," +
-                    "\"Protein\" TEXT NOT NULL," +
-
-                    "PRIMARY KEY (\"IngredientId\", \"IngredientName\")" +
+                    "\"IngredientId\" SERIAL PRIMARY KEY," +
+                    "\"IngredientName\" VARCHAR(255) NOT NULL UNIQUE," +
+                    "\"Calories\" INT NOT NULL," +
+                    "\"Carbohydrate\" INT NOT NULL," +
+                    "\"Sugar\" INT NOT NULL," +
+                    "\"Fiber\" INT NOT NULL," +
+                    "\"Fat\" INT NOT NULL," +
+                    "\"Protein\" INT NOT NULL" +
                     ");");
     }
 
