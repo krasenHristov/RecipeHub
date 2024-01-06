@@ -27,6 +27,15 @@ public class RecipeRepository
         }
     }
 
+    public async Task DeleteRecipe(int recipeId)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        var sql = "DELETE FROM \"Recipe\" WHERE \"RecipeId\" = @RecipeId";
+
+        await connection.ExecuteAsync(sql, new {RecipeId = recipeId});
+    }
+
     public async Task<GetRecipeByIdDto?> GetRecipeById(int recipeId)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
