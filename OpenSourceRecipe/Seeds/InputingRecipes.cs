@@ -79,6 +79,10 @@ namespace OpenSourceRecipes.Seeds
                 }
             };
 
+            var recipe1Ingredients = new[] { 1, 2, 3 };
+            var recipe2Ingredients = new[] { 4, 5, 6 };
+            var recipe3Ingredients = new[] { 7, 8, 9 };
+
             List<MyRecipeObject> insertedRecipes = new List<MyRecipeObject>();
 
             Console.WriteLine("Inserting Recipes");
@@ -94,6 +98,20 @@ namespace OpenSourceRecipes.Seeds
                                     "RETURNING *;";
                     var insertedRecipe = await connection.QueryFirstOrDefaultAsync<MyRecipeObject>(query);
                     if (insertedRecipe != null) insertedRecipes.Add(insertedRecipe);
+
+                    foreach (var ingredient in recipe1Ingredients)
+                    {
+                        string getIngredientNameQuery = $"SELECT \"IngredientName\" FROM \"Ingredient\" WHERE \"IngredientId\" = '{ingredient}'";
+
+                        var ingredientName = await connection.QueryFirstOrDefaultAsync<string>(getIngredientNameQuery);
+
+                        string ingredientQuery = $"INSERT INTO \"RecipeIngredient\" " +
+                                        "(\"Quantity\", \"RecipeId\", \"IngredientId\", \"IngredientName\") " +
+                                        $"VALUES ('1', '{recipe.RecipeId}', '{ingredient}', '{ingredientName}') " +
+                                        "RETURNING *;";
+                        var insertedRecipeIngredient = await connection.QueryFirstOrDefaultAsync<MyRecipeObject>(ingredientQuery);
+                        if (insertedRecipeIngredient != null) insertedRecipes.Add(insertedRecipeIngredient);
+                    }
                 }
                 catch (Exception ex)
                 {
