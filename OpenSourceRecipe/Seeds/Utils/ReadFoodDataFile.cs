@@ -28,7 +28,6 @@ public class ReadFoodFunc
 
         string[] files = Directory.GetFiles(currentDirectory, "*.txt");
 
-        Console.WriteLine("------------------------");
         foreach (string file in files)
         {
             try

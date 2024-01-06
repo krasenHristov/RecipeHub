@@ -21,12 +21,20 @@ namespace OpenSourceRecipes.Seeds
             Console.WriteLine("about to insert Into Users");
             foreach (var user in users)
             {
-                string query = $"INSERT INTO \"User\" " +
-                                "(\"Username\", \"Name\", \"Password\", \"ProfileImg\", \"Status\", \"Bio\") " +
-                                $"VALUES ('{user.Username}', '{user.Name}', '{passwordStuff.HashPassword(user.Password)}', '{user.ProfileImg}', '{user.Status}', '{user.Bio}') " +
-                                "RETURNING *;";
-                var insertedUser = await connection.QueryFirstOrDefaultAsync<MyUserObject>(query);
-                if (insertedUser != null) insertedUsers.Add(insertedUser);
+                try
+                {
+                    string query = $"INSERT INTO \"User\" " +
+                                    "(\"Username\", \"Name\", \"Password\", \"ProfileImg\", \"Status\", \"Bio\") " +
+                                    $"VALUES ('{user.Username}', '{user.Name}', '{passwordStuff.HashPassword(user.Password)}', '{user.ProfileImg}', '{user.Status}', '{user.Bio}') " +
+                                    "RETURNING *;";
+                    var insertedUser = await connection.QueryFirstOrDefaultAsync<MyUserObject>(query);
+                    if (insertedUser != null) insertedUsers.Add(insertedUser);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
             }
             return insertedUsers;
         }

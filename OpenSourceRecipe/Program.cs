@@ -73,8 +73,7 @@ else if(env == "Testing")
 
 var connectionString = builder.Configuration.GetConnectionString(connectionStringName);
 
-// if environment is test create connection, drop database, and recreate it
-if (env == "Testing")
+/*if (env == "Testing")
 {
     using var connection = new NpgsqlConnection(connectionString);
     connection.Open();
@@ -95,8 +94,7 @@ if (env == "Testing")
     cmd.ExecuteNonQuery();
 
     connection.Close();
-
-}
+}*/
 
 // add common FluentMigrator services
 builder.Services
@@ -159,18 +157,36 @@ if (env == "Testing" || env == "Development")
     using (var scope = app.Services.CreateScope())
     {
         var runner = scope.ServiceProvider.GetRequiredService<IMigrationRunner>();
+
+        await Task.Run(() =>
+        {
+            runner.MigrateDown(0);
+            runner.MigrateUp();
+        });
+    }
+}
+
+if (env == "Testing")
+{
+        var userseed = new SeedUserData(builder.Configuration);
+        var ingredientSeed = new SeedFoodData(builder.Configuration);
+        var recipeSeed = new SeedRecipeData(builder.Configuration);
+        var cuisineSeed = new SeedCuisineData(builder.Configuration);
+
+        await userseed?.InsertIntoUser();
+        await ingredientSeed?.InsertIntoFood();
+        await cuisineSeed?.InsertIntoCuisine();
+        await recipeSeed?.InsertIntoRecipe();
+}
+
+
+if (env == "Production")
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var runner = scope.ServiceProvider.GetRequiredService<IMigrationRunner>();
         runner.MigrateUp();
     }
-
-    var userseed = new SeedUserData(builder.Configuration);
-    var ingredientSeed = new SeedFoodData(builder.Configuration);
-    var recipeSeed = new SeedRecipeData(builder.Configuration);
-    var cuisineSeed = new SeedCuisineData(builder.Configuration);
-    
-    userseed?.InsertIntoUser();
-    ingredientSeed?.InsertIntoFood();
-    cuisineSeed?.InsertIntoCuisine(); 
-    recipeSeed?.InsertIntoRecipe();
 }
 
 app.UseCors("AllowAll");

@@ -19,17 +19,36 @@ namespace OpenSourceRecipes.Seeds
 
             for (int i = 0; i < foods.Count; i++)
             {
-                var food = foods[i];
-                string query = $"INSERT INTO \"Ingredient\" " +
-                                "(\"IngredientName\", \"Calories\", \"Carbohydrate\", \"Sugar\", \"Fiber\", \"Fat\", \"Protein\") " +
-                                $"VALUES ('{food.Name}', '{food.Calories}','{food.Carbohydrate}', '{food.Sugar}', '{food.Fiber}', '{food.Fat}', '{food.Protein}') " +
-                                "RETURNING *;";
-                var insertedFood = await connection.QueryAsync<MyFoodObject>(query);
-                insertedFoods.Add(insertedFood.FirstOrDefault()!);
+                try
+                {
+                    var food = foods[i];
+
+                    // Check if the ingredient already exists
+                    string checkQuery = "SELECT * FROM \"Ingredient\" WHERE \"IngredientName\" = @Name;";
+                    var existingFood = await connection.QueryAsync<MyFoodObject>(checkQuery, new { Name = food.Name });
+
+                    // If the ingredient does not exist, insert it
+                    if (!existingFood.Any())
+                    {
+                        string insertQuery = @"INSERT INTO ""Ingredient""
+                                    (""IngredientName"", ""Calories"", ""Carbohydrate"", ""Sugar"", ""Fiber"", ""Fat"", ""Protein"")
+                                    VALUES (@Name, @Calories, @Carbohydrate, @Sugar, @Fiber, @Fat, @Protein)
+                                    RETURNING *;";
+                        var insertedFood = await connection.QueryAsync<MyFoodObject>(insertQuery, food);
+                        insertedFoods.Add(insertedFood.FirstOrDefault());
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to insert ingredient");
+                    Console.WriteLine(e);
+                    throw;
+                }
             }
 
+
             Console.WriteLine("------------------------");
-            Console.WriteLine("Successfully inserted Ingredients");
+            Console.WriteLine("Successfully inserted" + insertedFoods.Count + "Ingredients");
             return insertedFoods;
         }
     }
