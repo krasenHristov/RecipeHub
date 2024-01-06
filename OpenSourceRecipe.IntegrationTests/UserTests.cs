@@ -418,6 +418,22 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
     }
 
+    [Fact]
+    public async Task DeleteRecipeEndpoint_ShouldSucceed()
+    {
+        // get recipe by id
+        var request = new HttpRequestMessage(HttpMethod.Delete, "api/recipes/1");
+        var response = await _client.SendAsync(request);
+
+        // assert
+        Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
+
+        var getRecipeRequest = new HttpRequestMessage(HttpMethod.Get, "api/recipes/1");
+        var getRecipeResponse = await _client.SendAsync(getRecipeRequest);
+
+        Assert.Equal(HttpStatusCode.NotFound, getRecipeResponse.StatusCode);
+    }
+
     // INGREDIENT TESTS
     [Fact]
     public async Task CreateIngredientEndpoint_ShouldSucceed()

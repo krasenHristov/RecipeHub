@@ -52,4 +52,18 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
             return BadRequest(e.Message);
         }
     }
+
+    [HttpDelete("api/recipes/{recipeId}")]
+    public async Task<ActionResult> DeleteRecipe(int recipeId)
+    {
+        try
+        {
+            await recipeRepository.DeleteRecipe(recipeId);
+            return StatusCode(204);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }
