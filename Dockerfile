@@ -16,4 +16,7 @@ RUN dotnet publish "OpenSourceRecipe.csproj" -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build-env /app/OpenSourceRecipe/out .
+
+# set environment to production
+ENV ASPNETCORE_ENVIRONMENT=Production
 ENTRYPOINT ["dotnet", "OpenSourceRecipe.dll"]
