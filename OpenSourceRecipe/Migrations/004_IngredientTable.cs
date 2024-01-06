@@ -11,12 +11,12 @@ public class CreateIngredientTable : Migration
                     "(" +
                     "\"IngredientId\" SERIAL PRIMARY KEY," +
                     "\"IngredientName\" VARCHAR(255) NOT NULL UNIQUE," +
-                    "\"Calories\" INT NOT NULL," +
-                    "\"Carbohydrate\" INT NOT NULL," +
-                    "\"Sugar\" INT NOT NULL," +
-                    "\"Fiber\" INT NOT NULL," +
-                    "\"Fat\" INT NOT NULL," +
-                    "\"Protein\" INT NOT NULL" +
+                    "\"Calories\" VARCHAR NOT NULL," +
+                    "\"Carbohydrate\" VARCHAR NOT NULL," +
+                    "\"Sugar\" VARCHAR NOT NULL," +
+                    "\"Fiber\" VARCHAR NOT NULL," +
+                    "\"Fat\" VARCHAR NOT NULL," +
+                    "\"Protein\" VARCHAR NOT NULL" +
                     ");");
     }
 

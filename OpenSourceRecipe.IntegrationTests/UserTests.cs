@@ -322,6 +322,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
             Name = "Test User2",
             ProfileImg = "https://www.google.com",
             Password = "password",
+            Status = true,
             Bio = "This is a test user for integration testing purposes only.............................................................."
         };
 
@@ -333,13 +334,9 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var registerResponse = await _client.SendAsync(registerRequest);
         registerResponse.EnsureSuccessStatusCode();
 
-        var requestUser = new HttpRequestMessage(HttpMethod.Get, $"api/user/testeruser4");
+        var registerContent = await registerResponse.Content.ReadAsStringAsync();
 
-        var responseUser = await _client.SendAsync(requestUser);
-
-        var userContent= await responseUser.Content.ReadAsStringAsync();
-
-        GetUserDto? user = JsonConvert.DeserializeObject<GetUserDto>(userContent);
+        GetUserDto? user = JsonConvert.DeserializeObject<GetUserDto>(registerContent);
 
         //Arrange
         var newRecipe = new
@@ -355,12 +352,10 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
             CuisineId = 1,
         };
 
-
         var request = new HttpRequestMessage(HttpMethod.Post, "api/recipes")
         {
             Content = new StringContent(JsonConvert.SerializeObject(newRecipe), Encoding.UTF8, "application/json")
         };
-
 
         //Act
         var response = await _client.SendAsync(request);

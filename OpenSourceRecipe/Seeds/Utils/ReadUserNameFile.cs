@@ -16,8 +16,8 @@ public class ReadUserFunc
 {
     public List<MyUserObject> ReadUserFile()
     {
-        Console.WriteLine("------------------------");
         Console.WriteLine("Reading Users");
+        Console.WriteLine("------------------------");
         string currentDirectory = Environment.CurrentDirectory;
         string filePath = @"Seeds/data/users.json";
         filePath = Path.Combine(currentDirectory, filePath);

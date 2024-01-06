@@ -52,16 +52,25 @@ namespace OpenSourceRecipes.Seeds
 
             foreach (var cuisine in cuisineArr)
             {
-                string query = $"INSERT INTO \"Cuisine\" " +
-                                "(\"CuisineId\", \"CuisineName\", \"Description\", \"CuisineImg\") " +
-                                $"VALUES ('{cuisine.CuisineId}', '{cuisine.CuisineName}', '{cuisine.Description}', '{cuisine.CuisineImg}') " +
-                                "RETURNING *;";
-                var insertedCuisine = await connection.QueryFirstOrDefaultAsync<MyCuisineObject>(query);
-                if (insertedCuisine != null) insertedCuisines.Add(insertedCuisine);
+                try
+                {
+                    string query = $"INSERT INTO \"Cuisine\" " +
+                                    "(\"CuisineId\", \"CuisineName\", \"Description\", \"CuisineImg\") " +
+                                    $"VALUES ('{cuisine.CuisineId}', '{cuisine.CuisineName}', '{cuisine.Description}', '{cuisine.CuisineImg}') " +
+                                    "RETURNING *;";
+                    var insertedCuisine = await connection.QueryFirstOrDefaultAsync<MyCuisineObject>(query);
+                    if (insertedCuisine != null) insertedCuisines.Add(insertedCuisine);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Failed to insert cuisine");
+                    Console.WriteLine(e);
+                    throw;
+                }
             }
 
+            Console.WriteLine("Successfully inserted " + insertedCuisines.Count + " Cuisines");
             Console.WriteLine("------------------------");
-            Console.WriteLine("Successfully inserted Cuisines");
 
             return insertedCuisines;
         }
