@@ -48,7 +48,7 @@ public class UserRepository
         return await connection.QueryFirstOrDefaultAsync<GetUserDto>(sql, new { Username = username });
     }
 
-    public async Task<string> RegisterUser(User user)
+    public async Task<GetLoggedInUserDto> RegisterUser(User user)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
@@ -65,6 +65,7 @@ public class UserRepository
         var sql = "INSERT INTO \"User\" " +
                   "(\"Username\", \"Name\", \"ProfileImg\", \"Password\", \"Status\", \"Bio\") " +
                   "VALUES (@Username, @Name, @ProfileImg, @Password, @Status, @Bio) RETURNING *";
+
         var newUser = await connection.QueryAsync<User>(sql, parameters);
 
         if (newUser == null)
@@ -72,12 +73,21 @@ public class UserRepository
             throw new Exception("User not created");
         }
 
-        return GenerateJwtToken(await GetUserByUsername(user.Username!));
+        GetUserDto? userDetails = await GetUserByUsername(user.Username!);
+
+        string token = GenerateJwtToken(userDetails);
+
+        return new GetLoggedInUserDto
+        {
+            UserId = userDetails?.UserId,
+            Username = userDetails?.Username,
+            Token = token
+        };
     }
 
-    public async Task<string> SignUserIn(string username, string password)
+    public async Task<GetLoggedInUserDto> SignUserIn(string username, string password)
     {
-        var user = await GetUserByUsername(username);
+        GetUserDto? user = await GetUserByUsername(username);
         if (user == null)
         {
             throw new Exception("User not found");
@@ -88,7 +98,14 @@ public class UserRepository
             throw new Exception("Invalid password");
         }
 
-        return GenerateJwtToken(await GetUserByUsername(username));
+        string token = GenerateJwtToken(await GetUserByUsername(username));
+
+        return new GetLoggedInUserDto
+        {
+            UserId = user.UserId,
+            Username = user.Username,
+            Token = token
+        };
     }
 
     private string GenerateJwtToken(GetUserDto? user)

@@ -203,9 +203,11 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var registerResponse = await _client.SendAsync(registerRequest);
         registerResponse.EnsureSuccessStatusCode();
 
-        string token = registerResponse.Content.ReadAsStringAsync().Result;
+        var userDetails = registerResponse.Content.ReadAsStringAsync().Result;
 
-        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
 
         // Act - Call the API
         var request = new HttpRequestMessage(HttpMethod.Get, "api/test-auth");
