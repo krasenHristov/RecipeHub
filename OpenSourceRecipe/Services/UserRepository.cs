@@ -111,6 +111,20 @@ public class UserRepository
         };
     }
 
+    public async Task<GetUserDto?> UpdateUserBio(int userId, string bio)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        var parameters = new DynamicParameters();
+        parameters.Add("UserId", userId);
+        parameters.Add("Bio", bio);
+
+        var sql = "UPDATE \"User\" SET \"Bio\" = @Bio WHERE \"UserId\" = @UserId RETURNING *";
+
+        return await connection.QueryFirstOrDefaultAsync<GetUserDto>(sql, parameters);
+    }
+
+    // SERVICE METHODS
     private string GenerateJwtToken(GetUserDto? user)
     {
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"] ?? string.Empty));
@@ -118,6 +132,9 @@ public class UserRepository
 
         var claims = new[]
         {
+            new Claim("UserId", user!.UserId.ToString()!),
+            new Claim("Username", user.Username!),
+
             new Claim(JwtRegisteredClaimNames.Sub, user!.UserId.ToString()!),
             new Claim(JwtRegisteredClaimNames.UniqueName, user.Username!),
             new Claim(JwtRegisteredClaimNames.NameId, user.Name!),

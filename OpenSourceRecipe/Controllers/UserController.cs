@@ -106,4 +106,41 @@ public class UserController(UserRepository userRepository) : ControllerBase
     {
         return Ok();
     }
+
+    [HttpPatch("api/user/{userId}/bio")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [Authorize]
+    public async Task<ActionResult<GetUserDto>> UpdateUser(int userId, UpdateUserBioDto bio)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(bio.Bio))
+            {
+                return BadRequest("Bio cannot be empty");
+            }
+
+            int? userIdFromToken = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value!);
+
+            if (userIdFromToken != userId)
+            {
+                return Unauthorized();
+            }
+
+            var updatedUser = await userRepository.UpdateUserBio(userId, bio.Bio!);
+
+            if (updatedUser == null)
+            {
+                return NotFound("User does not exist");
+            }
+
+            return Ok(updatedUser);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
 }
