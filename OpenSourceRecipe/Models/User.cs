@@ -55,3 +55,8 @@ public class UpdateUserBioDto
 {
     public string? Bio { get; set; }
 }
+
+public class UpdateUserNameDto
+{
+    public string? Name { get; set; }
+}
