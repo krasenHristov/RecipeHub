@@ -180,4 +180,41 @@ public class UserController(UserRepository userRepository) : ControllerBase
             throw;
         }
     }
+
+    [HttpPatch("api/user/{userId}/name")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [Authorize]
+    public async Task<ActionResult<GetUserDto>> UpdateUser(int userId, UpdateUserNameDto name)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(name.Name))
+            {
+                return BadRequest("Name cannot be empty");
+            }
+
+            int? userIdFromToken = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value!);
+
+            if (userIdFromToken != userId)
+            {
+                return Unauthorized();
+            }
+
+            var updatedUser = await userRepository.UpdateUserName(userId, name.Name!);
+
+            if (updatedUser == null)
+            {
+                return NotFound("User does not exist");
+            }
+
+            return Ok(updatedUser);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
 }
