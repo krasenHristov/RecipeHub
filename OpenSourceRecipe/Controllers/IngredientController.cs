@@ -20,4 +20,18 @@ public class IngredientController(IngredientRepository ingredientRepository) : C
             return BadRequest(e.Message);
         }
     }
+
+    [HttpGet("api/ingredients")]
+    public async Task<ActionResult<IEnumerable<GetIngredientDto>>> GetAllIngredients()
+    {
+        try
+        {
+            return Ok(await ingredientRepository.GetAllIngredients());
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
 }

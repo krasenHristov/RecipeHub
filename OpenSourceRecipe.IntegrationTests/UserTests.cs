@@ -545,6 +545,19 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
 
+    [Fact]
+    public async Task GetAllIngredientsEndpoint_ShouldSucceed()
+    {
+        // get all ingredients
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/ingredients");
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStreamAsync();
+
+        // assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(content);
+    }
+
     // CUISINE TESTS
     [Fact]
     public async Task GetAllCuisines_ShouldSucceed()
