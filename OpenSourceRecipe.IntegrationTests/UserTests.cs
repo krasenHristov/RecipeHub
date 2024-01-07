@@ -558,6 +558,29 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.NotNull(content);
     }
 
+    [Fact]
+    public async Task AddIngredientsToRecipe_ShouldSucceed()
+    {
+        var body = new
+        {
+            IngredientIds = new int[] { 1, 2, 3 },
+            Quantity = new string[] { "1 cup", "2 cups", "3 cups" }
+        };
+
+        var request = new HttpRequestMessage(HttpMethod.Post, "api/ingredients/recipes/1/ingredients")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json")
+        };
+
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStringAsync();
+
+        var recipe = JsonConvert.DeserializeObject<GetRecipeByIdDto>(content);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(recipe!.RecipeIngredients!.Count > 4);
+    }
+
     // CUISINE TESTS
     [Fact]
     public async Task GetAllCuisines_ShouldSucceed()

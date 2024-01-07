@@ -44,17 +44,17 @@ public class RecipeRepository
 
         var recipe = await connection.QueryFirstOrDefaultAsync<GetRecipeByIdDto>(recipeSql, new {RecipeId = recipeId});
 
-        var ingredientsSql = "SELECT i.* FROM \"RecipeIngredient\" ri " +
+        var ingredientsSql = "SELECT i.*, ri.\"Quantity\" FROM \"RecipeIngredient\" ri " +
                              "JOIN \"Ingredient\" i " +
                              "ON ri.\"IngredientId\" = i.\"IngredientId\"" +
-                             "WHERE \"RecipeId\" = @RecipeId";
+                             "WHERE \"RecipeId\" = @RecipeId " +
+                             "GROUP BY i.\"IngredientId\", ri.\"Quantity\"";
 
-        var ingredients = await connection.QueryAsync<Ingredient>(ingredientsSql, new {RecipeId = recipeId});
+        var ingredients = await connection.QueryAsync<IngredientRecipeDto>(ingredientsSql, new {RecipeId = recipeId});
 
         if (recipe != null)
         {
             recipe.RecipeIngredients = ingredients.ToList();
-
             return recipe;
         }
 

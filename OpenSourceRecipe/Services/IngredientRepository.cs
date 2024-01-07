@@ -7,6 +7,7 @@ public class IngredientRepository
 {
     private readonly IConfiguration _configuration;
     private readonly string? _connectionString;
+
     public IngredientRepository(IConfiguration configuration)
     {
         this._configuration = configuration;
@@ -63,4 +64,31 @@ public class IngredientRepository
         return ingredients;
     }
 
+    public async Task<GetRecipeByIdDto?> AddIngredientsToRecipe(int recipeId, int[] ingredientIds, string[] quantity)
+    {
+        for (int i = 0;i < ingredientIds.Length; i++)
+        {
+            await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+            var parameters = new DynamicParameters();
+            parameters.Add("RecipeId", recipeId);
+            parameters.Add("IngredientId", ingredientIds[i]);
+            parameters.Add("Quantity", quantity[i]);
+
+            var sql = "INSERT INTO \"RecipeIngredient\" " +
+                      "(\"RecipeId\", \"IngredientId\", \"Quantity\") " +
+                      "VALUES (@RecipeId, @IngredientId, @Quantity) RETURNING *";
+            var newRecipeIngredient = await connection.QuerySingleOrDefaultAsync<GetRecipeByIdDto>(sql, parameters);
+
+            if (newRecipeIngredient == null)
+            {
+                throw new Exception("RecipeIngredient not created due to missing parameters");
+            }
+        }
+
+        var recipeRepo = new RecipeRepository(_configuration);
+        GetRecipeByIdDto? newRecipe = await recipeRepo.GetRecipeById(recipeId);
+
+        return newRecipe;
+    }
 }

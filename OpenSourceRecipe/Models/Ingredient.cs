@@ -43,3 +43,22 @@ public class GetIngredientDto
     public string? Fat { get; set; }
     public string? Protein { get; set; }
 }
+
+public class AddIngredientToRecipeDto
+{
+    public int[]? IngredientIds { get; set; }
+    public string[]? Quantity { get; set; }
+}
+
+public class IngredientRecipeDto
+{
+    public int IngredientId { get; set; }
+    public string? IngredientName { get; set; }
+    public string? Quantity { get; set; }
+    public string? Calories { get; set; }
+    public string? Carbohydrate { get; set; }
+    public string? Sugar { get; set; }
+    public string? Fiber { get; set; }
+    public string? Fat { get; set; }
+    public string? Protein { get; set; }
+}

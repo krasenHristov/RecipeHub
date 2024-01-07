@@ -102,5 +102,5 @@ public class GetRecipeByIdDto
     public int? OriginalRecipeId { get; set; } = null;
     public int UserId { get; set; }
     public int CuisineId { get; set; }
-    public IEnumerable<Ingredient>? RecipeIngredients { get; set; }
+    public List<IngredientRecipeDto> RecipeIngredients { get; set; }
 }
