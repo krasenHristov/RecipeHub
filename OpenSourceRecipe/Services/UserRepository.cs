@@ -87,7 +87,10 @@ public class UserRepository
 
     public async Task<GetLoggedInUserDto> SignUserIn(string username, string password)
     {
-        GetUserDto? user = await GetUserByUsername(username);
+        using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        User? user = await connection.QueryFirstOrDefaultAsync<User>("SELECT * FROM \"User\" WHERE \"Username\" = @Username", new { Username = username });
+
         if (user == null)
         {
             throw new Exception("User not found");
