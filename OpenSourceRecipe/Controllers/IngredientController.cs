@@ -34,4 +34,18 @@ public class IngredientController(IngredientRepository ingredientRepository) : C
         }
     }
 
+    [HttpPost("api/ingredients/recipes/{recipeId}/ingredients")]
+    public async Task<ActionResult<GetRecipeByIdDto>> AddIngredientToRecipe(int recipeId, AddIngredientToRecipeDto? ingredient)
+    {
+        try
+        {
+            GetRecipeByIdDto? updatedRecipe = await ingredientRepository.AddIngredientsToRecipe(recipeId, ingredient?.IngredientIds!, ingredient?.Quantity!);
+
+            return Ok(updatedRecipe);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }
