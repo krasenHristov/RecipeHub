@@ -60,3 +60,8 @@ public class UpdateUserImgDto
 {
     public string? ProfileImg { get; set; }
 }
+
+public class UpdateUserNameDto
+{
+    public string? Name { get; set; }
+}
