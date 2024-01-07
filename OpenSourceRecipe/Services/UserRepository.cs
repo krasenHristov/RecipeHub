@@ -124,6 +124,19 @@ public class UserRepository
         return await connection.QueryFirstOrDefaultAsync<GetUserDto>(sql, parameters);
     }
 
+    public async Task<GetUserDto?> UpdateUserImg(int userId, string img)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        var parameters = new DynamicParameters();
+        parameters.Add("UserId", userId);
+        parameters.Add("ProfileImg", img);
+
+        var sql = "UPDATE \"User\" SET \"ProfileImg\" = @ProfileImg WHERE \"UserId\" = @UserId RETURNING *";
+
+        return await connection.QueryFirstOrDefaultAsync<GetUserDto>(sql, parameters);
+    }
+
     // SERVICE METHODS
     private string GenerateJwtToken(GetUserDto? user)
     {
