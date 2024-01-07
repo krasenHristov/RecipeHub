@@ -607,6 +607,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
     }
 
+
     [Fact]
     public async Task GetUserByUsername_ShouldReturnUserObject()
     {
