@@ -218,6 +218,136 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     }
 
     [Fact]
+    public async Task UpdateUserBio_ShouldSucceed()
+    {
+        // Arrange - login user
+        var newUser = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newUser), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+        loginResponse.EnsureSuccessStatusCode();
+
+        var userDetails = loginResponse.Content.ReadAsStringAsync().Result;
+
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
+
+        // Act - Call the API
+        var request = new HttpRequestMessage(HttpMethod.Patch, $"api/user/{user!.UserId}/bio")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(new { Bio = "This is a test bio" }), Encoding.UTF8, "application/json")
+        };
+
+        var response = await _client.SendAsync(request);
+
+        // Assert - Ensure the request was successful
+        response.EnsureSuccessStatusCode();
+
+        var getUserRequest = new HttpRequestMessage(HttpMethod.Get, "api/user/seededuser");
+        var getUserResponse = await _client.SendAsync(getUserRequest);
+
+        var content = await getUserResponse.Content.ReadAsStringAsync();
+
+        var getUser = JsonConvert.DeserializeObject<GetUserDto>(content);
+
+        Assert.Equal("This is a test bio", getUser?.Bio);
+    }
+
+    [Fact]
+    public async Task UpdateUserBioWithWrongUser_ShouldFail()
+    {
+        // Arrange - login user
+        var newUser = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newUser), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+        loginResponse.EnsureSuccessStatusCode();
+
+        var userDetails = loginResponse.Content.ReadAsStringAsync().Result;
+
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
+
+        // Act - Call the API
+        var request = new HttpRequestMessage(HttpMethod.Patch, $"api/user/9999/bio")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(new { Bio = "This is a test bio" }), Encoding.UTF8, "application/json")
+        };
+
+        var response = await _client.SendAsync(request);
+
+        // Assert - Ensure the request was successful
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task UpdateUserBioWithNoBio_ShouldFail()
+    {
+        // Arrange - login user
+        var newUser = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newUser), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+        loginResponse.EnsureSuccessStatusCode();
+
+        var userDetails = loginResponse.Content.ReadAsStringAsync().Result;
+
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
+
+        // Act - Call the API
+        var request = new HttpRequestMessage(HttpMethod.Patch, $"api/user/{user!.UserId}/bio")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(new { Bio = "" }), Encoding.UTF8, "application/json")
+        };
+
+        var response = await _client.SendAsync(request);
+
+        // Assert - Ensure the request was successful
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task UpdateUserBioUnauthorized_ShouldFail()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Patch, $"api/user/1/bio")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(new { Bio = "This is a test bio" }), Encoding.UTF8, "application/json")
+        };
+
+        var response = await _client.SendAsync(request);
+
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
+
+    [Fact]
     public async Task GetUserByUsername_ShouldReturnUserObject()
     {
         var newUser = new

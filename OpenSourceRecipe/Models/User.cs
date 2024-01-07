@@ -50,3 +50,8 @@ public class GetLoggedInUserDto
     public string? Username { get; set; }
     public string? Token { get; set; }
 }
+
+public class UpdateUserBioDto
+{
+    public string? Bio { get; set; }
+}
