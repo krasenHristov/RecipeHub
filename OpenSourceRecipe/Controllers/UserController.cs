@@ -143,4 +143,41 @@ public class UserController(UserRepository userRepository) : ControllerBase
             throw;
         }
     }
+
+    [HttpPatch("api/user/{userId}/img")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [Authorize]
+    public async Task<ActionResult<GetUserDto>> UpdateUser(int userId, UpdateUserImgDto img)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(img.ProfileImg))
+            {
+                return BadRequest("Img cannot be empty");
+            }
+
+            int? userIdFromToken = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value!);
+
+            if (userIdFromToken != userId)
+            {
+                return Unauthorized();
+            }
+
+            var updatedUser = await userRepository.UpdateUserImg(userId, img.ProfileImg!);
+
+            if (updatedUser == null)
+            {
+                return NotFound("User does not exist");
+            }
+
+            return Ok(updatedUser);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
 }
