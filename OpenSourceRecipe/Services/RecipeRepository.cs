@@ -40,7 +40,11 @@ public class RecipeRepository
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        var recipeSql = "SELECT * FROM \"Recipe\" WHERE \"RecipeId\" = @RecipeId";
+        string recipeSql = "SELECT r.*, " +
+                           "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"ForkedFromId\" = r.\"RecipeId\") as \"DirectForkCount\", " +
+                           "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"OriginalRecipeId\" = r.\"RecipeId\") as \"ForkCount\" " +
+                           "FROM \"Recipe\" r " +
+                           "WHERE \"RecipeId\" = @RecipeId";
 
         var recipe = await connection.QueryFirstOrDefaultAsync<GetRecipeByIdDto>(recipeSql, new {RecipeId = recipeId});
 
@@ -61,7 +65,7 @@ public class RecipeRepository
         return null;
     }
 
-    public async Task<GetRecipeDto> CreateRecipe(CreateRecipeDto recipe)
+    public async Task<GetRecipesDto> CreateRecipe(CreateRecipeDto recipe)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
@@ -81,7 +85,8 @@ public class RecipeRepository
         var sql = "INSERT INTO \"Recipe\" " +
                   "(\"RecipeTitle\", \"TagLine\", \"Difficulty\", \"TimeToPrepare\", \"RecipeMethod\", \"RecipeImg\", \"Cuisine\", \"ForkedFromId\", \"OriginalRecipeId\", \"UserId\", \"CuisineId\") " +
                   "VALUES (@RecipeTitle, @TagLine, @Difficulty, @TimeToPrepare, @RecipeMethod, @RecipeImg, @Cuisine, @ForkedFromId, @OriginalRecipeId, @UserId, @CuisineId) RETURNING *";
-        var newRecipe = await connection.QuerySingleOrDefaultAsync<GetRecipeDto>(sql, parameters);
+
+        var newRecipe = await connection.QuerySingleOrDefaultAsync<GetRecipesDto>(sql, parameters);
 
         if (newRecipe == null)
         {
@@ -91,13 +96,17 @@ public class RecipeRepository
         return newRecipe;
     }
 
-    public async Task<IEnumerable<GetRecipeDto>> GetAllRecipes(int? userId, int? cuisineId)
+    public async Task<IEnumerable<GetRecipesDto>> GetAllRecipes(int? userId, int? cuisineId)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        var sql = "SELECT * FROM \"Recipe\"" +
-                  "WHERE \"ForkedFromId\" IS NULL AND \"OriginalRecipeId\" IS NULL ";
-        var parameters = new DynamicParameters();
+        string sql = "SELECT r.*, " +
+                     "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"ForkedFromId\" = r.\"RecipeId\") as \"DirectForkCount\", " +
+                     "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"OriginalRecipeId\" = r.\"RecipeId\") as \"ForkCount\" " +
+                     "FROM \"Recipe\" r " +
+                     "WHERE r.\"ForkedFromId\" IS NULL AND r.\"OriginalRecipeId\" IS NULL ";
+
+        DynamicParameters parameters = new DynamicParameters();
 
         if (userId != null)
         {
@@ -111,18 +120,21 @@ public class RecipeRepository
             parameters.Add("CuisineId", cuisineId);
         }
 
-        var recipes = await connection.QueryAsync<GetRecipeDto>(sql, parameters);
+        var recipes = await connection.QueryAsync<GetRecipesDto>(sql, parameters);
 
         return recipes;
     }
 
-    public async Task<IEnumerable<GetRecipeDto>> GetForkedRecipes(
+    public async Task<IEnumerable<GetForkedRecipesDto>> GetForkedRecipes(
         int? userId, int? cuisineId, int? forkedFromId, int? originalRecipeId)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        string sql = "SELECT * FROM \"Recipe\"" +
-                  "WHERE \"ForkedFromId\" IS NOT NULL ";
+        string sql = "SELECT r.*, " +
+                     "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"ForkedFromId\" = r.\"RecipeId\") as \"DirectForkCount\" " +
+                     "FROM \"Recipe\" r " +
+                     "WHERE r.\"ForkedFromId\" IS NOT NULL ";
+
         var parameters = new DynamicParameters();
 
         if (userId != null)
@@ -149,7 +161,7 @@ public class RecipeRepository
             parameters.Add("OriginalRecipeId", originalRecipeId);
         }
 
-        var recipes = await connection.QueryAsync<GetRecipeDto>(sql, parameters);
+        var recipes = await connection.QueryAsync<GetForkedRecipesDto>(sql, parameters);
 
         return recipes;
     }

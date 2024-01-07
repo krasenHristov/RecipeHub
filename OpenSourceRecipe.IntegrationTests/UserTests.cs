@@ -519,7 +519,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var response = await _client.SendAsync(request);
         var content = await response.Content.ReadAsStringAsync();
 
-        var recipes = JsonConvert.DeserializeObject<List<GetRecipeDto>>(content);
+        var recipes = JsonConvert.DeserializeObject<List<GetRecipesDto>>(content);
 
         foreach (var recipe in recipes!)
         {
@@ -538,7 +538,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var response = await _client.SendAsync(request);
         var contentString = await response.Content.ReadAsStringAsync();
 
-        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.True(content!.Count > 0);
@@ -553,7 +553,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
 
         var contentString = await response.Content.ReadAsStringAsync();
 
-        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.True(content!.Count == 0);
@@ -567,7 +567,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var response = await _client.SendAsync(request);
         var contentString = await response.Content.ReadAsStringAsync();
 
-        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.True(content!.Count > 0);
@@ -582,7 +582,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
 
         var contentString = await response.Content.ReadAsStringAsync();
 
-        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.True(content!.Count == 0);
@@ -596,7 +596,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var response = await _client.SendAsync(request);
         var contentString = await response.Content.ReadAsStringAsync();
 
-        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
 
         foreach (var recipe in content!)
         {
@@ -616,7 +616,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var response = await _client.SendAsync(request);
         var contentString = await response.Content.ReadAsStringAsync();
 
-        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
 
         foreach (var recipe in content!)
         {
@@ -637,7 +637,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
 
         var contentString = await response.Content.ReadAsStringAsync();
 
-        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.True(content!.Count == 0);
@@ -651,7 +651,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var response = await _client.SendAsync(request);
         var contentString = await response.Content.ReadAsStringAsync();
 
-        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
 
         foreach (var recipe in content!)
         {
@@ -673,7 +673,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
 
         var contentString = await response.Content.ReadAsStringAsync();
 
-        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.True(content!.Count == 0);
@@ -687,7 +687,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var response = await _client.SendAsync(request);
         var contentString = await response.Content.ReadAsStringAsync();
 
-        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
 
         foreach (var recipe in content!)
         {
@@ -709,7 +709,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
 
         var contentString = await response.Content.ReadAsStringAsync();
 
-        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.True(content!.Count == 0);
@@ -723,7 +723,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var response = await _client.SendAsync(request);
         var contentString = await response.Content.ReadAsStringAsync();
 
-        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
 
         foreach (var recipe in content!)
         {

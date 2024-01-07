@@ -8,7 +8,7 @@ namespace OpenSourceRecipe.Controllers;
 public class RecipeController(RecipeRepository recipeRepository) : ControllerBase
 {
     [HttpPost("api/recipes")]
-    public async Task<ActionResult<GetRecipeDto>> CreateRecipe(CreateRecipeDto recipe)
+    public async Task<ActionResult<GetRecipesDto>> CreateRecipe(CreateRecipeDto recipe)
     {
         try
         {
@@ -21,7 +21,7 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
     }
 
     [HttpGet("api/recipes")]
-    public async Task<ActionResult<IEnumerable<GetRecipeDto>>> GetAllRecipes(int? userId = null, int? cuisineId = null)
+    public async Task<ActionResult<IEnumerable<GetRecipesDto>>> GetAllRecipes(int? userId = null, int? cuisineId = null)
     {
         try
         {
@@ -68,7 +68,7 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
     }
 
     [HttpGet("api/recipes/forks")]
-    public async Task<ActionResult<IEnumerable<GetRecipeDto>>> GetForkedRecipes(
+    public async Task<ActionResult<IEnumerable<GetRecipesDto>>> GetForkedRecipes(
         int? userId = null, int? cuisineId = null, int? forkedFromId = null, int? originalRecipeId = null)
     {
         try
