@@ -62,15 +62,14 @@ public class CreateRecipeDto
     public string? RecipeImg { get; set; }
     [Required]
     public string? Cuisine { get; set; }
+    public int UserId { get; set; }
     public int? ForkedFromId { get; set; } = null;
     public int? OriginalRecipeId { get; set; } = null;
-    [Required]
-    public int UserId { get; set; }
     [Required]
     public int CuisineId { get; set; }
 }
 
-public class GetRecipeDto
+public class GetRecipesDto
 {
     public int RecipeId { get; set; }
     public string? RecipeTitle { get; set; }
@@ -85,6 +84,26 @@ public class GetRecipeDto
     public int? OriginalRecipeId { get; set; } = null;
     public int UserId { get; set; }
     public int CuisineId { get; set; }
+    public int ForkCount { get; set; }
+    public int DirectForkCount { get; set; }
+}
+
+public class GetForkedRecipesDto
+{
+    public int RecipeId { get; set; }
+    public string? RecipeTitle { get; set; }
+    public string? TagLine { get; set; }
+    public int Difficulty { get; set; }
+    public int TimeToPrepare { get; set; }
+    public string? RecipeMethod { get; set; }
+    public string? PostedOn { get; set; }
+    public string? RecipeImg { get; set; }
+    public string? Cuisine { get; set; }
+    public int? ForkedFromId { get; set; } = null;
+    public int? OriginalRecipeId { get; set; } = null;
+    public int UserId { get; set; }
+    public int CuisineId { get; set; }
+    public int DirectForkCount { get; set; }
 }
 
 public class GetRecipeByIdDto
@@ -102,5 +121,7 @@ public class GetRecipeByIdDto
     public int? OriginalRecipeId { get; set; } = null;
     public int UserId { get; set; }
     public int CuisineId { get; set; }
+    public int ForkCount { get; set; }
+    public int DirectForkCount { get; set; }
     public List<IngredientRecipeDto>? RecipeIngredients { get; set; }
 }
