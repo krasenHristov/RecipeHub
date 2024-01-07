@@ -32,19 +32,8 @@ namespace OpenSourceRecipes.Seeds
             var recipesObject = new RecipesData();
             var recipeArr = recipesObject.GetRecipes();
 
-            var ingredients = new int[][]
-            {
-                new int[] {1, 2, 3, 4},
-                new int[] {5, 6, 7, 8},
-                new int[] {9, 10, 11, 12},
-            };
-
-            var quantity = new string[][]
-            {
-                new string[] {"12g", "25g", "36g", "43g"},
-                new string[] {"5g", "6g", "7g", "8g"},
-                new string[] {"100g", "200g", "125g", "1"},
-            };
+            var ingredients = recipesObject.ingredients();
+            var quantity = recipesObject.quantities();
 
             List<MyRecipeObject> insertedRecipes = new List<MyRecipeObject>();
 

@@ -387,11 +387,18 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         // get all recipes
         var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes");
         var response = await _client.SendAsync(request);
-        var content = await response.Content.ReadAsStreamAsync();
+        var content = await response.Content.ReadAsStringAsync();
+
+        var recipes = JsonConvert.DeserializeObject<List<GetRecipeDto>>(content);
+
+        foreach (var recipe in recipes!)
+        {
+            Assert.Null(recipe.ForkedFromId);
+            Assert.Null(recipe.OriginalRecipeId);
+        }
 
         // assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        Assert.NotNull(content);
     }
 
     [Fact]
@@ -449,6 +456,154 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.True(content!.Count == 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetAllForkedRecipes_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks");
+        var response = await _client.SendAsync(request);
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+
+        foreach (var recipe in content!)
+        {
+            Assert.NotNull(recipe.ForkedFromId);
+            Assert.NotNull(recipe.OriginalRecipeId);
+        }
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count > 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetAllForkedRecipesByCuisine_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?cuisineId=3");
+        var response = await _client.SendAsync(request);
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+
+        foreach (var recipe in content!)
+        {
+            Assert.NotNull(recipe.ForkedFromId);
+            Assert.NotNull(recipe.OriginalRecipeId);
+        }
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count > 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetAllForkedRecipesByCuisine_ShouldReturnAnEmptyList()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?cuisineId=9999");
+        var response = await _client.SendAsync(request);
+
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count == 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetAllForkedRecipesByUser_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?userId=1");
+        var response = await _client.SendAsync(request);
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+
+        foreach (var recipe in content!)
+        {
+            Assert.NotNull(recipe.ForkedFromId);
+            Assert.NotNull(recipe.OriginalRecipeId);
+            Assert.Equal(1, recipe.UserId);
+        }
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count > 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetAllForkedRecipesByUser_ShouldReturnAnEmptyList()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?userId=9999");
+        var response = await _client.SendAsync(request);
+
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count == 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetAllForkedRecipesByForkedFromId_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?forkedFromId=3");
+        var response = await _client.SendAsync(request);
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+
+        foreach (var recipe in content!)
+        {
+            Assert.NotNull(recipe.ForkedFromId);
+            Assert.NotNull(recipe.OriginalRecipeId);
+            Assert.Equal(3, recipe.ForkedFromId);
+        }
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count > 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetAllForkedRecipesByForkedFromId_ShouldReturnAnEmptyList()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?forkedFromId=9999");
+        var response = await _client.SendAsync(request);
+
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count == 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetAllForkedRecipesByOriginalRecipeId_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?originalRecipeId=3");
+        var response = await _client.SendAsync(request);
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+
+        foreach (var recipe in content!)
+        {
+            Assert.NotNull(recipe.ForkedFromId);
+            Assert.NotNull(recipe.OriginalRecipeId);
+            Assert.Equal(3, recipe.OriginalRecipeId);
+        }
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count > 0);
         Assert.NotNull(content);
     }
 

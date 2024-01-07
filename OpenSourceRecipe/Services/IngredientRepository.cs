@@ -54,12 +54,12 @@ public class IngredientRepository
         return newIngredient;
     }
 
-    public async Task<IEnumerable<GetIngredientDto>> GetAllIngredients()
+    public async Task<IEnumerable<GetAllIngredientsDto>> GetAllIngredients()
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        var sql = "SELECT * FROM \"Ingredient\"";
-        var ingredients = await connection.QueryAsync<GetIngredientDto>(sql);
+        var sql = "SELECT \"IngredientId\", \"IngredientName\" FROM \"Ingredient\" ORDER BY \"IngredientId\" ASC";
+        var ingredients = await connection.QueryAsync<GetAllIngredientsDto>(sql);
 
         return ingredients;
     }

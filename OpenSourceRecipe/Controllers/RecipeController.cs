@@ -66,4 +66,18 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
             return BadRequest(e.Message);
         }
     }
+
+    [HttpGet("api/recipes/forks")]
+    public async Task<ActionResult<IEnumerable<GetRecipeDto>>> GetForkedRecipes(
+        int? userId = null, int? cuisineId = null, int? forkedFromId = null, int? originalRecipeId = null)
+    {
+        try
+        {
+            return Ok(await recipeRepository.GetForkedRecipes(userId, cuisineId, forkedFromId, originalRecipeId));
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }

@@ -95,7 +95,8 @@ public class RecipeRepository
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        var sql = "SELECT * FROM \"Recipe\" WHERE 1=1 ";
+        var sql = "SELECT * FROM \"Recipe\"" +
+                  "WHERE \"ForkedFromId\" IS NULL AND \"OriginalRecipeId\" IS NULL ";
         var parameters = new DynamicParameters();
 
         if (userId != null)
@@ -108,6 +109,44 @@ public class RecipeRepository
         {
             sql += "AND \"CuisineId\" = @CuisineId";
             parameters.Add("CuisineId", cuisineId);
+        }
+
+        var recipes = await connection.QueryAsync<GetRecipeDto>(sql, parameters);
+
+        return recipes;
+    }
+
+    public async Task<IEnumerable<GetRecipeDto>> GetForkedRecipes(
+        int? userId, int? cuisineId, int? forkedFromId, int? originalRecipeId)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        string sql = "SELECT * FROM \"Recipe\"" +
+                  "WHERE \"ForkedFromId\" IS NOT NULL ";
+        var parameters = new DynamicParameters();
+
+        if (userId != null)
+        {
+            sql += "AND \"UserId\" = @UserId ";
+            parameters.Add("UserId", userId);
+        }
+
+        if (cuisineId != null)
+        {
+            sql += "AND \"CuisineId\" = @CuisineId ";
+            parameters.Add("CuisineId", cuisineId);
+        }
+
+        if (forkedFromId != null)
+        {
+            sql += "AND \"ForkedFromId\" = @ForkedFromId ";
+            parameters.Add("ForkedFromId", forkedFromId);
+        }
+
+        if (originalRecipeId != null)
+        {
+            sql += "AND \"OriginalRecipeId\" = @OriginalRecipeId ";
+            parameters.Add("OriginalRecipeId", originalRecipeId);
         }
 
         var recipes = await connection.QueryAsync<GetRecipeDto>(sql, parameters);

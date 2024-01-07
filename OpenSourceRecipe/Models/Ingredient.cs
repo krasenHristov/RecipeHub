@@ -62,3 +62,9 @@ public class IngredientRecipeDto
     public string? Fat { get; set; }
     public string? Protein { get; set; }
 }
+
+public class GetAllIngredientsDto
+{
+    public int IngredientId { get; set; }
+    public string? IngredientName { get; set; }
+}
