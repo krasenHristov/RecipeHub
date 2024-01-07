@@ -91,13 +91,26 @@ public class RecipeRepository
         return newRecipe;
     }
 
-    public async Task<IEnumerable<GetRecipeDto>> GetAllRecipes()
+    public async Task<IEnumerable<GetRecipeDto>> GetAllRecipes(int? userId, int? cuisineId)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        var sql = "SELECT * FROM \"Recipe\"";
+        var sql = "SELECT * FROM \"Recipe\" WHERE 1=1 ";
+        var parameters = new DynamicParameters();
 
-        var recipes = await connection.QueryAsync<GetRecipeDto>(sql);
+        if (userId != null)
+        {
+            sql += "AND \"UserId\" = @UserId ";
+            parameters.Add("UserId", userId);
+        }
+
+        if (cuisineId != null)
+        {
+            sql += "AND \"CuisineId\" = @CuisineId";
+            parameters.Add("CuisineId", cuisineId);
+        }
+
+        var recipes = await connection.QueryAsync<GetRecipeDto>(sql, parameters);
 
         return recipes;
     }

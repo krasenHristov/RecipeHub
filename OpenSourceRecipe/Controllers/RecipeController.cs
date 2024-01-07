@@ -21,11 +21,11 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
     }
 
     [HttpGet("api/recipes")]
-    public async Task<ActionResult<IEnumerable<GetRecipeDto>>> GetAllRecipes()
+    public async Task<ActionResult<IEnumerable<GetRecipeDto>>> GetAllRecipes(int? userId = null, int? cuisineId = null)
     {
         try
         {
-            return Ok(await recipeRepository.GetAllRecipes());
+            return Ok(await recipeRepository.GetAllRecipes(userId, cuisineId));
         }
         catch (Exception e)
         {
