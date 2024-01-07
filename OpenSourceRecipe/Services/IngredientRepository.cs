@@ -1,7 +1,4 @@
-using System.Security.Claims;
-using System.Text;
 using Dapper;
-using Microsoft.AspNetCore.Identity;
 using Npgsql;
 using OpenSourceRecipes.Models;
 

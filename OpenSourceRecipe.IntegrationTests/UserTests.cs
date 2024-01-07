@@ -486,4 +486,23 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         //Assert
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
+
+    // CUISINE TESTS
+    [Fact]
+    public async Task GetAllCuisines_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/cuisines");
+        var response = await _client.SendAsync(request);
+
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var cuisines = JsonConvert.DeserializeObject<List<GetCuisineDto>>(contentString);
+        int length = cuisines!.Count;
+
+        // assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(length > 0);
+        Assert.NotNull(cuisines);
+    }
+
 }
