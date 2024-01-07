@@ -395,6 +395,64 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     }
 
     [Fact]
+    public async Task GetAllRecipesByCuisine_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes?cuisineId=1");
+        var response = await _client.SendAsync(request);
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count > 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetAllRecipesByCuisine_ShouldReturnAnEmptyList()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes?cuisineId=9999");
+        var response = await _client.SendAsync(request);
+
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count == 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetAllRecipesByUser_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes?userId=1");
+        var response = await _client.SendAsync(request);
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count > 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetAllRecipesByUser_ShouldReturnAnEmptyList()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes?userId=9999");
+        var response = await _client.SendAsync(request);
+
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipeDto>>(contentString);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count == 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
     public async Task GetRecipeByIdEndpoint_ShouldSucceed()
     {
         // get recipe by id
