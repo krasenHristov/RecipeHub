@@ -6,7 +6,7 @@ public class RecipeRatingsRepository
 {
     private readonly IConfiguration _configuration;
     private readonly string? _connectionString;
-        public RecipeRepository(IConfiguration configuration)
+        public RecipeRatingsRepository(IConfiguration configuration)
     {
         this._configuration = configuration;
 
@@ -25,7 +25,7 @@ public class RecipeRatingsRepository
             _connectionString = "DefaultConnection";
         }
     }
-    
+
     public async Task<RecipeRatingDto> CreateRecipeRating(RecipeRatingDto ratingDetails)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
@@ -35,7 +35,7 @@ public class RecipeRatingsRepository
             throw new Exception("Rating is invalid.");
         }
 
-        var parameters = new DynamicParameters(); 
+        var parameters = new DynamicParameters();
         parameters.Add("RecipeId", ratingDetails.RecipeId);
         parameters.Add("UserId", ratingDetails.UserId);
         parameters.Add("Rating", ratingDetails.Rating);
@@ -63,7 +63,7 @@ public class RecipeRatingsRepository
             throw new Exception("Rating is invalid.");
         }
 
-        var parameters = new DynamicParameters(); 
+        var parameters = new DynamicParameters();
         parameters.Add("RecipeId", ratingDetails.RecipeId);
         parameters.Add("UserId", ratingDetails.UserId);
         parameters.Add("Rating", ratingDetails.Rating);

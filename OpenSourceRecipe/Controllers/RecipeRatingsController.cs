@@ -1,7 +1,6 @@
-using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OpenSourceRecipes.Models;
-using OpenSourceRecipes.Services;
 
 namespace OpenSourceRecipe.Controllers;
 
@@ -9,6 +8,7 @@ namespace OpenSourceRecipe.Controllers;
 public class RecipeRatingsController(RecipeRatingsRepository recipeRatingsRepository) : ControllerBase
 {
     [HttpPost("api/recipes/rating")]
+    [Authorize]
     public async Task<ActionResult> PostRecipeRating(RecipeRatingDto ratingDetails)
     {
         try
@@ -30,6 +30,7 @@ public class RecipeRatingsController(RecipeRatingsRepository recipeRatingsReposi
     }
 
     [HttpPatch("api/recipes/rating")]
+    [Authorize]
     public async Task<ActionResult> PatchRecipeRating(RecipeRatingDto ratingDetails)
     {
         try
