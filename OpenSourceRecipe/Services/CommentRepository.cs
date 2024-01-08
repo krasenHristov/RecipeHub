@@ -69,12 +69,27 @@ public class CommentRepository
         return;
     }
 
-    public async Task<GetCommentDto> GetCommentById(int commentId)
+    public async Task<GetCommentDto?> GetCommentById(int commentId)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
         string query = $"SELECT * FROM \"RecipeComment\" WHERE \"CommentId\" = @CommentId;";
 
         return await connection.QueryFirstOrDefaultAsync<GetCommentDto>(query, new { CommentId = commentId });
+    }
+
+    public async Task<GetCommentDto?> UpdateComment(int commentId, EditCommentBodyDto comment)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        string query = $"UPDATE \"RecipeComment\" " +
+                        "SET \"Comment\" = @Comment " +
+                        "WHERE \"CommentId\" = @CommentId " +
+                        "RETURNING *;";
+
+        DynamicParameters parameters = new DynamicParameters(comment);
+        parameters.Add("CommentId", commentId);
+
+        return await connection.QueryFirstOrDefaultAsync<GetCommentDto>(query, parameters);
     }
 }

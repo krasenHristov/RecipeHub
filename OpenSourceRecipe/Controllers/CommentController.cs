@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using OpenSourceRecipes.Models;
 using OpenSourceRecipes.Services;
 
@@ -80,6 +81,42 @@ public class CommentController(CommentRepository commentRepository) : Controller
         catch (Exception e)
         {
             return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
+        }
+    }
+
+    [HttpPatch("api/comments/{commentId}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize]
+    public async Task<ActionResult<GetCommentDto?>> UpdateComment(int commentId, EditCommentBodyDto comment)
+    {
+        try
+        {
+            GetCommentDto? commentFromDb = await commentRepository.GetCommentById(commentId);
+
+            if (commentFromDb == null)
+            {
+                return NotFound();
+            }
+
+            string? userIdFromToken = User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value;
+
+            if (userIdFromToken != commentFromDb.UserId.ToString())
+            {
+                return Unauthorized();
+            }
+
+            if (comment.Comment.IsNullOrEmpty())
+            {
+                return BadRequest("Comment cannot empty");
+            }
+
+            return Ok(await commentRepository.UpdateComment(commentId, comment));
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
         }
     }
 }
