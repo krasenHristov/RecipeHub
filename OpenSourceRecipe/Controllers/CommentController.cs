@@ -24,13 +24,29 @@ public class CommentController(CommentRepository commentRepository) : Controller
                 return Unauthorized();
             }
 
-            Console.WriteLine(username);
+            GetCommentDto? newComment = await commentRepository.CreateComment(comment);
 
-            return await commentRepository.CreateComment(comment);
+            return CreatedAtAction(nameof(CreateComment), newComment);
         }
         catch (Exception e)
         {
             return BadRequest(e.Message);
+        }
+    }
+
+    [HttpGet("api/comments/{recipeId}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<ActionResult<IEnumerable<GetCommentDto>>> GetCommentsByRecipeId(int recipeId)
+    {
+        try
+        {
+            return Ok(await commentRepository.GetCommentsByRecipeId(recipeId));
+        }
+        catch (Exception e)
+        {
+            return NotFound(e.Message);
         }
     }
 }
