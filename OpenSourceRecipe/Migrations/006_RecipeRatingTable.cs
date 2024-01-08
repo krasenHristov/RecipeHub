@@ -11,7 +11,7 @@ public class CreateRecipeRatingTable : Migration
                     "(" +
                     "\"RecipeId\" INT NOT NULL REFERENCES \"Recipe\" (\"RecipeId\") ON DELETE CASCADE," +
                     "\"UserId\" INT NOT NULL REFERENCES \"User\" (\"UserId\") ON DELETE CASCADE," +
-                    "\"RATING\" INT NOT NULL" +
+                    "\"Rating\" INT NOT NULL" +
                     ");"
                     );
     }

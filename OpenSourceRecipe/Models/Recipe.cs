@@ -86,6 +86,8 @@ public class GetRecipesDto
     public int CuisineId { get; set; }
     public int ForkCount { get; set; }
     public int DirectForkCount { get; set; }
+    public int RatingCount { get; set; } = 0;
+    public double AverageRating { get; set; } = 0;
 }
 
 public class GetForkedRecipesDto
@@ -104,6 +106,8 @@ public class GetForkedRecipesDto
     public int UserId { get; set; }
     public int CuisineId { get; set; }
     public int DirectForkCount { get; set; }
+    public int RatingCount { get; set; } = 0;
+    public double AverageRating { get; set; } = 0;
 }
 
 public class GetRecipeByIdDto
@@ -123,5 +127,7 @@ public class GetRecipeByIdDto
     public int CuisineId { get; set; }
     public int ForkCount { get; set; }
     public int DirectForkCount { get; set; }
+    public int RatingCount { get; set; } = 0;
+    public double AverageRating { get; set; } = 0;
     public List<IngredientRecipeDto>? RecipeIngredients { get; set; }
 }

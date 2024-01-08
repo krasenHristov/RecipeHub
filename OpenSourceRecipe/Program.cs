@@ -183,12 +183,14 @@ if (env == "Testing" || env == "Development")
     var cuisineSeed = new SeedCuisineData(builder.Configuration);
     var recipeSeed = new SeedRecipeData(builder.Configuration);
     var commentSeed = new SeedCommentsData(builder.Configuration);
+    var ratingSeed = new SeedRecipeRatingData(builder.Configuration);
 
     await userseed.InsertIntoUser(connectionStringName);
     await ingredientSeed.InsertIntoFood(connectionStringName);
     await cuisineSeed.InsertIntoCuisine(connectionStringName);
     await recipeSeed.InsertIntoRecipe(connectionStringName);
     await commentSeed.InsertIntoComments(connectionStringName);
+    await ratingSeed.InsertIntoRatings(connectionStringName);
 }
 
 if (env == "Production")

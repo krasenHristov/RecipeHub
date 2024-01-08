@@ -42,9 +42,13 @@ public class RecipeRepository
 
         string recipeSql = "SELECT r.*, " +
                            "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"ForkedFromId\" = r.\"RecipeId\") as \"DirectForkCount\", " +
-                           "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"OriginalRecipeId\" = r.\"RecipeId\") as \"ForkCount\" " +
+                           "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"OriginalRecipeId\" = r.\"RecipeId\") as \"ForkCount\", " +
+                           "COALESCE(ROUND(AVG(rr.\"Rating\")::NUMERIC, 2), 0) as \"AverageRating\", " +
+                           "COUNT(rr.\"UserId\") as \"RatingCount\" " +
                            "FROM \"Recipe\" r " +
-                           "WHERE \"RecipeId\" = @RecipeId";
+                           "LEFT JOIN \"RecipeRating\" rr ON r.\"RecipeId\" = rr.\"RecipeId\" " +
+                           "WHERE r.\"RecipeId\" = @RecipeId " +
+                           "GROUP BY r.\"RecipeId\";";
 
         var recipe = await connection.QueryFirstOrDefaultAsync<GetRecipeByIdDto>(recipeSql, new {RecipeId = recipeId});
 
@@ -102,23 +106,28 @@ public class RecipeRepository
 
         string sql = "SELECT r.*, " +
                      "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"ForkedFromId\" = r.\"RecipeId\") as \"DirectForkCount\", " +
-                     "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"OriginalRecipeId\" = r.\"RecipeId\") as \"ForkCount\" " +
+                     "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"OriginalRecipeId\" = r.\"RecipeId\") as \"ForkCount\", " +
+                     "COALESCE(ROUND(AVG(rr.\"Rating\")::NUMERIC, 2), 0) as \"AverageRating\", " +
+                     "COUNT(rr.\"UserId\") as \"RatingCount\" " +
                      "FROM \"Recipe\" r " +
-                     "WHERE r.\"ForkedFromId\" IS NULL AND r.\"OriginalRecipeId\" IS NULL ";
+                     "LEFT JOIN \"RecipeRating\" rr ON r.\"RecipeId\" = rr.\"RecipeId\" " +
+                     "WHERE r.\"ForkedFromId\" IS NULL ";
 
         DynamicParameters parameters = new DynamicParameters();
 
         if (userId != null)
         {
-            sql += "AND \"UserId\" = @UserId ";
+            sql += "AND r.\"UserId\" = @UserId ";
             parameters.Add("UserId", userId);
         }
 
         if (cuisineId != null)
         {
-            sql += "AND \"CuisineId\" = @CuisineId";
+            sql += "AND r.\"CuisineId\" = @CuisineId ";
             parameters.Add("CuisineId", cuisineId);
         }
+
+        sql += " GROUP BY r.\"RecipeId\";";
 
         var recipes = await connection.QueryAsync<GetRecipesDto>(sql, parameters);
 
@@ -131,35 +140,40 @@ public class RecipeRepository
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
         string sql = "SELECT r.*, " +
-                     "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"ForkedFromId\" = r.\"RecipeId\") as \"DirectForkCount\" " +
+                     "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"ForkedFromId\" = r.\"RecipeId\") as \"DirectForkCount\", " +
+                     "COALESCE(ROUND(AVG(rr.\"Rating\")::NUMERIC, 2), 0) as \"AverageRating\", " +
+                     "COUNT(rr.\"UserId\") as \"RatingCount\" " +
                      "FROM \"Recipe\" r " +
+                     "LEFT JOIN \"RecipeRating\" rr ON r.\"RecipeId\" = rr.\"RecipeId\" " +
                      "WHERE r.\"ForkedFromId\" IS NOT NULL ";
 
         var parameters = new DynamicParameters();
 
         if (userId != null)
         {
-            sql += "AND \"UserId\" = @UserId ";
+            sql += "AND r.\"UserId\" = @UserId ";
             parameters.Add("UserId", userId);
         }
 
         if (cuisineId != null)
         {
-            sql += "AND \"CuisineId\" = @CuisineId ";
+            sql += "AND r.\"CuisineId\" = @CuisineId ";
             parameters.Add("CuisineId", cuisineId);
         }
 
         if (forkedFromId != null)
         {
-            sql += "AND \"ForkedFromId\" = @ForkedFromId ";
+            sql += "AND r.\"ForkedFromId\" = @ForkedFromId ";
             parameters.Add("ForkedFromId", forkedFromId);
         }
 
         if (originalRecipeId != null)
         {
-            sql += "AND \"OriginalRecipeId\" = @OriginalRecipeId ";
+            sql += "AND r.\"OriginalRecipeId\" = @OriginalRecipeId ";
             parameters.Add("OriginalRecipeId", originalRecipeId);
         }
+
+        sql += " GROUP BY r.\"RecipeId\";";
 
         var recipes = await connection.QueryAsync<GetForkedRecipesDto>(sql, parameters);
 
