@@ -39,11 +39,11 @@ public class CommentController(CommentRepository commentRepository) : Controller
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<IEnumerable<GetCommentDto>>> GetCommentsByRecipeId(int recipeId)
+    public async Task<ActionResult<IEnumerable<GetCommentDto>>> GetCommentsByRecipeId(int recipeId, int userId)
     {
         try
         {
-            return Ok(await commentRepository.GetCommentsByRecipeId(recipeId));
+            return Ok(await commentRepository.GetCommentsByRecipeId(recipeId, userId));
         }
         catch (Exception e)
         {

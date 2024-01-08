@@ -42,6 +42,12 @@ public class GetCommentDto
     public string? Author { get; set; }
 
     public string? PostedOn { get; set; }
+
+    public int Upvotes { get; set; }
+
+    public int Downvotes { get; set; }
+
+    public string? CurrUserVote { get; set; } = null;
 }
 
 public class EditCommentBodyDto

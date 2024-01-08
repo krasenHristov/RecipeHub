@@ -40,7 +40,7 @@ public class CommentRepository
         return await connection.QueryFirstOrDefaultAsync<GetCommentDto>(query, comment);
     }
 
-    public async Task<IEnumerable<GetCommentDto>> GetCommentsByRecipeId(int recipeId)
+    public async Task<IEnumerable<GetCommentDto>> GetCommentsByRecipeId(int recipeId, int userId)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
@@ -53,9 +53,40 @@ public class CommentRepository
             throw new Exception("Recipe does not exist");
         }
 
-        string query = $"SELECT * FROM \"RecipeComment\" WHERE \"RecipeId\" = @RecipeId;";
+        string query = @"
+            SELECT
+            rc.*,
+            v.""Upvotes"",
+            v.""Downvotes"",
+            COALESCE(ucv.""CurrentUserVote"", 'none') AS ""CurrUserVote""
+            FROM
+            ""RecipeComment"" rc
+            LEFT JOIN
+            (SELECT
+                ""CommentId"",
+                COUNT(CASE WHEN ""Upvote"" = true THEN 1 END) AS ""Upvotes"",
+                COUNT(CASE WHEN ""Upvote"" = false THEN 1 END) AS ""Downvotes""
+             FROM
+                ""CommentVote""
+             GROUP BY ""CommentId"") v ON rc.""CommentId"" = v.""CommentId""
+            LEFT JOIN
+            (SELECT
+                ""CommentId"",
+                CASE WHEN ""Upvote"" IS TRUE THEN 'up'
+                     WHEN ""Upvote"" IS FALSE THEN 'down'
+                END AS ""CurrentUserVote""
+             FROM
+                ""CommentVote""
+             WHERE
+                ""UserId"" = @UserId) ucv ON rc.""CommentId"" = ucv.""CommentId""
+            WHERE
+            rc.""RecipeId"" = @RecipeId;";
 
-        return await connection.QueryAsync<GetCommentDto>(query, new { RecipeId = recipeId });
+        DynamicParameters parameters = new DynamicParameters();
+        parameters.Add("RecipeId", recipeId);
+        parameters.Add("UserId", userId);
+
+        return await connection.QueryAsync<GetCommentDto>(query, parameters);
     }
 
     public async Task DeleteComment(int commentId)
