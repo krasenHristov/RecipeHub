@@ -1350,4 +1350,98 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         // assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
     }
+
+    [Fact]
+    public async Task DeleteCommentEndpoint_ShouldSucceed()
+    {
+        var userLogin = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(userLogin), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+
+        var userDetails = loginResponse.Content.ReadAsStringAsync().Result;
+
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
+
+        // get recipe by id
+        var request = new HttpRequestMessage(HttpMethod.Delete, "api/comments/39");
+        var response = await _client.SendAsync(request);
+
+        // assert
+        Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
+
+        var getCommentRequest = new HttpRequestMessage(HttpMethod.Get, "api/comments/39");
+        var getCommentResponse = await _client.SendAsync(getCommentRequest);
+
+        Assert.Equal(HttpStatusCode.NotFound, getCommentResponse.StatusCode);
+    }
+
+    [Fact]
+    public async Task DeleteCommentEndpointNoComment_ShouldFail()
+    {
+        var userLogin = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(userLogin), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+
+        var userDetails = loginResponse.Content.ReadAsStringAsync().Result;
+
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
+
+        // get recipe by id
+        var request = new HttpRequestMessage(HttpMethod.Delete, "api/comments/9999");
+        var response = await _client.SendAsync(request);
+
+        // assert
+        Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task DeleteAnotherUserComment_ShouldFail()
+    {
+        var userLogin = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(userLogin), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+
+        var userDetails = loginResponse.Content.ReadAsStringAsync().Result;
+
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
+
+        var request = new HttpRequestMessage(HttpMethod.Delete, "api/comments/40");
+
+        var response = await _client.SendAsync(request);
+
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
 }

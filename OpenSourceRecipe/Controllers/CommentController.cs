@@ -49,4 +49,37 @@ public class CommentController(CommentRepository commentRepository) : Controller
             return NotFound(e.Message);
         }
     }
+
+    [HttpDelete("api/comments/{commentId}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize]
+    public async Task<ActionResult> DeleteComment(int commentId)
+    {
+        try
+        {
+            GetCommentDto? comment = await commentRepository.GetCommentById(commentId);
+
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            string? userIdFromToken = User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value;
+
+            if (userIdFromToken != comment.UserId.ToString())
+            {
+                return Unauthorized();
+            }
+
+            await commentRepository.DeleteComment(commentId);
+
+            return NoContent();
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
+        }
+    }
 }
