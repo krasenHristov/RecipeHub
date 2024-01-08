@@ -184,6 +184,7 @@ if (env == "Testing" || env == "Development")
     var recipeSeed = new SeedRecipeData(builder.Configuration);
     var commentSeed = new SeedCommentsData(builder.Configuration);
     var ratingSeed = new SeedRecipeRatingData(builder.Configuration);
+    var commentVoteSeed = new SeedCommentVotesData(builder.Configuration);
 
     await userseed.InsertIntoUser(connectionStringName);
     await ingredientSeed.InsertIntoFood(connectionStringName);
@@ -191,6 +192,7 @@ if (env == "Testing" || env == "Development")
     await recipeSeed.InsertIntoRecipe(connectionStringName);
     await commentSeed.InsertIntoComments(connectionStringName);
     await ratingSeed.InsertIntoRatings(connectionStringName);
+    await commentVoteSeed.InsertIntoCommentVotes(connectionStringName);
 }
 
 if (env == "Production")
