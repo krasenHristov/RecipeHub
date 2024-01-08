@@ -142,13 +142,6 @@ class CommentVotesData
             new VoteObject
             {
                 UserId = 1,
-                CommentId = 20,
-                UpVote = true
-            },
-
-            new VoteObject
-            {
-                UserId = 1,
                 CommentId = 21,
                 UpVote = true
             },

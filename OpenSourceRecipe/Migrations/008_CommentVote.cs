@@ -28,20 +28,20 @@ public class AddOnDeleteCascadeToCommentVoteTable : Migration
     public override void Up()
     {
         Execute.Sql("ALTER TABLE \"CommentVote\" " +
-                    "DROP CONSTRAINT \"CommentVote_UserId_fkey\" CASCADE;" +
-                    "ALTER TABLE \"CommentVote\" " +
-                    "DROP CONSTRAINT \"CommentVote_CommentId_fkey\" CASCADE;" +
-                    "ALTER TABLE \"CommentVote\" " +
-                    "ADD CONSTRAINT \"CommentVote_UserId_fkey\" " +
-                    "FOREIGN KEY (\"UserId\") " +
-                    "REFERENCES \"User\" (\"UserId\") " +
-                    "ON DELETE CASCADE;" +
-                    "ALTER TABLE \"CommentVote\" " +
-                    "ADD CONSTRAINT \"CommentVote_CommentId_fkey\" " +
-                    "FOREIGN KEY (\"CommentId\") " +
-                    "REFERENCES \"RecipeComment\" (\"CommentId\") " +
-                    "ON DELETE CASCADE;"
-                    );
+            "DROP CONSTRAINT \"CommentVote_UserId_fkey\" CASCADE;" +
+            "ALTER TABLE \"CommentVote\" " +
+            "DROP CONSTRAINT \"CommentVote_CommentId_fkey\" CASCADE;" +
+            "ALTER TABLE \"CommentVote\" " +
+            "ADD CONSTRAINT \"CommentVote_UserId_fkey\" " +
+            "FOREIGN KEY (\"UserId\") " +
+            "REFERENCES \"User\" (\"UserId\") " +
+            "ON DELETE CASCADE;" +
+            "ALTER TABLE \"CommentVote\" " +
+            "ADD CONSTRAINT \"CommentVote_CommentId_fkey\" " +
+            "FOREIGN KEY (\"CommentId\") " +
+            "REFERENCES \"RecipeComment\" (\"CommentId\") " +
+            "ON DELETE CASCADE;"
+            );
          Execute.Sql("ALTER TABLE \"CommentVote\" ADD CONSTRAINT \"UniqueCommentUser\" UNIQUE (\"CommentId\", \"UserId\");");
 
     }
@@ -61,7 +61,5 @@ public class AddOnDeleteCascadeToCommentVoteTable : Migration
             "FOREIGN KEY (\"CommentId\") " +
             "REFERENCES \"RecipeComment\" (\"CommentId\");"
             );
-                    
-            Execute.Sql("ALTER TABLE \"CommentVote\" DROP CONSTRAINT \"UniqueCommentUser\";");
      }
 }
