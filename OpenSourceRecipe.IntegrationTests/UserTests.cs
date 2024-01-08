@@ -1444,4 +1444,115 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
 
         Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
     }
+
+    [Fact]
+    public async Task UpdateCommentBody_ShouldSucceed()
+    {
+        var userLogin = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(userLogin), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+
+        var userDetails = loginResponse.Content.ReadAsStringAsync().Result;
+
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
+
+        var request = new HttpRequestMessage(HttpMethod.Patch, $"api/comments/20")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(new { Comment = "This is a test comment update" }), Encoding.UTF8, "application/json")
+        };
+
+        var response = await _client.SendAsync(request);
+
+        // deserialize response
+        var content = await response.Content.ReadAsStringAsync();
+        var comment = JsonConvert.DeserializeObject<GetCommentDto>(content);
+
+        // Assert - Ensure the request was successful
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal("This is a test comment update", comment!.Comment);
+    }
+
+    [Fact]
+    public async Task UpdateCommentBodyWithWrongUser_ShouldFail()
+    {
+        // Arrange - login user
+        var newUser = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newUser), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+        loginResponse.EnsureSuccessStatusCode();
+
+        var userDetails = loginResponse.Content.ReadAsStringAsync().Result;
+
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
+
+        // Act - Call the API
+        var request = new HttpRequestMessage(HttpMethod.Patch, $"api/comments/5")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(new { Comment = "This is a test comment update" }), Encoding.UTF8, "application/json")
+        };
+
+        var response = await _client.SendAsync(request);
+
+        // Assert - Ensure the request was successful
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task UpdateCommentBodyWithNoComment_ShouldFail()
+    {
+        // Arrange - login user
+        var newUser = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newUser), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+        loginResponse.EnsureSuccessStatusCode();
+
+        var userDetails = loginResponse.Content.ReadAsStringAsync().Result;
+
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
+
+        // Act - Call the API
+        var request = new HttpRequestMessage(HttpMethod.Patch, $"api/comments/20")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(new { Comment = "" }), Encoding.UTF8, "application/json")
+        };
+
+        var response = await _client.SendAsync(request);
+
+        // Assert - Ensure the request was successful
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
 }

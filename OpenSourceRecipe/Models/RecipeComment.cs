@@ -43,3 +43,8 @@ public class GetCommentDto
 
     public string? PostedOn { get; set; }
 }
+
+public class EditCommentBodyDto
+{
+    public string? Comment { get; set; }
+}
