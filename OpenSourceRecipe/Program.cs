@@ -7,6 +7,7 @@ using Microsoft.OpenApi.Models;
 using Npgsql;
 using OpenSourceRecipes.Services;
 using OpenSourceRecipes.Seeds;
+using OpenSourceRecipe.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -145,6 +146,7 @@ builder.Services.AddScoped<RecipeRepository>();
 builder.Services.AddScoped<IngredientRepository>();
 builder.Services.AddScoped<CuisineRepository>();
 builder.Services.AddScoped<CommentRepository>();
+builder.Services.AddScoped<RecipeRatingsRepository>();
 
 // Controllers
 builder.Services.AddControllers();

@@ -15,3 +15,10 @@ public class RecipeRating
     [Range(1, 5)]
     public int? Rating { get; set; }
 }
+
+public class RecipeRatingDto
+{
+    public int? RecipeId { get; set; }
+    public int? UserId { get; set; }
+    public int? Rating { get; set; }
+}
