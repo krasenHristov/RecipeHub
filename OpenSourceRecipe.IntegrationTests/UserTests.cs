@@ -1145,4 +1145,94 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.NotNull(cuisines);
     }
 
+
+    // COMMENT TESTS
+    [Fact]
+    public async Task CreateCommentEndpoint_ShouldSucceed()
+    {
+        // Arrange
+        var newComment = new
+        {
+            Comment = "Test Comment",
+            RecipeId = 1,
+            UserId = 1,
+            Author = "seededuser"
+        };
+
+        var newUser = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newUser), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+        var userDetails = await loginResponse.Content.ReadAsStringAsync();
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
+
+        var request = new HttpRequestMessage(HttpMethod.Post, "api/comments")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newComment), Encoding.UTF8, "application/json")
+        };
+
+        //Act
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStreamAsync();
+
+        Console.WriteLine(response.StatusCode);
+
+        //Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task CreateCommentEndpointNoRecipe_ShouldFail()
+    {
+        // Arrange
+        var newComment = new
+        {
+            Comment = "Test Comment",
+            RecipeId = 9999,
+            UserId = 1,
+            Author = "seededuser"
+        };
+
+        var newUser = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newUser), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+        var userDetails = await loginResponse.Content.ReadAsStringAsync();
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
+
+        var request = new HttpRequestMessage(HttpMethod.Post, "api/comments")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(newComment), Encoding.UTF8, "application/json")
+        };
+
+        //Act
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStreamAsync();
+
+        Console.WriteLine(response.StatusCode);
+
+        //Assert
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
 }

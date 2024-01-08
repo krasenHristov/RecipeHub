@@ -1,6 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace OpenSourceRecipes.Models;
 
 public class RecipeComment
@@ -19,4 +16,28 @@ public class RecipeComment
 
     // The date the comment was posted defaults to the current date
     public string PostedOn { get; set; } = DateTime.Now.ToString("MM/dd/yyyy");
+}
+
+public class CreateCommentDto
+{
+    public int? RecipeId { get; set; }
+
+    public int? UserId { get; set; }
+
+    public string? Author { get; set; }
+
+    public string? Comment { get; set; }
+}
+
+public class GetCommentDto
+{
+    public int? CommentId { get; set; }
+
+    public int? RecipeId { get; set; }
+
+    public int? UserId { get; set; }
+
+    public string? Comment { get; set; }
+
+    public string? PostedOn { get; set; }
 }
