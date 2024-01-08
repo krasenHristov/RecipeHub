@@ -1185,10 +1185,8 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var response = await _client.SendAsync(request);
         var content = await response.Content.ReadAsStreamAsync();
 
-        Console.WriteLine(response.StatusCode);
-
         //Assert
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal(HttpStatusCode.Created, response.StatusCode);
         Assert.NotNull(content);
     }
 
@@ -1230,9 +1228,29 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var response = await _client.SendAsync(request);
         var content = await response.Content.ReadAsStreamAsync();
 
-        Console.WriteLine(response.StatusCode);
-
         //Assert
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task GetCommentsForRecipe_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/comments/1");
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStreamAsync();
+
+        // assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetCommentsForRecipeNoRecipe_ShouldFail()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/comments/9999");
+        var response = await _client.SendAsync(request);
+
+        // assert
+        Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
     }
 }

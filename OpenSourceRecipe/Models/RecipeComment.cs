@@ -39,5 +39,7 @@ public class GetCommentDto
 
     public string? Comment { get; set; }
 
+    public string? Author { get; set; }
+
     public string? PostedOn { get; set; }
 }

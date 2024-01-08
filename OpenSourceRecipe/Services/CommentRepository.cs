@@ -39,4 +39,20 @@ public class CommentRepository
 
         return await connection.QueryFirstOrDefaultAsync<GetCommentDto>(query, comment);
     }
+
+    public async Task<IEnumerable<GetCommentDto>> GetCommentsByRecipeId(int recipeId)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        string recipeQuery = $"SELECT * FROM \"Recipe\" WHERE \"RecipeId\" = {recipeId};";
+
+        if (await connection.QueryFirstOrDefaultAsync<GetRecipeByIdDto>(recipeQuery) == null)
+        {
+            throw new Exception("Recipe does not exist");
+        }
+
+        string query = $"SELECT * FROM \"RecipeComment\" WHERE \"RecipeId\" = {recipeId};";
+
+        return await connection.QueryAsync<GetCommentDto>(query);
+    }
 }
