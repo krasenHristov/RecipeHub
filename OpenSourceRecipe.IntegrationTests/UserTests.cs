@@ -1253,4 +1253,65 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         // assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
     }
+
+
+    //-----------------------------------------------------PATCH & POST RECIPE RATING-------------------------------------------------------------------------
+    [Fact]
+    public async Task UpdateRecipeRatingById_ShouldSucceed()
+    {
+        //200 Response for UpdateRecipeRatingByID with valid params
+            //Post valid RecipeId, UserId & Rating
+            //Get 200 response from server, indicating that recipe rating has been posted successfully
+    }
+
+    [Fact]
+    public async Task UpdateRecipeRatingById_InvalidRecipeId_ShouldFail()
+    {
+        //400 bad request response for bad recipeId
+
+    }
+
+    [Fact]
+    public async Task UpdateRecipeRatingById_InvalidUserId_ShouldFail()
+    {
+        //400 bad request response for bad userId
+
+    }
+    
+    [Fact]
+    public async Task UpdateRecipeRatingById_InvalidRating_ShouldFail()
+    {
+        //400 bad request response for bad rating
+
+    }
+
+        [Fact]
+    public async Task CreateRecipeRatingById_ShouldSucceed()
+    {
+        //200 Response for CreateRecipeRatingByID with valid params
+            //Post valid RecipeId, UserId & Rating
+            //Get 200 response from server, indicating that recipe rating has been posted successfully
+    }
+
+    [Fact]
+    public async Task CreateRecipeRatingById_InvalidRecipeId_ShouldFail()
+    {
+        //400 bad request response for for bad recipeId
+
+    }
+
+    [Fact]
+    public async Task CreateRecipeRatingById_InvalidUserId_ShouldFail()
+    {
+        //400 bad request response for bad userId
+
+    }
+    
+    [Fact]
+    public async Task CreateRecipeRatingById_InvalidRating_ShouldFail()
+    {
+        //400 bad request response for bad rating
+
+    }
+    //----------------------------------------------------------------------------------------------------------------------------------------------------
 }
