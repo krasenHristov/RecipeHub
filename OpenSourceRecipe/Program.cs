@@ -144,6 +144,7 @@ builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<RecipeRepository>();
 builder.Services.AddScoped<IngredientRepository>();
 builder.Services.AddScoped<CuisineRepository>();
+builder.Services.AddScoped<CommentRepository>();
 
 // Controllers
 builder.Services.AddControllers();
