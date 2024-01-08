@@ -13,3 +13,8 @@ public class CommentVote
     // True if the user upvoted the comment, false if they downvoted
     public bool UpVote { get; set; }
 }
+
+public class CommentVoteDto
+{
+    public bool Upvote { get; set; }
+}
