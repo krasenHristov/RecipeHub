@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OpenSourceRecipes.Models;
 using OpenSourceRecipes.Services;
@@ -7,12 +8,26 @@ namespace OpenSourceRecipe.Controllers;
 [ApiController]
 public class RecipeController(RecipeRepository recipeRepository) : ControllerBase
 {
+
     [HttpPost("api/recipes")]
+    [Authorize]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<GetRecipesDto>> CreateRecipe(CreateRecipeDto recipe)
     {
         try
         {
-            return await recipeRepository.CreateRecipe(recipe);
+            // get user id
+            int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "UserId")!.Value);
+
+            // compare to passed id in recipe
+            if (userId != recipe.UserId)
+            {
+                return BadRequest("User id does not match");
+            }
+
+            GetRecipesDto newRecipe = await recipeRepository.CreateRecipe(recipe);
+            return Created($"api/recipes", newRecipe);
         }
         catch (Exception e)
         {

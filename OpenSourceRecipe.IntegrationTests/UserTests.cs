@@ -707,27 +707,26 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     [Fact]
     public async Task CreateRecipeEndpoint_ShouldSucceed()
     {
+
+        // login user
         var newUser = new
         {
-            Username = "testeruser4",
-            Name = "Test User2",
-            ProfileImg = "https://www.google.com",
-            Password = "password",
-            Status = true,
-            Bio = "This is a test user for integration testing purposes only.............................................................."
+            Username = "seededuser",
+            Password = "password"
         };
 
-        var registerRequest = new HttpRequestMessage(HttpMethod.Post, "api/register")
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
         {
             Content = new StringContent(JsonConvert.SerializeObject(newUser), Encoding.UTF8, "application/json")
         };
 
-        var registerResponse = await _client.SendAsync(registerRequest);
-        registerResponse.EnsureSuccessStatusCode();
+        var loginResponse = await _client.SendAsync(loginRequest);
 
-        var registerContent = await registerResponse.Content.ReadAsStringAsync();
+        var userDetails = loginResponse.Content.ReadAsStringAsync().Result;
 
-        GetUserDto? user = JsonConvert.DeserializeObject<GetUserDto>(registerContent);
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
 
         //Arrange
         var newRecipe = new
@@ -753,13 +752,33 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var content = await response.Content.ReadAsStreamAsync();
 
         //Assert
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal(HttpStatusCode.Created, response.StatusCode);
         Assert.NotNull(content);
     }
 
     [Fact]
     public async Task CreateRecipeEndpointNoRecipe_ShouldFail()
     {
+        //Arrange
+        var userLogin = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(userLogin), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+
+        var userDetails = loginResponse.Content.ReadAsStringAsync().Result;
+
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user?.Token);
+
         //Act
         var request = new HttpRequestMessage(HttpMethod.Post, "api/recipes")
         {
