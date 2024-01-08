@@ -1560,11 +1560,10 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         [Fact]
     public async Task CreateRecipeRatingById_ShouldSucceed()
     {
-        //201 Response for UpdateRecipeRatingByID with valid params - Post valid RecipeId, UserId & Rating
         // Arrange
         var newRating = new
         {
-            RecipeId = 2,
+            RecipeId = 11,
             UserId = 1,
             Rating = 3,
         };

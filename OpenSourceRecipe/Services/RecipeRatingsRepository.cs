@@ -41,7 +41,7 @@ public class RecipeRatingsRepository
         parameters.Add("Rating", ratingDetails.Rating);
 
         string sql = "INSERT INTO \"RecipeRating\" " +
-                     "(\"RecipeId\", \"UserId\", \"RATING\") " +
+                     "(\"RecipeId\", \"UserId\", \"Rating\") " +
                      "VALUES (@RecipeId, @UserId, @Rating) RETURNING *";
 
         var newRating = await connection.QuerySingleOrDefaultAsync<RecipeRatingDto>(sql, parameters);
@@ -69,7 +69,7 @@ public class RecipeRatingsRepository
         parameters.Add("Rating", ratingDetails.Rating);
 
         string sql = "UPDATE \"RecipeRating\" " +
-                     "SET \"RATING\" = @Rating " +
+                     "SET \"Rating\" = @Rating " +
                      "WHERE \"RecipeId\" = @RecipeId AND \"UserId\" = @UserId RETURNING *";
 
         var newRating = await connection.QuerySingleOrDefaultAsync<RecipeRatingDto>(sql, parameters);
