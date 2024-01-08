@@ -69,10 +69,28 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
     }
 
     [HttpDelete("api/recipes/{recipeId}")]
+    [Authorize]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult> DeleteRecipe(int recipeId)
     {
         try
         {
+            GetRecipeByIdDto? recipe = await recipeRepository.GetRecipeById(recipeId);
+
+            if (recipe == null)
+            {
+                return NotFound();
+            }
+
+            int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "UserId")!.Value);
+
+            if (userId != recipe!.UserId)
+            {
+                return Unauthorized("Recipe belongs to another user");
+            }
+
             await recipeRepository.DeleteRecipe(recipeId);
             return StatusCode(204);
         }
