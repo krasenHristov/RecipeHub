@@ -23,15 +23,43 @@ public class CreateCommentVoteTable : Migration
 }
 
 [Migration(2024010108_01)]
-public class UpdateCommentVoteTable : Migration
+public class AddOnDeleteCascadeToCommentVoteTable : Migration
 {
     public override void Up()
     {
-        Execute.Sql("ALTER TABLE \"CommentVote\" ADD CONSTRAINT \"UniqueCommentUser\" UNIQUE (\"CommentId\", \"UserId\");");
+        Execute.Sql("ALTER TABLE \"CommentVote\" " +
+            "DROP CONSTRAINT \"CommentVote_UserId_fkey\" CASCADE;" +
+            "ALTER TABLE \"CommentVote\" " +
+            "DROP CONSTRAINT \"CommentVote_CommentId_fkey\" CASCADE;" +
+            "ALTER TABLE \"CommentVote\" " +
+            "ADD CONSTRAINT \"CommentVote_UserId_fkey\" " +
+            "FOREIGN KEY (\"UserId\") " +
+            "REFERENCES \"User\" (\"UserId\") " +
+            "ON DELETE CASCADE;" +
+            "ALTER TABLE \"CommentVote\" " +
+            "ADD CONSTRAINT \"CommentVote_CommentId_fkey\" " +
+            "FOREIGN KEY (\"CommentId\") " +
+            "REFERENCES \"RecipeComment\" (\"CommentId\") " +
+            "ON DELETE CASCADE;"
+            );
+         Execute.Sql("ALTER TABLE \"CommentVote\" ADD CONSTRAINT \"UniqueCommentUser\" UNIQUE (\"CommentId\", \"UserId\");");
+
     }
 
     public override void Down()
     {
-        Execute.Sql("ALTER TABLE \"CommentVote\" DROP CONSTRAINT \"UniqueCommentUser\";");
-    }
+        Execute.Sql("ALTER TABLE \"CommentVote\" " +
+            "DROP CONSTRAINT \"CommentVote_UserId_fkey\" CASCADE;" +
+            "ALTER TABLE \"CommentVote\" " +
+            "DROP CONSTRAINT \"CommentVote_CommentId_fkey\" CASCADE;" +
+            "ALTER TABLE \"CommentVote\" " +
+            "ADD CONSTRAINT \"CommentVote_UserId_fkey\" " +
+            "FOREIGN KEY (\"UserId\") " +
+            "REFERENCES \"User\" (\"UserId\");" +
+            "ALTER TABLE \"CommentVote\" " +
+            "ADD CONSTRAINT \"CommentVote_CommentId_fkey\" " +
+            "FOREIGN KEY (\"CommentId\") " +
+            "REFERENCES \"RecipeComment\" (\"CommentId\");"
+            );
+     }
 }

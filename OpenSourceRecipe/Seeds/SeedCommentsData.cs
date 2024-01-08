@@ -30,14 +30,14 @@ namespace OpenSourceRecipes.Seeds
             {
                 try
                 {
-                    CommentObject recipe = commentArr[i];
+                    CommentObject comment = commentArr[i];
 
                     string query = $"INSERT INTO \"RecipeComment\" " +
                                     "(\"Comment\", \"RecipeId\", \"UserId\", \"Author\") " +
                                     "VALUES (@Comment, @RecipeId, @UserId, @Author) " +
                                     "RETURNING *;";
 
-                    var insertedComment = await connection.QueryFirstOrDefaultAsync<CommentObject>(query, recipe);
+                    var insertedComment = await connection.QueryFirstOrDefaultAsync<CommentObject>(query, comment);
                     if (insertedComment != null) insertedComments.Add(insertedComment);
                 }
                 catch (Exception ex)
