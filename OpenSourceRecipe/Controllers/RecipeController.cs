@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OpenSourceRecipes.Models;
 using OpenSourceRecipes.Services;
@@ -8,12 +9,26 @@ namespace OpenSourceRecipe.Controllers;
 [ApiController]
 public class RecipeController(RecipeRepository recipeRepository) : ControllerBase
 {
+
     [HttpPost("api/recipes")]
+    [Authorize]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<GetRecipesDto>> CreateRecipe(CreateRecipeDto recipe)
     {
         try
         {
-            return await recipeRepository.CreateRecipe(recipe);
+            // get user id
+            int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "UserId")!.Value);
+
+            // compare to passed id in recipe
+            if (userId != recipe.UserId)
+            {
+                return BadRequest("User id does not match");
+            }
+
+            GetRecipesDto newRecipe = await recipeRepository.CreateRecipe(recipe);
+            return Created($"api/recipes", newRecipe);
         }
         catch (Exception e)
         {
@@ -55,10 +70,28 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
     }
 
     [HttpDelete("api/recipes/{recipeId}")]
+    [Authorize]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult> DeleteRecipe(int recipeId)
     {
         try
         {
+            GetRecipeByIdDto? recipe = await recipeRepository.GetRecipeById(recipeId);
+
+            if (recipe == null)
+            {
+                return NotFound();
+            }
+
+            int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "UserId")!.Value);
+
+            if (userId != recipe!.UserId)
+            {
+                return Unauthorized("Recipe belongs to another user");
+            }
+
             await recipeRepository.DeleteRecipe(recipeId);
             return StatusCode(204);
         }

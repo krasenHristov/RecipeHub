@@ -44,15 +44,52 @@ public class CommentRepository
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        string recipeQuery = $"SELECT * FROM \"Recipe\" WHERE \"RecipeId\" = {recipeId};";
+        string recipeQuery = $"SELECT * FROM \"Recipe\" WHERE \"RecipeId\" = @RecipeId;";
 
-        if (await connection.QueryFirstOrDefaultAsync<GetRecipeByIdDto>(recipeQuery) == null)
+        var recipe = await connection.QueryFirstOrDefaultAsync<GetRecipeByIdDto>(recipeQuery, new { RecipeId = recipeId });
+
+        if (recipe == null)
         {
             throw new Exception("Recipe does not exist");
         }
 
-        string query = $"SELECT * FROM \"RecipeComment\" WHERE \"RecipeId\" = {recipeId};";
+        string query = $"SELECT * FROM \"RecipeComment\" WHERE \"RecipeId\" = @RecipeId;";
 
-        return await connection.QueryAsync<GetCommentDto>(query);
+        return await connection.QueryAsync<GetCommentDto>(query, new { RecipeId = recipeId });
+    }
+
+    public async Task DeleteComment(int commentId)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        string query = $"DELETE FROM \"RecipeComment\" WHERE \"CommentId\" = @CommentId;";
+
+        await connection.ExecuteAsync(query, new { CommentId = commentId });
+
+        return;
+    }
+
+    public async Task<GetCommentDto?> GetCommentById(int commentId)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        string query = $"SELECT * FROM \"RecipeComment\" WHERE \"CommentId\" = @CommentId;";
+
+        return await connection.QueryFirstOrDefaultAsync<GetCommentDto>(query, new { CommentId = commentId });
+    }
+
+    public async Task<GetCommentDto?> UpdateComment(int commentId, EditCommentBodyDto comment)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        string query = $"UPDATE \"RecipeComment\" " +
+                        "SET \"Comment\" = @Comment " +
+                        "WHERE \"CommentId\" = @CommentId " +
+                        "RETURNING *;";
+
+        DynamicParameters parameters = new DynamicParameters(comment);
+        parameters.Add("CommentId", commentId);
+
+        return await connection.QueryFirstOrDefaultAsync<GetCommentDto>(query, parameters);
     }
 }
