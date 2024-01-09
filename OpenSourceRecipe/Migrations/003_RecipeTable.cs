@@ -32,3 +32,20 @@ public class CreateRecipeTable : Migration
         Execute.Sql("DROP TABLE \"Recipe\"");
     }
 }
+
+[Migration(2024010103_01)]
+public class FullTextSearchRecipeTable : Migration
+{
+    public override void Up()
+    {
+        Execute.Sql("ALTER TABLE \"Recipe\" ADD COLUMN \"TsvDescription\" TSVECTOR;");
+        Execute.Sql("UPDATE \"Recipe\" SET \"TsvDescription\" = to_tsvector('simple', \"RecipeTitle\" || ' ' || \"RecipeMethod\" || ' ' || \"Cuisine\");");
+        Execute.Sql("CREATE INDEX \"Recipe_FTS_Simple\" ON \"Recipe\" USING GIN (\"TsvDescription\")");
+        Execute.Sql("CREATE TRIGGER \"Recipe_TsvDescription_update\" BEFORE INSERT OR UPDATE ON \"Recipe\" " +
+                    "FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger(\"TsvDescription\", 'pg_catalog.english', \"RecipeTitle\", \"RecipeMethod\", \"Cuisine\")");
+    }
+
+    public override void Down()
+    {
+    }
+}
