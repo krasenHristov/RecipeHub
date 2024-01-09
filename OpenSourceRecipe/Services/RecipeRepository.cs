@@ -1,6 +1,7 @@
 using Dapper;
 using Npgsql;
 using OpenSourceRecipes.Models;
+using System.Text;
 
 namespace OpenSourceRecipes.Services;
 public class RecipeRepository
@@ -180,4 +181,70 @@ public class RecipeRepository
         return recipes;
     }
 
+    public async Task<GetRecipeByIdDto> PatchRecipe(PatchRecipeDto recipe)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+        
+        var parameters = new DynamicParameters();
+        var sql = new StringBuilder("UPDATE \"Recipe\" SET ");
+
+        var updates = new List<string>();
+
+        if (recipe.RecipeTitle != null)
+        {
+            parameters.Add("RecipeTitle", recipe.RecipeTitle);
+            updates.Add("\"RecipeTitle\" = @RecipeTitle");
+        }
+        if (recipe.TagLine != null)
+        {
+            parameters.Add("TagLine", recipe.TagLine);
+            updates.Add("\"TagLine\" = @TagLine");
+        }
+        if (recipe.Difficulty != null)
+        {
+            parameters.Add("Difficulty", recipe.Difficulty);
+            updates.Add("\"Difficulty\" = @Difficulty");
+        }
+        if (recipe.TimeToPrepare != null)
+        {
+            parameters.Add("TimeToPrepare", recipe.TimeToPrepare);
+            updates.Add("\"TimeToPrepare\" = @TimeToPrepare");
+        }
+        if (recipe.RecipeMethod != null)
+        {
+            parameters.Add("RecipeMethod", recipe.RecipeMethod);
+            updates.Add("\"RecipeMethod\" = @RecipeMethod");
+        }
+        if (recipe.RecipeImg != null)
+        {
+            parameters.Add("RecipeImg", recipe.RecipeImg);
+            updates.Add("\"RecipeImg\" = @RecipeImg");
+        }
+        if (recipe.Cuisine != null)
+        {
+            parameters.Add("Cuisine", recipe.Cuisine);
+            updates.Add("\"Cuisine\" = @Cuisine");
+        }
+        if (recipe.CuisineId != null)
+        {
+            parameters.Add("CuisineId", recipe.CuisineId);
+            updates.Add("\"CuisineId\" = @CuisineId");
+        }
+
+        sql.Append(string.Join(", ", updates));
+
+        parameters.Add("RecipeId", recipe.RecipeId);
+        sql.Append(" WHERE \"RecipeId\" = @RecipeId RETURNING *;");
+
+        var updatedRecipe = await connection.QuerySingleOrDefaultAsync<GetRecipeByIdDto>(sql.ToString(), parameters);
+        if (updatedRecipe == null)
+        {
+            throw new Exception("Failed to update recipe.");
+        }
+
+        return updatedRecipe;
+    }
 }
+
+
+

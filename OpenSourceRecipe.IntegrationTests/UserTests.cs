@@ -2021,4 +2021,245 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.Equal(HttpStatusCode.OK, responseUpvote3.StatusCode);
         Assert.Equal("Upvote removed.", contentUpvote3);
     }
+
+    [Fact]
+    public async Task PatchRecipe_Title_ShouldSucceed()
+    {
+        //Arrange
+        // Define patch object with UserId & modified parameter
+        var modifiedRecipe = new 
+        {
+            UserId = 1,
+            RecipeId = 1,
+            RecipeTitle = "New Recipe Title"
+        };
+
+        //Act 
+        // 1. Login User
+        var userToLogin = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "/api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(userToLogin), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+        loginResponse.EnsureSuccessStatusCode();
+
+        var userDetails = await loginResponse.Content.ReadAsStringAsync();
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        Assert.Equal(HttpStatusCode.OK, loginResponse.StatusCode);
+
+        // 2. Request to patch title
+        var request = new HttpRequestMessage(HttpMethod.Patch, "/api/recipes")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(modifiedRecipe), Encoding.UTF8, "application/json")
+        };
+        request.Headers.Add("Authorization", "Bearer " + user?.Token);
+
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStringAsync();
+
+        //Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task PatchRecipe_Difficulty_ShouldSucceed()
+    {
+        //Arrange
+        // Define patch object with UserId & modified parameter
+        var modifiedRecipe = new 
+        {
+            UserId = 1,
+            RecipeId = 1,
+            Difficulty = 5
+        };
+
+        //Act 
+        // 1. Login User
+        var userToLogin = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "/api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(userToLogin), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+        loginResponse.EnsureSuccessStatusCode();
+
+        var userDetails = await loginResponse.Content.ReadAsStringAsync();
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        Assert.Equal(HttpStatusCode.OK, loginResponse.StatusCode);
+
+        // 2. Request to patch title
+        var request = new HttpRequestMessage(HttpMethod.Patch, "/api/recipes")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(modifiedRecipe), Encoding.UTF8, "application/json")
+        };
+        request.Headers.Add("Authorization", "Bearer " + user?.Token);
+
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStringAsync();
+
+        //Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task PatchRecipe_TimeToPrepare_ShouldSucceed()
+    {
+        //Arrange
+        // Define patch object with UserId & modified parameter
+        var modifiedRecipe = new 
+        {
+            UserId = 1,
+            RecipeId = 1,
+            TimeToPrepare = 3
+        };
+
+        //Act 
+        // 1. Login User
+        var userToLogin = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "/api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(userToLogin), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+        loginResponse.EnsureSuccessStatusCode();
+
+        var userDetails = await loginResponse.Content.ReadAsStringAsync();
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        Assert.Equal(HttpStatusCode.OK, loginResponse.StatusCode);
+
+        // 2. Request to patch title
+        var request = new HttpRequestMessage(HttpMethod.Patch, "/api/recipes")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(modifiedRecipe), Encoding.UTF8, "application/json")
+        };
+        request.Headers.Add("Authorization", "Bearer " + user?.Token);
+
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStringAsync();
+
+        //Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task PatchRecipe_MultipleParameters_ShouldSucceed()
+    {
+        //Arrange
+        // Define patch object with UserId & modified parameter
+        var modifiedRecipe = new 
+        {
+            UserId = 1,
+            RecipeId = 2,
+            RecipeTitle = "New Recipe Title",
+            CuisineId = 2
+        };
+
+        //Act 
+        // 1. Login User
+        var userToLogin = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "/api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(userToLogin), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+        loginResponse.EnsureSuccessStatusCode();
+
+        var userDetails = await loginResponse.Content.ReadAsStringAsync();
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        Assert.Equal(HttpStatusCode.OK, loginResponse.StatusCode);
+
+        // 2. Request to patch title
+        var request = new HttpRequestMessage(HttpMethod.Patch, "/api/recipes")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(modifiedRecipe), Encoding.UTF8, "application/json")
+        };
+        request.Headers.Add("Authorization", "Bearer " + user?.Token);
+
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStringAsync();
+
+        //Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task PatchRecipe_BadParameter_ShouldFail()
+    {
+        //Arrange
+        // Define patch object with UserId & modified parameter
+        var modifiedRecipe = new 
+        {
+            UserId = 1,
+            RecipeId = 1,
+            RecipeTitle = 5
+        };
+
+        //Act 
+        // 1. Login User
+        var userToLogin = new
+        {
+            Username = "seededuser",
+            Password = "password"
+        };
+
+        var loginRequest = new HttpRequestMessage(HttpMethod.Post, "/api/login")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(userToLogin), Encoding.UTF8, "application/json")
+        };
+
+        var loginResponse = await _client.SendAsync(loginRequest);
+        loginResponse.EnsureSuccessStatusCode();
+
+        var userDetails = await loginResponse.Content.ReadAsStringAsync();
+        var user = JsonConvert.DeserializeObject<GetLoggedInUserDto>(userDetails);
+
+        Assert.Equal(HttpStatusCode.OK, loginResponse.StatusCode);
+
+        // 2. Request to patch title
+        var request = new HttpRequestMessage(HttpMethod.Patch, "/api/recipes")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(modifiedRecipe), Encoding.UTF8, "application/json")
+        };
+        request.Headers.Add("Authorization", "Bearer " + user?.Token);
+
+        var response = await _client.SendAsync(request);
+        var content = await response.Content.ReadAsStringAsync();
+
+        //Assert
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+        Assert.NotNull(content);
+    }
 }

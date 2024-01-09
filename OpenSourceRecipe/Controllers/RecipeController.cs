@@ -114,4 +114,25 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
             return BadRequest(e.Message);
         }
     }
+
+    [HttpPatch("api/recipes")]
+    //[Authorize]
+    public async Task<ActionResult<GetRecipesDto>> PatchExistingRecipe(PatchRecipeDto recipeToPatchInfo)
+    {
+        try
+        {
+            int? userIdFromToken = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value!);
+
+            if (userIdFromToken != recipeToPatchInfo.UserId)
+            {
+                return Unauthorized();
+            }
+
+            return Ok(await recipeRepository.PatchRecipe(recipeToPatchInfo));
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }
