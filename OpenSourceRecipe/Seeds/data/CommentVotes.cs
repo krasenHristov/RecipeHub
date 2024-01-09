@@ -1,5 +1,4 @@
-using OpenSourceRecipes.Seeds;
-
+namespace OpenSourceRecipes.Seeds;
 class CommentVotesData
 {
     public VoteObject[] GetVotesData()

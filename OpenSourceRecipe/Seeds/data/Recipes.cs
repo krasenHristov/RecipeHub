@@ -226,7 +226,80 @@ public class RecipesData
                     RecipeImg = "https://images.unsplash.com/photo-1615486767794-4b74a4b1c1e1?ixlib=rb-1.2.1&q=80&w=1080&auto=format&fit=crop",
                     ForkedFromId = 6,
                     OriginalRecipeId = 6
-                }
+                },
+
+                /*
+                new MyRecipeObject
+                {
+                RecipeId = 12,
+                RecipeTitle = "Spaghetti Carbonara",
+                TagLine = "Creamy Italian Pasta",
+                Difficulty = 3,
+                TimeToPrepare = 25,
+                Cuisine = "Italian",
+                RecipeMethod = "1. Cook spaghetti according to package instructions.%" +
+                               "2. In a separate pan, fry pancetta until crispy.%" +
+                               "3. Whisk together eggs, grated Pecorino Romano cheese, and black pepper in a bowl.%" +
+                               "4. Drain cooked spaghetti and combine with the pancetta.%" +
+                               "5. Pour the egg and cheese mixture over the spaghetti and toss until creamy.%" +
+                               "6. Serve hot, garnished with more cheese and black pepper.",
+                UserId = 1,
+                CuisineId = 1,
+                RecipeImg = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Carbonara_-_panoramio.jpg/800px-Carbonara_-_panoramio.jpg",
+                },
+
+                new MyRecipeObject
+                {
+                    RecipeId = 13,
+                    RecipeTitle = "Vegetarian Chili",
+                    TagLine = "Hearty and Healthy",
+                    Difficulty = 2,
+                    TimeToPrepare = 40,
+                    Cuisine = "Mexican",
+                    RecipeMethod = "1. Sauté onions, garlic, and bell peppers in a large pot.%" +
+                                   "2. Add chili powder, cumin, and paprika; stir briefly.%" +
+                                   "3. Add beans, tomatoes, corn, and vegetable broth.%" +
+                                   "4. Simmer until chili thickens and flavors meld.%" +
+                                   "5. Serve hot with toppings like cheese, sour cream, and cilantro.",
+                    UserId = 3,
+                    CuisineId = 3,
+                    RecipeImg = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Vegetarian_chili_with_choy_sum.jpg/800px-Vegetarian_chili_with_choy_sum.jpg",
+                },
+
+                new MyRecipeObject
+                {
+                    RecipeId = 14,
+                    RecipeTitle = "Vegetable Fried Rice",
+                    TagLine = "Quick and Flavorful",
+                    Difficulty = 2,
+                    TimeToPrepare = 20,
+                    Cuisine = "Japanese",
+                    RecipeMethod = "1. Cook rice and let it cool.%" +
+                                   "2. Heat oil in a wok or skillet, and stir-fry mixed vegetables.%" +
+                                   "3. Add cooked rice and soy sauce, tossing to combine.%" +
+                                   "4. Push rice to the side and scramble eggs in the pan.%" +
+                                   "5. Mix eggs into the rice and serve hot with green onions.",
+                    UserId = 5,
+                    CuisineId = 3,
+                    RecipeImg = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Vegetable_fried_rice.jpg/800px-Vegetable_fried_rice.jpg",
+                },
+
+                new MyRecipeObject
+                {
+                    RecipeId = 15,
+                    RecipeTitle = "Guacamole",
+                    TagLine = "Fresh and Flavorful Dip",
+                    Difficulty = 1,
+                    TimeToPrepare = 15,
+                    Cuisine = "Mexican",
+                    RecipeMethod = "1. Mash ripe avocados in a bowl.%" +
+                                   "2. Add finely chopped onion, tomato, cilantro, and jalapeño.%" +
+                                   "3. Squeeze in lime juice and season with salt and pepper.%" +
+                                   "4. Mix well and serve with tortilla chips or as a topping.",
+                    UserId = 9,
+                    CuisineId = 2,
+                    RecipeImg = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Guacamole_and_chips_-_Melissa_dinn%C3%89.jpg/800px-Guacamole_and_chips_-_Melissa_dinn%C3%89.jpg",
+                }*/
             };
     }
 

@@ -4,10 +4,8 @@ using FluentMigrator.Runner;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using Npgsql;
 using OpenSourceRecipes.Services;
 using OpenSourceRecipes.Seeds;
-using OpenSourceRecipe.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,6 +49,12 @@ builder.Services.AddSwaggerGen(c =>
             Array.Empty<string>()
         }
     });
+
+    c.OperationFilter<FileUploadOperationFilter>();
+
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
 });
 
 // get environment variable for connection string
@@ -140,6 +144,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+
 // Repositories
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<RecipeRepository>();
@@ -148,7 +153,7 @@ builder.Services.AddScoped<CuisineRepository>();
 builder.Services.AddScoped<CommentRepository>();
 builder.Services.AddScoped<RecipeRatingsRepository>();
 builder.Services.AddScoped<CommentVotesRepository>();
-
+builder.Services.AddScoped<FirebaseStorageService.Storage.FirebaseStorageService>();
 // Controllers
 builder.Services.AddControllers();
 

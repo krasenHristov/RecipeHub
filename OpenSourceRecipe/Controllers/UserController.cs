@@ -6,7 +6,7 @@ using OpenSourceRecipes.Services;
 namespace OpenSourceRecipe.Controllers;
 
 [ApiController]
-public class UserController(UserRepository userRepository) : ControllerBase
+public class UserController(UserRepository userRepository, FirebaseStorageService.Storage.FirebaseStorageService firebaseStorageService) : ControllerBase
 {
 
     [HttpPost("api/register")]
