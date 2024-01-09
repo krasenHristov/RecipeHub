@@ -48,4 +48,19 @@ public class IngredientController(IngredientRepository ingredientRepository) : C
             return BadRequest(e.Message);
         }
     }
+
+    [HttpPatch("api/ingredients/recipes/{recipeId}/ingredients")]
+    public async Task<ActionResult<GetRecipeByIdDto>> DeleteIngredientFromRecipe(int recipeId, AddIngredientToRecipeDto? ingredient)
+    {
+        try
+        {
+            await ingredientRepository.UpdateIngredientsForRecipe(recipeId, ingredient?.IngredientIds!, ingredient?.Quantity!);
+
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }

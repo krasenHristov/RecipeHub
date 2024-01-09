@@ -1224,6 +1224,25 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.True(recipe!.RecipeIngredients!.Count > 4);
     }
 
+    [Fact]
+    public async Task UpdateIngredientsForRecipe_ShouldSucceed()
+    {
+        var body = new
+        {
+            IngredientIds = new int[] { 1, 2, 3 },
+            Quantity = new string[] { "1 cup", "2 cups", "3 cups" }
+        };
+
+        var request = new HttpRequestMessage(HttpMethod.Patch , "api/ingredients/recipes/1/ingredients")
+        {
+            Content = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json")
+        };
+
+        var response = await _client.SendAsync(request);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
     // CUISINE TESTS
     [Fact]
     public async Task GetAllCuisines_ShouldSucceed()
@@ -2326,4 +2345,5 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.Empty(recipesList!);
     }
+
 }
