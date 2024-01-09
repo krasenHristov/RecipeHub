@@ -131,3 +131,23 @@ public class GetRecipeByIdDto
     public double AverageRating { get; set; } = 0;
     public List<IngredientRecipeDto>? RecipeIngredients { get; set; }
 }
+
+public class PatchRecipeDto
+{
+    public int RecipeId { get; set; }
+    public string? RecipeTitle { get; set; }
+    public string? TagLine { get; set; }
+    public int? Difficulty { get; set; }
+    public int? TimeToPrepare { get; set; }
+    public string? RecipeMethod { get; set; }
+    public string? PostedOn { get; set; }
+    public string? RecipeImg { get; set; }
+    public string? Cuisine { get; set; }
+    public int UserId { get; set; }
+    public int? CuisineId { get; set; }
+    public int? ForkCount { get; set; }
+    public int? DirectForkCount { get; set; }
+    public int? RatingCount { get; set; } = 0;
+    public double? AverageRating { get; set; } = 0;
+    public List<IngredientRecipeDto>? RecipeIngredients { get; set; }
+}
