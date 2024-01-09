@@ -58,7 +58,7 @@ public class CommentRepository
             rc.*,
             v.""Upvotes"",
             v.""Downvotes"",
-            COALESCE(ucv.""CurrentUserVote"", 'none') AS ""CurrUserVote""
+            COALESCE(ucv.""CurrentUserVote"", NULL) AS ""CurrUserVote""
             FROM
             ""RecipeComment"" rc
             LEFT JOIN
