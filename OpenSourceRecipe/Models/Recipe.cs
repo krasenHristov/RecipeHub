@@ -151,3 +151,8 @@ public class PatchRecipeDto
     public double? AverageRating { get; set; } = 0;
     public List<IngredientRecipeDto>? RecipeIngredients { get; set; }
 }
+
+public class SearchRecipeDto
+{
+    public string? SearchTerm { get; set; }
+}

@@ -184,7 +184,7 @@ public class RecipeRepository
     public async Task<GetRecipeByIdDto> PatchRecipe(PatchRecipeDto recipe)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
-        
+
         var parameters = new DynamicParameters();
         var sql = new StringBuilder("UPDATE \"Recipe\" SET ");
 
@@ -243,6 +243,35 @@ public class RecipeRepository
         }
 
         return updatedRecipe;
+    }
+
+    public async Task<IEnumerable<GetRecipesDto>> SearchRecipes(string searchTerm)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        string[] searchTerms = searchTerm.Split(' ');
+
+        for (int i = 0; i < searchTerms.Length; i++)
+        {
+            searchTerms[i] = searchTerms[i] + ":*";
+        }
+        searchTerm = string.Join(" & ", searchTerms);
+
+        string sql = @"
+            SELECT r.*,
+                   (SELECT COUNT(""RecipeId"") FROM ""Recipe"" WHERE ""ForkedFromId"" = r.""RecipeId"") as ""DirectForkCount"",
+                   COALESCE(ROUND(AVG(rr.""Rating"")::NUMERIC, 2), 0) as ""AverageRating"",
+                   COUNT(rr.""UserId"") as ""RatingCount"",
+                   ts_rank(""TsvDescription"", to_tsquery('english', @SearchTerm)) as rank
+            FROM ""Recipe"" r
+            LEFT JOIN ""RecipeRating"" rr ON r.""RecipeId"" = rr.""RecipeId""
+            WHERE ""TsvDescription"" @@ to_tsquery('simple', @SearchTerm)
+            GROUP BY r.""RecipeId""
+            ORDER BY rank DESC
+            ";
+
+
+        return await connection.QueryAsync<GetRecipesDto>(sql, new {SearchTerm = searchTerm});
     }
 }
 

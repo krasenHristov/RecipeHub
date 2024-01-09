@@ -116,7 +116,7 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
     }
 
     [HttpPatch("api/recipes")]
-    //[Authorize]
+    [Authorize]
     public async Task<ActionResult<GetRecipesDto>> PatchExistingRecipe(PatchRecipeDto recipeToPatchInfo)
     {
         try
@@ -129,6 +129,20 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
             }
 
             return Ok(await recipeRepository.PatchRecipe(recipeToPatchInfo));
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
+    [HttpGet("api/recipes/search")]
+    public async Task<ActionResult<IEnumerable<GetRecipesDto>>> SearchRecipes(string search)
+    {
+        try
+        {
+            IEnumerable<GetRecipesDto> recipes = await recipeRepository.SearchRecipes(search);
+            return Ok(recipes);
         }
         catch (Exception e)
         {

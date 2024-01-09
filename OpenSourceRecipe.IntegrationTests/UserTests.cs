@@ -2027,14 +2027,14 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     {
         //Arrange
         // Define patch object with UserId & modified parameter
-        var modifiedRecipe = new 
+        var modifiedRecipe = new
         {
             UserId = 1,
             RecipeId = 1,
             RecipeTitle = "New Recipe Title"
         };
 
-        //Act 
+        //Act
         // 1. Login User
         var userToLogin = new
         {
@@ -2075,14 +2075,14 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     {
         //Arrange
         // Define patch object with UserId & modified parameter
-        var modifiedRecipe = new 
+        var modifiedRecipe = new
         {
             UserId = 1,
             RecipeId = 1,
             Difficulty = 5
         };
 
-        //Act 
+        //Act
         // 1. Login User
         var userToLogin = new
         {
@@ -2123,14 +2123,14 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     {
         //Arrange
         // Define patch object with UserId & modified parameter
-        var modifiedRecipe = new 
+        var modifiedRecipe = new
         {
             UserId = 1,
             RecipeId = 1,
             TimeToPrepare = 3
         };
 
-        //Act 
+        //Act
         // 1. Login User
         var userToLogin = new
         {
@@ -2171,7 +2171,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     {
         //Arrange
         // Define patch object with UserId & modified parameter
-        var modifiedRecipe = new 
+        var modifiedRecipe = new
         {
             UserId = 1,
             RecipeId = 2,
@@ -2179,7 +2179,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
             CuisineId = 2
         };
 
-        //Act 
+        //Act
         // 1. Login User
         var userToLogin = new
         {
@@ -2220,14 +2220,14 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     {
         //Arrange
         // Define patch object with UserId & modified parameter
-        var modifiedRecipe = new 
+        var modifiedRecipe = new
         {
             UserId = 1,
             RecipeId = 1,
             RecipeTitle = 5
         };
 
-        //Act 
+        //Act
         // 1. Login User
         var userToLogin = new
         {
@@ -2261,5 +2261,69 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         //Assert
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
         Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task SearchRecipe_ShouldSucceed()
+    {
+        var recipes = new HttpRequestMessage(HttpMethod.Get, "api/recipes/search?search=pizza");
+        var response = await _client.SendAsync(recipes);
+        var content = await response.Content.ReadAsStringAsync();
+
+        var recipesList = JsonConvert.DeserializeObject<IEnumerable<GetRecipesDto>>(content);
+
+        foreach (var recipe in recipesList!)
+        {
+            Assert.Contains("pizza", recipe.RecipeTitle!.ToLower());
+        }
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task SearchRecipeInMethod_ShouldSucceed()
+    {
+        var recipes = new HttpRequestMessage(HttpMethod.Get, "api/recipes/search?search=cook");
+        var response = await _client.SendAsync(recipes);
+        var content = await response.Content.ReadAsStringAsync();
+
+        var recipesList = JsonConvert.DeserializeObject<IEnumerable<GetRecipesDto>>(content);
+
+        foreach (var recipe in recipesList!)
+        {
+            Assert.Contains("cook", recipe.RecipeMethod!.ToLower());
+        }
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task SearchRecipeByCuisine_ShouldSucceed()
+    {
+        var recipes = new HttpRequestMessage(HttpMethod.Get, "api/recipes/search?search=italian");
+        var response = await _client.SendAsync(recipes);
+        var content = await response.Content.ReadAsStringAsync();
+
+        var recipesList = JsonConvert.DeserializeObject<IEnumerable<GetRecipesDto>>(content);
+
+        foreach (var recipe in recipesList!)
+        {
+            Assert.Contains("italian", recipe.Cuisine!.ToLower());
+        }
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task SearchRecipe_ShouldFail()
+    {
+        var recipes = new HttpRequestMessage(HttpMethod.Get, "api/recipes/search?search=notarealrecipe");
+        var response = await _client.SendAsync(recipes);
+        var content = await response.Content.ReadAsStringAsync();
+
+        var recipesList = JsonConvert.DeserializeObject<IEnumerable<GetRecipesDto>>(content);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Empty(recipesList!);
     }
 }
