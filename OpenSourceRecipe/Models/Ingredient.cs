@@ -68,3 +68,10 @@ public class GetAllIngredientsDto
     public int IngredientId { get; set; }
     public string? IngredientName { get; set; }
 }
+
+
+public class UpdateIngredientsDto
+{
+    int[]? IngredientIds { get; set; }
+    string[]? Quantities { get; set; }
+}

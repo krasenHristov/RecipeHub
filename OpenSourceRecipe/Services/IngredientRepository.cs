@@ -91,4 +91,35 @@ public class IngredientRepository
 
         return newRecipe;
     }
+
+    public async Task UpdateIngredientsForRecipe(int recipeId, int[] ingredientIds, string[] quantities)
+    {
+await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        var parameters = new DynamicParameters();
+        parameters.Add("RecipeId", recipeId);
+
+        var sql = "DELETE FROM \"RecipeIngredient\" WHERE \"RecipeId\" = @RecipeId";
+        await connection.ExecuteAsync(sql, parameters);
+
+        for (int i = 0; i < ingredientIds.Length; i++)
+        {
+            parameters = new DynamicParameters();
+            parameters.Add("RecipeId", recipeId);
+            parameters.Add("IngredientId", ingredientIds[i]);
+            parameters.Add("Quantity", quantities[i]);
+
+            sql = "INSERT INTO \"RecipeIngredient\" " +
+                  "(\"RecipeId\", \"IngredientId\", \"Quantity\") " +
+                  "VALUES (@RecipeId, @IngredientId, @Quantity) RETURNING *";
+            var newRecipeIngredient = await connection.QuerySingleOrDefaultAsync<GetRecipeByIdDto>(sql, parameters);
+
+            if (newRecipeIngredient == null)
+            {
+                throw new Exception("RecipeIngredient not created due to missing parameters");
+            }
+
+            return;
+        }
+    }
 }
