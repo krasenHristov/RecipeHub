@@ -329,44 +329,109 @@ public class RecipesData
 
                 new MyRecipeObject
                 {
-                    RecipeId = 3,
-                    RecipeTitle = "Sushi Rolls",
-                    TagLine = "Fresh and Flavorful Japanese Sushi",
-                    Difficulty = 4,
-                    TimeToPrepare = 75,
-                    Cuisine = "Japanese",
-                    RecipeMethod = "1. Prepare sushi rice according to package instructions.%" +
-                                    "2. Lay a sheet of nori on a bamboo sushi rolling mat.%" +
-                                    "3. Spread a thin layer of sushi rice on the nori, leaving a small border at the top.%" +
-                                    "4. Add your favorite sushi ingredients (e.g., sliced fish, avocado, cucumber) along the bottom edge of the rice.%" +
-                                    "5. Roll the sushi tightly using the bamboo mat.%" +
-                                    "6. Slice the roll into bite-sized pieces.%" +
-                                    "7. Serve with soy sauce, pickled ginger, and wasabi.",
+                    RecipeId = 41,
+                    RecipeTitle = "Penne alla Vodka",
+                    TagLine = "Creamy Penne Pasta with a Vodka-Infused Tomato Sauce",
+                    Difficulty = 3,
+                    TimeToPrepare = 45,
+                    Cuisine = "Italian",
+                    RecipeMethod = "1. Cook penne pasta according to package instructions until al dente. Drain and set aside.%" +
+                                   "2. In a large skillet, melt butter and sauté minced garlic until fragrant.%" +
+                                   "3. Pour in vodka and cook for a few minutes until reduced.%" +
+                                   "4. Add crushed tomatoes, heavy cream, and red pepper flakes. Simmer for 15-20 minutes.%" +
+                                   "5. Stir in grated Parmesan cheese and fresh basil.%" +
+                                   "6. Toss the cooked penne pasta in the creamy vodka sauce.%" +
+                                   "7. Serve hot, garnished with more Parmesan and basil leaves.",
                     UserId = 1,
-                    CuisineId = 3,
-                    RecipeImg = "https://images.unsplash.com/photo-1593614201641-6f16f8e41a4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    CuisineId = 1,
+                    RecipeImg = "https://www.saltandlavender.com/wp-content/uploads/2022/05/penne-alla-vodka-15-720x1080.jpg" // done
                 },
 
                 new MyRecipeObject
                 {
-                    RecipeId = 4,
-                    RecipeTitle = "Sushi Rolls",
-                    TagLine = "Fresh and Flavorful Japanese Sushi",
-                    Difficulty = 4,
-                    TimeToPrepare = 75,
-                    Cuisine = "Japanese",
-                    RecipeMethod = "1. Prepare sushi rice according to package instructions.%" +
-                                    "2. Lay a sheet of nori on a bamboo sushi rolling mat.%" +
-                                    "3. Spread a thin layer of sushi rice on the nori, leaving a small border at the top.%" +
-                                    "4. Add your favorite sushi ingredients (e.g., sliced fish, avocado, cucumber) along the bottom edge of the rice.%" +
-                                    "5. Roll the sushi tightly using the bamboo mat.%" +
-                                    "6. Slice the roll into bite-sized pieces.%" +
-                                    "7. Serve with soy sauce",
+                    RecipeId = 42,
+                    RecipeTitle = "Chicken Alfredo",
+                    TagLine = "Creamy Fettuccine Alfredo with Grilled Chicken",
+                    Difficulty = 3,
+                    TimeToPrepare = 30,
+                    Cuisine = "Italian",
+                    RecipeMethod = "1. Cook fettuccine pasta according to package instructions. Drain and set aside.%" +
+                                   "2. Season chicken breasts with salt, black pepper, and garlic powder. Grill or pan-fry until cooked through. Slice into strips.%" +
+                                   "3. In a large skillet, melt butter over medium heat. Add minced garlic and sauté until fragrant.%" +
+                                   "4. Pour in heavy cream and bring to a gentle simmer. Cook for a few minutes until it thickens slightly.%" +
+                                   "5. Stir in grated Parmesan cheese until the sauce is smooth and creamy.%" +
+                                   "6. Toss the cooked fettuccine in the Alfredo sauce until well coated.%" +
+                                   "7. Top with grilled chicken strips and chopped fresh parsley.%" +
+                                   "8. Serve hot, garnished with extra Parmesan if desired.",
                     UserId = 1,
-                    CuisineId = 3,
-                    RecipeImg = "https://images.unsplash.com/photo-1593614201641-6f16f8e41a4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                    ForkedFromId = 3,
-                    OriginalRecipeId = 3
+                    CuisineId = 1,
+                    RecipeImg = "https://www.budgetbytes.com/wp-content/uploads/2022/07/Chicken-Alfredo-V3-768x1024.jpg" // done
+                },
+
+                new MyRecipeObject
+                {
+                    RecipeId = 43,
+                    RecipeTitle = "Chicken Piccata",
+                    TagLine = "Tender Chicken Cutlets in a Lemon-Caper Sauce",
+                    Difficulty = 3,
+                    TimeToPrepare = 30,
+                    Cuisine = "Italian",
+                    RecipeMethod = "1. Season chicken cutlets with salt and black pepper. Dredge them in flour, shaking off excess.%" +
+                                   "2. In a large skillet, heat olive oil over medium-high heat. Add chicken cutlets and cook until golden brown and cooked through. Remove and set aside.%" +
+                                   "3. In the same skillet, add minced garlic and cook until fragrant.%" +
+                                   "4. Pour in chicken broth, lemon juice, and capers. Bring to a simmer and cook for a few minutes.%" +
+                                   "5. Stir in butter and fresh parsley until the sauce thickens.%" +
+                                   "6. Return the cooked chicken cutlets to the skillet, spooning the sauce over them. Cook for an additional minute.%" +
+                                   "7. Serve hot, garnished with lemon slices and additional capers if desired.",
+                    UserId = 1,
+                    CuisineId = 1,
+                    RecipeImg = "https://images.themodernproper.com/billowy-turkey/production/posts/2019/Chicken-Picatta-8.jpg?w=800&q=82&fm=jpg&fit=crop&dm=1689343305&s=9818cb3cb4fc509f8932ba868198aae6" // done
+                },
+
+                new MyRecipeObject
+                {
+                    RecipeId = 44,
+                    RecipeTitle = "Lasagna",
+                    TagLine = "Layered Pasta Dish with Meat Sauce and Creamy Bechamel",
+                    Difficulty = 4,
+                    TimeToPrepare = 120,
+                    Cuisine = "Italian",
+                    RecipeMethod = "1. Cook lasagna noodles according to package instructions until al dente. Drain and set aside.%" +
+                                   "2. In a large skillet, heat olive oil and sauté minced garlic and onions until translucent.%" +
+                                   "3. Add ground beef and Italian sausage. Cook until browned and crumbled. Drain excess fat.%" +
+                                   "4. Stir in crushed tomatoes, tomato paste, Italian seasoning, and sugar. Simmer for 20-30 minutes.%" +
+                                   "5. In a separate saucepan, melt butter and whisk in flour to create a roux. Slowly add milk, whisking constantly until the sauce thickens. Season with nutmeg, salt, and pepper.%" +
+                                   "6. Preheat your oven to 375°F (190°C).%" +
+                                   "7. In a large baking dish, layer lasagna noodles, meat sauce, and bechamel sauce. Repeat until all ingredients are used, finishing with a layer of bechamel.%" +
+                                   "8. Sprinkle shredded mozzarella and grated Parmesan cheese on top.%" +
+                                   "9. Bake in the preheated oven for 30-35 minutes or until the lasagna is bubbling and the cheese is golden brown.%" +
+                                   "10. Let it rest for a few minutes before serving.",
+                    UserId = 1,
+                    CuisineId = 1,
+                    RecipeImg = "https://cafedelites.com/wp-content/uploads/2018/01/Mamas-Best-Lasagna-IMAGE-96.jpg" // done
+                },
+
+                new MyRecipeObject
+                {
+                    RecipeId = 45,
+                    RecipeTitle = "Mushroom Risotto",
+                    TagLine = "Creamy Arborio Rice with Sautéed Mushrooms and Parmesan",
+                    Difficulty = 3,
+                    TimeToPrepare = 45,
+                    Cuisine = "Italian",
+                    RecipeMethod = "1. Heat chicken or vegetable broth in a saucepan and keep it warm over low heat.%" +
+                                   "2. In a separate large skillet, melt butter over medium heat. Add minced garlic and sauté for about 1 minute until fragrant.%" +
+                                   "3. Add Arborio rice to the skillet and cook, stirring constantly, for 2-3 minutes until the rice is lightly toasted.%" +
+                                   "4. Pour in white wine and cook, stirring, until the wine is mostly absorbed by the rice.%" +
+                                   "5. Begin adding the warm broth, one ladle at a time, to the rice. Stir constantly and allow the liquid to be absorbed before adding more broth. Continue this process until the rice is creamy and cooked to your desired doneness (usually about 18-20 minutes).%" +
+                                   "6. While cooking the rice, in another skillet, sauté sliced mushrooms with a bit of olive oil until they are tender and browned.%" +
+                                   "7. Stir in grated Parmesan cheese and fresh thyme into the cooked risotto.%" +
+                                   "8. Add the sautéed mushrooms to the risotto and gently mix.%" +
+                                   "9. Season with salt and black pepper to taste.%" +
+                                   "10. Serve hot, garnished with additional Parmesan cheese and fresh thyme leaves.",
+                    UserId = 1,
+                    CuisineId = 1,
+                    RecipeImg = "https://hips.hearstapps.com/del.h-cdn.co/assets/17/35/1504128527-delish-mushroom-risotto.jpg?resize=980:*" // done
                 },
 
                 new MyRecipeObject
@@ -387,10 +452,7 @@ public class RecipesData
                     UserId = 1,
                     CuisineId = 3,
                     RecipeImg = "https://images.unsplash.com/photo-1593614201641-6f16f8e41a4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                    ForkedFromId = 4,
-                    OriginalRecipeId = 3
                 },
-
                 new MyRecipeObject
                 {
                     RecipeId = 7,
@@ -409,7 +471,6 @@ public class RecipesData
                     CuisineId = 2,
                     RecipeImg = "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=1470&auto=format&fit=[…]3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 },
-
                 new MyRecipeObject
                 {
                     RecipeId = 8,
@@ -427,7 +488,6 @@ public class RecipesData
                     CuisineId = 3,
                     RecipeImg = "https://images.unsplash.com/photo-1598514983318-2f64f8f4796c?q=80&w=1470&auto=format&f[…]3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 },
-
                 new MyRecipeObject
                 {
                     RecipeId = 9,
@@ -445,11 +505,8 @@ public class RecipesData
                                    "7. Serve hot, garnished with fresh basil and a drizzle of olive oil.",
                     UserId = 2,
                     CuisineId = 1,
-                    RecipeImg = "https://images.unsplash.com/photo-1572183048591-67d4c43b0314?ixlib=rb-1.2.1&q=80&w=1080&auto=format&fit=crop",
-                    ForkedFromId = 4,
-                    OriginalRecipeId = 4
+                    RecipeImg = "https://simply-delicious-food.com/wp-content/uploads/2020/06/Grilled-Pizza-Margherita-5.jpg", // done
                 },
-
                 new MyRecipeObject
                 {
                     RecipeId = 10,
@@ -466,11 +523,8 @@ public class RecipesData
                                    "6. Garnish with pineapple, onion, cilantro, and lime.",
                     UserId = 3,
                     CuisineId = 2,
-                    RecipeImg = "https://images.unsplash.com/photo-1604908554025-f09d8cc4c5d5?ixlib=rb-1.2.1&q=80&w=1080&auto=format&fit=crop",
-                    ForkedFromId = 5,
-                    OriginalRecipeId = 5
+                    RecipeImg = "https://cookingformysoul.com/wp-content/uploads/2020/02/best-slow-cooked-tacos-al-pastor-min-683x1024.jpg", // done
                 },
-
                 new MyRecipeObject
                 {
                     RecipeId = 11,
@@ -487,11 +541,8 @@ public class RecipesData
                                    "6. Serve over rice, garnished with sesame seeds and green onions.",
                     UserId = 4,
                     CuisineId = 3,
-                    RecipeImg = "https://images.unsplash.com/photo-1615486767794-4b74a4b1c1e1?ixlib=rb-1.2.1&q=80&w=1080&auto=format&fit=crop",
-                    ForkedFromId = 6,
-                    OriginalRecipeId = 6
+                    RecipeImg = "https://skinnyms.com/wp-content/uploads/2017/03/Teriyaki-Chicken-Bake-Recipe.jpg", // done
                 },
-
                 new MyRecipeObject
                 {
                 RecipeId = 12,
@@ -510,7 +561,6 @@ public class RecipesData
                 CuisineId = 1,
                 RecipeImg = "https://www.chompslurrpburp.com/wp-content/uploads/2021/12/spaghetti-carbonara-800x500.jpg"
                 },
-
                 new MyRecipeObject
                 {
                     RecipeId = 13,
@@ -528,7 +578,6 @@ public class RecipesData
                     CuisineId = 3,
                     RecipeImg = "https://images.immediate.co.uk/production/volatile/sites/30/2022/10/Vegetarian-chilli-206c469.jpg?quality=90&webp=true&resize=300,272"
                 },
-
                 new MyRecipeObject
                 {
                     RecipeId = 14,
@@ -546,7 +595,6 @@ public class RecipesData
                     CuisineId = 3,
                     RecipeImg = "https://shwetainthekitchen.com/wp-content/uploads/2023/06/veg-fried-rice.jpg"
                 },
-
                 new MyRecipeObject
                 {
                     RecipeId = 15,
@@ -584,6 +632,12 @@ public class RecipesData
             new int[] { 634, 242, 363, 638, 543, 422, 396, 663, 249, 355, 34, 31, 347 }, // 36
             new int[] { 683, 242, 363, 638, 543, 422, 396, 663, 249, 355, 34, 31, 347 }, // 37
             new int[] { 688, 242, 363, 638, 543, 422, 396, 663, 249, 355, 34, 31, 347 }, // 38
+            new int[] { 683, 5, 363, 212, 396, 27, 34, 347, 378, 349 }, // 41
+            new int[] { 671, 528, 5, 363, 27, 34, 375, 378, 349}, // 42
+            new int[] { 528, 378, 349, 219, 242, 364, 389, 367, 5, 375 }, // 43
+            new int[] { 543, 564, 242, 363, 638, 396, 422, 663, 249, 378, 349 }, // 44
+            new int[] { 335, 5, 363, 215, 389, 634, 242, 34, 380, 378, 349 }, // 45
+
             new int[] {10, 11, 12, 13, 14, 15, 16, 17, 18},
             new int[] {19, 20, 21, 22, 23, 24, 25, 26, 27},
             new int[] {28, 29, 30, 31, 32, 33, 34, 35, 36},
@@ -618,6 +672,12 @@ public class RecipesData
             new string[] { "4 large", "2 tbs", "2 cloves", "1 med size", "500g", "2 tbs", "400g", "2 tsp", "1/2 tsp", "1 cup", "1/2 cup", "1/2 cup", "For garnish" }, // 36
             new string[] { "300g", "2 tbs", "2 cloves", "1 med size", "500g", "2tbs", "400g", "2 tsp", "1/2 tsp", "1 cup", "1/2 cup", "1/2 cup", "For garnish" }, // 37
             new string[] { "300g", "2 tbs", "2 cloves", "1 med size", "500g", "2tbs", "400g", "2 tsp", "1/2 tsp", "1 cup", "1/2 cup", "1/2 cup", "For garnish" }, // 38
+            new string[] { "340g", "2 tbs", "3 cloves", "1/4 cup", "1 can", "1 cup", "1/2 cup", "Handful", "To taste", "To taste" }, // 41
+            new string[] { "340g", "340g", "1 clove", "4 tbs", "1 cup", "1 cup", "Handful", "To taste", "To taste" }, // 42
+            new string[] { "340g", "1/2 tsp", "1/4 tsp", "1/2 cup", "2 tbsp", "2 cloves", "1 cup", "2 pcs", "2 tbsp", "2 tbsp" }, // 43
+            new string[] { "450g", "225g", "2 tbsp", "3 cloves", "1 med size", "1 can", "2 tbsp", "2 tsp", "1 tsp", "To taste", "To taste" }, // 44
+            new string[] { "1 1/2 cups", "3 tbsp", "2 cloves", "1/2 cup", "4 cups", "225g", "2 tbsp", "1/2", "1 tbsp", "To taste", "To taste" }, // 45
+
             new string[] { "10g", "112g", "123g", "134g", "145g", "156g", "167g", "178g", "189g" },
             new string[] { "19g", "201g", "212g", "223g", "234g", "245g", "256g", "267g", "278g" },
             new string[] { "28g", "291g", "302g", "313g", "324g", "335g", "346g", "357g", "368g" },
