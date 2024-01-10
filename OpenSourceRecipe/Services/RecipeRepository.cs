@@ -1,3 +1,4 @@
+using System.Collections;
 using Dapper;
 using Npgsql;
 using OpenSourceRecipes.Models;
@@ -272,6 +273,43 @@ public class RecipeRepository
 
 
         return await connection.QueryAsync<GetRecipesDto>(sql, new {SearchTerm = searchTerm});
+    }
+
+    public async Task<IEnumerable<GetRecipesDto>> GetRecipesByIngredients(int[] ingredientIds)
+    {
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        string query = @"
+            SELECT ri.""RecipeId""
+            FROM ""RecipeIngredient"" ri
+            WHERE ri.""RecipeId"" IN (
+            SELECT ri_sub.""RecipeId""
+            FROM ""RecipeIngredient"" ri_sub
+            WHERE ri_sub.""IngredientId"" = ANY(@Ids)
+            GROUP BY ri_sub.""RecipeId""
+            )
+            GROUP BY ri.""RecipeId"";";
+
+        var result = await connection.QueryAsync<int>(query, new { Ids = ingredientIds.ToArray() });
+
+        // get all recipes for these IDs
+        string sql = @"
+           SELECT
+            r.*,
+                (SELECT COUNT(""RecipeId"") FROM ""Recipe"" WHERE ""ForkedFromId"" = r.""RecipeId"") as ""DirectForkCount"",
+                COALESCE(ROUND(AVG(rr.""Rating"")::NUMERIC, 2), 0) as ""AverageRating"",
+                COUNT(rr.""UserId"") as ""RatingCount""
+            FROM
+                ""Recipe"" r
+            LEFT JOIN
+                ""RecipeRating"" rr ON r.""RecipeId"" = rr.""RecipeId""
+            WHERE
+                r.""RecipeId"" = ANY(@Ids)
+            GROUP BY
+                r.""RecipeId"";
+            ";
+
+        return await connection.QueryAsync<GetRecipesDto>(sql, new { Ids = result });
     }
 }
 

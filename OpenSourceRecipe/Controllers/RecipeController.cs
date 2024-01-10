@@ -149,4 +149,20 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
             return BadRequest(e.Message);
         }
     }
+
+    [HttpGet("api/recipes/ingredients/{ingredientIds}")]
+    public async Task<ActionResult<IEnumerable<GetRecipesDto>>> GetRecipesByIngredients(string ingredientIds)
+    {
+        int[] ingredientIdsArray = ingredientIds.Split(' ').Select(int.Parse).ToArray();
+
+        try
+        {
+            IEnumerable<GetRecipesDto> recipes = await recipeRepository.GetRecipesByIngredients(ingredientIdsArray);
+            return Ok(recipes);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }
