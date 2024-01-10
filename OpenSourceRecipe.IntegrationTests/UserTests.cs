@@ -1227,6 +1227,16 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     [Fact]
     public async Task UpdateIngredientsForRecipe_ShouldSucceed()
     {
+
+        var initialRecipe = new HttpRequestMessage(HttpMethod.Get, "api/recipes/1");
+
+        var initialRecipeResponse = await _client.SendAsync(initialRecipe);
+        var initialRecipeContent = await initialRecipeResponse.Content.ReadAsStringAsync();
+
+        var initialRecipeObject = JsonConvert.DeserializeObject<GetRecipeByIdDto>(initialRecipeContent);
+
+        Assert.True(initialRecipeObject!.RecipeIngredients!.Count > 3);
+
         var body = new
         {
             IngredientIds = new int[] { 1, 2, 3 },
@@ -1240,6 +1250,19 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
 
         var response = await _client.SendAsync(request);
 
+        var recipe = new HttpRequestMessage(HttpMethod.Get, "api/recipes/1");
+
+        var recipeResponse = await _client.SendAsync(recipe);
+        var recipeContent = await recipeResponse.Content.ReadAsStringAsync();
+
+        var recipeObject = JsonConvert.DeserializeObject<GetRecipeByIdDto>(recipeContent);
+
+        foreach (var ingredient in recipeObject!.RecipeIngredients!)
+        {
+            Assert.Contains(ingredient.IngredientId, body.IngredientIds);
+        }
+
+        Assert.Equal(3, recipeObject!.RecipeIngredients!.Count);
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
 

@@ -21,11 +21,19 @@ public class FileUploadOperationFilter : IOperationFilter
                         {
                             Type = "object",
                             Properties = fileUploadParams.ToDictionary(
-                                name => name,
-                                name => new OpenApiSchema
+                                name =>
                                 {
-                                    Type = "string",
-                                    Format = "binary"
+                                    if (name == null) throw new ArgumentNullException(nameof(name));
+                                    return name;
+                                },
+                                name =>
+                                {
+                                    if (name == null) throw new ArgumentNullException(nameof(name));
+                                    return new OpenApiSchema
+                                    {
+                                        Type = "string",
+                                        Format = "binary"
+                                    };
                                 })
                         }
                     }
