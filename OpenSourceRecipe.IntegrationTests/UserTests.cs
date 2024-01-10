@@ -1046,7 +1046,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     {
         var userLogin = new
         {
-            Username = "seededuser",
+            Username = "jellyfish",
             Password = "password"
         };
 
@@ -1081,7 +1081,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     {
         var userLogin = new
         {
-            Username = "seededuser",
+            Username = "jellyfish",
             Password = "password"
         };
 
@@ -1111,7 +1111,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     {
         var userLogin = new
         {
-            Username = "seededuser",
+            Username = "jellyfish",
             Password = "password"
         };
 
