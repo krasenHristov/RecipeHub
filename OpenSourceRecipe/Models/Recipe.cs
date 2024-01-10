@@ -124,6 +124,7 @@ public class GetRecipeByIdDto
     public int? ForkedFromId { get; set; } = null;
     public int? OriginalRecipeId { get; set; } = null;
     public int UserId { get; set; }
+    public string? Username { get; set; }
     public int CuisineId { get; set; }
     public int ForkCount { get; set; }
     public int DirectForkCount { get; set; }
@@ -155,4 +156,12 @@ public class PatchRecipeDto
 public class SearchRecipeDto
 {
     public string? SearchTerm { get; set; }
+}
+
+public class GetRelevantRecipesDto
+{
+    public int RecipeId { get; set; }
+    public string? RecipeTitle { get; set; }
+    public string? RecipeImg { get; set; }
+    public double AverageRating { get; set; } = 0;
 }

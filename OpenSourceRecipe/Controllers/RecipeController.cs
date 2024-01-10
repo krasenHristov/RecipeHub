@@ -165,4 +165,18 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
             return BadRequest(e.Message);
         }
     }
+
+    [HttpGet("api/recipes/relevant/{recipeId}")]
+    public async Task<ActionResult<IEnumerable<GetRelevantRecipesDto>>> GetRelevantRecipes(int recipeId)
+    {
+        try
+        {
+            IEnumerable<GetRelevantRecipesDto?> recipes = await recipeRepository.GetRelevantRecipes(recipeId);
+            return Ok(recipes);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }
