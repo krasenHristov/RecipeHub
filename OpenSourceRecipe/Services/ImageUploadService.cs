@@ -3,8 +3,8 @@ using Firebase.Storage;
 namespace FirebaseStorageService.Storage;
 public class FirebaseStorageService
 {
-    private readonly string _bucket;
-    private readonly string _apiKey;
+    private readonly string? _bucket;
+    private readonly string? _apiKey;
 
     public FirebaseStorageService(IConfiguration configuration)
     {
