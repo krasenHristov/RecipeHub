@@ -81,4 +81,5 @@ public class RecipeRatingsRepository
 
         return newRating;
     }
+
 }

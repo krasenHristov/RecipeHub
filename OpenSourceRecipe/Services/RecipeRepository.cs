@@ -3,6 +3,7 @@ using Dapper;
 using Npgsql;
 using OpenSourceRecipes.Models;
 using System.Text;
+using Microsoft.AspNetCore.Mvc;
 
 namespace OpenSourceRecipes.Services;
 public class RecipeRepository
@@ -42,15 +43,16 @@ public class RecipeRepository
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        string recipeSql = "SELECT r.*, " +
+        string recipeSql = "SELECT r.*, u.\"Username\", " +
                            "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"ForkedFromId\" = r.\"RecipeId\") as \"DirectForkCount\", " +
                            "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"OriginalRecipeId\" = r.\"RecipeId\") as \"ForkCount\", " +
                            "COALESCE(ROUND(AVG(rr.\"Rating\")::NUMERIC, 2), 0) as \"AverageRating\", " +
                            "COUNT(rr.\"UserId\") as \"RatingCount\" " +
                            "FROM \"Recipe\" r " +
                            "LEFT JOIN \"RecipeRating\" rr ON r.\"RecipeId\" = rr.\"RecipeId\" " +
+                           "JOIN \"User\" u ON r.\"UserId\" = u.\"UserId\" " +
                            "WHERE r.\"RecipeId\" = @RecipeId " +
-                           "GROUP BY r.\"RecipeId\";";
+                           "GROUP BY r.\"RecipeId\", u.\"Username\";";
 
         var recipe = await connection.QueryFirstOrDefaultAsync<GetRecipeByIdDto>(recipeSql, new {RecipeId = recipeId});
 
@@ -310,6 +312,63 @@ public class RecipeRepository
             ";
 
         return await connection.QueryAsync<GetRecipesDto>(sql, new { Ids = result });
+    }
+
+    public async Task<IEnumerable<GetRelevantRecipesDto?>> GetRelevantRecipes(int recipeId)
+    {
+        var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+
+        string currentRecipeSql = "SELECT * FROM \"Recipe\" WHERE \"RecipeId\" = @RecipeId;";
+
+        var currentRecipe = await connection.QueryFirstOrDefaultAsync<GetRecipesDto>(currentRecipeSql, new {RecipeId = recipeId});
+
+        if (currentRecipe == null)
+        {
+            throw new Exception("Recipe not found");
+        }
+
+        string[] searchTerms = currentRecipe!.RecipeTitle!.Split(' ');
+
+        for (int i = 0; i < searchTerms.Length; i++)
+        {
+            searchTerms[i] = searchTerms[i] + ":*";
+        }
+
+        string searchTerm = string.Join(" & ", searchTerms);
+
+        string searchSql = @"
+            SELECT r.""RecipeTitle"", r.""RecipeId"", r.""RecipeImg"", r.""Cuisine"",
+                   COALESCE(ROUND(AVG(rr.""Rating"")::NUMERIC, 2), 0) as ""AverageRating"",
+                   ts_rank(""TsvDescription"", to_tsquery('english', @SearchTerm)) as rank
+            FROM ""Recipe"" r
+            LEFT JOIN ""RecipeRating"" rr ON r.""RecipeId"" = rr.""RecipeId""
+            WHERE ""TsvDescription"" @@ to_tsquery('simple', @SearchTerm)
+            GROUP BY r.""RecipeId""
+            ORDER BY rank DESC
+            LIMIT 5
+            ";
+
+        var relevantRecipes = await connection.QueryAsync<GetRelevantRecipesDto>(searchSql, new {SearchTerm = searchTerm});
+
+        int recipeCount = relevantRecipes.Count();
+        if (recipeCount < 5)
+        {
+            string getByCuisineSql = $@"
+            SELECT r.""RecipeTitle"", r.""RecipeId"", r.""RecipeImg"", r.""Cuisine"",
+                   COALESCE(ROUND(AVG(rr.""Rating"")::NUMERIC, 2), 0) as ""AverageRating""
+            FROM ""Recipe"" r
+            LEFT JOIN ""RecipeRating"" rr ON r.""RecipeId"" = rr.""RecipeId""
+            WHERE ""CuisineId"" = @CuisineId
+            GROUP BY r.""RecipeId""
+            LIMIT {5 - recipeCount}
+            ";
+
+            IEnumerable<GetRelevantRecipesDto> recipesByCuisine = await connection.QueryAsync<GetRelevantRecipesDto>(getByCuisineSql , new {CuisineId = currentRecipe.CuisineId});
+
+            relevantRecipes = relevantRecipes.Concat(recipesByCuisine);
+        }
+
+        return relevantRecipes;
     }
 }
 

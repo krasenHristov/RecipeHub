@@ -1,6 +1,7 @@
 using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
+using Microsoft.Identity.Client;
 using Newtonsoft.Json;
 using OpenSourceRecipes.Models;
 
@@ -1133,6 +1134,28 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         var response = await _client.SendAsync(request);
 
         Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task GetRelevantRecipes_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/relevant/1");
+        var response = await _client.SendAsync(request);
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRelevantRecipesDto>>(contentString);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count == 5);
+    }
+
+    [Fact]
+    public async Task GetRelevantRecipes_ShouldReturnAnEmptyList()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/relevant/9999");
+        var response = await _client.SendAsync(request);
+
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
 
     // INGREDIENT TESTS
