@@ -119,7 +119,8 @@ await using var connection = new NpgsqlConnection(_configuration.GetConnectionSt
                 throw new Exception("RecipeIngredient not created due to missing parameters");
             }
 
-            return;
         }
+
+        return;
     }
 }
