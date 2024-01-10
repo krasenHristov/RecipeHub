@@ -32,6 +32,10 @@ namespace OpenSourceRecipes.Seeds
             var ingredients = recipesObject.ingredients();
             var quantity = recipesObject.quantities();
 
+            Console.WriteLine(recipeArr.Length);
+            Console.WriteLine(ingredients.Length);
+            Console.WriteLine(quantity.Length);
+
             List<MyRecipeObject> insertedRecipes = new List<MyRecipeObject>();
 
             Console.WriteLine("Inserting Recipes");
@@ -51,19 +55,23 @@ namespace OpenSourceRecipes.Seeds
 
                     for (int j = 0; j < ingredients[i].Length; j++)
                     {
+                        Console.WriteLine($"RecipeId: {insertedRecipe?.RecipeId}, IngredientId: {ingredients[i][j]}, Quantity: {quantity[i][j]}");
+                        Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+                        var parameters = new { Quantity = quantity[i][j], RecipeId = insertedRecipe?.RecipeId, IngredientId = ingredients[i][j] };
                         string ingredientQuery = $"INSERT INTO \"RecipeIngredient\" " +
                                         "(\"Quantity\", \"RecipeId\", \"IngredientId\") " +
-                                        $"VALUES ('{quantity[i][j]}', '{recipe.RecipeId}', '{ingredients[i][j]}') " +
+                                        $"VALUES (@Quantity, @RecipeId, @IngredientId) " +
                                         "RETURNING *;";
 
-                        var insertedRecipeIngredient = await connection.QueryFirstOrDefaultAsync<MyRecipeObject>(ingredientQuery);
+
+                        var insertedRecipeIngredient = await connection.QueryFirstOrDefaultAsync<MyRecipeObject>(ingredientQuery, parameters);
                         if (insertedRecipeIngredient != null) insertedRecipes.Add(insertedRecipeIngredient);
                     }
                 }
                 catch (Exception ex)
                 {
                      Console.WriteLine($"Error inserting recipe: {ex}");
-                    throw; // Re-throw the caught exception            }
+                    throw;
                 }
             }
             Console.WriteLine("------------------------");
