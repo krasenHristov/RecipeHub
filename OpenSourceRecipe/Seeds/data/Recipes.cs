@@ -228,7 +228,6 @@ public class RecipesData
                     OriginalRecipeId = 6
                 },
 
-                /*
                 new MyRecipeObject
                 {
                 RecipeId = 12,
@@ -296,10 +295,10 @@ public class RecipesData
                                    "2. Add finely chopped onion, tomato, cilantro, and jalapeño.%" +
                                    "3. Squeeze in lime juice and season with salt and pepper.%" +
                                    "4. Mix well and serve with tortilla chips or as a topping.",
-                    UserId = 9,
+                    UserId = 6,
                     CuisineId = 2,
                     RecipeImg = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Guacamole_and_chips_-_Melissa_dinn%C3%89.jpg/800px-Guacamole_and_chips_-_Melissa_dinn%C3%89.jpg",
-                }*/
+                }
             };
     }
 
@@ -311,11 +310,15 @@ public class RecipesData
             new int[] {10, 11, 12, 13, 14, 15, 16, 17, 18},
             new int[] {19, 20, 21, 22, 23, 24, 25, 26, 27},
             new int[] {28, 29, 30, 31, 32, 33, 34, 35, 36},
-            new int[] {37, 38, 39, 40, 41, 42, 43, 44, 45},
+            new int[] {1, 2, 3, 40, 41, 42, 43, 44, 45},
             new int[] {19, 20, 21, 22, 23, 24, 25, 26, 27},
             new int[] {28, 29, 30, 31, 32, 33, 34, 35, 36},
             new int[] {37, 38, 39, 40, 41, 42, 43, 44, 45},
-            new int[] {19, 20, 21, 22, 23, 24, 25, 26, 27},
+            new int[] {1, 2, 3, 22, 23, 24, 25, 26, 27},
+            new int[] {28, 29, 30, 31, 32, 33, 34, 35, 36},
+            new int[] {37, 38, 39, 40, 41, 42, 43, 44, 45},
+            new int[] {37, 38, 39, 40, 41, 42, 43, 44, 45},
+            new int[] {1, 2, 3, 22, 23, 24, 25, 26, 27},
             new int[] {28, 29, 30, 31, 32, 33, 34, 35, 36},
             new int[] {37, 38, 39, 40, 41, 42, 43, 44, 45},
         };
@@ -332,6 +335,10 @@ public class RecipesData
             new string[] { "37g", "391g", "402g", "413g", "424g", "435g", "446g", "457g", "468g" },
             new string[] { "19g", "201g", "212g", "223g", "234g", "245g", "256g", "267g", "278g" },
             new string[] { "28g", "291g", "302g", "313g", "324g", "335g", "346g", "357g", "368g" },
+            new string[] { "37g", "391g", "402g", "413g", "424g", "435g", "446g", "457g", "468g" },
+            new string[] { "19g", "201g", "212g", "223g", "234g", "245g", "256g", "267g", "278g" },
+            new string[] { "28g", "291g", "302g", "313g", "324g", "335g", "346g", "357g", "368g" },
+            new string[] { "37g", "391g", "402g", "413g", "424g", "435g", "446g", "457g", "468g" },
             new string[] { "37g", "391g", "402g", "413g", "424g", "435g", "446g", "457g", "468g" },
             new string[] { "19g", "201g", "212g", "223g", "234g", "245g", "256g", "267g", "278g" },
             new string[] { "28g", "291g", "302g", "313g", "324g", "335g", "346g", "357g", "368g" },

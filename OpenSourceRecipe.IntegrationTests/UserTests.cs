@@ -1266,6 +1266,34 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
 
+    [Fact]
+    public async Task GetRecipesByIngredientIds_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes?recipeIds=120%220%3");
+        var response = await _client.SendAsync(request);
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count > 0);
+        Assert.NotNull(content);
+    }
+
+    [Fact]
+    public async Task GetRecipesByIngredientIdsParamsWithComas_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes?recipeIds=1,2,3");
+        var response = await _client.SendAsync(request);
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count > 0);
+        Assert.NotNull(content);
+    }
+
     // CUISINE TESTS
     [Fact]
     public async Task GetAllCuisines_ShouldSucceed()
