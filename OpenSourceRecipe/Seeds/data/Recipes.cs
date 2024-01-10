@@ -180,6 +180,155 @@ public class RecipesData
 
                 new MyRecipeObject
                 {
+                    RecipeId = 33,
+                    RecipeTitle = "Spicy Sausage and Mushroom Linguine",
+                    TagLine = "A Flavorful Twist on Classic Italian Pasta",
+                    Difficulty = 3,
+                    TimeToPrepare = 45,
+                    Cuisine = "Italian",
+                    RecipeMethod = "1. Heat olive oil in a pan and sauté minced garlic and sliced mushrooms until fragrant and mushrooms are tender.%" +
+                                   "2. Remove the mushroom mixture from the pan and set aside.%" +
+                                   "3. In the same pan, add spicy Italian sausage, breaking it into crumbles, and cook until browned and cooked through. Drain excess fat.%" +
+                                   "4. Return the mushroom mixture to the pan with the sausage.%" +
+                                   "5. Stir in crushed tomatoes, red pepper flakes (for a spicy kick), and Italian herbs. Simmer for 15-20 minutes to let the flavors meld.%" +
+                                   "6. Cook linguine according to package instructions.%" +
+                                   "7. Toss the cooked linguine in the spicy sausage and mushroom sauce.%" +
+                                   "8. Serve hot, garnished with fresh parsley and grated Parmesan cheese.",
+                    UserId = 1,
+                    ForkedFromId = 7,
+                    OriginalRecipeId = 7,
+                    CuisineId = 1,
+                    RecipeImg = "https://www.chilipeppermadness.com/wp-content/uploads/2021/07/Bucatini-all-Amatriciana-Recipe1.jpg" // done
+                },
+
+                new MyRecipeObject
+                {
+                    RecipeId = 34,
+                    RecipeTitle = "Bolognese Stuffed Bell Peppers",
+                    TagLine = "A Unique Twist on Bolognese Served in Bell Peppers",
+                    Difficulty = 3,
+                    TimeToPrepare = 60,
+                    Cuisine = "Italian",
+                    RecipeMethod = "1. Preheat the oven to 375°F (190°C).%" +
+                                   "2. Cut the tops off bell peppers and remove the seeds and membranes. Set aside.%" +
+                                   "3. In a skillet, heat olive oil and sauté minced garlic and onions until fragrant.%" +
+                                   "4. Add ground beef and cook until browned. Drain excess fat.%" +
+                                   "5. Stir in tomato paste, crushed tomatoes, Italian herbs, and a pinch of sugar. Simmer for 30-40 minutes to let the flavors meld.%" +
+                                   "6. In a mixing bowl, combine the Bolognese sauce with cooked rice and grated Parmesan cheese.%" +
+                                   "7. Stuff each bell pepper with the Bolognese and rice mixture.%" +
+                                   "8. Place the stuffed bell peppers in a baking dish. Cover with aluminum foil.%" +
+                                   "9. Bake in the preheated oven for 30-35 minutes or until the peppers are tender.%" +
+                                   "10. Remove the foil, sprinkle with mozzarella cheese, and bake for an additional 5-10 minutes until the cheese is bubbly and golden.%" +
+                                   "11. Serve hot, garnished with fresh basil leaves.",
+                    UserId = 1,
+                    ForkedFromId = 7,
+                    OriginalRecipeId = 7,
+                    CuisineId = 1,
+                    RecipeImg = "https://itsavegworldafterall.com/wp-content/uploads/2018/09/Spaghetti-Stuffed-Bell-Peppers-4.jpg" // done
+                },
+
+                new MyRecipeObject
+                {
+                    RecipeId = 35,
+                    RecipeTitle = "Bolognese Zucchini Boats",
+                    TagLine = "A Low-Carb Twist on Bolognese Served in Zucchini Halves",
+                    Difficulty = 3,
+                    TimeToPrepare = 60,
+                    Cuisine = "Italian",
+                    RecipeMethod = "1. Preheat the oven to 375°F (190°C).%" +
+                                   "2. Cut zucchinis in half lengthwise and scoop out the seeds and flesh to create 'boats.'%" +
+                                   "3. In a skillet, heat olive oil and sauté minced garlic and onions until fragrant.%" +
+                                   "4. Add ground beef and cook until browned. Drain excess fat.%" +
+                                   "5. Stir in tomato paste, crushed tomatoes, Italian herbs, and a pinch of sugar. Simmer for 30-40 minutes to let the flavors meld.%" +
+                                   "6. In a mixing bowl, combine the Bolognese sauce with cooked rice and grated Parmesan cheese.%" +
+                                   "7. Fill each zucchini boat with the Bolognese and rice mixture.%" +
+                                   "8. Place the filled zucchini boats in a baking dish.%" +
+                                   "9. Cover with aluminum foil and bake in the preheated oven for 25-30 minutes.%" +
+                                   "10. Remove the foil, sprinkle with mozzarella cheese, and bake for an additional 5-10 minutes until the cheese is bubbly and golden.%" +
+                                   "11. Serve hot, garnished with fresh basil leaves.",
+                    UserId = 1,
+                    ForkedFromId = 7,
+                    OriginalRecipeId = 7,
+                    CuisineId = 1,
+                    RecipeImg = "https://www.howsweeteats.com/wp-content/uploads/2022/08/zucchini-boat-bolognese-14.jpg" // done
+                },
+
+                new MyRecipeObject
+                {
+                    RecipeId = 36,
+                    RecipeTitle = "Bolognese Stuffed Portobello Mushrooms",
+                    TagLine = "A Delicious Twist on Bolognese Served in Portobello Mushroom Caps",
+                    Difficulty = 3,
+                    TimeToPrepare = 60,
+                    Cuisine = "Italian",
+                    RecipeMethod = "1. Preheat the oven to 375°F (190°C).%" +
+                                   "2. Remove the stems and gills from portobello mushroom caps to create 'mushroom bowls.'%" +
+                                   "3. In a skillet, heat olive oil and sauté minced garlic and onions until fragrant.%" +
+                                   "4. Add ground beef and cook until browned. Drain excess fat.%" +
+                                   "5. Stir in tomato paste, crushed tomatoes, Italian herbs, and a pinch of sugar. Simmer for 30-40 minutes to let the flavors meld.%" +
+                                   "6. In a mixing bowl, combine the Bolognese sauce with cooked rice and grated Parmesan cheese.%" +
+                                   "7. Fill each portobello mushroom cap with the Bolognese and rice mixture.%" +
+                                   "8. Place the stuffed mushroom caps in a baking dish.%" +
+                                   "9. Cover with aluminum foil and bake in the preheated oven for 25-30 minutes.%" +
+                                   "10. Remove the foil, sprinkle with mozzarella cheese, and bake for an additional 5-10 minutes until the cheese is bubbly and golden.%" +
+                                   "11. Serve hot, garnished with fresh basil leaves.",
+                    UserId = 1,
+                    ForkedFromId = 7,
+                    OriginalRecipeId = 7,
+                    CuisineId = 1,
+                    RecipeImg = "https://www.healthyseasonalrecipes.com/wp-content/uploads/2015/01/Italian-Marinara-Mushroom-15.jpg" // done
+                },
+
+                new MyRecipeObject
+                {
+                    RecipeId = 37,
+                    RecipeTitle = "Bolognese Penne with Creamy Mushroom Sauce",
+                    TagLine = "A Rich and Flavorful Fusion of Bolognese and Creamy Mushrooms",
+                    Difficulty = 3,
+                    TimeToPrepare = 60,
+                    Cuisine = "Italian",
+                    RecipeMethod = "1. Cook penne pasta according to package instructions. Drain and set aside.%" +
+                                   "2. In a large skillet, heat olive oil and sauté minced garlic and onions until fragrant.%" +
+                                   "3. Add ground beef and cook until browned. Drain excess fat.%" +
+                                   "4. Stir in tomato paste, crushed tomatoes, Italian herbs, and a pinch of sugar. Simmer for 30-40 minutes to let the flavors meld.%" +
+                                   "5. In a separate skillet, melt butter and sauté sliced mushrooms until they release their moisture and turn golden brown.%" +
+                                   "6. Add heavy cream and grated Parmesan cheese to the mushrooms. Stir and cook until the sauce thickens.%" +
+                                   "7. Combine the Bolognese sauce and creamy mushroom sauce.%" +
+                                   "8. Toss the cooked penne pasta in the sauce mixture until well coated.%" +
+                                   "9. Serve hot, garnished with fresh basil leaves and an extra sprinkle of Parmesan.",
+                    UserId = 1,
+                    ForkedFromId = 7,
+                    OriginalRecipeId = 1,
+                    CuisineId = 1,
+                    RecipeImg = "https://www.kitchensanctuary.com/wp-content/uploads/2022/04/One-Pot-Creamy-Bolognese-Pasta-tall-FS-12.webp" // done
+                },
+
+                new MyRecipeObject
+                {
+                    RecipeId = 38,
+                    RecipeTitle = "Bolognese Rigatoni Bake",
+                    TagLine = "A Comforting Baked Dish with Rigatoni and Bolognese Sauce",
+                    Difficulty = 3,
+                    TimeToPrepare = 75,
+                    Cuisine = "Italian",
+                    RecipeMethod = "1. Cook rigatoni pasta according to package instructions until al dente. Drain and set aside.%" +
+                                   "2. In a large skillet, heat olive oil and sauté minced garlic and onions until fragrant.%" +
+                                   "3. Add ground beef and cook until browned. Drain excess fat.%" +
+                                   "4. Stir in tomato paste, crushed tomatoes, Italian herbs, and a pinch of sugar. Simmer for 30-40 minutes to let the flavors meld.%" +
+                                   "5. Preheat your oven to 350°F (175°C).%" +
+                                   "6. In a baking dish, layer cooked rigatoni and Bolognese sauce. Repeat the layers until all ingredients are used.%" +
+                                   "7. Top with shredded mozzarella cheese.%" +
+                                   "8. Bake in the preheated oven for 20-25 minutes or until the cheese is melted and bubbly.%" +
+                                   "9. Serve hot, garnished with fresh basil leaves.",
+                    UserId = 1,
+                    ForkedFromId = 7,
+                    OriginalRecipeId = 7,
+                    CuisineId = 1,
+                    RecipeImg = "https://i0.wp.com/www.aspicyperspective.com/wp-content/uploads/2021/08/Creamy-Baked-Rigatoni-Bolognese-23.jpg?resize=650%2C933&ssl=1" // done
+                },
+
+                new MyRecipeObject
+                {
                     RecipeId = 3,
                     RecipeTitle = "Sushi Rolls",
                     TagLine = "Fresh and Flavorful Japanese Sushi",
@@ -429,6 +578,12 @@ public class RecipesData
             new int[] {217, 137, 528, 31, 633, 108, 242, 378, 349, 347}, // 26
             new int[] { 242, 363, 368, 543, 422, 396, 663, 249, 692, 34, 347 }, // 31
             new int[] { 682, 242, 638, 543, 153, 396, 663, 249, 5, 634, 363, 27, 34, 16, 371, 378, 349 }, // 32
+            new int[] { 242, 363, 634, 564, 396, 663, 675, 375, 34 }, // 33
+            new int[] { 594, 242, 363, 638, 543, 422, 396, 663, 249, 335, 34, 31, 347 }, // 34
+            new int[] { 662, 242, 363, 638, 543, 422, 396, 663, 249, 335, 34, 31, 347 }, // 35
+            new int[] { 634, 242, 363, 638, 543, 422, 396, 663, 249, 355, 34, 31, 347 }, // 36
+            new int[] { 683, 242, 363, 638, 543, 422, 396, 663, 249, 355, 34, 31, 347 }, // 37
+            new int[] { 688, 242, 363, 638, 543, 422, 396, 663, 249, 355, 34, 31, 347 }, // 38
             new int[] {10, 11, 12, 13, 14, 15, 16, 17, 18},
             new int[] {19, 20, 21, 22, 23, 24, 25, 26, 27},
             new int[] {28, 29, 30, 31, 32, 33, 34, 35, 36},
@@ -457,6 +612,12 @@ public class RecipesData
             new string[] { "300g", "2-3 tbs", "150g", "150g", "4-6 pcs", "1-2 tbs", "1-2 tbs", "To taste", "To taste", "2-4 leaves"}, //26
             new string[] { "2 tbs", "2 cloves", "1 med size", "500g", "2 tbs", "400g", "2 tsp", "1/2 tsp", "300g", "For garnish", "For garnish" }, // 31
             new string[] { "300g", "2 cloves", "1 med size", "500g", "2 tbs", "400g", "2 tbs", "1/2 tbs", "2 tbs", "250g", "2 cloves", "1 cup", "1/2 cup", "1/4 cup", "1/4 tbs", "To taste", "To taste" }, // 32
+            new string[] { "2 tbs", "2 cloves", "200g", "450g", "400g", "2 tsp", "300g", "For garnish", "For garnish" }, // 33
+            new string[] { "4 large", "2 tbs", "2 cloves", "1 med size", "500g", "2 tbs", "400g", "2 tsp", "1/2 tsp", "1 cup", "1/2 cup", "1/2 cup", "For garnish" }, // 34
+            new string[] { "4 large", "2 tbs", "2 cloves", "1 med size", "500g", "2 tbs", "400g", "2 tsp", "1/2 tsp", "1 cup", "1/2 cup", "1/2 cup", "For garnish" }, // 35
+            new string[] { "4 large", "2 tbs", "2 cloves", "1 med size", "500g", "2 tbs", "400g", "2 tsp", "1/2 tsp", "1 cup", "1/2 cup", "1/2 cup", "For garnish" }, // 36
+            new string[] { "300g", "2 tbs", "2 cloves", "1 med size", "500g", "2tbs", "400g", "2 tsp", "1/2 tsp", "1 cup", "1/2 cup", "1/2 cup", "For garnish" }, // 37
+            new string[] { "300g", "2 tbs", "2 cloves", "1 med size", "500g", "2tbs", "400g", "2 tsp", "1/2 tsp", "1 cup", "1/2 cup", "1/2 cup", "For garnish" }, // 38
             new string[] { "10g", "112g", "123g", "134g", "145g", "156g", "167g", "178g", "189g" },
             new string[] { "19g", "201g", "212g", "223g", "234g", "245g", "256g", "267g", "278g" },
             new string[] { "28g", "291g", "302g", "313g", "324g", "335g", "346g", "357g", "368g" },

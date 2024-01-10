@@ -592,5 +592,5 @@
     "fat": "12 g",
     "protein": "10 g",
     "name": "Fish Fingers"
-  }
+  },
 ]
