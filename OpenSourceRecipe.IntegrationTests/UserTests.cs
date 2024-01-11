@@ -893,7 +893,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     [Fact]
     public async Task GetAllForkedRecipesByCuisine_ShouldSucceed()
     {
-        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?cuisineId=3");
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?cuisineId=1");
         var response = await _client.SendAsync(request);
         var contentString = await response.Content.ReadAsStringAsync();
 
@@ -964,7 +964,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     [Fact]
     public async Task GetAllForkedRecipesByForkedFromId_ShouldSucceed()
     {
-        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?forkedFromId=3");
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?forkedFromId=7");
         var response = await _client.SendAsync(request);
         var contentString = await response.Content.ReadAsStringAsync();
 
@@ -974,7 +974,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         {
             Assert.NotNull(recipe.ForkedFromId);
             Assert.NotNull(recipe.OriginalRecipeId);
-            Assert.Equal(3, recipe.ForkedFromId);
+            Assert.Equal(7, recipe.ForkedFromId);
         }
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -1000,7 +1000,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
     [Fact]
     public async Task GetAllForkedRecipesByOriginalRecipeId_ShouldSucceed()
     {
-        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?originalRecipeId=3");
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes/forks?originalRecipeId=7");
         var response = await _client.SendAsync(request);
         var contentString = await response.Content.ReadAsStringAsync();
 
@@ -1010,7 +1010,7 @@ public class UserEndpoints(CustomWebApplicationFactory<Program> factory)
         {
             Assert.NotNull(recipe.ForkedFromId);
             Assert.NotNull(recipe.OriginalRecipeId);
-            Assert.Equal(3, recipe.OriginalRecipeId);
+            Assert.Equal(7, recipe.OriginalRecipeId);
         }
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
