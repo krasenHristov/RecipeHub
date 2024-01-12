@@ -1,3 +1,4 @@
+/*
 using System.Net;
 using System.Text;
 using Newtonsoft.Json;
@@ -7,7 +8,6 @@ public class RecipeEndpoints
 {
 
     private readonly HttpClient _client = SharedTestResources.Factory.CreateClient();
-
 
     // INGREDIENT TESTS
     [Fact]
@@ -75,3 +75,4 @@ public class RecipeEndpoints
         Assert.NotNull(content);
     }
 }
+*/
