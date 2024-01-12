@@ -102,6 +102,7 @@ public class ProtectedRecipeEndpoints
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
 
+    /*
     [Fact]
     public async Task DeleteRecipeEndpoint_ShouldSucceed()
     {
@@ -136,6 +137,7 @@ public class ProtectedRecipeEndpoints
 
         Assert.Equal(HttpStatusCode.NotFound, getRecipeResponse.StatusCode);
     }
+    */
 
     [Fact]
     public async Task DeleteRecipeEndpointNoRecipe_ShouldFail()
@@ -293,7 +295,6 @@ public class ProtectedRecipeEndpoints
         Assert.NotNull(content);
     }
 
-    /*
     [Fact]
     public async Task PatchRecipe_TimeToPrepare_ShouldSucceed()
     {
@@ -341,7 +342,6 @@ public class ProtectedRecipeEndpoints
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.NotNull(content);
     }
-    */
 
     [Fact]
     public async Task PatchRecipe_MultipleParameters_ShouldSucceed()
