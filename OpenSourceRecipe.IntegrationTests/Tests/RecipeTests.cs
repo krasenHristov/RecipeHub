@@ -283,4 +283,83 @@ public class RecipeEndpoints
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
 
+    [Fact]
+    public async Task GetRecipesByIngredientIdsParamsWithComas_ShouldSucceed()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/recipes?recipeIds=1,2,3");
+        var response = await _client.SendAsync(request);
+        var contentString = await response.Content.ReadAsStringAsync();
+
+        var content = JsonConvert.DeserializeObject<List<GetRecipesDto>>(contentString);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.True(content!.Count > 0);
+        Assert.NotNull(content);
+    }
+
+
+    [Fact]
+    public async Task SearchRecipe_ShouldSucceed()
+    {
+        var recipes = new HttpRequestMessage(HttpMethod.Get, "api/recipes/search?search=pizza");
+        var response = await _client.SendAsync(recipes);
+        var content = await response.Content.ReadAsStringAsync();
+
+        var recipesList = JsonConvert.DeserializeObject<IEnumerable<GetRecipesDto>>(content);
+
+        foreach (var recipe in recipesList!)
+        {
+            Assert.Contains("pizza", recipe.RecipeTitle!.ToLower());
+        }
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
+
+    [Fact]
+    public async Task SearchRecipeInMethod_ShouldSucceed()
+    {
+        var recipes = new HttpRequestMessage(HttpMethod.Get, "api/recipes/search?search=cook");
+        var response = await _client.SendAsync(recipes);
+        var content = await response.Content.ReadAsStringAsync();
+
+        var recipesList = JsonConvert.DeserializeObject<IEnumerable<GetRecipesDto>>(content);
+
+        foreach (var recipe in recipesList!)
+        {
+            Assert.Contains("cook", recipe.RecipeMethod!.ToLower());
+        }
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task SearchRecipeByCuisine_ShouldSucceed()
+    {
+        var recipes = new HttpRequestMessage(HttpMethod.Get, "api/recipes/search?search=italian");
+        var response = await _client.SendAsync(recipes);
+        var content = await response.Content.ReadAsStringAsync();
+
+        var recipesList = JsonConvert.DeserializeObject<IEnumerable<GetRecipesDto>>(content);
+
+        foreach (var recipe in recipesList!)
+        {
+            Assert.Contains("italian", recipe.Cuisine!.ToLower());
+        }
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task SearchRecipe_ShouldFail()
+    {
+        var recipes = new HttpRequestMessage(HttpMethod.Get, "api/recipes/search?search=notarealrecipe");
+        var response = await _client.SendAsync(recipes);
+        var content = await response.Content.ReadAsStringAsync();
+
+        var recipesList = JsonConvert.DeserializeObject<IEnumerable<GetRecipesDto>>(content);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Empty(recipesList!);
+    }
 }
