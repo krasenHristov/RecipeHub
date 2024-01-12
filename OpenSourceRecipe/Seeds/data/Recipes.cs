@@ -413,6 +413,26 @@ public class RecipesData
 
                 new MyRecipeObject
                 {
+                    RecipeId = 51,
+                    RecipeTitle = "Fish and Chips",
+                    TagLine = "Traditional British Dish with Crispy Fish and Potato Chips",
+                    Difficulty = 3,
+                    TimeToPrepare = 45,
+                    Cuisine = "British",
+                    RecipeMethod = "1. Peel and cut potatoes into thick strips to make potato chips. Rinse and dry them thoroughly.%" +
+                                   "2. Heat vegetable oil in a deep fryer or large pot to 350°F (175°C).%" +
+                                   "3. Fry potato chips in batches until they are golden brown and crispy. Remove and drain on paper towels.%" +
+                                   "4. In a separate bowl, mix flour, baking powder, salt, and water to make a smooth batter for the fish.%" +
+                                   "5. Dip fish fillets into the batter, ensuring they are fully coated.%" +
+                                   "6. Carefully place the battered fish fillets into the hot oil and fry until they are golden and the fish is cooked through. Drain on paper towels.%" +
+                                   "7. Serve hot fish and chips with salt, vinegar, tartar sauce, or mushy peas as desired.",
+                    UserId = 1,
+                    CuisineId = 4,
+                    RecipeImg = "https://images.unsplash.com/photo-1579208030886-b937da0925dc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // done
+                },
+
+                new MyRecipeObject
+                {
                     RecipeId = 45,
                     RecipeTitle = "Mushroom Risotto",
                     TagLine = "Creamy Arborio Rice with Sautéed Mushrooms and Parmesan",
@@ -637,6 +657,7 @@ public class RecipesData
             new int[] { 528, 378, 349, 219, 242, 364, 389, 367, 5, 375 }, // 43
             new int[] { 543, 564, 242, 363, 638, 396, 422, 663, 249, 378, 349 }, // 44
             new int[] { 335, 5, 363, 215, 389, 634, 242, 34, 380, 378, 349 }, // 45
+            new int[] { 643, 251, 378, 303, 219, 223 }, // 51
 
             new int[] {10, 11, 12, 13, 14, 15, 16, 17, 18},
             new int[] {19, 20, 21, 22, 23, 24, 25, 26, 27},
@@ -677,6 +698,7 @@ public class RecipesData
             new string[] { "340g", "1/2 tsp", "1/4 tsp", "1/2 cup", "2 tbsp", "2 cloves", "1 cup", "2 pcs", "2 tbsp", "2 tbsp" }, // 43
             new string[] { "450g", "225g", "2 tbsp", "3 cloves", "1 med size", "1 can", "2 tbsp", "2 tsp", "1 tsp", "To taste", "To taste" }, // 44
             new string[] { "1 1/2 cups", "3 tbsp", "2 cloves", "1/2 cup", "4 cups", "225g", "2 tbsp", "1/2", "1 tbsp", "To taste", "To taste" }, // 45
+            new string[] { "680g", "500ml", "To taste", "450g" ,"1 cup", "1 tbsp" }, // 51
 
             new string[] { "10g", "112g", "123g", "134g", "145g", "156g", "167g", "178g", "189g" },
             new string[] { "19g", "201g", "212g", "223g", "234g", "245g", "256g", "267g", "278g" },
