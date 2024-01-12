@@ -154,6 +154,7 @@ builder.Services.AddScoped<CommentRepository>();
 builder.Services.AddScoped<RecipeRatingsRepository>();
 builder.Services.AddScoped<CommentVotesRepository>();
 builder.Services.AddScoped<FirebaseStorageService.Storage.FirebaseStorageService>();
+
 // Controllers
 builder.Services.AddControllers();
 
