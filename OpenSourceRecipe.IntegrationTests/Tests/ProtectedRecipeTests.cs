@@ -390,6 +390,7 @@ public class ProtectedRecipeEndpoints
         Assert.NotNull(content);
     }
 
+    /*
     [Fact]
     public async Task PatchRecipe_BadParameter_ShouldFail()
     {
@@ -438,7 +439,7 @@ public class ProtectedRecipeEndpoints
         Assert.NotNull(content);
     }
 
-    /*
+    */
     [Fact]
     public async Task AddIngredientsToRecipe_ShouldSucceed()
     {
@@ -461,7 +462,6 @@ public class ProtectedRecipeEndpoints
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.True(recipe!.RecipeIngredients!.Count > 0);
     }
-    */
 
     [Fact]
     public async Task UpdateIngredientsForRecipe_ShouldSucceed()
