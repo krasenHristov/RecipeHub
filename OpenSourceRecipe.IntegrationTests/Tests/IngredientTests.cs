@@ -1,4 +1,3 @@
-/*
 using System.Net;
 using System.Text;
 using Newtonsoft.Json;
@@ -75,4 +74,3 @@ public class RecipeEndpoints
         Assert.NotNull(content);
     }
 }
-*/
