@@ -1,4 +1,4 @@
-/*using System.Net;
+using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
 using Newtonsoft.Json;
@@ -476,7 +476,7 @@ public class ProtectedRecipeEndpoints
 
         var body = new
         {
-            IngredientIds = new int[] { 1, 2, 3 },
+            IngredientIds = new int[] { 122, 233, 344 },
             Quantity = new string[] { "1 cup", "2 cups", "3 cups" }
         };
 
@@ -503,4 +503,4 @@ public class ProtectedRecipeEndpoints
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
 
-}*/
+}
