@@ -16,7 +16,7 @@ public class RecipeEndpoints
         //Arrange
         var newIngredient = new
         {
-            IngredientName = "TestIngredient",
+            IngredientName = "testing new ingredient",
             Calories = "50 kcal",
             Carbohydrate = "5 g",
             Sugar = "3 g",
