@@ -293,6 +293,7 @@ public class ProtectedRecipeEndpoints
         Assert.NotNull(content);
     }
 
+    /*
     [Fact]
     public async Task PatchRecipe_TimeToPrepare_ShouldSucceed()
     {
@@ -340,8 +341,8 @@ public class ProtectedRecipeEndpoints
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.NotNull(content);
     }
+    */
 
-    /*
     [Fact]
     public async Task PatchRecipe_MultipleParameters_ShouldSucceed()
     {
@@ -390,7 +391,6 @@ public class ProtectedRecipeEndpoints
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.NotNull(content);
     }
-    */
 
     [Fact]
     public async Task PatchRecipe_BadParameter_ShouldFail()
