@@ -143,48 +143,49 @@ public class RecipeRepository
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        string sql = "SELECT r.*, " +
-                     "(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"ForkedFromId\" = r.\"RecipeId\") as \"DirectForkCount\", " +
-                     "COALESCE(ROUND(AVG(rr.\"Rating\")::NUMERIC, 2), 0) as \"AverageRating\", " +
-                     "COUNT(rr.\"UserId\") as \"RatingCount\" " +
-                     "FROM \"Recipe\" r " +
-                     "LEFT JOIN \"RecipeRating\" rr ON r.\"RecipeId\" = rr.\"RecipeId\" " +
-                     "WHERE r.\"ForkedFromId\" IS NOT NULL ";
+        StringBuilder query = new StringBuilder();
+        query.Append("SELECT r.*, ");
+        query.Append("(SELECT COUNT(\"RecipeId\") FROM \"Recipe\" WHERE \"ForkedFromId\" = r.\"RecipeId\") as \"DirectForkCount\", ");
+        query.Append("COALESCE(ROUND(AVG(rr.\"Rating\")::NUMERIC, 2), 0) as \"AverageRating\", ");
+        query.Append("COUNT(rr.\"UserId\") as \"RatingCount\" ");
+        query.Append("FROM \"Recipe\" r ");
+        query.Append("LEFT JOIN \"RecipeRating\" rr ON r.\"RecipeId\" = rr.\"RecipeId\" ");
+        query.Append("WHERE r.\"ForkedFromId\" IS NOT NULL ");
 
         var parameters = new DynamicParameters();
 
         if (userId != null)
         {
-            sql += "AND r.\"UserId\" = @UserId ";
+            query.Append("AND r.\"UserId\" = @UserId ");
             parameters.Add("UserId", userId);
         }
 
         if (cuisineId != null)
         {
-            sql += "AND r.\"CuisineId\" = @CuisineId ";
+            query.Append("AND r.\"CuisineId\" = @CuisineId ");
             parameters.Add("CuisineId", cuisineId);
         }
 
         if (forkedFromId != null)
         {
-            sql += "AND r.\"ForkedFromId\" = @ForkedFromId ";
+            query.Append("AND r.\"ForkedFromId\" = @ForkedFromId ");
             parameters.Add("ForkedFromId", forkedFromId);
         }
 
         if (originalRecipeId != null)
         {
-            sql += "AND r.\"OriginalRecipeId\" = @OriginalRecipeId ";
+            query.Append("AND r.\"OriginalRecipeId\" = @OriginalRecipeId ");
             parameters.Add("OriginalRecipeId", originalRecipeId);
         }
 
-        sql += " GROUP BY r.\"RecipeId\";";
+        query.Append(" GROUP BY r.\"RecipeId\";");
 
-        var recipes = await connection.QueryAsync<GetForkedRecipesDto>(sql, parameters);
+        var recipes = await connection.QueryAsync<GetForkedRecipesDto>(query.ToString(), parameters);
 
         return recipes;
     }
 
-    public async Task<GetRecipeByIdDto> PatchRecipe(PatchRecipeDto recipe)
+    public async Task<GetRecipeByIdDto> UpdateRecipe(PatchRecipeDto recipe)
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
@@ -371,6 +372,3 @@ public class RecipeRepository
         return relevantRecipes;
     }
 }
-
-
-

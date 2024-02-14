@@ -189,5 +189,3 @@ public class UserRepository
         return hasher.VerifyHashedPassword(null!, hashedPassword, password) != PasswordVerificationResult.Failed;
     }
 }
-
-
