@@ -128,7 +128,7 @@ public class RecipeController(RecipeRepository recipeRepository) : ControllerBas
                 return Unauthorized();
             }
 
-            return Ok(await recipeRepository.PatchRecipe(recipeToPatchInfo));
+            return Ok(await recipeRepository.UpdateRecipe(recipeToPatchInfo));
         }
         catch (Exception e)
         {

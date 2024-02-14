@@ -1,3 +1,4 @@
+using System.Text;
 using Dapper;
 using Npgsql;
 using OpenSourceRecipes.Models;
@@ -81,11 +82,12 @@ public class CommentVotesRepository
         {
              parameters.Add("Upvote", voteDetails.Upvote);
 
-             string sql = "INSERT INTO \"CommentVote\" " +
-                          "(\"CommentId\", \"UserId\", \"Upvote\") " +
-                          "VALUES (@CommentId, @UserId, @Upvote)";
+             StringBuilder query = new StringBuilder();
+             query.Append("INSERT INTO \"CommentVote\" ");
+             query.Append("(\"CommentId\", \"UserId\", \"Upvote\") ");
+             query.Append("VALUES (@CommentId, @UserId, @Upvote)");
 
-             await connection.ExecuteAsync(sql, parameters);
+             await connection.ExecuteAsync(query.ToString(), parameters);
         }
 
         return "Upvote added.";

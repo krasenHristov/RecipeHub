@@ -1,3 +1,4 @@
+using System.Text;
 using Dapper;
 using Npgsql;
 using OpenSourceRecipes.Models;
@@ -68,11 +69,12 @@ public class RecipeRatingsRepository
         parameters.Add("UserId", ratingDetails.UserId);
         parameters.Add("Rating", ratingDetails.Rating);
 
-        string sql = "UPDATE \"RecipeRating\" " +
-                     "SET \"Rating\" = @Rating " +
-                     "WHERE \"RecipeId\" = @RecipeId AND \"UserId\" = @UserId RETURNING *";
+        StringBuilder query = new StringBuilder();
+        query.Append("UPDATE \"RecipeRating\" ");
+        query.Append("SET \"Rating\" = @Rating ");
+        query.Append("WHERE \"RecipeId\" = @RecipeId AND \"UserId\" = @UserId RETURNING *");
 
-        var newRating = await connection.QuerySingleOrDefaultAsync<RecipeRatingDto>(sql, parameters);
+        var newRating = await connection.QuerySingleOrDefaultAsync<RecipeRatingDto>(query.ToString(), parameters);
 
         if (newRating == null)
         {

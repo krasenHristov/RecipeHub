@@ -1,3 +1,4 @@
+using System.Text;
 using Dapper;
 using Npgsql;
 using OpenSourceRecipes.Models;
@@ -75,10 +76,13 @@ public class IngredientRepository
             parameters.Add("IngredientId", ingredientIds[i]);
             parameters.Add("Quantity", quantity[i]);
 
-            var sql = "INSERT INTO \"RecipeIngredient\" " +
-                      "(\"RecipeId\", \"IngredientId\", \"Quantity\") " +
-                      "VALUES (@RecipeId, @IngredientId, @Quantity) RETURNING *";
-            var newRecipeIngredient = await connection.QuerySingleOrDefaultAsync<GetRecipeByIdDto>(sql, parameters);
+            StringBuilder query = new StringBuilder();
+            query.Append("INSERT INTO \"RecipeIngredient\" ");
+            query.Append("(\"RecipeId\", \"IngredientId\", \"Quantity\") ");
+            query.Append("VALUES (@RecipeId, @IngredientId, @Quantity) ");
+            query.Append("RETURNING *;");
+
+            var newRecipeIngredient = await connection.QuerySingleOrDefaultAsync<GetRecipeByIdDto>(query.ToString(), parameters);
 
             if (newRecipeIngredient == null)
             {
@@ -94,12 +98,13 @@ public class IngredientRepository
 
     public async Task UpdateIngredientsForRecipe(int recipeId, int[] ingredientIds, string[] quantities)
     {
-await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
+        await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
         var parameters = new DynamicParameters();
         parameters.Add("RecipeId", recipeId);
 
         var sql = "DELETE FROM \"RecipeIngredient\" WHERE \"RecipeId\" = @RecipeId";
+
         await connection.ExecuteAsync(sql, parameters);
 
         for (int i = 0; i < ingredientIds.Length; i++)
@@ -109,10 +114,13 @@ await using var connection = new NpgsqlConnection(_configuration.GetConnectionSt
             parameters.Add("IngredientId", ingredientIds[i]);
             parameters.Add("Quantity", quantities[i]);
 
-            sql = "INSERT INTO \"RecipeIngredient\" " +
-                  "(\"RecipeId\", \"IngredientId\", \"Quantity\") " +
-                  "VALUES (@RecipeId, @IngredientId, @Quantity) RETURNING *";
-            var newRecipeIngredient = await connection.QuerySingleOrDefaultAsync<GetRecipeByIdDto>(sql, parameters);
+            StringBuilder query = new StringBuilder();
+            query.Append("INSERT INTO \"RecipeIngredient\" ");
+            query.Append("(\"RecipeId\", \"IngredientId\", \"Quantity\") ");
+            query.Append("VALUES (@RecipeId, @IngredientId, @Quantity) ");
+            query.Append("RETURNING *;");
+
+            var newRecipeIngredient = await connection.QuerySingleOrDefaultAsync<GetRecipeByIdDto>(query.ToString(), parameters);
 
             if (newRecipeIngredient == null)
             {

@@ -1,3 +1,4 @@
+using System.Text;
 using Dapper;
 using Npgsql;
 using OpenSourceRecipes.Models;
@@ -32,12 +33,13 @@ public class CommentRepository
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        string query = $"INSERT INTO \"RecipeComment\" " +
-                        "(\"RecipeId\", \"UserId\", \"Author\", \"Comment\") " +
-                        "VALUES (@RecipeId, @UserId, @Author, @Comment) " +
-                        "RETURNING *;";
+        StringBuilder query = new StringBuilder();
+        query.Append("INSERT INTO \"RecipeComment\" ");
+        query.Append("(\"RecipeId\", \"UserId\", \"Author\", \"Comment\") ");
+        query.Append("VALUES (@RecipeId, @UserId, @Author, @Comment) ");
+        query.Append("RETURNING *;");
 
-        return await connection.QueryFirstOrDefaultAsync<GetCommentDto>(query, comment);
+        return await connection.QueryFirstOrDefaultAsync<GetCommentDto>(query.ToString(), comment);
     }
 
     public async Task<IEnumerable<GetCommentDto>> GetCommentsByRecipeId(int recipeId, int userId)
@@ -113,14 +115,15 @@ public class CommentRepository
     {
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
-        string query = $"UPDATE \"RecipeComment\" " +
-                        "SET \"Comment\" = @Comment " +
-                        "WHERE \"CommentId\" = @CommentId " +
-                        "RETURNING *;";
+        StringBuilder query = new StringBuilder();
+        query.Append("UPDATE \"RecipeComment\" ");
+        query.Append("SET \"Comment\" = @Comment ");
+        query.Append("WHERE \"CommentId\" = @CommentId ");
+        query.Append("RETURNING *;");
 
         DynamicParameters parameters = new DynamicParameters(comment);
         parameters.Add("CommentId", commentId);
 
-        return await connection.QueryFirstOrDefaultAsync<GetCommentDto>(query, parameters);
+        return await connection.QueryFirstOrDefaultAsync<GetCommentDto>(query.ToString(), parameters);
     }
 }

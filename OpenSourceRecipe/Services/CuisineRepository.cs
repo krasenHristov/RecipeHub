@@ -1,3 +1,4 @@
+using System.Text;
 using Dapper;
 using Npgsql;
 using OpenSourceRecipes.Models;
@@ -34,13 +35,14 @@ public class CuisineRepository
         await using var connection = new NpgsqlConnection(_configuration.GetConnectionString(_connectionString!));
 
         // get all cuisines with count of recipes
-        var sql = "SELECT c.\"CuisineId\", c.\"CuisineName\", c.\"CuisineImg\", c.\"Description\", COUNT(r.\"CuisineId\") AS \"RecipeCount\" " +
-                  "FROM \"Cuisine\" c " +
-                  "LEFT JOIN \"Recipe\" r ON c.\"CuisineId\" = r.\"CuisineId\" " +
-                  "GROUP BY c.\"CuisineId\" " +
-                  "ORDER BY c.\"CuisineName\" ASC";
+        StringBuilder query = new StringBuilder();
+        query.Append("SELECT c.\"CuisineId\", c.\"CuisineName\", c.\"CuisineImg\", c.\"Description\", COUNT(r.\"CuisineId\") AS \"RecipeCount\" ");
+        query.Append("FROM \"Cuisine\" c ");
+        query.Append("LEFT JOIN \"Recipe\" r ON c.\"CuisineId\" = r.\"CuisineId\" ");
+        query.Append("GROUP BY c.\"CuisineId\" ");
+        query.Append("ORDER BY c.\"CuisineName\" ASC");
 
-        var cuisines = await connection.QueryAsync<GetCuisineDto>(sql);
+        var cuisines = await connection.QueryAsync<GetCuisineDto>(query.ToString());
 
         return cuisines;
     }
